@@ -1,0 +1,15 @@
+E:\Tündi Egyetemi dolgok\Szakdolgozat\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+E:\Tündi Egyetemi dolgok\Szakdolgozat\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+E:\Tündi Egyetemi dolgok\Szakdolgozat\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+E:\Tündi Egyetemi dolgok\Szakdolgozat\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csprojAssemblyReference.cache
+E:\Tündi Egyetemi dolgok\Szakdolgozat\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.MainMenu.resources
+E:\Tündi Egyetemi dolgok\Szakdolgozat\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+E:\Tündi Egyetemi dolgok\Szakdolgozat\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+E:\Tündi Egyetemi dolgok\Szakdolgozat\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+E:\Tündi Egyetemi dolgok\Szakdolgozat\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+E:\Tündi Egyetemi dolgok\Szakdolgozat\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+E:\Tündi Egyetemi dolgok\Szakdolgozat\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.SaleForm.resources
+E:\Tündi Egyetemi dolgok\Szakdolgozat\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.BookManagerForm.resources
+E:\Tündi Egyetemi dolgok\Szakdolgozat\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.RegularCustomerForm.resources
+E:\Tündi Egyetemi dolgok\Szakdolgozat\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.StatementsForm.resources
+E:\Tündi Egyetemi dolgok\Szakdolgozat\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.WishListForm.resources
