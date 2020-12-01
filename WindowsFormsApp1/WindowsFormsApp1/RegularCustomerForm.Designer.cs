@@ -37,7 +37,6 @@
             this.statementsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.súgóToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -50,14 +49,17 @@
             this.textBox_address = new System.Windows.Forms.TextBox();
             this.textBox_phone_number = new System.Windows.Forms.TextBox();
             this.textBox_email_address = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.textBox_torzsvasarloi_kod = new System.Windows.Forms.TextBox();
+            this.comboBox_gender = new System.Windows.Forms.ComboBox();
             this.display_button = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
+            this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.info_button = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -68,7 +70,7 @@
             this.súgóToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1006, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1006, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -82,7 +84,7 @@
             this.statementsToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.fájlToolStripMenuItem.Name = "fájlToolStripMenuItem";
-            this.fájlToolStripMenuItem.Size = new System.Drawing.Size(45, 24);
+            this.fájlToolStripMenuItem.Size = new System.Drawing.Size(45, 26);
             this.fájlToolStripMenuItem.Text = "Fájl";
             // 
             // mainMenuToolStripMenuItem
@@ -130,18 +132,8 @@
             // súgóToolStripMenuItem
             // 
             this.súgóToolStripMenuItem.Name = "súgóToolStripMenuItem";
-            this.súgóToolStripMenuItem.Size = new System.Drawing.Size(57, 24);
+            this.súgóToolStripMenuItem.Size = new System.Drawing.Size(57, 26);
             this.súgóToolStripMenuItem.Text = "Súgó";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 281);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(982, 360);
-            this.dataGridView1.TabIndex = 1;
             // 
             // label1
             // 
@@ -248,63 +240,87 @@
             this.textBox_email_address.Size = new System.Drawing.Size(240, 22);
             this.textBox_email_address.TabIndex = 14;
             // 
-            // textBox1
+            // textBox_torzsvasarloi_kod
             // 
-            this.textBox1.Location = new System.Drawing.Point(728, 168);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(240, 22);
-            this.textBox1.TabIndex = 15;
+            this.textBox_torzsvasarloi_kod.Location = new System.Drawing.Point(728, 168);
+            this.textBox_torzsvasarloi_kod.Name = "textBox_torzsvasarloi_kod";
+            this.textBox_torzsvasarloi_kod.Size = new System.Drawing.Size(240, 22);
+            this.textBox_torzsvasarloi_kod.TabIndex = 15;
             // 
-            // comboBox1
+            // comboBox_gender
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.comboBox_gender.FormattingEnabled = true;
+            this.comboBox_gender.Items.AddRange(new object[] {
             "Nő",
             "Férfi"});
-            this.comboBox1.Location = new System.Drawing.Point(200, 120);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(240, 24);
-            this.comboBox1.TabIndex = 16;
+            this.comboBox_gender.Location = new System.Drawing.Point(200, 120);
+            this.comboBox_gender.Name = "comboBox_gender";
+            this.comboBox_gender.Size = new System.Drawing.Size(240, 24);
+            this.comboBox_gender.TabIndex = 16;
             // 
             // display_button
             // 
             this.display_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.display_button.Location = new System.Drawing.Point(760, 212);
+            this.display_button.Location = new System.Drawing.Point(760, 210);
             this.display_button.Name = "display_button";
             this.display_button.Size = new System.Drawing.Size(174, 50);
             this.display_button.TabIndex = 19;
             this.display_button.Text = "Megjelenítés";
             this.display_button.UseVisualStyleBackColor = true;
+            this.display_button.Click += new System.EventHandler(this.display_button_Click);
             // 
             // button1
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button1.Location = new System.Drawing.Point(500, 50);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(174, 50);
             this.button1.TabIndex = 20;
             this.button1.Text = "Új törzsvásárló regisztrálása";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button2.Location = new System.Drawing.Point(500, 130);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(174, 50);
             this.button2.TabIndex = 21;
             this.button2.Text = "Törzsvásárlói adatok módosítása";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button3.Location = new System.Drawing.Point(500, 220);
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button3.Location = new System.Drawing.Point(500, 210);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(174, 50);
             this.button3.TabIndex = 22;
             this.button3.Text = "Törzsvásárló törlése";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // dataGridView
+            // 
+            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Location = new System.Drawing.Point(12, 281);
+            this.dataGridView.Name = "dataGridView";
+            this.dataGridView.RowHeadersWidth = 51;
+            this.dataGridView.RowTemplate.Height = 24;
+            this.dataGridView.Size = new System.Drawing.Size(982, 360);
+            this.dataGridView.TabIndex = 23;
+            // 
+            // info_button
+            // 
+            this.info_button.Location = new System.Drawing.Point(971, 167);
+            this.info_button.Name = "info_button";
+            this.info_button.Size = new System.Drawing.Size(23, 23);
+            this.info_button.TabIndex = 24;
+            this.info_button.Text = "I";
+            this.info_button.UseVisualStyleBackColor = true;
+            this.info_button.Click += new System.EventHandler(this.info_button_Click);
             // 
             // RegularCustomerForm
             // 
@@ -313,12 +329,14 @@
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1006, 653);
+            this.Controls.Add(this.info_button);
+            this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.display_button);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.comboBox_gender);
+            this.Controls.Add(this.textBox_torzsvasarloi_kod);
             this.Controls.Add(this.textBox_email_address);
             this.Controls.Add(this.textBox_phone_number);
             this.Controls.Add(this.textBox_address);
@@ -331,7 +349,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "RegularCustomerForm";
@@ -339,7 +356,7 @@
             this.Text = "Törzsvásárlók";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -356,7 +373,6 @@
         private System.Windows.Forms.ToolStripMenuItem statementsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem súgóToolStripMenuItem;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -369,11 +385,14 @@
         private System.Windows.Forms.TextBox textBox_address;
         private System.Windows.Forms.TextBox textBox_phone_number;
         private System.Windows.Forms.TextBox textBox_email_address;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox textBox_torzsvasarloi_kod;
+        private System.Windows.Forms.ComboBox comboBox_gender;
         private System.Windows.Forms.Button display_button;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.HelpProvider helpProvider1;
+        private System.Windows.Forms.DataGridView dataGridView;
+        private System.Windows.Forms.Button info_button;
     }
 }
