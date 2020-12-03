@@ -118,7 +118,19 @@ namespace WindowsFormsApp1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
+            dataBase.openConnection();
+            cmd = new SQLiteCommand("UPDATE RegularCustomer SET name = '" + textBox_name.Text + "', Born_date = '" + textBox_born_date.Text +
+                                                            "', Gender = '" + comboBox_gender.Text + "', Address = '" + textBox_address.Text +
+                                                            "', Phone_Number = '" + textBox_phone_number.Text + "', Email_address = '" + textBox_email_address.Text + "' " +
+                                                            "WHERE Regular_customer_id = '" + textBox_torzsvasarloi_kod.Text + "'", dataBase.GetConnection());
+            cmd.ExecuteNonQuery();
+            dataBase.closeConnection();
+            cmd = new SQLiteCommand("SELECT * FROM RegularCustomer", dataBase.GetConnection());
+            sda = new SQLiteDataAdapter(cmd);
+            dataTable = new DataTable();
+            sda.Fill(dataTable);
+            dataGridView.DataSource = dataTable;
+            dataBase.closeConnection();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -133,6 +145,22 @@ namespace WindowsFormsApp1
             else
             {
                 MessageBox.Show("Nincs megadva törzsvásárlói kód!");
+            }
+        }
+
+        private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(dataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+            {
+                dataGridView.CurrentRow.Selected = true;
+                textBox_torzsvasarloi_kod.Text = dataGridView.Rows[e.RowIndex].Cells["Regular_customer_id"].FormattedValue.ToString();
+                textBox_name.Text = dataGridView.Rows[e.RowIndex].Cells["Name"].FormattedValue.ToString();
+                textBox_born_date.Text = dataGridView.Rows[e.RowIndex].Cells["Born_date"].FormattedValue.ToString();
+                comboBox_gender.Text = dataGridView.Rows[e.RowIndex].Cells["Gender"].FormattedValue.ToString();
+                textBox_address.Text = dataGridView.Rows[e.RowIndex].Cells["Address"].FormattedValue.ToString();
+                textBox_phone_number.Text = dataGridView.Rows[e.RowIndex].Cells["Phone_number"].FormattedValue.ToString();
+                textBox_email_address.Text = dataGridView.Rows[e.RowIndex].Cells["Email_address"].FormattedValue.ToString();
+                
             }
         }
     }

@@ -70,7 +70,7 @@
             this.súgóToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1006, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1006, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -84,7 +84,7 @@
             this.statementsToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.fájlToolStripMenuItem.Name = "fájlToolStripMenuItem";
-            this.fájlToolStripMenuItem.Size = new System.Drawing.Size(45, 26);
+            this.fájlToolStripMenuItem.Size = new System.Drawing.Size(45, 24);
             this.fájlToolStripMenuItem.Text = "Fájl";
             // 
             // mainMenuToolStripMenuItem
@@ -132,7 +132,7 @@
             // súgóToolStripMenuItem
             // 
             this.súgóToolStripMenuItem.Name = "súgóToolStripMenuItem";
-            this.súgóToolStripMenuItem.Size = new System.Drawing.Size(57, 26);
+            this.súgóToolStripMenuItem.Size = new System.Drawing.Size(57, 24);
             this.súgóToolStripMenuItem.Text = "Súgó";
             // 
             // label1
@@ -311,6 +311,7 @@
             this.dataGridView.RowTemplate.Height = 24;
             this.dataGridView.Size = new System.Drawing.Size(982, 360);
             this.dataGridView.TabIndex = 23;
+            this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
             // 
             // info_button
             // 
