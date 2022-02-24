@@ -55,11 +55,17 @@
             this.textBox_pagenumber = new System.Windows.Forms.TextBox();
             this.textBox_purchase_price = new System.Windows.Forms.TextBox();
             this.textBox_selling_price = new System.Windows.Forms.TextBox();
-            this.display_button = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button_ = new System.Windows.Forms.Button();
+            this.button_display = new System.Windows.Forms.Button();
+            this.button_new = new System.Windows.Forms.Button();
+            this.button_modification = new System.Windows.Forms.Button();
+            this.button_delete = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.antiqueDBDataSetBindingSource)).BeginInit();
@@ -93,42 +99,42 @@
             // mainMenuToolStripMenuItem
             // 
             this.mainMenuToolStripMenuItem.Name = "mainMenuToolStripMenuItem";
-            this.mainMenuToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.mainMenuToolStripMenuItem.Size = new System.Drawing.Size(182, 26);
             this.mainMenuToolStripMenuItem.Text = "Főmenü";
             this.mainMenuToolStripMenuItem.Click += new System.EventHandler(this.mainMenuToolStripMenuItem_Click);
             // 
             // saleToolStripMenuItem
             // 
             this.saleToolStripMenuItem.Name = "saleToolStripMenuItem";
-            this.saleToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.saleToolStripMenuItem.Size = new System.Drawing.Size(182, 26);
             this.saleToolStripMenuItem.Text = "Eladás";
             this.saleToolStripMenuItem.Click += new System.EventHandler(this.saleToolStripMenuItem_Click);
             // 
             // regularCustomerToolStripMenuItem
             // 
             this.regularCustomerToolStripMenuItem.Name = "regularCustomerToolStripMenuItem";
-            this.regularCustomerToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.regularCustomerToolStripMenuItem.Size = new System.Drawing.Size(182, 26);
             this.regularCustomerToolStripMenuItem.Text = "Törzsvásárlók";
             this.regularCustomerToolStripMenuItem.Click += new System.EventHandler(this.regularCustomerToolStripMenuItem_Click);
             // 
             // wishListToolStripMenuItem
             // 
             this.wishListToolStripMenuItem.Name = "wishListToolStripMenuItem";
-            this.wishListToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.wishListToolStripMenuItem.Size = new System.Drawing.Size(182, 26);
             this.wishListToolStripMenuItem.Text = "Kívánság lista";
             this.wishListToolStripMenuItem.Click += new System.EventHandler(this.wishListToolStripMenuItem_Click);
             // 
             // statementsToolStripMenuItem
             // 
             this.statementsToolStripMenuItem.Name = "statementsToolStripMenuItem";
-            this.statementsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.statementsToolStripMenuItem.Size = new System.Drawing.Size(182, 26);
             this.statementsToolStripMenuItem.Text = "Kimutatások";
             this.statementsToolStripMenuItem.Click += new System.EventHandler(this.statementsToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(182, 26);
             this.exitToolStripMenuItem.Text = "Kilépés";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -140,18 +146,24 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.DataSource = this.antiqueDBDataSetBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 281);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 360);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(982, 360);
+            this.dataGridView1.Size = new System.Drawing.Size(982, 281);
             this.dataGridView1.TabIndex = 1;
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.Location = new System.Drawing.Point(50, 40);
@@ -162,6 +174,9 @@
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label2.Location = new System.Drawing.Point(50, 70);
@@ -172,6 +187,9 @@
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label3.Location = new System.Drawing.Point(50, 100);
@@ -182,9 +200,12 @@
             // 
             // label4
             // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(50, 160);
+            this.label4.Location = new System.Drawing.Point(50, 158);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(50, 20);
             this.label4.TabIndex = 5;
@@ -192,9 +213,12 @@
             // 
             // label5
             // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label5.Location = new System.Drawing.Point(50, 190);
+            this.label5.Location = new System.Drawing.Point(50, 270);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(89, 20);
             this.label5.TabIndex = 6;
@@ -202,9 +226,12 @@
             // 
             // label7
             // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label7.Location = new System.Drawing.Point(50, 220);
+            this.label7.Location = new System.Drawing.Point(50, 300);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(114, 20);
             this.label7.TabIndex = 8;
@@ -212,9 +239,12 @@
             // 
             // label8
             // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label8.Location = new System.Drawing.Point(50, 250);
+            this.label8.Location = new System.Drawing.Point(50, 330);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(84, 20);
             this.label8.TabIndex = 9;
@@ -222,102 +252,136 @@
             // 
             // textBox_ISBN
             // 
-            this.textBox_ISBN.Location = new System.Drawing.Point(200, 40);
+            this.textBox_ISBN.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox_ISBN.Location = new System.Drawing.Point(346, 38);
             this.textBox_ISBN.Name = "textBox_ISBN";
             this.textBox_ISBN.Size = new System.Drawing.Size(240, 22);
             this.textBox_ISBN.TabIndex = 10;
             // 
             // textBox_author
             // 
-            this.textBox_author.Location = new System.Drawing.Point(200, 70);
+            this.textBox_author.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox_author.Location = new System.Drawing.Point(346, 68);
             this.textBox_author.Name = "textBox_author";
             this.textBox_author.Size = new System.Drawing.Size(240, 22);
             this.textBox_author.TabIndex = 11;
             // 
             // textBox_title
             // 
-            this.textBox_title.Location = new System.Drawing.Point(200, 100);
+            this.textBox_title.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox_title.Location = new System.Drawing.Point(346, 98);
             this.textBox_title.Name = "textBox_title";
             this.textBox_title.Size = new System.Drawing.Size(240, 22);
             this.textBox_title.TabIndex = 12;
             // 
             // textBox_year
             // 
-            this.textBox_year.Location = new System.Drawing.Point(200, 130);
+            this.textBox_year.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox_year.Location = new System.Drawing.Point(346, 128);
             this.textBox_year.Name = "textBox_year";
             this.textBox_year.Size = new System.Drawing.Size(240, 22);
             this.textBox_year.TabIndex = 13;
             // 
             // textBox_genre
             // 
-            this.textBox_genre.Location = new System.Drawing.Point(200, 158);
+            this.textBox_genre.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox_genre.Location = new System.Drawing.Point(346, 156);
             this.textBox_genre.Name = "textBox_genre";
             this.textBox_genre.Size = new System.Drawing.Size(240, 22);
             this.textBox_genre.TabIndex = 14;
             // 
             // textBox_pagenumber
             // 
-            this.textBox_pagenumber.Location = new System.Drawing.Point(200, 190);
+            this.textBox_pagenumber.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox_pagenumber.Location = new System.Drawing.Point(346, 268);
             this.textBox_pagenumber.Name = "textBox_pagenumber";
             this.textBox_pagenumber.Size = new System.Drawing.Size(240, 22);
             this.textBox_pagenumber.TabIndex = 15;
             // 
             // textBox_purchase_price
             // 
-            this.textBox_purchase_price.Location = new System.Drawing.Point(200, 220);
+            this.textBox_purchase_price.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox_purchase_price.Location = new System.Drawing.Point(346, 298);
             this.textBox_purchase_price.Name = "textBox_purchase_price";
             this.textBox_purchase_price.Size = new System.Drawing.Size(240, 22);
             this.textBox_purchase_price.TabIndex = 16;
             // 
             // textBox_selling_price
             // 
-            this.textBox_selling_price.Location = new System.Drawing.Point(200, 250);
+            this.textBox_selling_price.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox_selling_price.Location = new System.Drawing.Point(346, 328);
             this.textBox_selling_price.Name = "textBox_selling_price";
             this.textBox_selling_price.Size = new System.Drawing.Size(240, 22);
             this.textBox_selling_price.TabIndex = 17;
             // 
-            // display_button
+            // button_display
             // 
-            this.display_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.display_button.Location = new System.Drawing.Point(500, 40);
-            this.display_button.Name = "display_button";
-            this.display_button.Size = new System.Drawing.Size(174, 50);
-            this.display_button.TabIndex = 18;
-            this.display_button.Text = "Megjelenítés";
-            this.display_button.UseVisualStyleBackColor = true;
+            this.button_display.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button_display.AutoSize = true;
+            this.button_display.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button_display.Location = new System.Drawing.Point(726, 40);
+            this.button_display.Name = "button_display";
+            this.button_display.Size = new System.Drawing.Size(210, 50);
+            this.button_display.TabIndex = 18;
+            this.button_display.Text = "Megjelenítés";
+            this.button_display.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // button_new
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button1.Location = new System.Drawing.Point(500, 100);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(174, 50);
-            this.button1.TabIndex = 19;
-            this.button1.Text = "Új könyv hozzáadása";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button_new.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button_new.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button_new.Location = new System.Drawing.Point(726, 100);
+            this.button_new.Name = "button_new";
+            this.button_new.Size = new System.Drawing.Size(210, 50);
+            this.button_new.TabIndex = 19;
+            this.button_new.Text = "Új könyv hozzáadása";
+            this.button_new.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // button_modification
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button2.Location = new System.Drawing.Point(500, 160);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(174, 50);
-            this.button2.TabIndex = 20;
-            this.button2.Text = "Könyv módosítása";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button_modification.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button_modification.AutoSize = true;
+            this.button_modification.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button_modification.Location = new System.Drawing.Point(726, 160);
+            this.button_modification.Name = "button_modification";
+            this.button_modification.Size = new System.Drawing.Size(210, 50);
+            this.button_modification.TabIndex = 20;
+            this.button_modification.Text = "Könyv módosítása";
+            this.button_modification.UseVisualStyleBackColor = true;
             // 
-            // button_
+            // button_delete
             // 
-            this.button_.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button_.Location = new System.Drawing.Point(500, 220);
-            this.button_.Name = "button_";
-            this.button_.Size = new System.Drawing.Size(174, 50);
-            this.button_.TabIndex = 21;
-            this.button_.Text = "Könyv módosítása";
-            this.button_.UseVisualStyleBackColor = true;
+            this.button_delete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button_delete.AutoSize = true;
+            this.button_delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button_delete.Location = new System.Drawing.Point(726, 220);
+            this.button_delete.Name = "button_delete";
+            this.button_delete.Size = new System.Drawing.Size(210, 50);
+            this.button_delete.TabIndex = 21;
+            this.button_delete.Text = "Könyv törlése";
+            this.button_delete.UseVisualStyleBackColor = true;
             // 
             // label6
             // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label6.Location = new System.Drawing.Point(50, 130);
@@ -326,6 +390,75 @@
             this.label6.TabIndex = 22;
             this.label6.Text = "Kiadás éve";
             // 
+            // textBox1
+            // 
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox1.Location = new System.Drawing.Point(346, 184);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(240, 22);
+            this.textBox1.TabIndex = 23;
+            // 
+            // label9
+            // 
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label9.Location = new System.Drawing.Point(50, 186);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(51, 20);
+            this.label9.TabIndex = 24;
+            this.label9.Text = "Kiadó";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox2.Location = new System.Drawing.Point(346, 212);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(240, 22);
+            this.textBox2.TabIndex = 25;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox3.Location = new System.Drawing.Point(346, 240);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(240, 22);
+            this.textBox3.TabIndex = 26;
+            // 
+            // label10
+            // 
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label10.Location = new System.Drawing.Point(50, 242);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(52, 20);
+            this.label10.TabIndex = 27;
+            this.label10.Text = "Kötés";
+            // 
+            // label11
+            // 
+            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label11.Location = new System.Drawing.Point(50, 214);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(60, 20);
+            this.label11.TabIndex = 28;
+            this.label11.Text = "Állapot";
+            // 
             // BookManagerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -333,11 +466,17 @@
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1006, 653);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.button_);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.display_button);
+            this.Controls.Add(this.button_delete);
+            this.Controls.Add(this.button_modification);
+            this.Controls.Add(this.button_new);
+            this.Controls.Add(this.button_display);
             this.Controls.Add(this.textBox_selling_price);
             this.Controls.Add(this.textBox_purchase_price);
             this.Controls.Add(this.textBox_pagenumber);
@@ -397,10 +536,16 @@
         private System.Windows.Forms.TextBox textBox_pagenumber;
         private System.Windows.Forms.TextBox textBox_purchase_price;
         private System.Windows.Forms.TextBox textBox_selling_price;
-        private System.Windows.Forms.Button display_button;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button_;
+        private System.Windows.Forms.Button button_display;
+        private System.Windows.Forms.Button button_new;
+        private System.Windows.Forms.Button button_modification;
+        private System.Windows.Forms.Button button_delete;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
     }
 }

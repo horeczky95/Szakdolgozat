@@ -1,9 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\WindowsFormsApp1",
-    "\\WindowsFormsApp1\\bin"
+    "\\WindowsFormsApp1"
   ],
-  "SelectedNode": "\\WindowsFormsApp1.sln",
+  "SelectedNode": "\\WindowsFormsApp1\\BookManagerForm.Designer.cs",
   "PreviewInSolutionExplorer": false
 }

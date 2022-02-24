@@ -42,7 +42,9 @@
             this.statments = new System.Windows.Forms.Button();
             this.wish_list = new System.Windows.Forms.Button();
             this.sale = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -120,11 +122,13 @@
             // 
             // regular_customer
             // 
+            this.regular_customer.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.regular_customer.AutoSize = true;
             this.regular_customer.BackColor = System.Drawing.Color.Salmon;
             this.regular_customer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.regular_customer.Location = new System.Drawing.Point(150, 240);
+            this.regular_customer.Location = new System.Drawing.Point(30, 160);
             this.regular_customer.Name = "regular_customer";
-            this.regular_customer.Size = new System.Drawing.Size(230, 110);
+            this.regular_customer.Size = new System.Drawing.Size(230, 100);
             this.regular_customer.TabIndex = 2;
             this.regular_customer.Text = "Törzsvásárlók";
             this.regular_customer.UseVisualStyleBackColor = false;
@@ -132,11 +136,13 @@
             // 
             // book_manager
             // 
+            this.book_manager.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.book_manager.AutoSize = true;
             this.book_manager.BackColor = System.Drawing.Color.Salmon;
             this.book_manager.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.book_manager.Location = new System.Drawing.Point(150, 380);
+            this.book_manager.Location = new System.Drawing.Point(30, 280);
             this.book_manager.Name = "book_manager";
-            this.book_manager.Size = new System.Drawing.Size(230, 110);
+            this.book_manager.Size = new System.Drawing.Size(230, 100);
             this.book_manager.TabIndex = 3;
             this.book_manager.Text = "Könyv kezelő";
             this.book_manager.UseVisualStyleBackColor = false;
@@ -144,11 +150,13 @@
             // 
             // statments
             // 
+            this.statments.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.statments.AutoSize = true;
             this.statments.BackColor = System.Drawing.Color.Salmon;
             this.statments.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.statments.Location = new System.Drawing.Point(578, 305);
+            this.statments.Location = new System.Drawing.Point(30, 520);
             this.statments.Name = "statments";
-            this.statments.Size = new System.Drawing.Size(230, 110);
+            this.statments.Size = new System.Drawing.Size(230, 100);
             this.statments.TabIndex = 5;
             this.statments.Text = "Kimutatások";
             this.statments.UseVisualStyleBackColor = false;
@@ -156,11 +164,13 @@
             // 
             // wish_list
             // 
+            this.wish_list.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.wish_list.AutoSize = true;
             this.wish_list.BackColor = System.Drawing.Color.Salmon;
             this.wish_list.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.wish_list.Location = new System.Drawing.Point(578, 165);
+            this.wish_list.Location = new System.Drawing.Point(30, 400);
             this.wish_list.Name = "wish_list";
-            this.wish_list.Size = new System.Drawing.Size(230, 110);
+            this.wish_list.Size = new System.Drawing.Size(230, 100);
             this.wish_list.TabIndex = 4;
             this.wish_list.Text = "Kívánság lista";
             this.wish_list.UseVisualStyleBackColor = false;
@@ -168,15 +178,30 @@
             // 
             // sale
             // 
+            this.sale.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.sale.AutoSize = true;
             this.sale.BackColor = System.Drawing.Color.Salmon;
             this.sale.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.sale.Location = new System.Drawing.Point(150, 100);
+            this.sale.Location = new System.Drawing.Point(30, 40);
             this.sale.Name = "sale";
-            this.sale.Size = new System.Drawing.Size(230, 110);
+            this.sale.Size = new System.Drawing.Size(230, 100);
             this.sale.TabIndex = 1;
             this.sale.Text = "Eladás";
             this.sale.UseVisualStyleBackColor = false;
             this.sale.Click += new System.EventHandler(this.sale_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(296, 42);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(698, 599);
+            this.dataGridView1.TabIndex = 6;
             // 
             // MainMenu
             // 
@@ -185,6 +210,7 @@
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1006, 653);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.sale);
             this.Controls.Add(this.statments);
             this.Controls.Add(this.wish_list);
@@ -197,6 +223,7 @@
             this.Text = "Főmenü";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -218,6 +245,7 @@
         private System.Windows.Forms.Button statments;
         private System.Windows.Forms.Button wish_list;
         private System.Windows.Forms.Button sale;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
 

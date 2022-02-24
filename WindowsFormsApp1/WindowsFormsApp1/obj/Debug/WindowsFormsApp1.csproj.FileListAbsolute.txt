@@ -50,7 +50,6 @@ D:\Suli\Szakdolgozat\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\ru\Microsoft.Bu
 D:\Suli\Szakdolgozat\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\tr\Microsoft.Build.resources.dll
 D:\Suli\Szakdolgozat\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\zh-Hans\Microsoft.Build.resources.dll
 D:\Suli\Szakdolgozat\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\zh-Hant\Microsoft.Build.resources.dll
-D:\Suli\Szakdolgozat\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csprojAssemblyReference.cache
 D:\Suli\Szakdolgozat\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe.config
 D:\Suli\Szakdolgozat\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.BookManagerForm.resources
 D:\Suli\Szakdolgozat\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.MainMenu.resources
@@ -80,3 +79,6 @@ D:\Suli\Szakdolgozat\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\System.Data.SQL
 D:\Suli\Szakdolgozat\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\EntityFramework.xml
 D:\Suli\Szakdolgozat\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\EntityFramework.SqlServer.xml
 D:\Suli\Szakdolgozat\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\System.Data.SQLite.xml
+D:\Suli\Szakdolgozat\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Microsoft.NET.StringTools.dll
+D:\Suli\Szakdolgozat\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\System.Buffers.dll
+D:\Suli\Szakdolgozat\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.AssemblyReference.cache
