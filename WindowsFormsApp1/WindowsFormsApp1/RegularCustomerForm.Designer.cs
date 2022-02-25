@@ -281,7 +281,7 @@
             this.display_button.TabIndex = 19;
             this.display_button.Text = "Megjelenítés";
             this.display_button.UseVisualStyleBackColor = true;
-            this.display_button.Click += new System.EventHandler(this.display_button_Click);
+            this.display_button.Click += new System.EventHandler(this.regcus_display_Click);
             // 
             // button1
             // 

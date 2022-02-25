@@ -9,17 +9,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Configuration;
-using System.Data.SQLite;
 
 namespace WindowsFormsApp1
 {
     public partial class RegularCustomerForm : Form
     {
-        DB dataBase = new DB();
-        SQLiteDataAdapter sda;
-        DataTable dataTable;
-        SQLiteCommand cmd;
-
+        SqlConnection connection = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename=D:\Suli\GitHub\WindowsFormsApp1\WindowsFormsApp1\AntiqueDB.mdf;Integrated Security = True");
         public RegularCustomerForm()
         {
             InitializeComponent();
@@ -65,30 +60,29 @@ namespace WindowsFormsApp1
             Application.Exit();
         }
 
-        private void display_button_Click(object sender, EventArgs e)
+        //Adatbázis műveletek
+        public void display_data()
         {
-            if(textBox_torzsvasarloi_kod.Text == "")
-            {
-                cmd = new SQLiteCommand("SELECT * FROM RegularCustomer", dataBase.GetConnection());
-                sda = new SQLiteDataAdapter(cmd);
-                dataTable = new DataTable();
-                sda.Fill(dataTable);
-                dataGridView.DataSource = dataTable;
-                dataBase.closeConnection();
-            } else
-            {
-                cmd = new SQLiteCommand("SELECT * FROM RegularCustomer WHERE Regular_customer_id = '" + textBox_torzsvasarloi_kod.Text + "'", dataBase.GetConnection());
-                sda = new SQLiteDataAdapter(cmd);
-                dataTable = new DataTable();
-                sda.Fill(dataTable);
-                dataGridView.DataSource = dataTable;
-                dataBase.closeConnection();
-            }
+            connection.Open();
+            SqlCommand cmd = connection.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select * from [Törzsvásárlók]";
+            cmd.ExecuteNonQuery();
+            DataTable dta = new DataTable();
+            SqlDataAdapter dataadp = new SqlDataAdapter(cmd);
+            dataadp.Fill(dta);
+            dataGridView.DataSource = dta;
+            connection.Close();
+
+        }
+        private void regcus_display_Click(object sender, EventArgs e)
+        {
+            display_data();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(textBox_torzsvasarloi_kod.Text != "" && textBox_name.Text != "" && textBox_address.Text != "" && textBox_born_date.Text != "" && comboBox_gender != null 
+            /*if(textBox_torzsvasarloi_kod.Text != "" && textBox_name.Text != "" && textBox_address.Text != "" && textBox_born_date.Text != "" && comboBox_gender != null 
                 && textBox_phone_number.Text != "" && textBox_email_address.Text != "")
             {
                 dataBase.openConnection();
@@ -101,7 +95,7 @@ namespace WindowsFormsApp1
             } else
             {
                 MessageBox.Show("\tHiányzó adat!");
-            }
+            }*/
 
         }
 
@@ -118,7 +112,7 @@ namespace WindowsFormsApp1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            dataBase.openConnection();
+            /*dataBase.openConnection();
             cmd = new SQLiteCommand("UPDATE RegularCustomer SET name = '" + textBox_name.Text + "', Born_date = '" + textBox_born_date.Text +
                                                             "', Gender = '" + comboBox_gender.Text + "', Address = '" + textBox_address.Text +
                                                             "', Phone_Number = '" + textBox_phone_number.Text + "', Email_address = '" + textBox_email_address.Text + "' " +
@@ -130,12 +124,12 @@ namespace WindowsFormsApp1
             dataTable = new DataTable();
             sda.Fill(dataTable);
             dataGridView.DataSource = dataTable;
-            dataBase.closeConnection();
+            dataBase.closeConnection();*/
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (textBox_torzsvasarloi_kod.Text != "")
+           /*if (textBox_torzsvasarloi_kod.Text != "")
             {
                 dataBase.openConnection();
                 cmd = new SQLiteCommand("DELETE FROM RegularCustomer WHERE Regular_customer_id = '" + textBox_torzsvasarloi_kod.Text + "'", dataBase.GetConnection());
@@ -145,12 +139,12 @@ namespace WindowsFormsApp1
             else
             {
                 MessageBox.Show("Nincs megadva törzsvásárlói kód!");
-            }
+            }*/
         }
 
         private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(dataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+            /*if(dataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
             {
                 dataGridView.CurrentRow.Selected = true;
                 textBox_torzsvasarloi_kod.Text = dataGridView.Rows[e.RowIndex].Cells["Regular_customer_id"].FormattedValue.ToString();
@@ -161,13 +155,12 @@ namespace WindowsFormsApp1
                 textBox_phone_number.Text = dataGridView.Rows[e.RowIndex].Cells["Phone_number"].FormattedValue.ToString();
                 textBox_email_address.Text = dataGridView.Rows[e.RowIndex].Cells["Email_address"].FormattedValue.ToString();
                 
-            }
+            }*/
         }
 
         private void RegularCustomerForm_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'antiqueDBDataSet.Törzsvásárlók' table. You can move, or remove it, as needed.
-            this.törzsvásárlókTableAdapter.Fill(this.antiqueDBDataSet.Törzsvásárlók);
 
         }
     }

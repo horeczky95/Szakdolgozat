@@ -7,14 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace WindowsFormsApp1
 {
     public partial class MainMenu : Form
     {
+        SqlConnection connection = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename=D:\Suli\GitHub\WindowsFormsApp1\WindowsFormsApp1\AntiqueDB.mdf;Integrated Security = True");
         public MainMenu()
         {
             InitializeComponent();
+            display_data();
         }
 
         private void saleToolStripMenuItem_Click_1(object sender, EventArgs e)
@@ -91,11 +94,23 @@ namespace WindowsFormsApp1
             state.Show();
             this.Hide();
         }
-
         private void MainMenu_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'antiqueDBDataSet.Könyvek' table. You can move, or remove it, as needed.
-            this.könyvekTableAdapter.Fill(this.antiqueDBDataSet.Könyvek);
+        }
+        //Adatbázis műveletek
+        public void display_data()
+        {
+            connection.Open();
+            SqlCommand cmd = connection.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select * from [Könyvek]";
+            cmd.ExecuteNonQuery();
+            DataTable dta = new DataTable();
+            SqlDataAdapter dataadp = new SqlDataAdapter(cmd);
+            dataadp.Fill(dta);
+            dataGridView1.DataSource = dta;
+            connection.Close();
 
         }
     }

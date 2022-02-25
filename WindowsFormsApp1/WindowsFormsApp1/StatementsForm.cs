@@ -7,12 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace WindowsFormsApp1
 {
     public partial class StatementsForm : Form
     {
-        public StatementsForm()
+        SqlConnection connection = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename=D:\Suli\GitHub\WindowsFormsApp1\WindowsFormsApp1\AntiqueDB.mdf;Integrated Security = True");        public StatementsForm()
         {
             InitializeComponent();
         }
@@ -60,8 +61,21 @@ namespace WindowsFormsApp1
         private void StatementsForm_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'antiqueDBDataSet.Bevételek' table. You can move, or remove it, as needed.
-            this.bevételekTableAdapter.Fill(this.antiqueDBDataSet.Bevételek);
-
         }
+
+        //Adatbázis műveletek
+        /*public void display_data()
+        {
+            connection.Open();
+            SqlCommand cmd = connection.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select * from [Könyvek]";
+            cmd.ExecuteNonQuery();
+            DataTable dta = new DataTable();
+            SqlDataAdapter dataadp = new SqlDataAdapter(cmd);
+            dataadp.Fill(dta);
+            dataGridView1.DataSource = dta;
+            connection.Close();
+        }*/
     }
 }

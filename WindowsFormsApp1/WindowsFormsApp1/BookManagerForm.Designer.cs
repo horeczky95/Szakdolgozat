@@ -39,6 +39,8 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.súgóToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.könyvekBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.antiqueDBDataSet = new WindowsFormsApp1.AntiqueDBDataSet();
             this.antiqueDBDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -66,26 +68,14 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.antiqueDBDataSet = new WindowsFormsApp1.AntiqueDBDataSet();
-            this.könyvekBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.könyvekTableAdapter = new WindowsFormsApp1.AntiqueDBDataSetTableAdapters.KönyvekTableAdapter();
-            this.könyvidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iSBNDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.szerzőDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.címDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.kiadásÉveDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.műfajDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.kiadóDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.állapotDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.kötésDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.oldalszámDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.beszerzésiÁrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.eladásiÁrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.könyvekBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.antiqueDBDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.antiqueDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.könyvekBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.antiqueDBDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.antiqueDBDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.könyvekBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -166,28 +156,23 @@
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.könyvidDataGridViewTextBoxColumn,
-            this.iSBNDataGridViewTextBoxColumn,
-            this.szerzőDataGridViewTextBoxColumn,
-            this.címDataGridViewTextBoxColumn,
-            this.kiadásÉveDataGridViewTextBoxColumn,
-            this.műfajDataGridViewTextBoxColumn,
-            this.kiadóDataGridViewTextBoxColumn,
-            this.állapotDataGridViewTextBoxColumn,
-            this.kötésDataGridViewTextBoxColumn,
-            this.oldalszámDataGridViewTextBoxColumn,
-            this.beszerzésiÁrDataGridViewTextBoxColumn,
-            this.eladásiÁrDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.könyvekBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 360);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(982, 281);
             this.dataGridView1.TabIndex = 1;
+            // 
+            // könyvekBindingSource
+            // 
+            this.könyvekBindingSource.DataMember = "Könyvek";
+            this.könyvekBindingSource.DataSource = this.antiqueDBDataSet;
+            // 
+            // antiqueDBDataSet
+            // 
+            this.antiqueDBDataSet.DataSetName = "AntiqueDBDataSet";
+            this.antiqueDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label1
             // 
@@ -371,6 +356,7 @@
             this.button_display.TabIndex = 18;
             this.button_display.Text = "Megjelenítés";
             this.button_display.UseVisualStyleBackColor = true;
+            this.button_display.Click += new System.EventHandler(this.books_display_Click);
             // 
             // button_new
             // 
@@ -489,115 +475,14 @@
             this.label11.TabIndex = 28;
             this.label11.Text = "Állapot";
             // 
-            // antiqueDBDataSet
-            // 
-            this.antiqueDBDataSet.DataSetName = "AntiqueDBDataSet";
-            this.antiqueDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // könyvekBindingSource
-            // 
-            this.könyvekBindingSource.DataMember = "Könyvek";
-            this.könyvekBindingSource.DataSource = this.antiqueDBDataSet;
-            // 
             // könyvekTableAdapter
             // 
             this.könyvekTableAdapter.ClearBeforeFill = true;
             // 
-            // könyvidDataGridViewTextBoxColumn
+            // könyvekBindingSource1
             // 
-            this.könyvidDataGridViewTextBoxColumn.DataPropertyName = "Könyv_id";
-            this.könyvidDataGridViewTextBoxColumn.HeaderText = "Könyv_id";
-            this.könyvidDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.könyvidDataGridViewTextBoxColumn.Name = "könyvidDataGridViewTextBoxColumn";
-            this.könyvidDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // iSBNDataGridViewTextBoxColumn
-            // 
-            this.iSBNDataGridViewTextBoxColumn.DataPropertyName = "ISBN";
-            this.iSBNDataGridViewTextBoxColumn.HeaderText = "ISBN";
-            this.iSBNDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.iSBNDataGridViewTextBoxColumn.Name = "iSBNDataGridViewTextBoxColumn";
-            this.iSBNDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // szerzőDataGridViewTextBoxColumn
-            // 
-            this.szerzőDataGridViewTextBoxColumn.DataPropertyName = "Szerző";
-            this.szerzőDataGridViewTextBoxColumn.HeaderText = "Szerző";
-            this.szerzőDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.szerzőDataGridViewTextBoxColumn.Name = "szerzőDataGridViewTextBoxColumn";
-            this.szerzőDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // címDataGridViewTextBoxColumn
-            // 
-            this.címDataGridViewTextBoxColumn.DataPropertyName = "Cím";
-            this.címDataGridViewTextBoxColumn.HeaderText = "Cím";
-            this.címDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.címDataGridViewTextBoxColumn.Name = "címDataGridViewTextBoxColumn";
-            this.címDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // kiadásÉveDataGridViewTextBoxColumn
-            // 
-            this.kiadásÉveDataGridViewTextBoxColumn.DataPropertyName = "Kiadás éve";
-            this.kiadásÉveDataGridViewTextBoxColumn.HeaderText = "Kiadás éve";
-            this.kiadásÉveDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.kiadásÉveDataGridViewTextBoxColumn.Name = "kiadásÉveDataGridViewTextBoxColumn";
-            this.kiadásÉveDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // műfajDataGridViewTextBoxColumn
-            // 
-            this.műfajDataGridViewTextBoxColumn.DataPropertyName = "Műfaj";
-            this.műfajDataGridViewTextBoxColumn.HeaderText = "Műfaj";
-            this.műfajDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.műfajDataGridViewTextBoxColumn.Name = "műfajDataGridViewTextBoxColumn";
-            this.műfajDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // kiadóDataGridViewTextBoxColumn
-            // 
-            this.kiadóDataGridViewTextBoxColumn.DataPropertyName = "Kiadó";
-            this.kiadóDataGridViewTextBoxColumn.HeaderText = "Kiadó";
-            this.kiadóDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.kiadóDataGridViewTextBoxColumn.Name = "kiadóDataGridViewTextBoxColumn";
-            this.kiadóDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // állapotDataGridViewTextBoxColumn
-            // 
-            this.állapotDataGridViewTextBoxColumn.DataPropertyName = "Állapot";
-            this.állapotDataGridViewTextBoxColumn.HeaderText = "Állapot";
-            this.állapotDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.állapotDataGridViewTextBoxColumn.Name = "állapotDataGridViewTextBoxColumn";
-            this.állapotDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // kötésDataGridViewTextBoxColumn
-            // 
-            this.kötésDataGridViewTextBoxColumn.DataPropertyName = "Kötés";
-            this.kötésDataGridViewTextBoxColumn.HeaderText = "Kötés";
-            this.kötésDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.kötésDataGridViewTextBoxColumn.Name = "kötésDataGridViewTextBoxColumn";
-            this.kötésDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // oldalszámDataGridViewTextBoxColumn
-            // 
-            this.oldalszámDataGridViewTextBoxColumn.DataPropertyName = "Oldalszám";
-            this.oldalszámDataGridViewTextBoxColumn.HeaderText = "Oldalszám";
-            this.oldalszámDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.oldalszámDataGridViewTextBoxColumn.Name = "oldalszámDataGridViewTextBoxColumn";
-            this.oldalszámDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // beszerzésiÁrDataGridViewTextBoxColumn
-            // 
-            this.beszerzésiÁrDataGridViewTextBoxColumn.DataPropertyName = "Beszerzési ár";
-            this.beszerzésiÁrDataGridViewTextBoxColumn.HeaderText = "Beszerzési ár";
-            this.beszerzésiÁrDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.beszerzésiÁrDataGridViewTextBoxColumn.Name = "beszerzésiÁrDataGridViewTextBoxColumn";
-            this.beszerzésiÁrDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // eladásiÁrDataGridViewTextBoxColumn
-            // 
-            this.eladásiÁrDataGridViewTextBoxColumn.DataPropertyName = "Eladási ár";
-            this.eladásiÁrDataGridViewTextBoxColumn.HeaderText = "Eladási ár";
-            this.eladásiÁrDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.eladásiÁrDataGridViewTextBoxColumn.Name = "eladásiÁrDataGridViewTextBoxColumn";
-            this.eladásiÁrDataGridViewTextBoxColumn.Width = 125;
+            this.könyvekBindingSource1.DataMember = "Könyvek";
+            this.könyvekBindingSource1.DataSource = this.antiqueDBDataSet;
             // 
             // BookManagerForm
             // 
@@ -643,9 +528,10 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.antiqueDBDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.antiqueDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.könyvekBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.antiqueDBDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.antiqueDBDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.könyvekBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -693,17 +579,6 @@
         private AntiqueDBDataSet antiqueDBDataSet;
         private System.Windows.Forms.BindingSource könyvekBindingSource;
         private AntiqueDBDataSetTableAdapters.KönyvekTableAdapter könyvekTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn könyvidDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iSBNDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn szerzőDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn címDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn kiadásÉveDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn műfajDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn kiadóDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn állapotDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn kötésDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn oldalszámDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn beszerzésiÁrDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn eladásiÁrDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource könyvekBindingSource1;
     }
 }
