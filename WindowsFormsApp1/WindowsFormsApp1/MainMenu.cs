@@ -91,5 +91,12 @@ namespace WindowsFormsApp1
             state.Show();
             this.Hide();
         }
+
+        private void MainMenu_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'antiqueDBDataSet.Könyvek' table. You can move, or remove it, as needed.
+            this.könyvekTableAdapter.Fill(this.antiqueDBDataSet.Könyvek);
+
+        }
     }
 }

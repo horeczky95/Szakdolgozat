@@ -56,5 +56,12 @@ namespace WindowsFormsApp1
         {
             Application.Exit();
         }
+
+        private void SaleForm_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'antiqueDBDataSet.Könyvek' table. You can move, or remove it, as needed.
+            this.könyvekTableAdapter.Fill(this.antiqueDBDataSet.Könyvek);
+
+        }
     }
 }

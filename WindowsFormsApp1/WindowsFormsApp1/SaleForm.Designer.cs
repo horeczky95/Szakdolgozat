@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fájlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,8 +42,22 @@
             this.listView1 = new System.Windows.Forms.ListView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.antiqueDBDataSet = new WindowsFormsApp1.AntiqueDBDataSet();
+            this.könyvekBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.könyvekTableAdapter = new WindowsFormsApp1.AntiqueDBDataSetTableAdapters.KönyvekTableAdapter();
+            this.Könyv_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iSBNDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.szerzőDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.címDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kiadásÉveDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.műfajDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kiadóDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.eladásiÁrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Állapot = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.antiqueDBDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.könyvekBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -120,7 +135,19 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Könyv_id,
+            this.iSBNDataGridViewTextBoxColumn,
+            this.szerzőDataGridViewTextBoxColumn,
+            this.címDataGridViewTextBoxColumn,
+            this.kiadásÉveDataGridViewTextBoxColumn,
+            this.műfajDataGridViewTextBoxColumn,
+            this.kiadóDataGridViewTextBoxColumn,
+            this.eladásiÁrDataGridViewTextBoxColumn,
+            this.Állapot});
+            this.dataGridView1.DataSource = this.könyvekBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(564, 33);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
@@ -157,6 +184,92 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Részösszeg";
             // 
+            // antiqueDBDataSet
+            // 
+            this.antiqueDBDataSet.DataSetName = "AntiqueDBDataSet";
+            this.antiqueDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // könyvekBindingSource
+            // 
+            this.könyvekBindingSource.DataMember = "Könyvek";
+            this.könyvekBindingSource.DataSource = this.antiqueDBDataSet;
+            // 
+            // könyvekTableAdapter
+            // 
+            this.könyvekTableAdapter.ClearBeforeFill = true;
+            // 
+            // Könyv_id
+            // 
+            this.Könyv_id.DataPropertyName = "Könyv_id";
+            this.Könyv_id.HeaderText = "Könyv_id";
+            this.Könyv_id.MinimumWidth = 6;
+            this.Könyv_id.Name = "Könyv_id";
+            this.Könyv_id.Width = 125;
+            // 
+            // iSBNDataGridViewTextBoxColumn
+            // 
+            this.iSBNDataGridViewTextBoxColumn.DataPropertyName = "ISBN";
+            this.iSBNDataGridViewTextBoxColumn.HeaderText = "ISBN";
+            this.iSBNDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.iSBNDataGridViewTextBoxColumn.Name = "iSBNDataGridViewTextBoxColumn";
+            this.iSBNDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // szerzőDataGridViewTextBoxColumn
+            // 
+            this.szerzőDataGridViewTextBoxColumn.DataPropertyName = "Szerző";
+            this.szerzőDataGridViewTextBoxColumn.HeaderText = "Szerző";
+            this.szerzőDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.szerzőDataGridViewTextBoxColumn.Name = "szerzőDataGridViewTextBoxColumn";
+            this.szerzőDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // címDataGridViewTextBoxColumn
+            // 
+            this.címDataGridViewTextBoxColumn.DataPropertyName = "Cím";
+            this.címDataGridViewTextBoxColumn.HeaderText = "Cím";
+            this.címDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.címDataGridViewTextBoxColumn.Name = "címDataGridViewTextBoxColumn";
+            this.címDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // kiadásÉveDataGridViewTextBoxColumn
+            // 
+            this.kiadásÉveDataGridViewTextBoxColumn.DataPropertyName = "Kiadás éve";
+            this.kiadásÉveDataGridViewTextBoxColumn.HeaderText = "Kiadás éve";
+            this.kiadásÉveDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.kiadásÉveDataGridViewTextBoxColumn.Name = "kiadásÉveDataGridViewTextBoxColumn";
+            this.kiadásÉveDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // műfajDataGridViewTextBoxColumn
+            // 
+            this.műfajDataGridViewTextBoxColumn.DataPropertyName = "Műfaj";
+            this.műfajDataGridViewTextBoxColumn.HeaderText = "Műfaj";
+            this.műfajDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.műfajDataGridViewTextBoxColumn.Name = "műfajDataGridViewTextBoxColumn";
+            this.műfajDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // kiadóDataGridViewTextBoxColumn
+            // 
+            this.kiadóDataGridViewTextBoxColumn.DataPropertyName = "Kiadó";
+            this.kiadóDataGridViewTextBoxColumn.HeaderText = "Kiadó";
+            this.kiadóDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.kiadóDataGridViewTextBoxColumn.Name = "kiadóDataGridViewTextBoxColumn";
+            this.kiadóDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // eladásiÁrDataGridViewTextBoxColumn
+            // 
+            this.eladásiÁrDataGridViewTextBoxColumn.DataPropertyName = "Eladási ár";
+            this.eladásiÁrDataGridViewTextBoxColumn.HeaderText = "Eladási ár";
+            this.eladásiÁrDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.eladásiÁrDataGridViewTextBoxColumn.Name = "eladásiÁrDataGridViewTextBoxColumn";
+            this.eladásiÁrDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // Állapot
+            // 
+            this.Állapot.DataPropertyName = "Állapot";
+            this.Állapot.HeaderText = "Állapot";
+            this.Állapot.MinimumWidth = 6;
+            this.Állapot.Name = "Állapot";
+            this.Állapot.Width = 125;
+            // 
             // SaleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -167,12 +280,15 @@
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "SaleForm";
             this.Text = "Eladás";
+            this.Load += new System.EventHandler(this.SaleForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.antiqueDBDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.könyvekBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -193,5 +309,17 @@
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private AntiqueDBDataSet antiqueDBDataSet;
+        private System.Windows.Forms.BindingSource könyvekBindingSource;
+        private AntiqueDBDataSetTableAdapters.KönyvekTableAdapter könyvekTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Könyv_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iSBNDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn szerzőDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn címDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kiadásÉveDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn műfajDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kiadóDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn eladásiÁrDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Állapot;
     }
 }

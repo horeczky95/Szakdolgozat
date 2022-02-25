@@ -56,5 +56,12 @@ namespace WindowsFormsApp1
         {
             Application.Exit();
         }
+
+        private void WishListForm_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'antiqueDBDataSet.Kívánságlista' table. You can move, or remove it, as needed.
+            this.kívánságlistaTableAdapter.Fill(this.antiqueDBDataSet.Kívánságlista);
+
+        }
     }
 }

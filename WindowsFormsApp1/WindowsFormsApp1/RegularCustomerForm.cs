@@ -163,5 +163,12 @@ namespace WindowsFormsApp1
                 
             }
         }
+
+        private void RegularCustomerForm_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'antiqueDBDataSet.Törzsvásárlók' table. You can move, or remove it, as needed.
+            this.törzsvásárlókTableAdapter.Fill(this.antiqueDBDataSet.Törzsvásárlók);
+
+        }
     }
 }
