@@ -58,22 +58,14 @@
             this.button3 = new System.Windows.Forms.Button();
             this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.info_button = new System.Windows.Forms.Button();
-            this.antiqueDBDataSet = new WindowsFormsApp1.AntiqueDBDataSet();
             this.törzsvásárlókBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.antiqueDBDataSet = new WindowsFormsApp1.AntiqueDBDataSet();
+            this.info_button = new System.Windows.Forms.Button();
             this.törzsvásárlókTableAdapter = new WindowsFormsApp1.AntiqueDBDataSetTableAdapters.TörzsvásárlókTableAdapter();
-            this.törzsvásárlóiidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.névDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.címDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.születésiDátumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefonszámDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailCímDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.aktuálisPontokDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.előzőÉvesPontokDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.antiqueDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.törzsvásárlókBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.antiqueDBDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -292,7 +284,7 @@
             this.button1.TabIndex = 20;
             this.button1.Text = "Új törzsvásárló regisztrálása";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.new_regcust_Click);
             // 
             // button2
             // 
@@ -303,7 +295,6 @@
             this.button2.TabIndex = 21;
             this.button2.Text = "Törzsvásárlói adatok módosítása";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -314,29 +305,26 @@
             this.button3.TabIndex = 22;
             this.button3.Text = "Törzsvásárló törlése";
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // dataGridView
             // 
-            this.dataGridView.AutoGenerateColumns = false;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.törzsvásárlóiidDataGridViewTextBoxColumn,
-            this.névDataGridViewTextBoxColumn,
-            this.címDataGridViewTextBoxColumn,
-            this.születésiDátumDataGridViewTextBoxColumn,
-            this.telefonszámDataGridViewTextBoxColumn,
-            this.emailCímDataGridViewTextBoxColumn,
-            this.aktuálisPontokDataGridViewTextBoxColumn,
-            this.előzőÉvesPontokDataGridViewTextBoxColumn});
-            this.dataGridView.DataSource = this.törzsvásárlókBindingSource;
             this.dataGridView.Location = new System.Drawing.Point(12, 281);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.RowHeadersWidth = 51;
             this.dataGridView.RowTemplate.Height = 24;
             this.dataGridView.Size = new System.Drawing.Size(982, 360);
             this.dataGridView.TabIndex = 23;
-            this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
+            // 
+            // törzsvásárlókBindingSource
+            // 
+            this.törzsvásárlókBindingSource.DataMember = "Törzsvásárlók";
+            this.törzsvásárlókBindingSource.DataSource = this.antiqueDBDataSet;
+            // 
+            // antiqueDBDataSet
+            // 
+            this.antiqueDBDataSet.DataSetName = "AntiqueDBDataSet";
+            this.antiqueDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // info_button
             // 
@@ -348,83 +336,9 @@
             this.info_button.UseVisualStyleBackColor = true;
             this.info_button.Click += new System.EventHandler(this.info_button_Click);
             // 
-            // antiqueDBDataSet
-            // 
-            this.antiqueDBDataSet.DataSetName = "AntiqueDBDataSet";
-            this.antiqueDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // törzsvásárlókBindingSource
-            // 
-            this.törzsvásárlókBindingSource.DataMember = "Törzsvásárlók";
-            this.törzsvásárlókBindingSource.DataSource = this.antiqueDBDataSet;
-            // 
             // törzsvásárlókTableAdapter
             // 
             this.törzsvásárlókTableAdapter.ClearBeforeFill = true;
-            // 
-            // törzsvásárlóiidDataGridViewTextBoxColumn
-            // 
-            this.törzsvásárlóiidDataGridViewTextBoxColumn.DataPropertyName = "Törzsvásárlói_id";
-            this.törzsvásárlóiidDataGridViewTextBoxColumn.HeaderText = "Törzsvásárlói_id";
-            this.törzsvásárlóiidDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.törzsvásárlóiidDataGridViewTextBoxColumn.Name = "törzsvásárlóiidDataGridViewTextBoxColumn";
-            this.törzsvásárlóiidDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // névDataGridViewTextBoxColumn
-            // 
-            this.névDataGridViewTextBoxColumn.DataPropertyName = "Név";
-            this.névDataGridViewTextBoxColumn.HeaderText = "Név";
-            this.névDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.névDataGridViewTextBoxColumn.Name = "névDataGridViewTextBoxColumn";
-            this.névDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // címDataGridViewTextBoxColumn
-            // 
-            this.címDataGridViewTextBoxColumn.DataPropertyName = "Cím";
-            this.címDataGridViewTextBoxColumn.HeaderText = "Cím";
-            this.címDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.címDataGridViewTextBoxColumn.Name = "címDataGridViewTextBoxColumn";
-            this.címDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // születésiDátumDataGridViewTextBoxColumn
-            // 
-            this.születésiDátumDataGridViewTextBoxColumn.DataPropertyName = "Születési dátum";
-            this.születésiDátumDataGridViewTextBoxColumn.HeaderText = "Születési dátum";
-            this.születésiDátumDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.születésiDátumDataGridViewTextBoxColumn.Name = "születésiDátumDataGridViewTextBoxColumn";
-            this.születésiDátumDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // telefonszámDataGridViewTextBoxColumn
-            // 
-            this.telefonszámDataGridViewTextBoxColumn.DataPropertyName = "Telefonszám";
-            this.telefonszámDataGridViewTextBoxColumn.HeaderText = "Telefonszám";
-            this.telefonszámDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.telefonszámDataGridViewTextBoxColumn.Name = "telefonszámDataGridViewTextBoxColumn";
-            this.telefonszámDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // emailCímDataGridViewTextBoxColumn
-            // 
-            this.emailCímDataGridViewTextBoxColumn.DataPropertyName = "E-mail cím";
-            this.emailCímDataGridViewTextBoxColumn.HeaderText = "E-mail cím";
-            this.emailCímDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.emailCímDataGridViewTextBoxColumn.Name = "emailCímDataGridViewTextBoxColumn";
-            this.emailCímDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // aktuálisPontokDataGridViewTextBoxColumn
-            // 
-            this.aktuálisPontokDataGridViewTextBoxColumn.DataPropertyName = "Aktuális pontok";
-            this.aktuálisPontokDataGridViewTextBoxColumn.HeaderText = "Aktuális pontok";
-            this.aktuálisPontokDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.aktuálisPontokDataGridViewTextBoxColumn.Name = "aktuálisPontokDataGridViewTextBoxColumn";
-            this.aktuálisPontokDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // előzőÉvesPontokDataGridViewTextBoxColumn
-            // 
-            this.előzőÉvesPontokDataGridViewTextBoxColumn.DataPropertyName = "Előző éves pontok";
-            this.előzőÉvesPontokDataGridViewTextBoxColumn.HeaderText = "Előző éves pontok";
-            this.előzőÉvesPontokDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.előzőÉvesPontokDataGridViewTextBoxColumn.Name = "előzőÉvesPontokDataGridViewTextBoxColumn";
-            this.előzőÉvesPontokDataGridViewTextBoxColumn.Width = 125;
             // 
             // RegularCustomerForm
             // 
@@ -458,12 +372,11 @@
             this.Name = "RegularCustomerForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Törzsvásárlók";
-            this.Load += new System.EventHandler(this.RegularCustomerForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.antiqueDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.törzsvásárlókBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.antiqueDBDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -504,13 +417,5 @@
         private AntiqueDBDataSet antiqueDBDataSet;
         private System.Windows.Forms.BindingSource törzsvásárlókBindingSource;
         private AntiqueDBDataSetTableAdapters.TörzsvásárlókTableAdapter törzsvásárlókTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn törzsvásárlóiidDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn névDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn címDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn születésiDátumDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn telefonszámDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn emailCímDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn aktuálisPontokDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn előzőÉvesPontokDataGridViewTextBoxColumn;
     }
 }

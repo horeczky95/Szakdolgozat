@@ -39,18 +39,9 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.súgóToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.kívánságidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iSBNDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.szerzőDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.címDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vásárlóNeveDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vásárlóCímeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vásárlóTelefonszámaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vásárlóEmailCímeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.törzsvásárlóiKódDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.elérhetőségDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.kívánságlistaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.kívánságlistaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.antiqueDBDataSet = new WindowsFormsApp1.AntiqueDBDataSet();
+            this.kívánságlistaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -59,23 +50,26 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.tB_ISBN = new System.Windows.Forms.TextBox();
+            this.tB_author = new System.Windows.Forms.TextBox();
+            this.tB_title = new System.Windows.Forms.TextBox();
+            this.tB_RegCust = new System.Windows.Forms.TextBox();
+            this.tB_name = new System.Windows.Forms.TextBox();
+            this.tB_add = new System.Windows.Forms.TextBox();
+            this.tB_phone = new System.Windows.Forms.TextBox();
+            this.tB_email = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.kívánságlistaTableAdapter = new WindowsFormsApp1.AntiqueDBDataSetTableAdapters.KívánságlistaTableAdapter();
+            this.tB_ID = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kívánságlistaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kívánságlistaBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.antiqueDBDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kívánságlistaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -100,7 +94,7 @@
             this.statementsToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.fájlToolStripMenuItem.Name = "fájlToolStripMenuItem";
-            this.fájlToolStripMenuItem.Size = new System.Drawing.Size(45, 24);
+            this.fájlToolStripMenuItem.Size = new System.Drawing.Size(45, 26);
             this.fájlToolStripMenuItem.Text = "Fájl";
             // 
             // mainMenuToolStripMenuItem
@@ -148,121 +142,33 @@
             // súgóToolStripMenuItem
             // 
             this.súgóToolStripMenuItem.Name = "súgóToolStripMenuItem";
-            this.súgóToolStripMenuItem.Size = new System.Drawing.Size(57, 24);
+            this.súgóToolStripMenuItem.Size = new System.Drawing.Size(57, 26);
             this.súgóToolStripMenuItem.Text = "Súgó";
             // 
             // dataGridView1
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.kívánságidDataGridViewTextBoxColumn,
-            this.iSBNDataGridViewTextBoxColumn,
-            this.szerzőDataGridViewTextBoxColumn,
-            this.címDataGridViewTextBoxColumn,
-            this.vásárlóNeveDataGridViewTextBoxColumn,
-            this.vásárlóCímeDataGridViewTextBoxColumn,
-            this.vásárlóTelefonszámaDataGridViewTextBoxColumn,
-            this.vásárlóEmailCímeDataGridViewTextBoxColumn,
-            this.törzsvásárlóiKódDataGridViewTextBoxColumn,
-            this.elérhetőségDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.kívánságlistaBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 311);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(982, 330);
-            this.dataGridView1.TabIndex = 2;
+            this.dataGridView1.TabIndex = 21;
             // 
-            // kívánságidDataGridViewTextBoxColumn
+            // kívánságlistaBindingSource1
             // 
-            this.kívánságidDataGridViewTextBoxColumn.DataPropertyName = "Kívánság_id";
-            this.kívánságidDataGridViewTextBoxColumn.HeaderText = "Kívánság_id";
-            this.kívánságidDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.kívánságidDataGridViewTextBoxColumn.Name = "kívánságidDataGridViewTextBoxColumn";
-            this.kívánságidDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // iSBNDataGridViewTextBoxColumn
-            // 
-            this.iSBNDataGridViewTextBoxColumn.DataPropertyName = "ISBN";
-            this.iSBNDataGridViewTextBoxColumn.HeaderText = "ISBN";
-            this.iSBNDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.iSBNDataGridViewTextBoxColumn.Name = "iSBNDataGridViewTextBoxColumn";
-            this.iSBNDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // szerzőDataGridViewTextBoxColumn
-            // 
-            this.szerzőDataGridViewTextBoxColumn.DataPropertyName = "Szerző";
-            this.szerzőDataGridViewTextBoxColumn.HeaderText = "Szerző";
-            this.szerzőDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.szerzőDataGridViewTextBoxColumn.Name = "szerzőDataGridViewTextBoxColumn";
-            this.szerzőDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // címDataGridViewTextBoxColumn
-            // 
-            this.címDataGridViewTextBoxColumn.DataPropertyName = "Cím";
-            this.címDataGridViewTextBoxColumn.HeaderText = "Cím";
-            this.címDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.címDataGridViewTextBoxColumn.Name = "címDataGridViewTextBoxColumn";
-            this.címDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // vásárlóNeveDataGridViewTextBoxColumn
-            // 
-            this.vásárlóNeveDataGridViewTextBoxColumn.DataPropertyName = "Vásárló neve";
-            this.vásárlóNeveDataGridViewTextBoxColumn.HeaderText = "Vásárló neve";
-            this.vásárlóNeveDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.vásárlóNeveDataGridViewTextBoxColumn.Name = "vásárlóNeveDataGridViewTextBoxColumn";
-            this.vásárlóNeveDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // vásárlóCímeDataGridViewTextBoxColumn
-            // 
-            this.vásárlóCímeDataGridViewTextBoxColumn.DataPropertyName = "Vásárló címe";
-            this.vásárlóCímeDataGridViewTextBoxColumn.HeaderText = "Vásárló címe";
-            this.vásárlóCímeDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.vásárlóCímeDataGridViewTextBoxColumn.Name = "vásárlóCímeDataGridViewTextBoxColumn";
-            this.vásárlóCímeDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // vásárlóTelefonszámaDataGridViewTextBoxColumn
-            // 
-            this.vásárlóTelefonszámaDataGridViewTextBoxColumn.DataPropertyName = "Vásárló telefonszáma";
-            this.vásárlóTelefonszámaDataGridViewTextBoxColumn.HeaderText = "Vásárló telefonszáma";
-            this.vásárlóTelefonszámaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.vásárlóTelefonszámaDataGridViewTextBoxColumn.Name = "vásárlóTelefonszámaDataGridViewTextBoxColumn";
-            this.vásárlóTelefonszámaDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // vásárlóEmailCímeDataGridViewTextBoxColumn
-            // 
-            this.vásárlóEmailCímeDataGridViewTextBoxColumn.DataPropertyName = "Vásárló email címe";
-            this.vásárlóEmailCímeDataGridViewTextBoxColumn.HeaderText = "Vásárló email címe";
-            this.vásárlóEmailCímeDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.vásárlóEmailCímeDataGridViewTextBoxColumn.Name = "vásárlóEmailCímeDataGridViewTextBoxColumn";
-            this.vásárlóEmailCímeDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // törzsvásárlóiKódDataGridViewTextBoxColumn
-            // 
-            this.törzsvásárlóiKódDataGridViewTextBoxColumn.DataPropertyName = "Törzsvásárlói kód";
-            this.törzsvásárlóiKódDataGridViewTextBoxColumn.HeaderText = "Törzsvásárlói kód";
-            this.törzsvásárlóiKódDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.törzsvásárlóiKódDataGridViewTextBoxColumn.Name = "törzsvásárlóiKódDataGridViewTextBoxColumn";
-            this.törzsvásárlóiKódDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // elérhetőségDataGridViewTextBoxColumn
-            // 
-            this.elérhetőségDataGridViewTextBoxColumn.DataPropertyName = "Elérhetőség";
-            this.elérhetőségDataGridViewTextBoxColumn.HeaderText = "Elérhetőség";
-            this.elérhetőségDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.elérhetőségDataGridViewTextBoxColumn.Name = "elérhetőségDataGridViewTextBoxColumn";
-            this.elérhetőségDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // kívánságlistaBindingSource
-            // 
-            this.kívánságlistaBindingSource.DataMember = "Kívánságlista";
-            this.kívánságlistaBindingSource.DataSource = this.antiqueDBDataSet;
+            this.kívánságlistaBindingSource1.DataMember = "Kívánságlista";
+            this.kívánságlistaBindingSource1.DataSource = this.antiqueDBDataSet;
             // 
             // antiqueDBDataSet
             // 
             this.antiqueDBDataSet.DataSetName = "AntiqueDBDataSet";
             this.antiqueDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // kívánságlistaBindingSource
+            // 
+            this.kívánságlistaBindingSource.DataMember = "Kívánságlista";
+            this.kívánságlistaBindingSource.DataSource = this.antiqueDBDataSet;
             // 
             // label1
             // 
@@ -271,7 +177,7 @@
             this.label1.Location = new System.Drawing.Point(40, 50);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(94, 20);
-            this.label1.TabIndex = 4;
+            this.label1.TabIndex = 9;
             this.label1.Text = "ISBN szám";
             // 
             // label2
@@ -281,7 +187,7 @@
             this.label2.Location = new System.Drawing.Point(40, 80);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(62, 20);
-            this.label2.TabIndex = 5;
+            this.label2.TabIndex = 10;
             this.label2.Text = "Szerző";
             // 
             // label3
@@ -291,7 +197,7 @@
             this.label3.Location = new System.Drawing.Point(40, 110);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(39, 20);
-            this.label3.TabIndex = 6;
+            this.label3.TabIndex = 11;
             this.label3.Text = "Cím";
             // 
             // label4
@@ -301,7 +207,7 @@
             this.label4.Location = new System.Drawing.Point(40, 140);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(207, 20);
-            this.label4.TabIndex = 7;
+            this.label4.TabIndex = 12;
             this.label4.Text = "Törzsvásárlói kód (ha van)";
             // 
             // label5
@@ -311,7 +217,7 @@
             this.label5.Location = new System.Drawing.Point(40, 170);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(106, 20);
-            this.label5.TabIndex = 8;
+            this.label5.TabIndex = 13;
             this.label5.Text = "Vásárló neve";
             // 
             // label6
@@ -321,7 +227,7 @@
             this.label6.Location = new System.Drawing.Point(40, 200);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(107, 20);
-            this.label6.TabIndex = 9;
+            this.label6.TabIndex = 14;
             this.label6.Text = "Vásárló címe";
             // 
             // label7
@@ -331,7 +237,7 @@
             this.label7.Location = new System.Drawing.Point(40, 230);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(171, 20);
-            this.label7.TabIndex = 10;
+            this.label7.TabIndex = 15;
             this.label7.Text = "Vásárló telefonszáma";
             // 
             // label8
@@ -341,64 +247,64 @@
             this.label8.Location = new System.Drawing.Point(40, 260);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(152, 20);
-            this.label8.TabIndex = 11;
+            this.label8.TabIndex = 16;
             this.label8.Text = "Vásárló email címe";
             // 
-            // textBox1
+            // tB_ISBN
             // 
-            this.textBox1.Location = new System.Drawing.Point(270, 50);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(250, 22);
-            this.textBox1.TabIndex = 12;
+            this.tB_ISBN.Location = new System.Drawing.Point(270, 50);
+            this.tB_ISBN.Name = "tB_ISBN";
+            this.tB_ISBN.Size = new System.Drawing.Size(250, 22);
+            this.tB_ISBN.TabIndex = 1;
             // 
-            // textBox2
+            // tB_author
             // 
-            this.textBox2.Location = new System.Drawing.Point(270, 80);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(250, 22);
-            this.textBox2.TabIndex = 13;
+            this.tB_author.Location = new System.Drawing.Point(270, 80);
+            this.tB_author.Name = "tB_author";
+            this.tB_author.Size = new System.Drawing.Size(250, 22);
+            this.tB_author.TabIndex = 2;
             // 
-            // textBox3
+            // tB_title
             // 
-            this.textBox3.Location = new System.Drawing.Point(270, 110);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(250, 22);
-            this.textBox3.TabIndex = 14;
+            this.tB_title.Location = new System.Drawing.Point(270, 110);
+            this.tB_title.Name = "tB_title";
+            this.tB_title.Size = new System.Drawing.Size(250, 22);
+            this.tB_title.TabIndex = 3;
             // 
-            // textBox4
+            // tB_RegCust
             // 
-            this.textBox4.Location = new System.Drawing.Point(270, 140);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(250, 22);
-            this.textBox4.TabIndex = 15;
+            this.tB_RegCust.Location = new System.Drawing.Point(270, 140);
+            this.tB_RegCust.Name = "tB_RegCust";
+            this.tB_RegCust.Size = new System.Drawing.Size(250, 22);
+            this.tB_RegCust.TabIndex = 4;
             // 
-            // textBox5
+            // tB_name
             // 
-            this.textBox5.Location = new System.Drawing.Point(270, 170);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(250, 22);
-            this.textBox5.TabIndex = 16;
+            this.tB_name.Location = new System.Drawing.Point(270, 170);
+            this.tB_name.Name = "tB_name";
+            this.tB_name.Size = new System.Drawing.Size(250, 22);
+            this.tB_name.TabIndex = 5;
             // 
-            // textBox6
+            // tB_add
             // 
-            this.textBox6.Location = new System.Drawing.Point(270, 200);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(250, 22);
-            this.textBox6.TabIndex = 17;
+            this.tB_add.Location = new System.Drawing.Point(270, 200);
+            this.tB_add.Name = "tB_add";
+            this.tB_add.Size = new System.Drawing.Size(250, 22);
+            this.tB_add.TabIndex = 6;
             // 
-            // textBox7
+            // tB_phone
             // 
-            this.textBox7.Location = new System.Drawing.Point(270, 228);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(250, 22);
-            this.textBox7.TabIndex = 18;
+            this.tB_phone.Location = new System.Drawing.Point(270, 232);
+            this.tB_phone.Name = "tB_phone";
+            this.tB_phone.Size = new System.Drawing.Size(250, 22);
+            this.tB_phone.TabIndex = 7;
             // 
-            // textBox8
+            // tB_email
             // 
-            this.textBox8.Location = new System.Drawing.Point(270, 260);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(250, 22);
-            this.textBox8.TabIndex = 19;
+            this.tB_email.Location = new System.Drawing.Point(270, 260);
+            this.tB_email.Name = "tB_email";
+            this.tB_email.Size = new System.Drawing.Size(250, 22);
+            this.tB_email.TabIndex = 8;
             // 
             // button1
             // 
@@ -406,9 +312,10 @@
             this.button1.Location = new System.Drawing.Point(570, 50);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(174, 50);
-            this.button1.TabIndex = 21;
+            this.button1.TabIndex = 17;
             this.button1.Text = "Új kivánság hozzáadása";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.new_wish_click);
             // 
             // button2
             // 
@@ -416,7 +323,7 @@
             this.button2.Location = new System.Drawing.Point(570, 110);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(174, 50);
-            this.button2.TabIndex = 22;
+            this.button2.TabIndex = 18;
             this.button2.Text = "Kívánságok megjelenítés";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.wishList_display_click);
@@ -424,44 +331,65 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button3.Location = new System.Drawing.Point(570, 170);
+            this.button3.Location = new System.Drawing.Point(570, 232);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(174, 50);
-            this.button3.TabIndex = 23;
+            this.button3.TabIndex = 20;
             this.button3.Text = "Kívánság törlése";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.wish_delete_Click);
             // 
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button4.Location = new System.Drawing.Point(570, 230);
+            this.button4.Location = new System.Drawing.Point(570, 172);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(174, 50);
-            this.button4.TabIndex = 24;
+            this.button4.TabIndex = 19;
             this.button4.Text = "Kívánság módosítása";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.wish_modification_Click);
             // 
             // kívánságlistaTableAdapter
             // 
             this.kívánságlistaTableAdapter.ClearBeforeFill = true;
+            // 
+            // tB_ID
+            // 
+            this.tB_ID.Location = new System.Drawing.Point(890, 258);
+            this.tB_ID.Name = "tB_ID";
+            this.tB_ID.Size = new System.Drawing.Size(63, 22);
+            this.tB_ID.TabIndex = 22;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label9.Location = new System.Drawing.Point(765, 260);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(99, 20);
+            this.label9.TabIndex = 23;
+            this.label9.Text = "Kívánság ID";
             // 
             // WishListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1006, 653);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.tB_ID);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tB_email);
+            this.Controls.Add(this.tB_phone);
+            this.Controls.Add(this.tB_add);
+            this.Controls.Add(this.tB_name);
+            this.Controls.Add(this.tB_RegCust);
+            this.Controls.Add(this.tB_title);
+            this.Controls.Add(this.tB_author);
+            this.Controls.Add(this.tB_ISBN);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -480,8 +408,9 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kívánságlistaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kívánságlistaBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.antiqueDBDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kívánságlistaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -507,14 +436,14 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox tB_ISBN;
+        private System.Windows.Forms.TextBox tB_author;
+        private System.Windows.Forms.TextBox tB_title;
+        private System.Windows.Forms.TextBox tB_RegCust;
+        private System.Windows.Forms.TextBox tB_name;
+        private System.Windows.Forms.TextBox tB_add;
+        private System.Windows.Forms.TextBox tB_phone;
+        private System.Windows.Forms.TextBox tB_email;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
@@ -522,15 +451,8 @@
         private AntiqueDBDataSet antiqueDBDataSet;
         private System.Windows.Forms.BindingSource kívánságlistaBindingSource;
         private AntiqueDBDataSetTableAdapters.KívánságlistaTableAdapter kívánságlistaTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn kívánságidDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iSBNDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn szerzőDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn címDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn vásárlóNeveDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn vásárlóCímeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn vásárlóTelefonszámaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn vásárlóEmailCímeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn törzsvásárlóiKódDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn elérhetőségDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource kívánságlistaBindingSource1;
+        private System.Windows.Forms.TextBox tB_ID;
+        private System.Windows.Forms.Label label9;
     }
 }

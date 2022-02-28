@@ -64,8 +64,7 @@ namespace WindowsFormsApp1
 
         private void BookManagerForm_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'antiqueDBDataSet.Könyvek' table. You can move, or remove it, as needed.
-                   }
+        }
 
         //Adatbázis műveletek
         public void display_data()
@@ -140,12 +139,12 @@ namespace WindowsFormsApp1
 
         private void button_book_modification_Click(object sender, EventArgs e)
         {
-            connection.Open();
-            SqlCommand cmd = connection.CreateCommand();
-            cmd.CommandType = CommandType.Text;
             if (textBox_ID.Text != "")
             {
-                if(textBox_ISBN.Text != "")
+                connection.Open();
+                SqlCommand cmd = connection.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                if (textBox_ISBN.Text != "")
                 {
                     cmd.CommandText = "update [Könyvek] set ISBN = '"+ textBox_ISBN.Text +"' where Könyv_id = '" + int.Parse(textBox_ID.Text) + "'";
                     textBox_ISBN.Text = "";
@@ -181,14 +180,16 @@ namespace WindowsFormsApp1
                     textBox_selling_price.Text = "";
                 } else {
                     MessageBox.Show("Hiányzó adat!");
+                    cmd.CommandText = "select * from [Könyvek]";
                 }
                 textBox_ID.Text = "";
+                cmd.ExecuteNonQuery();
+                connection.Close();
+                display_data();
             } else {
                 MessageBox.Show("Nincs meg adva ID!");
             }
-            cmd.ExecuteNonQuery();
-            connection.Close();
-            display_data();
+            
         }
     }
 }
