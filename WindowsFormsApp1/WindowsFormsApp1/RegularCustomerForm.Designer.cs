@@ -45,13 +45,13 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox_name = new System.Windows.Forms.TextBox();
-            this.textBox_born_date = new System.Windows.Forms.TextBox();
-            this.textBox_address = new System.Windows.Forms.TextBox();
-            this.textBox_phone_number = new System.Windows.Forms.TextBox();
-            this.textBox_email_address = new System.Windows.Forms.TextBox();
-            this.textBox_torzsvasarloi_kod = new System.Windows.Forms.TextBox();
-            this.comboBox_gender = new System.Windows.Forms.ComboBox();
+            this.tB_name = new System.Windows.Forms.TextBox();
+            this.tB_born_date = new System.Windows.Forms.TextBox();
+            this.tB_address = new System.Windows.Forms.TextBox();
+            this.tB_phone = new System.Windows.Forms.TextBox();
+            this.tB_email = new System.Windows.Forms.TextBox();
+            this.tB_regCus_ID = new System.Windows.Forms.TextBox();
+            this.cB_gender = new System.Windows.Forms.ComboBox();
             this.display_button = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -211,58 +211,58 @@
             this.label7.TabIndex = 8;
             this.label7.Text = "Törzsvásrálói kód";
             // 
-            // textBox_name
+            // tB_name
             // 
-            this.textBox_name.Location = new System.Drawing.Point(200, 40);
-            this.textBox_name.Name = "textBox_name";
-            this.textBox_name.Size = new System.Drawing.Size(240, 22);
-            this.textBox_name.TabIndex = 9;
+            this.tB_name.Location = new System.Drawing.Point(200, 40);
+            this.tB_name.Name = "tB_name";
+            this.tB_name.Size = new System.Drawing.Size(240, 22);
+            this.tB_name.TabIndex = 9;
             // 
-            // textBox_born_date
+            // tB_born_date
             // 
-            this.textBox_born_date.Location = new System.Drawing.Point(200, 80);
-            this.textBox_born_date.Name = "textBox_born_date";
-            this.textBox_born_date.Size = new System.Drawing.Size(240, 22);
-            this.textBox_born_date.TabIndex = 10;
+            this.tB_born_date.Location = new System.Drawing.Point(200, 80);
+            this.tB_born_date.Name = "tB_born_date";
+            this.tB_born_date.Size = new System.Drawing.Size(240, 22);
+            this.tB_born_date.TabIndex = 10;
             // 
-            // textBox_address
+            // tB_address
             // 
-            this.textBox_address.Location = new System.Drawing.Point(200, 160);
-            this.textBox_address.Name = "textBox_address";
-            this.textBox_address.Size = new System.Drawing.Size(240, 22);
-            this.textBox_address.TabIndex = 12;
+            this.tB_address.Location = new System.Drawing.Point(200, 160);
+            this.tB_address.Name = "tB_address";
+            this.tB_address.Size = new System.Drawing.Size(240, 22);
+            this.tB_address.TabIndex = 12;
             // 
-            // textBox_phone_number
+            // tB_phone
             // 
-            this.textBox_phone_number.Location = new System.Drawing.Point(200, 200);
-            this.textBox_phone_number.Name = "textBox_phone_number";
-            this.textBox_phone_number.Size = new System.Drawing.Size(240, 22);
-            this.textBox_phone_number.TabIndex = 13;
+            this.tB_phone.Location = new System.Drawing.Point(200, 200);
+            this.tB_phone.Name = "tB_phone";
+            this.tB_phone.Size = new System.Drawing.Size(240, 22);
+            this.tB_phone.TabIndex = 13;
             // 
-            // textBox_email_address
+            // tB_email
             // 
-            this.textBox_email_address.Location = new System.Drawing.Point(200, 240);
-            this.textBox_email_address.Name = "textBox_email_address";
-            this.textBox_email_address.Size = new System.Drawing.Size(240, 22);
-            this.textBox_email_address.TabIndex = 14;
+            this.tB_email.Location = new System.Drawing.Point(200, 240);
+            this.tB_email.Name = "tB_email";
+            this.tB_email.Size = new System.Drawing.Size(240, 22);
+            this.tB_email.TabIndex = 14;
             // 
-            // textBox_torzsvasarloi_kod
+            // tB_regCus_ID
             // 
-            this.textBox_torzsvasarloi_kod.Location = new System.Drawing.Point(728, 168);
-            this.textBox_torzsvasarloi_kod.Name = "textBox_torzsvasarloi_kod";
-            this.textBox_torzsvasarloi_kod.Size = new System.Drawing.Size(240, 22);
-            this.textBox_torzsvasarloi_kod.TabIndex = 15;
+            this.tB_regCus_ID.Location = new System.Drawing.Point(728, 168);
+            this.tB_regCus_ID.Name = "tB_regCus_ID";
+            this.tB_regCus_ID.Size = new System.Drawing.Size(240, 22);
+            this.tB_regCus_ID.TabIndex = 15;
             // 
-            // comboBox_gender
+            // cB_gender
             // 
-            this.comboBox_gender.FormattingEnabled = true;
-            this.comboBox_gender.Items.AddRange(new object[] {
+            this.cB_gender.FormattingEnabled = true;
+            this.cB_gender.Items.AddRange(new object[] {
             "Nő",
             "Férfi"});
-            this.comboBox_gender.Location = new System.Drawing.Point(200, 120);
-            this.comboBox_gender.Name = "comboBox_gender";
-            this.comboBox_gender.Size = new System.Drawing.Size(240, 24);
-            this.comboBox_gender.TabIndex = 16;
+            this.cB_gender.Location = new System.Drawing.Point(200, 120);
+            this.cB_gender.Name = "cB_gender";
+            this.cB_gender.Size = new System.Drawing.Size(240, 24);
+            this.cB_gender.TabIndex = 16;
             // 
             // display_button
             // 
@@ -295,6 +295,7 @@
             this.button2.TabIndex = 21;
             this.button2.Text = "Törzsvásárlói adatok módosítása";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.regcus_modification_Click);
             // 
             // button3
             // 
@@ -305,6 +306,7 @@
             this.button3.TabIndex = 22;
             this.button3.Text = "Törzsvásárló törlése";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.delete_regcus_Click);
             // 
             // dataGridView
             // 
@@ -353,13 +355,13 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.display_button);
-            this.Controls.Add(this.comboBox_gender);
-            this.Controls.Add(this.textBox_torzsvasarloi_kod);
-            this.Controls.Add(this.textBox_email_address);
-            this.Controls.Add(this.textBox_phone_number);
-            this.Controls.Add(this.textBox_address);
-            this.Controls.Add(this.textBox_born_date);
-            this.Controls.Add(this.textBox_name);
+            this.Controls.Add(this.cB_gender);
+            this.Controls.Add(this.tB_regCus_ID);
+            this.Controls.Add(this.tB_email);
+            this.Controls.Add(this.tB_phone);
+            this.Controls.Add(this.tB_address);
+            this.Controls.Add(this.tB_born_date);
+            this.Controls.Add(this.tB_name);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -400,13 +402,13 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox_name;
-        private System.Windows.Forms.TextBox textBox_born_date;
-        private System.Windows.Forms.TextBox textBox_address;
-        private System.Windows.Forms.TextBox textBox_phone_number;
-        private System.Windows.Forms.TextBox textBox_email_address;
-        private System.Windows.Forms.TextBox textBox_torzsvasarloi_kod;
-        private System.Windows.Forms.ComboBox comboBox_gender;
+        private System.Windows.Forms.TextBox tB_name;
+        private System.Windows.Forms.TextBox tB_born_date;
+        private System.Windows.Forms.TextBox tB_address;
+        private System.Windows.Forms.TextBox tB_phone;
+        private System.Windows.Forms.TextBox tB_email;
+        private System.Windows.Forms.TextBox tB_regCus_ID;
+        private System.Windows.Forms.ComboBox cB_gender;
         private System.Windows.Forms.Button display_button;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;

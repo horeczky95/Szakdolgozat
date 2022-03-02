@@ -63,19 +63,26 @@ namespace WindowsFormsApp1
             // TODO: This line of code loads data into the 'antiqueDBDataSet.Bevételek' table. You can move, or remove it, as needed.
         }
 
+       
+
         //Adatbázis műveletek
-        /*public void display_data()
+        private void income_statements_Click(object sender, EventArgs e)
+        {
+            display_income_data();
+        }
+        public void display_income_data()
         {
             connection.Open();
             SqlCommand cmd = connection.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select * from [Könyvek]";
+            cmd.CommandText = "select * from [Bevételek]";
             cmd.ExecuteNonQuery();
             DataTable dta = new DataTable();
             SqlDataAdapter dataadp = new SqlDataAdapter(cmd);
             dataadp.Fill(dta);
             dataGridView1.DataSource = dta;
             connection.Close();
-        }*/
+        }
+
     }
 }

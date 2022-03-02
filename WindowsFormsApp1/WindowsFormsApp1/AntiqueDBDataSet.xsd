@@ -4,7 +4,7 @@
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="AntiqueDBConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="AntiqueDBConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.WindowsFormsApp1.Properties.Settings.GlobalReference.Default.AntiqueDBConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="AntiqueDBConnectionString" IsAppSettingsProperty="true" Modifier="Assembly" Name="AntiqueDBConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.WindowsFormsApp1.Properties.Settings.GlobalReference.Default.AntiqueDBConnectionString" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="BevételekTableAdapter" GeneratorDataComponentClassName="BevételekTableAdapter" Name="Bevételek" UserDataComponentName="BevételekTableAdapter">
@@ -397,7 +397,7 @@ SELECT Törzsvásárlói_id, Név, Cím, [Születési dátum], Telefonszám, [E-
   <xs:element name="AntiqueDBDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="AntiqueDBDataSet" msprop:Generator_UserDSName="AntiqueDBDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Bevételek" msprop:Generator_TableClassName="BevételekDataTable" msprop:Generator_TableVarName="tableBevételek" msprop:Generator_TablePropName="Bevételek" msprop:Generator_RowDeletingName="BevételekRowDeleting" msprop:Generator_RowChangingName="BevételekRowChanging" msprop:Generator_RowEvHandlerName="BevételekRowChangeEventHandler" msprop:Generator_RowDeletedName="BevételekRowDeleted" msprop:Generator_UserTableName="Bevételek" msprop:Generator_RowChangedName="BevételekRowChanged" msprop:Generator_RowEvArgName="BevételekRowChangeEvent" msprop:Generator_RowClassName="BevételekRow">
+        <xs:element name="Bevételek" msprop:Generator_TableClassName="BevételekDataTable" msprop:Generator_TableVarName="tableBevételek" msprop:Generator_RowChangedName="BevételekRowChanged" msprop:Generator_TablePropName="Bevételek" msprop:Generator_RowDeletingName="BevételekRowDeleting" msprop:Generator_RowChangingName="BevételekRowChanging" msprop:Generator_RowEvHandlerName="BevételekRowChangeEventHandler" msprop:Generator_RowDeletedName="BevételekRowDeleted" msprop:Generator_RowClassName="BevételekRow" msprop:Generator_UserTableName="Bevételek" msprop:Generator_RowEvArgName="BevételekRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Bevétel_id" msprop:Generator_ColumnVarNameInTable="columnBevétel_id" msprop:Generator_ColumnPropNameInRow="Bevétel_id" msprop:Generator_ColumnPropNameInTable="Bevétel_idColumn" msprop:Generator_UserColumnName="Bevétel_id" type="xs:int" />
@@ -413,7 +413,7 @@ SELECT Törzsvásárlói_id, Név, Cím, [Születési dátum], Telefonszám, [E-
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Kiadások" msprop:Generator_TableClassName="KiadásokDataTable" msprop:Generator_TableVarName="tableKiadások" msprop:Generator_TablePropName="Kiadások" msprop:Generator_RowDeletingName="KiadásokRowDeleting" msprop:Generator_RowChangingName="KiadásokRowChanging" msprop:Generator_RowEvHandlerName="KiadásokRowChangeEventHandler" msprop:Generator_RowDeletedName="KiadásokRowDeleted" msprop:Generator_UserTableName="Kiadások" msprop:Generator_RowChangedName="KiadásokRowChanged" msprop:Generator_RowEvArgName="KiadásokRowChangeEvent" msprop:Generator_RowClassName="KiadásokRow">
+        <xs:element name="Kiadások" msprop:Generator_TableClassName="KiadásokDataTable" msprop:Generator_TableVarName="tableKiadások" msprop:Generator_RowChangedName="KiadásokRowChanged" msprop:Generator_TablePropName="Kiadások" msprop:Generator_RowDeletingName="KiadásokRowDeleting" msprop:Generator_RowChangingName="KiadásokRowChanging" msprop:Generator_RowEvHandlerName="KiadásokRowChangeEventHandler" msprop:Generator_RowDeletedName="KiadásokRowDeleted" msprop:Generator_RowClassName="KiadásokRow" msprop:Generator_UserTableName="Kiadások" msprop:Generator_RowEvArgName="KiadásokRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Kiadás_id" msprop:Generator_ColumnVarNameInTable="columnKiadás_id" msprop:Generator_ColumnPropNameInRow="Kiadás_id" msprop:Generator_ColumnPropNameInTable="Kiadás_idColumn" msprop:Generator_UserColumnName="Kiadás_id" type="xs:int" />
@@ -429,7 +429,7 @@ SELECT Törzsvásárlói_id, Név, Cím, [Születési dátum], Telefonszám, [E-
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Kívánságlista" msprop:Generator_TableClassName="KívánságlistaDataTable" msprop:Generator_TableVarName="tableKívánságlista" msprop:Generator_TablePropName="Kívánságlista" msprop:Generator_RowDeletingName="KívánságlistaRowDeleting" msprop:Generator_RowChangingName="KívánságlistaRowChanging" msprop:Generator_RowEvHandlerName="KívánságlistaRowChangeEventHandler" msprop:Generator_RowDeletedName="KívánságlistaRowDeleted" msprop:Generator_UserTableName="Kívánságlista" msprop:Generator_RowChangedName="KívánságlistaRowChanged" msprop:Generator_RowEvArgName="KívánságlistaRowChangeEvent" msprop:Generator_RowClassName="KívánságlistaRow">
+        <xs:element name="Kívánságlista" msprop:Generator_TableClassName="KívánságlistaDataTable" msprop:Generator_TableVarName="tableKívánságlista" msprop:Generator_RowChangedName="KívánságlistaRowChanged" msprop:Generator_TablePropName="Kívánságlista" msprop:Generator_RowDeletingName="KívánságlistaRowDeleting" msprop:Generator_RowChangingName="KívánságlistaRowChanging" msprop:Generator_RowEvHandlerName="KívánságlistaRowChangeEventHandler" msprop:Generator_RowDeletedName="KívánságlistaRowDeleted" msprop:Generator_RowClassName="KívánságlistaRow" msprop:Generator_UserTableName="Kívánságlista" msprop:Generator_RowEvArgName="KívánságlistaRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Kívánság_id" msprop:Generator_ColumnVarNameInTable="columnKívánság_id" msprop:Generator_ColumnPropNameInRow="Kívánság_id" msprop:Generator_ColumnPropNameInTable="Kívánság_idColumn" msprop:Generator_UserColumnName="Kívánság_id" type="xs:int" />
@@ -487,7 +487,7 @@ SELECT Törzsvásárlói_id, Név, Cím, [Születési dátum], Telefonszám, [E-
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Könyvek" msprop:Generator_TableClassName="KönyvekDataTable" msprop:Generator_TableVarName="tableKönyvek" msprop:Generator_TablePropName="Könyvek" msprop:Generator_RowDeletingName="KönyvekRowDeleting" msprop:Generator_RowChangingName="KönyvekRowChanging" msprop:Generator_RowEvHandlerName="KönyvekRowChangeEventHandler" msprop:Generator_RowDeletedName="KönyvekRowDeleted" msprop:Generator_UserTableName="Könyvek" msprop:Generator_RowChangedName="KönyvekRowChanged" msprop:Generator_RowEvArgName="KönyvekRowChangeEvent" msprop:Generator_RowClassName="KönyvekRow">
+        <xs:element name="Könyvek" msprop:Generator_TableClassName="KönyvekDataTable" msprop:Generator_TableVarName="tableKönyvek" msprop:Generator_RowChangedName="KönyvekRowChanged" msprop:Generator_TablePropName="Könyvek" msprop:Generator_RowDeletingName="KönyvekRowDeleting" msprop:Generator_RowChangingName="KönyvekRowChanging" msprop:Generator_RowEvHandlerName="KönyvekRowChangeEventHandler" msprop:Generator_RowDeletedName="KönyvekRowDeleted" msprop:Generator_RowClassName="KönyvekRow" msprop:Generator_UserTableName="Könyvek" msprop:Generator_RowEvArgName="KönyvekRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Könyv_id" msprop:Generator_ColumnVarNameInTable="columnKönyv_id" msprop:Generator_ColumnPropNameInRow="Könyv_id" msprop:Generator_ColumnPropNameInTable="Könyv_idColumn" msprop:Generator_UserColumnName="Könyv_id" type="xs:int" />
@@ -541,7 +541,7 @@ SELECT Törzsvásárlói_id, Név, Cím, [Születési dátum], Telefonszám, [E-
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Törzsvásárlók" msprop:Generator_TableClassName="TörzsvásárlókDataTable" msprop:Generator_TableVarName="tableTörzsvásárlók" msprop:Generator_TablePropName="Törzsvásárlók" msprop:Generator_RowDeletingName="TörzsvásárlókRowDeleting" msprop:Generator_RowChangingName="TörzsvásárlókRowChanging" msprop:Generator_RowEvHandlerName="TörzsvásárlókRowChangeEventHandler" msprop:Generator_RowDeletedName="TörzsvásárlókRowDeleted" msprop:Generator_UserTableName="Törzsvásárlók" msprop:Generator_RowChangedName="TörzsvásárlókRowChanged" msprop:Generator_RowEvArgName="TörzsvásárlókRowChangeEvent" msprop:Generator_RowClassName="TörzsvásárlókRow">
+        <xs:element name="Törzsvásárlók" msprop:Generator_TableClassName="TörzsvásárlókDataTable" msprop:Generator_TableVarName="tableTörzsvásárlók" msprop:Generator_RowChangedName="TörzsvásárlókRowChanged" msprop:Generator_TablePropName="Törzsvásárlók" msprop:Generator_RowDeletingName="TörzsvásárlókRowDeleting" msprop:Generator_RowChangingName="TörzsvásárlókRowChanging" msprop:Generator_RowEvHandlerName="TörzsvásárlókRowChangeEventHandler" msprop:Generator_RowDeletedName="TörzsvásárlókRowDeleted" msprop:Generator_RowClassName="TörzsvásárlókRow" msprop:Generator_UserTableName="Törzsvásárlók" msprop:Generator_RowEvArgName="TörzsvásárlókRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Törzsvásárlói_id" msprop:Generator_ColumnVarNameInTable="columnTörzsvásárlói_id" msprop:Generator_ColumnPropNameInRow="Törzsvásárlói_id" msprop:Generator_ColumnPropNameInTable="Törzsvásárlói_idColumn" msprop:Generator_UserColumnName="Törzsvásárlói_id">

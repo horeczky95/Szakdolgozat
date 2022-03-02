@@ -29,10 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fájlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,7 +40,8 @@
             this.súgóToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.startDate = new System.Windows.Forms.DateTimePicker();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.antiqueDBDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.antiqueDBDataSet = new WindowsFormsApp1.AntiqueDBDataSet();
             this.finishDate = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -55,18 +52,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.antiqueDBDataSet = new WindowsFormsApp1.AntiqueDBDataSet();
-            this.bevételekBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bevételekTableAdapter = new WindowsFormsApp1.AntiqueDBDataSetTableAdapters.BevételekTableAdapter();
-            this.bevételekBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.antiqueDBDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.antiqueDBDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bevételekBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bevételekBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.antiqueDBDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.antiqueDBDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -159,34 +149,15 @@
             this.dataGridView1.Size = new System.Drawing.Size(500, 360);
             this.dataGridView1.TabIndex = 2;
             // 
-            // chart1
+            // antiqueDBDataSetBindingSource
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
-            this.chart1.Location = new System.Drawing.Point(541, 281);
-            this.chart1.Name = "chart1";
-            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Chocolate;
-            series3.BorderWidth = 3;
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series3.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            series3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            series3.Legend = "Legend1";
-            series3.Name = "Kiadás";
-            series4.BorderWidth = 3;
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series4.Color = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            series4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            series4.Legend = "Legend1";
-            series4.Name = "Bevétel";
-            this.chart1.Series.Add(series3);
-            this.chart1.Series.Add(series4);
-            this.chart1.Size = new System.Drawing.Size(453, 360);
-            this.chart1.TabIndex = 3;
-            this.chart1.Text = "chart1";
+            this.antiqueDBDataSetBindingSource.DataSource = this.antiqueDBDataSet;
+            this.antiqueDBDataSetBindingSource.Position = 0;
+            // 
+            // antiqueDBDataSet
+            // 
+            this.antiqueDBDataSet.DataSetName = "AntiqueDBDataSet";
+            this.antiqueDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // finishDate
             // 
@@ -214,6 +185,7 @@
             this.button2.TabIndex = 23;
             this.button2.Text = "Bevételek kimutatása";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.income_statements_Click);
             // 
             // button3
             // 
@@ -285,29 +257,9 @@
             this.label6.TabIndex = 30;
             this.label6.Text = "Adott időszak nyeresége";
             // 
-            // antiqueDBDataSet
-            // 
-            this.antiqueDBDataSet.DataSetName = "AntiqueDBDataSet";
-            this.antiqueDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // bevételekBindingSource
-            // 
-            this.bevételekBindingSource.DataMember = "Bevételek";
-            this.bevételekBindingSource.DataSource = this.antiqueDBDataSet;
-            // 
             // bevételekTableAdapter
             // 
             this.bevételekTableAdapter.ClearBeforeFill = true;
-            // 
-            // bevételekBindingSource1
-            // 
-            this.bevételekBindingSource1.DataMember = "Bevételek";
-            this.bevételekBindingSource1.DataSource = this.antiqueDBDataSet;
-            // 
-            // antiqueDBDataSetBindingSource
-            // 
-            this.antiqueDBDataSetBindingSource.DataSource = this.antiqueDBDataSet;
-            this.antiqueDBDataSetBindingSource.Position = 0;
             // 
             // StatementsForm
             // 
@@ -324,7 +276,6 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.finishDate);
-            this.Controls.Add(this.chart1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.startDate);
             this.Controls.Add(this.menuStrip1);
@@ -337,11 +288,8 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.antiqueDBDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bevételekBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bevételekBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.antiqueDBDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.antiqueDBDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -360,7 +308,6 @@
         private System.Windows.Forms.ToolStripMenuItem súgóToolStripMenuItem;
         private System.Windows.Forms.DateTimePicker startDate;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.DateTimePicker finishDate;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
@@ -372,9 +319,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private AntiqueDBDataSet antiqueDBDataSet;
-        private System.Windows.Forms.BindingSource bevételekBindingSource;
         private AntiqueDBDataSetTableAdapters.BevételekTableAdapter bevételekTableAdapter;
-        private System.Windows.Forms.BindingSource bevételekBindingSource1;
         private System.Windows.Forms.BindingSource antiqueDBDataSetBindingSource;
     }
 }
