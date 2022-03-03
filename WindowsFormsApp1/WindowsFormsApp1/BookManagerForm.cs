@@ -110,10 +110,10 @@ namespace WindowsFormsApp1
             textBox_binding.Text != "" && textBox_pagenumber.Text != "" && textBox_purchase_price.Text != "" && textBox_selling_price.Text != "") {
                 connection.Open();
                 SqlCommand cmd = connection.CreateCommand();
-                SqlCommand cmd_income = connection.CreateCommand();
+                SqlCommand cmd_expend = connection.CreateCommand();
                 SqlCommand cmd_id = connection.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd_income.CommandType = CommandType.Text;
+                cmd_expend.CommandType = CommandType.Text;
                 cmd_id.CommandType = CommandType.Text;
                 cmd.CommandText = "insert into [Könyvek] (ISBN, Szerző, Cím, [Kiadás éve], Műfaj, Kiadó, Állapot, Kötés, Oldalszám, [Beszerzési ár], [Eladási ár]) " +
                     "values ('" + textBox_ISBN.Text + "', '" + textBox_author.Text + "', '" + textBox_title.Text + "','" + int.Parse(textBox_year.Text) + "', " +
@@ -129,10 +129,10 @@ namespace WindowsFormsApp1
                 string id = read["Könyv_id"].ToString();
                 read.Close();
                 string format = "yyyy.MM.dd";
-                cmd_income.CommandText ="insert into [Bevételek] (Könyv_id, Megnevezés, Összeg, Dátum) " +
+                cmd_expend.CommandText ="insert into [Kiadások] (Könyv_id, Megnevezés, Összeg, Dátum) " +
                     "values ('" + int.Parse(id.ToString()) + "', '" + name.ToString() + "', '" + int.Parse(textBox_purchase_price.Text) +
                     "', '" + DateTime.Today.ToString(format) + "')";
-                cmd_income.ExecuteNonQuery();
+                cmd_expend.ExecuteNonQuery();
                 connection.Close();
                 display_data();
                 textClear();

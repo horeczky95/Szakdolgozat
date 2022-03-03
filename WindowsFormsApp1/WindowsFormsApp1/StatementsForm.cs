@@ -70,6 +70,11 @@ namespace WindowsFormsApp1
         {
             display_income_data();
         }
+        private void expend_statements_Click(object sender, EventArgs e)
+        {
+            display_expend_data();
+        }
+
         public void display_income_data()
         {
             connection.Open();
@@ -81,6 +86,22 @@ namespace WindowsFormsApp1
             SqlDataAdapter dataadp = new SqlDataAdapter(cmd);
             dataadp.Fill(dta);
             dataGridView1.DataSource = dta;
+            connection.Close();
+        }
+        public void display_expend_data()
+        {
+            connection.Open();
+
+            SqlCommand cmd = connection.CreateCommand();
+
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select * from [Kiadások]";
+            cmd.ExecuteNonQuery();
+            DataTable dta = new DataTable();
+            SqlDataAdapter dataadp = new SqlDataAdapter(cmd);
+            dataadp.Fill(dta);
+            dataGridView1.DataSource = dta;
+
             connection.Close();
         }
 
