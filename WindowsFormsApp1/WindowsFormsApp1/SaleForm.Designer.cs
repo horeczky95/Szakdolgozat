@@ -39,12 +39,6 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.súgóToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.antiqueDBDataSet = new WindowsFormsApp1.AntiqueDBDataSet();
-            this.könyvekBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.könyvekTableAdapter = new WindowsFormsApp1.AntiqueDBDataSetTableAdapters.KönyvekTableAdapter();
             this.Könyv_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iSBNDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.szerzőDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,10 +48,18 @@
             this.kiadóDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.eladásiÁrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Állapot = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.könyvekBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.antiqueDBDataSet = new WindowsFormsApp1.AntiqueDBDataSet();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.könyvekTableAdapter = new WindowsFormsApp1.AntiqueDBDataSetTableAdapters.KönyvekTableAdapter();
+            this.display_button = new System.Windows.Forms.Button();
+            this.tB_ID = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.antiqueDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.könyvekBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.antiqueDBDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -154,49 +156,7 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(430, 280);
             this.dataGridView1.TabIndex = 1;
-            // 
-            // listView1
-            // 
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(564, 319);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(430, 280);
-            this.listView1.TabIndex = 3;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(794, 615);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 20);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Végösszeg";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(560, 615);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(112, 20);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Részösszeg";
-            // 
-            // antiqueDBDataSet
-            // 
-            this.antiqueDBDataSet.DataSetName = "AntiqueDBDataSet";
-            this.antiqueDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // könyvekBindingSource
-            // 
-            this.könyvekBindingSource.DataMember = "Könyvek";
-            this.könyvekBindingSource.DataSource = this.antiqueDBDataSet;
-            // 
-            // könyvekTableAdapter
-            // 
-            this.könyvekTableAdapter.ClearBeforeFill = true;
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dG_double_Click);
             // 
             // Könyv_id
             // 
@@ -270,11 +230,74 @@
             this.Állapot.Name = "Állapot";
             this.Állapot.Width = 125;
             // 
+            // könyvekBindingSource
+            // 
+            this.könyvekBindingSource.DataMember = "Könyvek";
+            this.könyvekBindingSource.DataSource = this.antiqueDBDataSet;
+            // 
+            // antiqueDBDataSet
+            // 
+            this.antiqueDBDataSet.DataSetName = "AntiqueDBDataSet";
+            this.antiqueDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // listView1
+            // 
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(564, 319);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(430, 280);
+            this.listView1.TabIndex = 3;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.Location = new System.Drawing.Point(794, 615);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(101, 20);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Végösszeg";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.Location = new System.Drawing.Point(560, 615);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(112, 20);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Részösszeg";
+            // 
+            // könyvekTableAdapter
+            // 
+            this.könyvekTableAdapter.ClearBeforeFill = true;
+            // 
+            // display_button
+            // 
+            this.display_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.display_button.Location = new System.Drawing.Point(12, 42);
+            this.display_button.Name = "display_button";
+            this.display_button.Size = new System.Drawing.Size(174, 50);
+            this.display_button.TabIndex = 20;
+            this.display_button.Text = "Könyvek megjelenítése";
+            this.display_button.UseVisualStyleBackColor = true;
+            this.display_button.Click += new System.EventHandler(this.display_button_Click);
+            // 
+            // tB_ID
+            // 
+            this.tB_ID.Location = new System.Drawing.Point(12, 115);
+            this.tB_ID.Name = "tB_ID";
+            this.tB_ID.Size = new System.Drawing.Size(240, 22);
+            this.tB_ID.TabIndex = 21;
+            // 
             // SaleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1006, 653);
+            this.Controls.Add(this.tB_ID);
+            this.Controls.Add(this.display_button);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listView1);
@@ -287,8 +310,8 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.antiqueDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.könyvekBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.antiqueDBDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -321,5 +344,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn kiadóDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn eladásiÁrDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Állapot;
+        private System.Windows.Forms.Button display_button;
+        private System.Windows.Forms.TextBox tB_ID;
     }
 }

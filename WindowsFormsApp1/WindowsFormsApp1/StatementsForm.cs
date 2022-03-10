@@ -80,7 +80,7 @@ namespace WindowsFormsApp1
             connection.Open();
             SqlCommand cmd = connection.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select * from [Bevételek]";
+            cmd.CommandText = "select * from [Revenues]";
             cmd.ExecuteNonQuery();
             DataTable dta = new DataTable();
             SqlDataAdapter dataadp = new SqlDataAdapter(cmd);
@@ -95,7 +95,7 @@ namespace WindowsFormsApp1
             SqlCommand cmd = connection.CreateCommand();
 
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select * from [Kiadások]";
+            cmd.CommandText = "select * from [Costs]";
             cmd.ExecuteNonQuery();
             DataTable dta = new DataTable();
             SqlDataAdapter dataadp = new SqlDataAdapter(cmd);

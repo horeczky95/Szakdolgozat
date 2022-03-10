@@ -67,17 +67,42 @@ namespace WindowsFormsApp1
         //Adatbázis műveletek
         public void display_data()
         {
-            connection.Open();
-            SqlCommand cmd = connection.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select * from [Könyvek]";
-            cmd.ExecuteNonQuery();
-            DataTable dta = new DataTable();
-            SqlDataAdapter dataadp = new SqlDataAdapter(cmd);
-            dataadp.Fill(dta);
-            dataGridView1.DataSource = dta;
-            connection.Close();
+            if (tB_ID.Text != "")
+            {
+                connection.Open();
+                SqlCommand cmd = connection.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "select * from [Könyvek] where [Könyv_id] = '" + tB_ID.Text + "'";
+                cmd.ExecuteNonQuery();
+                DataTable dta = new DataTable();
+                SqlDataAdapter dataadp = new SqlDataAdapter(cmd);
+                dataadp.Fill(dta);
+                dataGridView1.DataSource = dta;
+                connection.Close();
+            } else
+            {
+                connection.Open();
+                SqlCommand cmd = connection.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "select * from [Könyvek]";
+                cmd.ExecuteNonQuery();
+                DataTable dta = new DataTable();
+                SqlDataAdapter dataadp = new SqlDataAdapter(cmd);
+                dataadp.Fill(dta);
+                dataGridView1.DataSource = dta;
+                connection.Close();
+            }
+            
         }
 
+        private void dG_double_Click(object sender, DataGridViewCellEventArgs e)
+        {
+            tB_ID.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+        }
+
+        private void display_button_Click(object sender, EventArgs e)
+        {
+            display_data();
+        }
     }
 }

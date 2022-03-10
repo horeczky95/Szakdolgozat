@@ -104,7 +104,7 @@ namespace WindowsFormsApp1
             connection.Open();
             SqlCommand cmd = connection.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select * from [Könyvek]";
+            cmd.CommandText = "select * from [Books]";
             cmd.ExecuteNonQuery();
             DataTable dta = new DataTable();
             SqlDataAdapter dataadp = new SqlDataAdapter(cmd);

@@ -72,7 +72,7 @@ namespace WindowsFormsApp1
             connection.Open();
             SqlCommand cmd = connection.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select * from [Könyvek]";
+            cmd.CommandText = "select * from [Books]";
             cmd.ExecuteNonQuery();
             DataTable dta = new DataTable();
             SqlDataAdapter dataadp = new SqlDataAdapter(cmd);
@@ -88,26 +88,26 @@ namespace WindowsFormsApp1
 
         public void textClear()
         {
-            textBox_ID.Text = "";
-            textBox_ISBN.Text = "";
-            textBox_author.Text = "";
-            textBox_title.Text = "";
-            textBox_year.Text = "";
-            textBox_genre.Text = "";
-            textBox_publisher.Text = "";
-            textBox_condition.Text = "";
-            textBox_binding.Text = "";
-            textBox_pagenumber.Text = "";
-            textBox_purchase_price.Text = "";
-            textBox_selling_price.Text = "";
+            tB_ID.Text = "";
+            tB_ISBN.Text = "";
+            tB_author.Text = "";
+            tB_title.Text = "";
+            tB_year.Text = "";
+            tB_genre.Text = "";
+            tB_publisher.Text = "";
+            tB_condition.Text = "";
+            tB_binding.Text = "";
+            tB_pagenumber.Text = "";
+            tB_purchase_price.Text = "";
+            tB_selling_price.Text = "";
         }
 
         private void button_new_book_Click(object sender, EventArgs e)
         {
 
-            if (textBox_ISBN.Text != "" && textBox_author.Text != "" && textBox_title.Text != "" &&
-            textBox_year.Text != "" && textBox_genre.Text != "" && textBox_publisher.Text != "" && textBox_condition.Text != "" &&
-            textBox_binding.Text != "" && textBox_pagenumber.Text != "" && textBox_purchase_price.Text != "" && textBox_selling_price.Text != "") {
+            if (tB_ISBN.Text != "" && tB_author.Text != "" && tB_title.Text != "" &&
+            tB_year.Text != "" && tB_genre.Text != "" && tB_publisher.Text != "" && tB_condition.Text != "" &&
+            tB_binding.Text != "" && tB_pagenumber.Text != "" && tB_purchase_price.Text != "" && tB_selling_price.Text != "") {
                 connection.Open();
                 SqlCommand cmd = connection.CreateCommand();
                 SqlCommand cmd_expend = connection.CreateCommand();
@@ -115,22 +115,22 @@ namespace WindowsFormsApp1
                 cmd.CommandType = CommandType.Text;
                 cmd_expend.CommandType = CommandType.Text;
                 cmd_id.CommandType = CommandType.Text;
-                cmd.CommandText = "insert into [Könyvek] (ISBN, Szerző, Cím, [Kiadás éve], Műfaj, Kiadó, Állapot, Kötés, Oldalszám, [Beszerzési ár], [Eladási ár]) " +
-                    "values ('" + textBox_ISBN.Text + "', '" + textBox_author.Text + "', '" + textBox_title.Text + "','" + int.Parse(textBox_year.Text) + "', " +
-                    "'" + textBox_genre.Text + "', '" + textBox_publisher.Text + "', '" + textBox_condition.Text + "', '" + textBox_binding.Text + "', " +
-                    "'" + int.Parse(textBox_pagenumber.Text) + "', '" + int.Parse(textBox_purchase_price.Text) + "', '" + int.Parse(textBox_selling_price.Text) + "')";
+                cmd.CommandText = "insert into [Books] (ISBN, Author, Title, [Release year], Genre, Publisher, Condition, Binding, Pagenumber, [Purchase_Price], [Selling_Price]) " +
+                    "values ('" + tB_ISBN.Text + "', '" + tB_author.Text + "', '" + tB_title.Text + "','" + int.Parse(tB_year.Text) + "', " +
+                    "'" + tB_genre.Text + "', '" + tB_publisher.Text + "', '" + tB_condition.Text + "', '" + tB_binding.Text + "', " +
+                    "'" + int.Parse(tB_pagenumber.Text) + "', '" + int.Parse(tB_purchase_price.Text) + "', '" + int.Parse(tB_selling_price.Text) + "')";
                 cmd.ExecuteNonQuery();
-                string name = textBox_author.Text + ", " + textBox_title.Text;
+                string name = tB_author.Text + ", " + tB_title.Text;
                 SqlDataReader read = (null);
-                cmd_id.CommandText = ("select top(1) * from Könyvek order by Könyv_id desc");
+                cmd_id.CommandText = ("select top(1) * from Books order by Book_ID desc");
                 cmd_id.ExecuteNonQuery();
                 read = cmd_id.ExecuteReader();
                 read.Read();
-                string id = read["Könyv_id"].ToString();
+                string id = read["Book_ID"].ToString();
                 read.Close();
                 string format = "yyyy.MM.dd";
-                cmd_expend.CommandText ="insert into [Kiadások] (Könyv_id, Megnevezés, Összeg, Dátum) " +
-                    "values ('" + int.Parse(id.ToString()) + "', '" + name.ToString() + "', '" + int.Parse(textBox_purchase_price.Text) +
+                cmd_expend.CommandText ="insert into [Costs] (Book_ID, Name, Amount, Date) " +
+                    "values ('" + int.Parse(id.ToString()) + "', '" + name.ToString() + "', '" + int.Parse(tB_purchase_price.Text) +
                     "', '" + DateTime.Today.ToString(format) + "')";
                 cmd_expend.ExecuteNonQuery();
                 connection.Close();
@@ -144,12 +144,12 @@ namespace WindowsFormsApp1
 
         private void button_book_delete_Click(object sender, EventArgs e)
         {
-            if(textBox_ID.Text != "")
+            if(tB_ID.Text != "")
             {
                 connection.Open();
                 SqlCommand cmd = connection.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "delete from [Könyvek] where [Könyv_id] = '" + int.Parse(textBox_ID.Text) + "'";
+                cmd.CommandText = "delete from [Books] where [Book_ID] = '" + int.Parse(tB_ID.Text) + "'";
                 cmd.ExecuteNonQuery();
                 connection.Close();
                 display_data();
@@ -162,37 +162,37 @@ namespace WindowsFormsApp1
 
         private void button_book_modification_Click(object sender, EventArgs e)
         {
-            if (textBox_ID.Text != "")
+            if (tB_ID.Text != "")
             {
                 connection.Open();
                 SqlCommand cmd = connection.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                if (textBox_ISBN.Text != "")
+                if (tB_ISBN.Text != "")
                 {
-                    cmd.CommandText = "update [Könyvek] set ISBN = '"+ textBox_ISBN.Text +"' where Könyv_id = '" + int.Parse(textBox_ID.Text) + "'";
-                } else if (textBox_author.Text != "") {
-                    cmd.CommandText = "update [Könyvek] set Szerző = '" + textBox_author.Text + "' where Könyv_id = '" + int.Parse(textBox_ID.Text) + "'";
-                } else if (textBox_title.Text != "") {
-                    cmd.CommandText = "update [Könyvek] set Cím = '" + textBox_title.Text + "' where Könyv_id = '" + int.Parse(textBox_ID.Text) + "'";
-                } else if (textBox_year.Text != "") {
-                    cmd.CommandText = "update [Könyvek] set [Kiadás éve] = '" + int.Parse(textBox_year.Text) + "' where Könyv_id = '" + int.Parse(textBox_ID.Text) + "'";
-                } else if (textBox_genre.Text != "") {
-                    cmd.CommandText = "update [Könyvek] set  Műfaj= '" + textBox_genre.Text + "' where Könyv_id = '" + int.Parse(textBox_ID.Text) + "'";
-                } else if (textBox_publisher.Text != "") {
-                    cmd.CommandText = "update [Könyvek] set Kiadó= '" + textBox_publisher.Text + "' where Könyv_id = '" + int.Parse(textBox_ID.Text) + "'";
-                } else if (textBox_condition.Text != "") {
-                    cmd.CommandText = "update [Könyvek] set Állapot = '" + textBox_condition.Text+ "' where Könyv_id = '" + int.Parse(textBox_ID.Text) + "'";
-                } else if (textBox_binding.Text != "") {
-                    cmd.CommandText = "update [Könyvek] set Kötés = '" + textBox_binding.Text + "' where Könyv_id = '" + int.Parse(textBox_ID.Text) + "'";
-                } else if (textBox_pagenumber.Text != "") {
-                    cmd.CommandText = "update [Könyvek] set Oldalszám = '" + int.Parse(textBox_pagenumber.Text) + "' where Könyv_id = '" + int.Parse(textBox_ID.Text) + "'";
-                } else if (textBox_purchase_price.Text != "") {
-                    cmd.CommandText = "update [Könyvek] set [Beszerzési ár] = '" + int.Parse(textBox_purchase_price.Text) + "' where Könyv_id = '" + int.Parse(textBox_ID.Text) + "'";
-                } else if (textBox_selling_price.Text != "") {
-                    cmd.CommandText = "update [Könyvek] set [Eladási ár] = '" + int.Parse(textBox_selling_price.Text) + "' where Könyv_id = '" + int.Parse(textBox_ID.Text) + "'";
+                    cmd.CommandText = "update [Books] set ISBN = '"+ tB_ISBN.Text +"' where Book_ID = '" + int.Parse(tB_ID.Text) + "'";
+                } else if (tB_author.Text != "") {
+                    cmd.CommandText = "update [Books] set Author = '" + tB_author.Text + "' where Book_ID = '" + int.Parse(tB_ID.Text) + "'";
+                } else if (tB_title.Text != "") {
+                    cmd.CommandText = "update [Books] set Title = '" + tB_title.Text + "' where Book_ID = '" + int.Parse(tB_ID.Text) + "'";
+                } else if (tB_year.Text != "") {
+                    cmd.CommandText = "update [Books] set [Release year]= '" + int.Parse(tB_year.Text) + "' where Book_ID = '" + int.Parse(tB_ID.Text) + "'";
+                } else if (tB_genre.Text != "") {
+                    cmd.CommandText = "update [Books] set Genre= '" + tB_genre.Text + "' where Book_ID = '" + int.Parse(tB_ID.Text) + "'";
+                } else if (tB_publisher.Text != "") {
+                    cmd.CommandText = "update [Books] set Publisher = '" + tB_publisher.Text + "' where Book_ID = '" + int.Parse(tB_ID.Text) + "'";
+                } else if (tB_condition.Text != "") {
+                    cmd.CommandText = "update [Books] set Condition = '" + tB_condition.Text+ "' where Book_ID = '" + int.Parse(tB_ID.Text) + "'";
+                } else if (tB_binding.Text != "") {
+                    cmd.CommandText = "update [Books] set Binding = '" + tB_binding.Text + "' where Book_ID = '" + int.Parse(tB_ID.Text) + "'";
+                } else if (tB_pagenumber.Text != "") {
+                    cmd.CommandText = "update [Books] set Pagenumber = '" + int.Parse(tB_pagenumber.Text) + "' where Book_ID = '" + int.Parse(tB_ID.Text) + "'";
+                } else if (tB_purchase_price.Text != "") {
+                    cmd.CommandText = "update [Books] set [Purchase_Price] = '" + int.Parse(tB_purchase_price.Text) + "' where Book_ID = '" + int.Parse(tB_ID.Text) + "'";
+                } else if (tB_selling_price.Text != "") {
+                    cmd.CommandText = "update [Books] set [Selling_Price] = '" + int.Parse(tB_selling_price.Text) + "' where Book_ID = '" + int.Parse(tB_ID.Text) + "'";
                 } else {
                     MessageBox.Show("Hiányzó adat!");
-                    cmd.CommandText = "select * from [Könyvek]";
+                    cmd.CommandText = "select * from [Books]";
                 }
                 textClear();
                 cmd.ExecuteNonQuery();
@@ -202,6 +202,11 @@ namespace WindowsFormsApp1
                 MessageBox.Show("Nincs meg adva ID!");
             }
             
+        }
+
+        private void dG_double_Click(object sender, DataGridViewCellEventArgs e)
+        {
+            tB_ID.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
         }
     }
 }

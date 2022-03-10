@@ -49,28 +49,28 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox_ISBN = new System.Windows.Forms.TextBox();
-            this.textBox_author = new System.Windows.Forms.TextBox();
-            this.textBox_title = new System.Windows.Forms.TextBox();
-            this.textBox_year = new System.Windows.Forms.TextBox();
-            this.textBox_genre = new System.Windows.Forms.TextBox();
-            this.textBox_pagenumber = new System.Windows.Forms.TextBox();
-            this.textBox_purchase_price = new System.Windows.Forms.TextBox();
-            this.textBox_selling_price = new System.Windows.Forms.TextBox();
+            this.tB_ISBN = new System.Windows.Forms.TextBox();
+            this.tB_author = new System.Windows.Forms.TextBox();
+            this.tB_title = new System.Windows.Forms.TextBox();
+            this.tB_year = new System.Windows.Forms.TextBox();
+            this.tB_genre = new System.Windows.Forms.TextBox();
+            this.tB_pagenumber = new System.Windows.Forms.TextBox();
+            this.tB_purchase_price = new System.Windows.Forms.TextBox();
+            this.tB_selling_price = new System.Windows.Forms.TextBox();
             this.button_display = new System.Windows.Forms.Button();
             this.button_new_book = new System.Windows.Forms.Button();
             this.button_book_modification = new System.Windows.Forms.Button();
             this.button_book_delete = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox_publisher = new System.Windows.Forms.TextBox();
+            this.tB_publisher = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox_condition = new System.Windows.Forms.TextBox();
-            this.textBox_binding = new System.Windows.Forms.TextBox();
+            this.tB_condition = new System.Windows.Forms.TextBox();
+            this.tB_binding = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.könyvekTableAdapter = new WindowsFormsApp1.AntiqueDBDataSetTableAdapters.KönyvekTableAdapter();
             this.könyvekBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.textBox_ID = new System.Windows.Forms.TextBox();
+            this.tB_ID = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -165,6 +165,7 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(982, 281);
             this.dataGridView1.TabIndex = 27;
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dG_double_Click);
             // 
             // könyvekBindingSource
             // 
@@ -267,85 +268,85 @@
             this.label8.TabIndex = 26;
             this.label8.Text = "Eladási ár";
             // 
-            // textBox_ISBN
+            // tB_ISBN
             // 
-            this.textBox_ISBN.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.tB_ISBN.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox_ISBN.Location = new System.Drawing.Point(346, 38);
-            this.textBox_ISBN.Name = "textBox_ISBN";
-            this.textBox_ISBN.Size = new System.Drawing.Size(240, 22);
-            this.textBox_ISBN.TabIndex = 1;
+            this.tB_ISBN.Location = new System.Drawing.Point(346, 38);
+            this.tB_ISBN.Name = "tB_ISBN";
+            this.tB_ISBN.Size = new System.Drawing.Size(240, 22);
+            this.tB_ISBN.TabIndex = 1;
             // 
-            // textBox_author
+            // tB_author
             // 
-            this.textBox_author.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.tB_author.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox_author.Location = new System.Drawing.Point(346, 68);
-            this.textBox_author.Name = "textBox_author";
-            this.textBox_author.Size = new System.Drawing.Size(240, 22);
-            this.textBox_author.TabIndex = 2;
+            this.tB_author.Location = new System.Drawing.Point(346, 68);
+            this.tB_author.Name = "tB_author";
+            this.tB_author.Size = new System.Drawing.Size(240, 22);
+            this.tB_author.TabIndex = 2;
             // 
-            // textBox_title
+            // tB_title
             // 
-            this.textBox_title.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.tB_title.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox_title.Location = new System.Drawing.Point(346, 98);
-            this.textBox_title.Name = "textBox_title";
-            this.textBox_title.Size = new System.Drawing.Size(240, 22);
-            this.textBox_title.TabIndex = 3;
+            this.tB_title.Location = new System.Drawing.Point(346, 98);
+            this.tB_title.Name = "tB_title";
+            this.tB_title.Size = new System.Drawing.Size(240, 22);
+            this.tB_title.TabIndex = 3;
             // 
-            // textBox_year
+            // tB_year
             // 
-            this.textBox_year.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.tB_year.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox_year.Location = new System.Drawing.Point(346, 128);
-            this.textBox_year.Name = "textBox_year";
-            this.textBox_year.Size = new System.Drawing.Size(240, 22);
-            this.textBox_year.TabIndex = 4;
+            this.tB_year.Location = new System.Drawing.Point(346, 128);
+            this.tB_year.Name = "tB_year";
+            this.tB_year.Size = new System.Drawing.Size(240, 22);
+            this.tB_year.TabIndex = 4;
             // 
-            // textBox_genre
+            // tB_genre
             // 
-            this.textBox_genre.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.tB_genre.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox_genre.Location = new System.Drawing.Point(346, 156);
-            this.textBox_genre.Name = "textBox_genre";
-            this.textBox_genre.Size = new System.Drawing.Size(240, 22);
-            this.textBox_genre.TabIndex = 5;
+            this.tB_genre.Location = new System.Drawing.Point(346, 156);
+            this.tB_genre.Name = "tB_genre";
+            this.tB_genre.Size = new System.Drawing.Size(240, 22);
+            this.tB_genre.TabIndex = 5;
             // 
-            // textBox_pagenumber
+            // tB_pagenumber
             // 
-            this.textBox_pagenumber.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.tB_pagenumber.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox_pagenumber.Location = new System.Drawing.Point(346, 268);
-            this.textBox_pagenumber.Name = "textBox_pagenumber";
-            this.textBox_pagenumber.Size = new System.Drawing.Size(240, 22);
-            this.textBox_pagenumber.TabIndex = 9;
+            this.tB_pagenumber.Location = new System.Drawing.Point(346, 268);
+            this.tB_pagenumber.Name = "tB_pagenumber";
+            this.tB_pagenumber.Size = new System.Drawing.Size(240, 22);
+            this.tB_pagenumber.TabIndex = 9;
             // 
-            // textBox_purchase_price
+            // tB_purchase_price
             // 
-            this.textBox_purchase_price.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.tB_purchase_price.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox_purchase_price.Location = new System.Drawing.Point(346, 298);
-            this.textBox_purchase_price.Name = "textBox_purchase_price";
-            this.textBox_purchase_price.Size = new System.Drawing.Size(240, 22);
-            this.textBox_purchase_price.TabIndex = 10;
+            this.tB_purchase_price.Location = new System.Drawing.Point(346, 298);
+            this.tB_purchase_price.Name = "tB_purchase_price";
+            this.tB_purchase_price.Size = new System.Drawing.Size(240, 22);
+            this.tB_purchase_price.TabIndex = 10;
             // 
-            // textBox_selling_price
+            // tB_selling_price
             // 
-            this.textBox_selling_price.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.tB_selling_price.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox_selling_price.Location = new System.Drawing.Point(346, 328);
-            this.textBox_selling_price.Name = "textBox_selling_price";
-            this.textBox_selling_price.Size = new System.Drawing.Size(240, 22);
-            this.textBox_selling_price.TabIndex = 11;
+            this.tB_selling_price.Location = new System.Drawing.Point(346, 328);
+            this.tB_selling_price.Name = "tB_selling_price";
+            this.tB_selling_price.Size = new System.Drawing.Size(240, 22);
+            this.tB_selling_price.TabIndex = 11;
             // 
             // button_display
             // 
@@ -411,15 +412,15 @@
             this.label6.TabIndex = 19;
             this.label6.Text = "Kiadás éve";
             // 
-            // textBox_publisher
+            // tB_publisher
             // 
-            this.textBox_publisher.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.tB_publisher.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox_publisher.Location = new System.Drawing.Point(346, 184);
-            this.textBox_publisher.Name = "textBox_publisher";
-            this.textBox_publisher.Size = new System.Drawing.Size(240, 22);
-            this.textBox_publisher.TabIndex = 6;
+            this.tB_publisher.Location = new System.Drawing.Point(346, 184);
+            this.tB_publisher.Name = "tB_publisher";
+            this.tB_publisher.Size = new System.Drawing.Size(240, 22);
+            this.tB_publisher.TabIndex = 6;
             // 
             // label9
             // 
@@ -434,25 +435,25 @@
             this.label9.TabIndex = 21;
             this.label9.Text = "Kiadó";
             // 
-            // textBox_condition
+            // tB_condition
             // 
-            this.textBox_condition.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.tB_condition.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox_condition.Location = new System.Drawing.Point(346, 212);
-            this.textBox_condition.Name = "textBox_condition";
-            this.textBox_condition.Size = new System.Drawing.Size(240, 22);
-            this.textBox_condition.TabIndex = 7;
+            this.tB_condition.Location = new System.Drawing.Point(346, 212);
+            this.tB_condition.Name = "tB_condition";
+            this.tB_condition.Size = new System.Drawing.Size(240, 22);
+            this.tB_condition.TabIndex = 7;
             // 
-            // textBox_binding
+            // tB_binding
             // 
-            this.textBox_binding.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.tB_binding.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox_binding.Location = new System.Drawing.Point(346, 240);
-            this.textBox_binding.Name = "textBox_binding";
-            this.textBox_binding.Size = new System.Drawing.Size(240, 22);
-            this.textBox_binding.TabIndex = 8;
+            this.tB_binding.Location = new System.Drawing.Point(346, 240);
+            this.tB_binding.Name = "tB_binding";
+            this.tB_binding.Size = new System.Drawing.Size(240, 22);
+            this.tB_binding.TabIndex = 8;
             // 
             // label10
             // 
@@ -489,12 +490,12 @@
             this.könyvekBindingSource1.DataMember = "Könyvek";
             this.könyvekBindingSource1.DataSource = this.antiqueDBDataSet;
             // 
-            // textBox_ID
+            // tB_ID
             // 
-            this.textBox_ID.Location = new System.Drawing.Point(836, 300);
-            this.textBox_ID.Name = "textBox_ID";
-            this.textBox_ID.Size = new System.Drawing.Size(100, 22);
-            this.textBox_ID.TabIndex = 28;
+            this.tB_ID.Location = new System.Drawing.Point(836, 300);
+            this.tB_ID.Name = "tB_ID";
+            this.tB_ID.Size = new System.Drawing.Size(100, 22);
+            this.tB_ID.TabIndex = 28;
             // 
             // label12
             // 
@@ -517,26 +518,26 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1006, 653);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.textBox_ID);
+            this.Controls.Add(this.tB_ID);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.textBox_binding);
-            this.Controls.Add(this.textBox_condition);
+            this.Controls.Add(this.tB_binding);
+            this.Controls.Add(this.tB_condition);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.textBox_publisher);
+            this.Controls.Add(this.tB_publisher);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.button_book_delete);
             this.Controls.Add(this.button_book_modification);
             this.Controls.Add(this.button_new_book);
             this.Controls.Add(this.button_display);
-            this.Controls.Add(this.textBox_selling_price);
-            this.Controls.Add(this.textBox_purchase_price);
-            this.Controls.Add(this.textBox_pagenumber);
-            this.Controls.Add(this.textBox_genre);
-            this.Controls.Add(this.textBox_year);
-            this.Controls.Add(this.textBox_title);
-            this.Controls.Add(this.textBox_author);
-            this.Controls.Add(this.textBox_ISBN);
+            this.Controls.Add(this.tB_selling_price);
+            this.Controls.Add(this.tB_purchase_price);
+            this.Controls.Add(this.tB_pagenumber);
+            this.Controls.Add(this.tB_genre);
+            this.Controls.Add(this.tB_year);
+            this.Controls.Add(this.tB_title);
+            this.Controls.Add(this.tB_author);
+            this.Controls.Add(this.tB_ISBN);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label5);
@@ -584,30 +585,30 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox_ISBN;
-        private System.Windows.Forms.TextBox textBox_author;
-        private System.Windows.Forms.TextBox textBox_title;
-        private System.Windows.Forms.TextBox textBox_year;
-        private System.Windows.Forms.TextBox textBox_genre;
-        private System.Windows.Forms.TextBox textBox_pagenumber;
-        private System.Windows.Forms.TextBox textBox_purchase_price;
-        private System.Windows.Forms.TextBox textBox_selling_price;
+        private System.Windows.Forms.TextBox tB_ISBN;
+        private System.Windows.Forms.TextBox tB_author;
+        private System.Windows.Forms.TextBox tB_title;
+        private System.Windows.Forms.TextBox tB_year;
+        private System.Windows.Forms.TextBox tB_genre;
+        private System.Windows.Forms.TextBox tB_pagenumber;
+        private System.Windows.Forms.TextBox tB_purchase_price;
+        private System.Windows.Forms.TextBox tB_selling_price;
         private System.Windows.Forms.Button button_display;
         private System.Windows.Forms.Button button_new_book;
         private System.Windows.Forms.Button button_book_modification;
         private System.Windows.Forms.Button button_book_delete;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox_publisher;
+        private System.Windows.Forms.TextBox tB_publisher;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox_condition;
-        private System.Windows.Forms.TextBox textBox_binding;
+        private System.Windows.Forms.TextBox tB_condition;
+        private System.Windows.Forms.TextBox tB_binding;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private AntiqueDBDataSet antiqueDBDataSet;
         private System.Windows.Forms.BindingSource könyvekBindingSource;
         private AntiqueDBDataSetTableAdapters.KönyvekTableAdapter könyvekTableAdapter;
         private System.Windows.Forms.BindingSource könyvekBindingSource1;
-        private System.Windows.Forms.TextBox textBox_ID;
+        private System.Windows.Forms.TextBox tB_ID;
         private System.Windows.Forms.Label label12;
     }
 }

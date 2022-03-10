@@ -50,7 +50,7 @@
             this.tB_address = new System.Windows.Forms.TextBox();
             this.tB_phone = new System.Windows.Forms.TextBox();
             this.tB_email = new System.Windows.Forms.TextBox();
-            this.tB_regCus_ID = new System.Windows.Forms.TextBox();
+            this.tB_ID = new System.Windows.Forms.TextBox();
             this.cB_gender = new System.Windows.Forms.ComboBox();
             this.display_button = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -60,7 +60,6 @@
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.törzsvásárlókBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.antiqueDBDataSet = new WindowsFormsApp1.AntiqueDBDataSet();
-            this.info_button = new System.Windows.Forms.Button();
             this.törzsvásárlókTableAdapter = new WindowsFormsApp1.AntiqueDBDataSetTableAdapters.TörzsvásárlókTableAdapter();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
@@ -246,12 +245,12 @@
             this.tB_email.Size = new System.Drawing.Size(240, 22);
             this.tB_email.TabIndex = 14;
             // 
-            // tB_regCus_ID
+            // tB_ID
             // 
-            this.tB_regCus_ID.Location = new System.Drawing.Point(728, 168);
-            this.tB_regCus_ID.Name = "tB_regCus_ID";
-            this.tB_regCus_ID.Size = new System.Drawing.Size(240, 22);
-            this.tB_regCus_ID.TabIndex = 15;
+            this.tB_ID.Location = new System.Drawing.Point(728, 168);
+            this.tB_ID.Name = "tB_ID";
+            this.tB_ID.Size = new System.Drawing.Size(240, 22);
+            this.tB_ID.TabIndex = 15;
             // 
             // cB_gender
             // 
@@ -317,6 +316,7 @@
             this.dataGridView.RowTemplate.Height = 24;
             this.dataGridView.Size = new System.Drawing.Size(982, 360);
             this.dataGridView.TabIndex = 23;
+            this.dataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dG_double_Click);
             // 
             // törzsvásárlókBindingSource
             // 
@@ -327,16 +327,6 @@
             // 
             this.antiqueDBDataSet.DataSetName = "AntiqueDBDataSet";
             this.antiqueDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // info_button
-            // 
-            this.info_button.Location = new System.Drawing.Point(971, 167);
-            this.info_button.Name = "info_button";
-            this.info_button.Size = new System.Drawing.Size(23, 23);
-            this.info_button.TabIndex = 24;
-            this.info_button.Text = "I";
-            this.info_button.UseVisualStyleBackColor = true;
-            this.info_button.Click += new System.EventHandler(this.info_button_Click);
             // 
             // törzsvásárlókTableAdapter
             // 
@@ -349,14 +339,13 @@
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1006, 653);
-            this.Controls.Add(this.info_button);
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.display_button);
             this.Controls.Add(this.cB_gender);
-            this.Controls.Add(this.tB_regCus_ID);
+            this.Controls.Add(this.tB_ID);
             this.Controls.Add(this.tB_email);
             this.Controls.Add(this.tB_phone);
             this.Controls.Add(this.tB_address);
@@ -407,7 +396,7 @@
         private System.Windows.Forms.TextBox tB_address;
         private System.Windows.Forms.TextBox tB_phone;
         private System.Windows.Forms.TextBox tB_email;
-        private System.Windows.Forms.TextBox tB_regCus_ID;
+        private System.Windows.Forms.TextBox tB_ID;
         private System.Windows.Forms.ComboBox cB_gender;
         private System.Windows.Forms.Button display_button;
         private System.Windows.Forms.Button button1;
@@ -415,7 +404,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.HelpProvider helpProvider1;
         private System.Windows.Forms.DataGridView dataGridView;
-        private System.Windows.Forms.Button info_button;
         private AntiqueDBDataSet antiqueDBDataSet;
         private System.Windows.Forms.BindingSource törzsvásárlókBindingSource;
         private AntiqueDBDataSetTableAdapters.TörzsvásárlókTableAdapter törzsvásárlókTableAdapter;

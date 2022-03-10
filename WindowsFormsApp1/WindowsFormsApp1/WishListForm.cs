@@ -70,7 +70,7 @@ namespace WindowsFormsApp1
             connection.Open();
             SqlCommand cmd = connection.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select * from [Kívánságlista]";
+            cmd.CommandText = "select * from [Wish_List]";
             cmd.ExecuteNonQuery();
             DataTable dta = new DataTable();
             SqlDataAdapter dataadp = new SqlDataAdapter(cmd);
@@ -99,7 +99,7 @@ namespace WindowsFormsApp1
                 connection.Open();
                 SqlCommand cmd = connection.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "insert into [Kívánságlista] (ISBN, Szerző, Cím, [Vásárló neve], [Vásárló címe], [Vásárló telefonszáma], [Vásárló email címe], [Törzsvásárlói kód]) values ('" +
+                cmd.CommandText = "insert into [Wish_List] (ISBN, Author, Title, [Customer_Name], [Customer_Address], [Customer_Phone_Number], [Customer_Email_Address], [Regular_Customer_ID]) values ('" +
                     tB_ISBN.Text + "', '" + tB_author.Text + "', '" + tB_title.Text + "', '" + tB_name.Text + "', '" + tB_add.Text + "', '" + tB_phone.Text + "', '" +
                     tB_email.Text + "', '" + tB_RegCust.Text + "')";
                 cmd.ExecuteNonQuery();
@@ -129,46 +129,46 @@ namespace WindowsFormsApp1
                 cmd.CommandType = CommandType.Text;
                 if (tB_ISBN.Text != "")
                 {
-                    cmd.CommandText = "update [Kívánságlista] set ISBN = '" + tB_ISBN.Text + "' where Kívánság_id = '" + int.Parse(tB_ID.Text) + "'";
+                    cmd.CommandText = "update [Wish_List] set ISBN = '" + tB_ISBN.Text + "' where Wish_ID = '" + int.Parse(tB_ID.Text) + "'";
                     tB_ISBN.Text = "";
                 }
                 else if (tB_author.Text != "")
                 {
-                    cmd.CommandText = "update [Kívánságlista] set Szerző = '" + tB_author.Text + "' where Kívánság_id = '" + int.Parse(tB_ID.Text) + "'";
+                    cmd.CommandText = "update [Wish_List] set Author = '" + tB_author.Text + "' where Wish_ID = '" + int.Parse(tB_ID.Text) + "'";
                     tB_author.Text = "";
                 }
                 else if (tB_title.Text != "")
                 {
-                    cmd.CommandText = "update [Kívánságlista] set Cím = '" + tB_title.Text + "' where Kívánság_id = '" + int.Parse(tB_ID.Text) + "'";
+                    cmd.CommandText = "update [Wish_List] set Title = '" + tB_title.Text + "' where Wish_ID = '" + int.Parse(tB_ID.Text) + "'";
                     tB_title.Text = "";
                 }
                 else if (tB_name.Text != "")
                 {
-                    cmd.CommandText = "update [Kívánságlista] set [Vásárló neve] = '" + tB_name.Text + "' where Kívánság_id = '" + int.Parse(tB_ID.Text) + "'";
+                    cmd.CommandText = "update [Wish_List] set [Customer_Name] = '" + tB_name.Text + "' where Wish_ID = '" + int.Parse(tB_ID.Text) + "'";
                     tB_name.Text = "";
                 }
                 else if (tB_add.Text != "")
                 {
-                    cmd.CommandText = "update [Kívánságlista] set  [Vásárló címe]= '" + tB_add.Text + "' where Kívánság_id = '" + int.Parse(tB_ID.Text) + "'";
+                    cmd.CommandText = "update [Wish_List] set  [Customer_Address]= '" + tB_add.Text + "' where Wish_ID = '" + int.Parse(tB_ID.Text) + "'";
                     tB_add.Text = "";
                 }
                 else if (tB_phone.Text != "")
                 {
-                    cmd.CommandText = "update [Kívánságlista] set [Vásárló telefonszáma]= '" + tB_phone.Text + "' where Kívánság_id = '" + int.Parse(tB_ID.Text) + "'";
+                    cmd.CommandText = "update [Wish_List] set [Customer_Phone_Number]= '" + tB_phone.Text + "' where Wish_ID = '" + int.Parse(tB_ID.Text) + "'";
                     tB_phone.Text = "";
                 }
                 else if (tB_email.Text != "")
                 {
-                    cmd.CommandText = "update [Kívánságlista] set [Vásárló email címe] = '" + tB_email.Text + "' where Kívánság_id = '" + int.Parse(tB_ID.Text) + "'";
+                    cmd.CommandText = "update [Wish_List] set [Customer_Email_Address] = '" + tB_email.Text + "' where Wish_ID = '" + int.Parse(tB_ID.Text) + "'";
                     tB_email.Text = "";
                 }
                 else if (tB_RegCust.Text != "")
                 {
-                    cmd.CommandText = "update [Kívánságlista] set [Törzsvásárlói kód] = '" + tB_RegCust.Text + "' where Kívánság_id = '" + int.Parse(tB_ID.Text) + "'";
+                    cmd.CommandText = "update [Wish_List] set [Regular_Customer_ID] = '" + tB_RegCust.Text + "' where Wish_ID = '" + int.Parse(tB_ID.Text) + "'";
                     tB_RegCust.Text = "";
                 } else {
                     MessageBox.Show("Hiányzó adat!");
-                    cmd.CommandText = "select * from [Kívánságlista]";
+                    cmd.CommandText = "select * from [Wish_List]";
                 }
                 tB_ID.Text = "";
                 cmd.ExecuteNonQuery();
@@ -189,7 +189,7 @@ namespace WindowsFormsApp1
                 connection.Open();
                 SqlCommand cmd = connection.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "delete from [Kívánságlista] where [Kívánság_ID] = '" + int.Parse(tB_ID.Text) + "'";
+                cmd.CommandText = "delete from [Wish_List] where [Wish_ID] = '" + int.Parse(tB_ID.Text) + "'";
                 cmd.ExecuteNonQuery();
                 connection.Close();
                 display_data();
@@ -200,6 +200,11 @@ namespace WindowsFormsApp1
                 MessageBox.Show("Nincs meg adva ID");
             }
         }
-    }
 
+        private void dG_double_Click(object sender, DataGridViewCellEventArgs e)
+        {
+            tB_ID.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+        }
+    
+    }
 }

@@ -68,7 +68,7 @@ namespace WindowsFormsApp1
             connection.Open();
             SqlCommand cmd = connection.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select * from [Törzsvásárlók]";
+            cmd.CommandText = "select * from [Regular_Customers]";
             cmd.ExecuteNonQuery();
             DataTable dta = new DataTable();
             SqlDataAdapter dataadp = new SqlDataAdapter(cmd);
@@ -82,16 +82,6 @@ namespace WindowsFormsApp1
             display_data();
         }
 
-        private void info_button_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Új törzsvásárló regisztrálása esetén a " +
-                "törzsvásárlói kód kialakítása a következők képpen történik.\n" +
-                "-> Első 6 karakter: A vásárló születési dátumának éve és a hónapja számokban megadva.\n" +
-                "-> Ezt követi a nem meghatározás egy karakterrel: hölgy esetén 1, úr esetében 2.\n" +
-                "-> Az utolsó két karakter a vezeték név első két karaktere nagy betűvel írva.\n" +
-                "-> Péládul Kis Pista törzsvásárlói kódja aki 1975. Március 05. született: 1975032KP.\n" +
-                "-> Abban az esetben, ha már létezne hasonló kód az adatbázisban, akkor a születési dátum első számjegyét eggyel meg kell növelnünk.\n");
-        }
 
         private void new_regcust_Click(object sender, EventArgs e)
         {
@@ -118,12 +108,12 @@ namespace WindowsFormsApp1
                 connection.Open();
                 SqlCommand cmd = connection.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "insert into [Törzsvásárlók] (Törzsvásárlói_id, Név, Cím, [Születési dátum], Nem, Telefonszám, [E-mail cím], [Aktuális pontok], [Előző éves pontok]) " +
+                cmd.CommandText = "insert into [Regular_Customers] (Regular_Customer_ID, Name, Address, [Born date], Gender, [Phone_Number], [Email_Address], [Current_Points], [Previous_Year_Points]) " +
                     "values ('" + reg_cust.ToString() + "', '" + tB_name.Text + "', '" + tB_address.Text + "','" + tB_born_date.Text + "', " +
                     "'" + gender.ToString()+ "', '" + tB_phone.Text + "', '" + tB_email.Text + "', '" + 0 + "', " + "'" + 0 + "')";
                 cmd.ExecuteNonQuery();
                 connection.Close();
-                tB_regCus_ID.Text = "";
+                tB_ID.Text = "";
                 tB_name.Text = "";
                 tB_address.Text = "";
                 tB_born_date.Text = "";
@@ -143,7 +133,7 @@ namespace WindowsFormsApp1
             connection.Open();
             SqlCommand cmd = connection.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "delete from [Törzsvásárlók] where Törzsvásárlói_id = '" + tB_regCus_ID.Text +"'";
+            cmd.CommandText = "delete from [Regular_Customers] where Regular_Customer_ID = '" + tB_ID.Text +"'";
             cmd.ExecuteNonQuery();
             connection.Close();
             display_data();
@@ -151,47 +141,47 @@ namespace WindowsFormsApp1
 
         private void regcus_modification_Click(object sender, EventArgs e)
         {
-            if (tB_regCus_ID.Text != "")
+            if (tB_ID.Text != "")
             {
                 connection.Open();
                 SqlCommand cmd = connection.CreateCommand();
                 cmd.CommandType = CommandType.Text;
                 if (tB_name.Text != "")
                 {
-                    cmd.CommandText = "update [Törzsvásárlók] set Név = '" + tB_name.Text + "' where Törzsvásárlói_id = '" + tB_regCus_ID.Text + "'";
+                    cmd.CommandText = "update [Regular_Customers] set Name = '" + tB_name.Text + "' where Regular_Customer_ID = '" + tB_ID.Text + "'";
                     tB_name.Text = "";
                 }
                 else if (tB_address.Text != "")
                 {
-                    cmd.CommandText = "update [Törzsvásárlók] set Cím = '" + tB_address.Text + "' where Törzsvásárlói_id = '" + tB_regCus_ID.Text + "'";
+                    cmd.CommandText = "update [Regular_Customers] set Address = '" + tB_address.Text + "' where Regular_Customer_ID = '" + tB_ID.Text + "'";
                     tB_address.Text = "";
                 }
                 else if (tB_born_date.Text != "")
                 {
-                    cmd.CommandText = "update [Törzsvásárlók] set [Születési dátum] = '" + tB_born_date.Text + "' where Törzsvásárlói_id = '" + tB_regCus_ID.Text + "'";
+                    cmd.CommandText = "update [Regular_Customers] set [Born year] = '" + tB_born_date.Text + "' where Regular_Customer_ID = '" + tB_ID.Text + "'";
                     tB_born_date.Text = "";
                 }
                 else if (cB_gender.Text != "")
                 {
-                    cmd.CommandText = "update [Törzsvásárlók] set Nem = '" + cB_gender.Text + "' where Törzsvásárlói_id = '" + tB_regCus_ID.Text + "'";
+                    cmd.CommandText = "update [Regular_Customers] set Gender = '" + cB_gender.Text + "' where Regular_Customer_ID = '" + tB_ID.Text + "'";
                     cB_gender.Text = "";
                 }
                 else if (tB_phone.Text != "")
                 {
-                    cmd.CommandText = "update [Törzsvásárlók] set  Telefonszám = '" + tB_phone.Text + "' where Törzsvásárlói_id = '" + tB_regCus_ID.Text  + "'";
+                    cmd.CommandText = "update [Regular_Customers] set  [Phone_Number] = '" + tB_phone.Text + "' where Regular_Customer_ID = '" + tB_ID.Text  + "'";
                     tB_phone.Text = "";
                 }
                 else if (tB_email.Text != "")
                 {
-                    cmd.CommandText = "update [Törzsvásárlók] set [Email cím]= '" + tB_email.Text + "' where Törzsvásárlói_id = '" + tB_regCus_ID.Text + "'";
+                    cmd.CommandText = "update [Regular_Customers] set [Email_Address]= '" + tB_email.Text + "' where Regular_Customer_ID = '" + tB_ID.Text + "'";
                     tB_email.Text = "";
                 }
                 else
                 {
                     MessageBox.Show("Hiányzó adat!");
-                    cmd.CommandText = "select * from [Könyvek]";
+                    cmd.CommandText = "select * from [Books]";
                 }
-                tB_regCus_ID.Text = "";
+                tB_ID.Text = "";
                 cmd.ExecuteNonQuery();
                 connection.Close();
                 display_data();
@@ -201,6 +191,10 @@ namespace WindowsFormsApp1
                 MessageBox.Show("Nincs meg adva ID!");
             }
         }
-    }
 
+        private void dG_double_Click(object sender, DataGridViewCellEventArgs e)
+        {
+            tB_ID.Text = dataGridView.CurrentRow.Cells[0].Value.ToString();
+        }
+    }
 }
