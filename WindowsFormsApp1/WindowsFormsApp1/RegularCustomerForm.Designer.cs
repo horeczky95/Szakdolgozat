@@ -38,13 +38,13 @@
             this.statementsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.súgóToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.label_Name = new System.Windows.Forms.Label();
+            this.label_Born_date = new System.Windows.Forms.Label();
+            this.label_Gender = new System.Windows.Forms.Label();
+            this.label_Address = new System.Windows.Forms.Label();
+            this.label_Phone_number = new System.Windows.Forms.Label();
+            this.label_Email_address = new System.Windows.Forms.Label();
+            this.label_RegCust_ID = new System.Windows.Forms.Label();
             this.tB_name = new System.Windows.Forms.TextBox();
             this.tB_born_date = new System.Windows.Forms.TextBox();
             this.tB_address = new System.Windows.Forms.TextBox();
@@ -140,75 +140,75 @@
             this.súgóToolStripMenuItem.Size = new System.Drawing.Size(57, 24);
             this.súgóToolStripMenuItem.Text = "Súgó";
             // 
-            // label1
+            // label_Name
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(50, 40);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 20);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Név";
+            this.label_Name.AutoSize = true;
+            this.label_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_Name.Location = new System.Drawing.Point(50, 40);
+            this.label_Name.Name = "label_Name";
+            this.label_Name.Size = new System.Drawing.Size(38, 20);
+            this.label_Name.TabIndex = 2;
+            this.label_Name.Text = "Név";
             // 
-            // label2
+            // label_Born_date
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(50, 80);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(129, 20);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Születési dátum";
+            this.label_Born_date.AutoSize = true;
+            this.label_Born_date.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_Born_date.Location = new System.Drawing.Point(50, 80);
+            this.label_Born_date.Name = "label_Born_date";
+            this.label_Born_date.Size = new System.Drawing.Size(129, 20);
+            this.label_Born_date.TabIndex = 3;
+            this.label_Born_date.Text = "Születési dátum";
             // 
-            // label3
+            // label_Gender
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(50, 120);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(44, 20);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Nem";
+            this.label_Gender.AutoSize = true;
+            this.label_Gender.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_Gender.Location = new System.Drawing.Point(50, 120);
+            this.label_Gender.Name = "label_Gender";
+            this.label_Gender.Size = new System.Drawing.Size(44, 20);
+            this.label_Gender.TabIndex = 4;
+            this.label_Gender.Text = "Nem";
             // 
-            // label4
+            // label_Address
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(50, 160);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(39, 20);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Cím";
+            this.label_Address.AutoSize = true;
+            this.label_Address.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_Address.Location = new System.Drawing.Point(50, 160);
+            this.label_Address.Name = "label_Address";
+            this.label_Address.Size = new System.Drawing.Size(39, 20);
+            this.label_Address.TabIndex = 5;
+            this.label_Address.Text = "Cím";
             // 
-            // label5
+            // label_Phone_number
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label5.Location = new System.Drawing.Point(50, 200);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(105, 20);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "Telefonszám";
+            this.label_Phone_number.AutoSize = true;
+            this.label_Phone_number.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_Phone_number.Location = new System.Drawing.Point(50, 200);
+            this.label_Phone_number.Name = "label_Phone_number";
+            this.label_Phone_number.Size = new System.Drawing.Size(105, 20);
+            this.label_Phone_number.TabIndex = 6;
+            this.label_Phone_number.Text = "Telefonszám";
             // 
-            // label6
+            // label_Email_address
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label6.Location = new System.Drawing.Point(50, 240);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(83, 20);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "Email cím";
+            this.label_Email_address.AutoSize = true;
+            this.label_Email_address.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_Email_address.Location = new System.Drawing.Point(50, 240);
+            this.label_Email_address.Name = "label_Email_address";
+            this.label_Email_address.Size = new System.Drawing.Size(83, 20);
+            this.label_Email_address.TabIndex = 7;
+            this.label_Email_address.Text = "Email cím";
             // 
-            // label7
+            // label_RegCust_ID
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label7.Location = new System.Drawing.Point(777, 130);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(141, 20);
-            this.label7.TabIndex = 8;
-            this.label7.Text = "Törzsvásrálói kód";
+            this.label_RegCust_ID.AutoSize = true;
+            this.label_RegCust_ID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_RegCust_ID.Location = new System.Drawing.Point(777, 130);
+            this.label_RegCust_ID.Name = "label_RegCust_ID";
+            this.label_RegCust_ID.Size = new System.Drawing.Size(141, 20);
+            this.label_RegCust_ID.TabIndex = 8;
+            this.label_RegCust_ID.Text = "Törzsvásrálói kód";
             // 
             // tB_name
             // 
@@ -351,13 +351,13 @@
             this.Controls.Add(this.tB_address);
             this.Controls.Add(this.tB_born_date);
             this.Controls.Add(this.tB_name);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label_RegCust_ID);
+            this.Controls.Add(this.label_Email_address);
+            this.Controls.Add(this.label_Phone_number);
+            this.Controls.Add(this.label_Address);
+            this.Controls.Add(this.label_Gender);
+            this.Controls.Add(this.label_Born_date);
+            this.Controls.Add(this.label_Name);
             this.Controls.Add(this.menuStrip1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "RegularCustomerForm";
@@ -384,13 +384,13 @@
         private System.Windows.Forms.ToolStripMenuItem statementsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem súgóToolStripMenuItem;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label_Name;
+        private System.Windows.Forms.Label label_Born_date;
+        private System.Windows.Forms.Label label_Gender;
+        private System.Windows.Forms.Label label_Address;
+        private System.Windows.Forms.Label label_Phone_number;
+        private System.Windows.Forms.Label label_Email_address;
+        private System.Windows.Forms.Label label_RegCust_ID;
         private System.Windows.Forms.TextBox tB_name;
         private System.Windows.Forms.TextBox tB_born_date;
         private System.Windows.Forms.TextBox tB_address;

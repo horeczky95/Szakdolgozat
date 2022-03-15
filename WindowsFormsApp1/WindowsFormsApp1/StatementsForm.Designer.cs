@@ -46,8 +46,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.label_Start = new System.Windows.Forms.Label();
+            this.label_Finish = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -198,25 +198,25 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.expend_statements_Click);
             // 
-            // label1
+            // label_Start
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(20, 70);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 20);
-            this.label1.TabIndex = 25;
-            this.label1.Text = "Kezdő dátum";
+            this.label_Start.AutoSize = true;
+            this.label_Start.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_Start.Location = new System.Drawing.Point(20, 70);
+            this.label_Start.Name = "label_Start";
+            this.label_Start.Size = new System.Drawing.Size(107, 20);
+            this.label_Start.TabIndex = 25;
+            this.label_Start.Text = "Kezdő dátum";
             // 
-            // label2
+            // label_Finish
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(20, 160);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(126, 20);
-            this.label2.TabIndex = 26;
-            this.label2.Text = "Befejező dátum";
+            this.label_Finish.AutoSize = true;
+            this.label_Finish.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_Finish.Location = new System.Drawing.Point(20, 160);
+            this.label_Finish.Name = "label_Finish";
+            this.label_Finish.Size = new System.Drawing.Size(126, 20);
+            this.label_Finish.TabIndex = 26;
+            this.label_Finish.Text = "Befejező dátum";
             // 
             // label3
             // 
@@ -271,8 +271,8 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label_Finish);
+            this.Controls.Add(this.label_Start);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -313,8 +313,8 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label_Start;
+        private System.Windows.Forms.Label label_Finish;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;

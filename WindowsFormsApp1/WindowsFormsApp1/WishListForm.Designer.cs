@@ -42,14 +42,14 @@
             this.kívánságlistaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.antiqueDBDataSet = new WindowsFormsApp1.AntiqueDBDataSet();
             this.kívánságlistaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.label_ISBN = new System.Windows.Forms.Label();
+            this.label_Author = new System.Windows.Forms.Label();
+            this.label_Title = new System.Windows.Forms.Label();
+            this.label_RegCust_ID = new System.Windows.Forms.Label();
+            this.label_Name = new System.Windows.Forms.Label();
+            this.label_Address = new System.Windows.Forms.Label();
+            this.label_Phone_number = new System.Windows.Forms.Label();
+            this.label_Email_address = new System.Windows.Forms.Label();
             this.tB_ISBN = new System.Windows.Forms.TextBox();
             this.tB_author = new System.Windows.Forms.TextBox();
             this.tB_title = new System.Windows.Forms.TextBox();
@@ -64,7 +64,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.kívánságlistaTableAdapter = new WindowsFormsApp1.AntiqueDBDataSetTableAdapters.KívánságlistaTableAdapter();
             this.tB_ID = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
+            this.label_Wish_ID = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kívánságlistaBindingSource1)).BeginInit();
@@ -80,7 +80,7 @@
             this.súgóToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1006, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1006, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -94,7 +94,7 @@
             this.statementsToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.fájlToolStripMenuItem.Name = "fájlToolStripMenuItem";
-            this.fájlToolStripMenuItem.Size = new System.Drawing.Size(45, 24);
+            this.fájlToolStripMenuItem.Size = new System.Drawing.Size(45, 26);
             this.fájlToolStripMenuItem.Text = "Fájl";
             // 
             // mainMenuToolStripMenuItem
@@ -142,7 +142,7 @@
             // súgóToolStripMenuItem
             // 
             this.súgóToolStripMenuItem.Name = "súgóToolStripMenuItem";
-            this.súgóToolStripMenuItem.Size = new System.Drawing.Size(57, 24);
+            this.súgóToolStripMenuItem.Size = new System.Drawing.Size(57, 26);
             this.súgóToolStripMenuItem.Text = "Súgó";
             // 
             // dataGridView1
@@ -171,85 +171,85 @@
             this.kívánságlistaBindingSource.DataMember = "Kívánságlista";
             this.kívánságlistaBindingSource.DataSource = this.antiqueDBDataSet;
             // 
-            // label1
+            // label_ISBN
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(40, 50);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 20);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "ISBN szám";
+            this.label_ISBN.AutoSize = true;
+            this.label_ISBN.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_ISBN.Location = new System.Drawing.Point(40, 50);
+            this.label_ISBN.Name = "label_ISBN";
+            this.label_ISBN.Size = new System.Drawing.Size(53, 20);
+            this.label_ISBN.TabIndex = 9;
+            this.label_ISBN.Text = "ISBN ";
             // 
-            // label2
+            // label_Author
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(40, 80);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 20);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Szerző";
+            this.label_Author.AutoSize = true;
+            this.label_Author.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_Author.Location = new System.Drawing.Point(40, 80);
+            this.label_Author.Name = "label_Author";
+            this.label_Author.Size = new System.Drawing.Size(62, 20);
+            this.label_Author.TabIndex = 10;
+            this.label_Author.Text = "Szerző";
             // 
-            // label3
+            // label_Title
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(40, 110);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(39, 20);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "Cím";
+            this.label_Title.AutoSize = true;
+            this.label_Title.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_Title.Location = new System.Drawing.Point(40, 110);
+            this.label_Title.Name = "label_Title";
+            this.label_Title.Size = new System.Drawing.Size(39, 20);
+            this.label_Title.TabIndex = 11;
+            this.label_Title.Text = "Cím";
             // 
-            // label4
+            // label_RegCust_ID
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(40, 140);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(207, 20);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "Törzsvásárlói kód (ha van)";
+            this.label_RegCust_ID.AutoSize = true;
+            this.label_RegCust_ID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_RegCust_ID.Location = new System.Drawing.Point(40, 140);
+            this.label_RegCust_ID.Name = "label_RegCust_ID";
+            this.label_RegCust_ID.Size = new System.Drawing.Size(207, 20);
+            this.label_RegCust_ID.TabIndex = 12;
+            this.label_RegCust_ID.Text = "Törzsvásárlói kód (ha van)";
             // 
-            // label5
+            // label_Name
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label5.Location = new System.Drawing.Point(40, 170);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(106, 20);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "Vásárló neve";
+            this.label_Name.AutoSize = true;
+            this.label_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_Name.Location = new System.Drawing.Point(40, 170);
+            this.label_Name.Name = "label_Name";
+            this.label_Name.Size = new System.Drawing.Size(106, 20);
+            this.label_Name.TabIndex = 13;
+            this.label_Name.Text = "Vásárló neve";
             // 
-            // label6
+            // label_Address
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label6.Location = new System.Drawing.Point(40, 200);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(107, 20);
-            this.label6.TabIndex = 14;
-            this.label6.Text = "Vásárló címe";
+            this.label_Address.AutoSize = true;
+            this.label_Address.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_Address.Location = new System.Drawing.Point(40, 200);
+            this.label_Address.Name = "label_Address";
+            this.label_Address.Size = new System.Drawing.Size(107, 20);
+            this.label_Address.TabIndex = 14;
+            this.label_Address.Text = "Vásárló címe";
             // 
-            // label7
+            // label_Phone_number
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label7.Location = new System.Drawing.Point(40, 230);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(171, 20);
-            this.label7.TabIndex = 15;
-            this.label7.Text = "Vásárló telefonszáma";
+            this.label_Phone_number.AutoSize = true;
+            this.label_Phone_number.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_Phone_number.Location = new System.Drawing.Point(40, 230);
+            this.label_Phone_number.Name = "label_Phone_number";
+            this.label_Phone_number.Size = new System.Drawing.Size(171, 20);
+            this.label_Phone_number.TabIndex = 15;
+            this.label_Phone_number.Text = "Vásárló telefonszáma";
             // 
-            // label8
+            // label_Email_address
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label8.Location = new System.Drawing.Point(40, 260);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(152, 20);
-            this.label8.TabIndex = 16;
-            this.label8.Text = "Vásárló email címe";
+            this.label_Email_address.AutoSize = true;
+            this.label_Email_address.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_Email_address.Location = new System.Drawing.Point(40, 260);
+            this.label_Email_address.Name = "label_Email_address";
+            this.label_Email_address.Size = new System.Drawing.Size(152, 20);
+            this.label_Email_address.TabIndex = 16;
+            this.label_Email_address.Text = "Vásárló email címe";
             // 
             // tB_ISBN
             // 
@@ -362,22 +362,22 @@
             this.tB_ID.Size = new System.Drawing.Size(63, 22);
             this.tB_ID.TabIndex = 22;
             // 
-            // label9
+            // label_Wish_ID
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label9.Location = new System.Drawing.Point(765, 260);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(99, 20);
-            this.label9.TabIndex = 23;
-            this.label9.Text = "Kívánság ID";
+            this.label_Wish_ID.AutoSize = true;
+            this.label_Wish_ID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_Wish_ID.Location = new System.Drawing.Point(765, 260);
+            this.label_Wish_ID.Name = "label_Wish_ID";
+            this.label_Wish_ID.Size = new System.Drawing.Size(99, 20);
+            this.label_Wish_ID.TabIndex = 23;
+            this.label_Wish_ID.Text = "Kívánság ID";
             // 
             // WishListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1006, 653);
-            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label_Wish_ID);
             this.Controls.Add(this.tB_ID);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -391,14 +391,14 @@
             this.Controls.Add(this.tB_title);
             this.Controls.Add(this.tB_author);
             this.Controls.Add(this.tB_ISBN);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label_Email_address);
+            this.Controls.Add(this.label_Phone_number);
+            this.Controls.Add(this.label_Address);
+            this.Controls.Add(this.label_Name);
+            this.Controls.Add(this.label_RegCust_ID);
+            this.Controls.Add(this.label_Title);
+            this.Controls.Add(this.label_Author);
+            this.Controls.Add(this.label_ISBN);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -429,14 +429,14 @@
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem súgóToolStripMenuItem;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label_ISBN;
+        private System.Windows.Forms.Label label_Author;
+        private System.Windows.Forms.Label label_Title;
+        private System.Windows.Forms.Label label_RegCust_ID;
+        private System.Windows.Forms.Label label_Name;
+        private System.Windows.Forms.Label label_Address;
+        private System.Windows.Forms.Label label_Phone_number;
+        private System.Windows.Forms.Label label_Email_address;
         private System.Windows.Forms.TextBox tB_ISBN;
         private System.Windows.Forms.TextBox tB_author;
         private System.Windows.Forms.TextBox tB_title;
@@ -454,6 +454,6 @@
         private AntiqueDBDataSetTableAdapters.KívánságlistaTableAdapter kívánságlistaTableAdapter;
         private System.Windows.Forms.BindingSource kívánságlistaBindingSource1;
         private System.Windows.Forms.TextBox tB_ID;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label_Wish_ID;
     }
 }

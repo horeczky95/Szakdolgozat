@@ -42,13 +42,13 @@
             this.könyvekBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.antiqueDBDataSet = new WindowsFormsApp1.AntiqueDBDataSet();
             this.antiqueDBDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.label_ISBN = new System.Windows.Forms.Label();
+            this.label_Author = new System.Windows.Forms.Label();
+            this.label_Title = new System.Windows.Forms.Label();
+            this.label_Genre = new System.Windows.Forms.Label();
+            this.label_Pagenumber = new System.Windows.Forms.Label();
+            this.label_Purchase_price = new System.Windows.Forms.Label();
+            this.label_Selling_price = new System.Windows.Forms.Label();
             this.tB_ISBN = new System.Windows.Forms.TextBox();
             this.tB_author = new System.Windows.Forms.TextBox();
             this.tB_title = new System.Windows.Forms.TextBox();
@@ -61,17 +61,17 @@
             this.button_new_book = new System.Windows.Forms.Button();
             this.button_book_modification = new System.Windows.Forms.Button();
             this.button_book_delete = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
+            this.label_Year = new System.Windows.Forms.Label();
             this.tB_publisher = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
+            this.label_Publisher = new System.Windows.Forms.Label();
             this.tB_condition = new System.Windows.Forms.TextBox();
             this.tB_binding = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.label_Binding = new System.Windows.Forms.Label();
+            this.label_Condition = new System.Windows.Forms.Label();
             this.könyvekTableAdapter = new WindowsFormsApp1.AntiqueDBDataSetTableAdapters.KönyvekTableAdapter();
             this.könyvekBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tB_ID = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
+            this.label_BookID = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.könyvekBindingSource)).BeginInit();
@@ -177,96 +177,96 @@
             this.antiqueDBDataSet.DataSetName = "AntiqueDBDataSet";
             this.antiqueDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // label1
+            // label_ISBN
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.label_ISBN.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(50, 40);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 20);
-            this.label1.TabIndex = 16;
-            this.label1.Text = "ISBN szám";
+            this.label_ISBN.AutoSize = true;
+            this.label_ISBN.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_ISBN.Location = new System.Drawing.Point(50, 40);
+            this.label_ISBN.Name = "label_ISBN";
+            this.label_ISBN.Size = new System.Drawing.Size(94, 20);
+            this.label_ISBN.TabIndex = 16;
+            this.label_ISBN.Text = "ISBN szám";
             // 
-            // label2
+            // label_Author
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.label_Author.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(50, 70);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 20);
-            this.label2.TabIndex = 17;
-            this.label2.Text = "Szerző";
+            this.label_Author.AutoSize = true;
+            this.label_Author.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_Author.Location = new System.Drawing.Point(50, 70);
+            this.label_Author.Name = "label_Author";
+            this.label_Author.Size = new System.Drawing.Size(62, 20);
+            this.label_Author.TabIndex = 17;
+            this.label_Author.Text = "Szerző";
             // 
-            // label3
+            // label_Title
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.label_Title.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(50, 100);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(39, 20);
-            this.label3.TabIndex = 18;
-            this.label3.Text = "Cím";
+            this.label_Title.AutoSize = true;
+            this.label_Title.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_Title.Location = new System.Drawing.Point(50, 100);
+            this.label_Title.Name = "label_Title";
+            this.label_Title.Size = new System.Drawing.Size(39, 20);
+            this.label_Title.TabIndex = 18;
+            this.label_Title.Text = "Cím";
             // 
-            // label4
+            // label_Genre
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.label_Genre.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(50, 158);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(50, 20);
-            this.label4.TabIndex = 20;
-            this.label4.Text = "Műfaj";
+            this.label_Genre.AutoSize = true;
+            this.label_Genre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_Genre.Location = new System.Drawing.Point(50, 158);
+            this.label_Genre.Name = "label_Genre";
+            this.label_Genre.Size = new System.Drawing.Size(50, 20);
+            this.label_Genre.TabIndex = 20;
+            this.label_Genre.Text = "Műfaj";
             // 
-            // label5
+            // label_Pagenumber
             // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.label_Pagenumber.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label5.Location = new System.Drawing.Point(50, 270);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(89, 20);
-            this.label5.TabIndex = 24;
-            this.label5.Text = "Oldalszám";
+            this.label_Pagenumber.AutoSize = true;
+            this.label_Pagenumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_Pagenumber.Location = new System.Drawing.Point(50, 270);
+            this.label_Pagenumber.Name = "label_Pagenumber";
+            this.label_Pagenumber.Size = new System.Drawing.Size(89, 20);
+            this.label_Pagenumber.TabIndex = 24;
+            this.label_Pagenumber.Text = "Oldalszám";
             // 
-            // label7
+            // label_Purchase_price
             // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.label_Purchase_price.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label7.Location = new System.Drawing.Point(50, 300);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(114, 20);
-            this.label7.TabIndex = 25;
-            this.label7.Text = "Beszerzési ár";
+            this.label_Purchase_price.AutoSize = true;
+            this.label_Purchase_price.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_Purchase_price.Location = new System.Drawing.Point(50, 300);
+            this.label_Purchase_price.Name = "label_Purchase_price";
+            this.label_Purchase_price.Size = new System.Drawing.Size(114, 20);
+            this.label_Purchase_price.TabIndex = 25;
+            this.label_Purchase_price.Text = "Beszerzési ár";
             // 
-            // label8
+            // label_Selling_price
             // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.label_Selling_price.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label8.Location = new System.Drawing.Point(50, 330);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(84, 20);
-            this.label8.TabIndex = 26;
-            this.label8.Text = "Eladási ár";
+            this.label_Selling_price.AutoSize = true;
+            this.label_Selling_price.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_Selling_price.Location = new System.Drawing.Point(50, 330);
+            this.label_Selling_price.Name = "label_Selling_price";
+            this.label_Selling_price.Size = new System.Drawing.Size(84, 20);
+            this.label_Selling_price.TabIndex = 26;
+            this.label_Selling_price.Text = "Eladási ár";
             // 
             // tB_ISBN
             // 
@@ -399,18 +399,18 @@
             this.button_book_delete.UseVisualStyleBackColor = true;
             this.button_book_delete.Click += new System.EventHandler(this.button_book_delete_Click);
             // 
-            // label6
+            // label_Year
             // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.label_Year.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label6.Location = new System.Drawing.Point(50, 130);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(91, 20);
-            this.label6.TabIndex = 19;
-            this.label6.Text = "Kiadás éve";
+            this.label_Year.AutoSize = true;
+            this.label_Year.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_Year.Location = new System.Drawing.Point(50, 130);
+            this.label_Year.Name = "label_Year";
+            this.label_Year.Size = new System.Drawing.Size(91, 20);
+            this.label_Year.TabIndex = 19;
+            this.label_Year.Text = "Kiadás éve";
             // 
             // tB_publisher
             // 
@@ -422,18 +422,18 @@
             this.tB_publisher.Size = new System.Drawing.Size(240, 22);
             this.tB_publisher.TabIndex = 6;
             // 
-            // label9
+            // label_Publisher
             // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.label_Publisher.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label9.Location = new System.Drawing.Point(50, 186);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(51, 20);
-            this.label9.TabIndex = 21;
-            this.label9.Text = "Kiadó";
+            this.label_Publisher.AutoSize = true;
+            this.label_Publisher.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_Publisher.Location = new System.Drawing.Point(50, 186);
+            this.label_Publisher.Name = "label_Publisher";
+            this.label_Publisher.Size = new System.Drawing.Size(51, 20);
+            this.label_Publisher.TabIndex = 21;
+            this.label_Publisher.Text = "Kiadó";
             // 
             // tB_condition
             // 
@@ -455,31 +455,31 @@
             this.tB_binding.Size = new System.Drawing.Size(240, 22);
             this.tB_binding.TabIndex = 8;
             // 
-            // label10
+            // label_Binding
             // 
-            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.label_Binding.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label10.Location = new System.Drawing.Point(50, 242);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(52, 20);
-            this.label10.TabIndex = 23;
-            this.label10.Text = "Kötés";
+            this.label_Binding.AutoSize = true;
+            this.label_Binding.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_Binding.Location = new System.Drawing.Point(50, 242);
+            this.label_Binding.Name = "label_Binding";
+            this.label_Binding.Size = new System.Drawing.Size(52, 20);
+            this.label_Binding.TabIndex = 23;
+            this.label_Binding.Text = "Kötés";
             // 
-            // label11
+            // label_Condition
             // 
-            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.label_Condition.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label11.Location = new System.Drawing.Point(50, 214);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(60, 20);
-            this.label11.TabIndex = 22;
-            this.label11.Text = "Állapot";
+            this.label_Condition.AutoSize = true;
+            this.label_Condition.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_Condition.Location = new System.Drawing.Point(50, 214);
+            this.label_Condition.Name = "label_Condition";
+            this.label_Condition.Size = new System.Drawing.Size(60, 20);
+            this.label_Condition.TabIndex = 22;
+            this.label_Condition.Text = "Állapot";
             // 
             // könyvekTableAdapter
             // 
@@ -497,18 +497,18 @@
             this.tB_ID.Size = new System.Drawing.Size(100, 22);
             this.tB_ID.TabIndex = 28;
             // 
-            // label12
+            // label_BookID
             // 
-            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.label_BookID.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label12.Location = new System.Drawing.Point(722, 300);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(76, 20);
-            this.label12.TabIndex = 29;
-            this.label12.Text = "Könyv ID";
+            this.label_BookID.AutoSize = true;
+            this.label_BookID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_BookID.Location = new System.Drawing.Point(722, 300);
+            this.label_BookID.Name = "label_BookID";
+            this.label_BookID.Size = new System.Drawing.Size(76, 20);
+            this.label_BookID.TabIndex = 29;
+            this.label_BookID.Text = "Könyv ID";
             // 
             // BookManagerForm
             // 
@@ -517,15 +517,15 @@
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1006, 653);
-            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label_BookID);
             this.Controls.Add(this.tB_ID);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label_Condition);
+            this.Controls.Add(this.label_Binding);
             this.Controls.Add(this.tB_binding);
             this.Controls.Add(this.tB_condition);
-            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label_Publisher);
             this.Controls.Add(this.tB_publisher);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label_Year);
             this.Controls.Add(this.button_book_delete);
             this.Controls.Add(this.button_book_modification);
             this.Controls.Add(this.button_new_book);
@@ -538,13 +538,13 @@
             this.Controls.Add(this.tB_title);
             this.Controls.Add(this.tB_author);
             this.Controls.Add(this.tB_ISBN);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label_Selling_price);
+            this.Controls.Add(this.label_Purchase_price);
+            this.Controls.Add(this.label_Pagenumber);
+            this.Controls.Add(this.label_Genre);
+            this.Controls.Add(this.label_Title);
+            this.Controls.Add(this.label_Author);
+            this.Controls.Add(this.label_ISBN);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -578,13 +578,13 @@
         private System.Windows.Forms.ToolStripMenuItem súgóToolStripMenuItem;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource antiqueDBDataSetBindingSource;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label_ISBN;
+        private System.Windows.Forms.Label label_Author;
+        private System.Windows.Forms.Label label_Title;
+        private System.Windows.Forms.Label label_Genre;
+        private System.Windows.Forms.Label label_Pagenumber;
+        private System.Windows.Forms.Label label_Purchase_price;
+        private System.Windows.Forms.Label label_Selling_price;
         private System.Windows.Forms.TextBox tB_ISBN;
         private System.Windows.Forms.TextBox tB_author;
         private System.Windows.Forms.TextBox tB_title;
@@ -597,18 +597,18 @@
         private System.Windows.Forms.Button button_new_book;
         private System.Windows.Forms.Button button_book_modification;
         private System.Windows.Forms.Button button_book_delete;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label_Year;
         private System.Windows.Forms.TextBox tB_publisher;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label_Publisher;
         private System.Windows.Forms.TextBox tB_condition;
         private System.Windows.Forms.TextBox tB_binding;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label_Binding;
+        private System.Windows.Forms.Label label_Condition;
         private AntiqueDBDataSet antiqueDBDataSet;
         private System.Windows.Forms.BindingSource könyvekBindingSource;
         private AntiqueDBDataSetTableAdapters.KönyvekTableAdapter könyvekTableAdapter;
         private System.Windows.Forms.BindingSource könyvekBindingSource1;
         private System.Windows.Forms.TextBox tB_ID;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label_BookID;
     }
 }
