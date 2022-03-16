@@ -42,6 +42,11 @@
             this.könyvekBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.antiqueDBDataSet = new WindowsFormsApp1.AntiqueDBDataSet();
             this.listView1 = new System.Windows.Forms.ListView();
+            this.ID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ISBN = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Author = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Title = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Sellin_Price = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.könyvekTableAdapter = new WindowsFormsApp1.AntiqueDBDataSetTableAdapters.KönyvekTableAdapter();
@@ -61,13 +66,15 @@
             this.display_button = new System.Windows.Forms.Button();
             this.tB_id = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.ISBN = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.ID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Author = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Title = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Sellin_Price = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label_subtotal = new System.Windows.Forms.Label();
             this.label_total = new System.Windows.Forms.Label();
+            this.delete_button = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.tB_RegCust_ID = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.könyvekBindingSource)).BeginInit();
@@ -184,6 +191,31 @@
             this.listView1.TabIndex = 3;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.list_click);
+            // 
+            // ID
+            // 
+            this.ID.Text = "ID";
+            this.ID.Width = 50;
+            // 
+            // ISBN
+            // 
+            this.ISBN.Text = "ISBN";
+            // 
+            // Author
+            // 
+            this.Author.Text = "Szerző";
+            this.Author.Width = 120;
+            // 
+            // Title
+            // 
+            this.Title.Text = "Cím";
+            this.Title.Width = 120;
+            // 
+            // Sellin_Price
+            // 
+            this.Sellin_Price.Text = "Eladási ár";
+            this.Sellin_Price.Width = 50;
             // 
             // label1
             // 
@@ -222,7 +254,7 @@
             // 
             // add_button
             // 
-            this.add_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.add_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.add_button.Location = new System.Drawing.Point(192, 42);
             this.add_button.Name = "add_button";
             this.add_button.Size = new System.Drawing.Size(174, 50);
@@ -240,10 +272,11 @@
             this.sale_button.TabIndex = 23;
             this.sale_button.Text = "Eladás";
             this.sale_button.UseVisualStyleBackColor = true;
+            this.sale_button.Click += new System.EventHandler(this.sale_button_Click);
             // 
             // tB_ISBN
             // 
-            this.tB_ISBN.Location = new System.Drawing.Point(192, 115);
+            this.tB_ISBN.Location = new System.Drawing.Point(306, 115);
             this.tB_ISBN.Name = "tB_ISBN";
             this.tB_ISBN.Size = new System.Drawing.Size(240, 22);
             this.tB_ISBN.TabIndex = 21;
@@ -318,7 +351,7 @@
             this.tB_genre.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tB_genre.Location = new System.Drawing.Point(192, 231);
+            this.tB_genre.Location = new System.Drawing.Point(306, 231);
             this.tB_genre.Name = "tB_genre";
             this.tB_genre.Size = new System.Drawing.Size(240, 22);
             this.tB_genre.TabIndex = 32;
@@ -328,7 +361,7 @@
             this.tB_year.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tB_year.Location = new System.Drawing.Point(192, 203);
+            this.tB_year.Location = new System.Drawing.Point(306, 203);
             this.tB_year.Name = "tB_year";
             this.tB_year.Size = new System.Drawing.Size(240, 22);
             this.tB_year.TabIndex = 31;
@@ -338,7 +371,7 @@
             this.tB_title.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tB_title.Location = new System.Drawing.Point(192, 173);
+            this.tB_title.Location = new System.Drawing.Point(306, 173);
             this.tB_title.Name = "tB_title";
             this.tB_title.Size = new System.Drawing.Size(240, 22);
             this.tB_title.TabIndex = 30;
@@ -348,7 +381,7 @@
             this.tB_author.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tB_author.Location = new System.Drawing.Point(192, 143);
+            this.tB_author.Location = new System.Drawing.Point(306, 143);
             this.tB_author.Name = "tB_author";
             this.tB_author.Size = new System.Drawing.Size(240, 22);
             this.tB_author.TabIndex = 29;
@@ -369,7 +402,7 @@
             this.tB_id.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tB_id.Location = new System.Drawing.Point(192, 259);
+            this.tB_id.Location = new System.Drawing.Point(306, 259);
             this.tB_id.Name = "tB_id";
             this.tB_id.Size = new System.Drawing.Size(240, 22);
             this.tB_id.TabIndex = 34;
@@ -386,30 +419,6 @@
             this.label8.Size = new System.Drawing.Size(83, 20);
             this.label8.TabIndex = 35;
             this.label8.Text = "Azonosító";
-            // 
-            // ISBN
-            // 
-            this.ISBN.Text = "ISBN";
-            // 
-            // ID
-            // 
-            this.ID.Text = "ID";
-            this.ID.Width = 50;
-            // 
-            // Author
-            // 
-            this.Author.Text = "Szerző";
-            this.Author.Width = 120;
-            // 
-            // Title
-            // 
-            this.Title.Text = "Cím";
-            this.Title.Width = 120;
-            // 
-            // Sellin_Price
-            // 
-            this.Sellin_Price.Text = "Eladási ár";
-            this.Sellin_Price.Width = 50;
             // 
             // label_subtotal
             // 
@@ -431,11 +440,89 @@
             this.label_total.TabIndex = 37;
             this.label_total.Text = "0 Ft";
             // 
+            // delete_button
+            // 
+            this.delete_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.delete_button.Location = new System.Drawing.Point(12, 295);
+            this.delete_button.Name = "delete_button";
+            this.delete_button.Size = new System.Drawing.Size(174, 50);
+            this.delete_button.TabIndex = 38;
+            this.delete_button.Text = "Törlés a kosárból";
+            this.delete_button.UseVisualStyleBackColor = true;
+            this.delete_button.Click += new System.EventHandler(this.delete_button_Click);
+            // 
+            // label9
+            // 
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label9.Location = new System.Drawing.Point(12, 360);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(141, 20);
+            this.label9.TabIndex = 39;
+            this.label9.Text = "Törzsvásárlói kód";
+            // 
+            // tB_RegCust_ID
+            // 
+            this.tB_RegCust_ID.Location = new System.Drawing.Point(306, 358);
+            this.tB_RegCust_ID.Name = "tB_RegCust_ID";
+            this.tB_RegCust_ID.Size = new System.Drawing.Size(240, 22);
+            this.tB_RegCust_ID.TabIndex = 40;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(306, 388);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(240, 22);
+            this.textBox1.TabIndex = 42;
+            // 
+            // label10
+            // 
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label10.Location = new System.Drawing.Point(12, 390);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(183, 20);
+            this.label10.TabIndex = 41;
+            this.label10.Text = "Könyv kedvezmény (%)";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(306, 416);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(240, 22);
+            this.textBox2.TabIndex = 44;
+            // 
+            // label11
+            // 
+            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label11.Location = new System.Drawing.Point(12, 418);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(221, 20);
+            this.label11.TabIndex = 43;
+            this.label11.Text = "Végösszeg kedvezmény (%)";
+            // 
             // SaleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1006, 653);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.tB_RegCust_ID);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.delete_button);
             this.Controls.Add(this.tB_author);
             this.Controls.Add(this.label_total);
             this.Controls.Add(this.label_subtotal);
@@ -514,5 +601,12 @@
         private System.Windows.Forms.ColumnHeader Sellin_Price;
         private System.Windows.Forms.Label label_subtotal;
         private System.Windows.Forms.Label label_total;
+        private System.Windows.Forms.Button delete_button;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox tB_RegCust_ID;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label11;
     }
 }
