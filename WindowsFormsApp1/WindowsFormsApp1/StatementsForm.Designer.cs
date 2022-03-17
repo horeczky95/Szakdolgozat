@@ -44,8 +44,8 @@
             this.antiqueDBDataSet = new WindowsFormsApp1.AntiqueDBDataSet();
             this.finishDate = new System.Windows.Forms.DateTimePicker();
             this.full_statments_button = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.income_statements_button = new System.Windows.Forms.Button();
+            this.expend_statements_button = new System.Windows.Forms.Button();
             this.label_Start = new System.Windows.Forms.Label();
             this.label_Finish = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -53,6 +53,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.bevételekTableAdapter = new WindowsFormsApp1.AntiqueDBDataSetTableAdapters.BevételekTableAdapter();
+            this.label_revenue = new System.Windows.Forms.Label();
+            this.label_cost = new System.Windows.Forms.Label();
+            this.label_profit = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.antiqueDBDataSetBindingSource)).BeginInit();
@@ -67,7 +70,7 @@
             this.súgóToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1006, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1082, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -175,28 +178,29 @@
             this.full_statments_button.TabIndex = 22;
             this.full_statments_button.Text = "Teljes kimutatás";
             this.full_statments_button.UseVisualStyleBackColor = true;
+            this.full_statments_button.Click += new System.EventHandler(this.full_statments_button_Click);
             // 
-            // button2
+            // income_statements_button
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button2.Location = new System.Drawing.Point(450, 120);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(174, 50);
-            this.button2.TabIndex = 23;
-            this.button2.Text = "Bevételek kimutatása";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.income_statements_Click);
+            this.income_statements_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.income_statements_button.Location = new System.Drawing.Point(450, 120);
+            this.income_statements_button.Name = "income_statements_button";
+            this.income_statements_button.Size = new System.Drawing.Size(174, 50);
+            this.income_statements_button.TabIndex = 23;
+            this.income_statements_button.Text = "Bevételek kimutatása";
+            this.income_statements_button.UseVisualStyleBackColor = true;
+            this.income_statements_button.Click += new System.EventHandler(this.income_statements_Click);
             // 
-            // button3
+            // expend_statements_button
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button3.Location = new System.Drawing.Point(450, 200);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(174, 50);
-            this.button3.TabIndex = 24;
-            this.button3.Text = "Kiadások kimutatása";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.expend_statements_Click);
+            this.expend_statements_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.expend_statements_button.Location = new System.Drawing.Point(450, 200);
+            this.expend_statements_button.Name = "expend_statements_button";
+            this.expend_statements_button.Size = new System.Drawing.Size(174, 50);
+            this.expend_statements_button.TabIndex = 24;
+            this.expend_statements_button.Text = "Kiadások kimutatása";
+            this.expend_statements_button.UseVisualStyleBackColor = true;
+            this.expend_statements_button.Click += new System.EventHandler(this.expend_statements_Click);
             // 
             // label_Start
             // 
@@ -262,19 +266,52 @@
             // 
             this.bevételekTableAdapter.ClearBeforeFill = true;
             // 
+            // label_revenue
+            // 
+            this.label_revenue.AutoSize = true;
+            this.label_revenue.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_revenue.Location = new System.Drawing.Point(864, 99);
+            this.label_revenue.Name = "label_revenue";
+            this.label_revenue.Size = new System.Drawing.Size(42, 20);
+            this.label_revenue.TabIndex = 37;
+            this.label_revenue.Text = "0 Ft";
+            // 
+            // label_cost
+            // 
+            this.label_cost.AutoSize = true;
+            this.label_cost.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_cost.Location = new System.Drawing.Point(864, 150);
+            this.label_cost.Name = "label_cost";
+            this.label_cost.Size = new System.Drawing.Size(42, 20);
+            this.label_cost.TabIndex = 38;
+            this.label_cost.Text = "0 Ft";
+            // 
+            // label_profit
+            // 
+            this.label_profit.AutoSize = true;
+            this.label_profit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_profit.Location = new System.Drawing.Point(864, 200);
+            this.label_profit.Name = "label_profit";
+            this.label_profit.Size = new System.Drawing.Size(42, 20);
+            this.label_profit.TabIndex = 39;
+            this.label_profit.Text = "0 Ft";
+            // 
             // StatementsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1006, 653);
+            this.ClientSize = new System.Drawing.Size(1082, 653);
+            this.Controls.Add(this.label_profit);
+            this.Controls.Add(this.label_cost);
+            this.Controls.Add(this.label_revenue);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label_Finish);
             this.Controls.Add(this.label_Start);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.expend_statements_button);
+            this.Controls.Add(this.income_statements_button);
             this.Controls.Add(this.full_statments_button);
             this.Controls.Add(this.finishDate);
             this.Controls.Add(this.dataGridView1);
@@ -284,7 +321,6 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "StatementsForm";
             this.Text = "Kimutatások";
-            this.Load += new System.EventHandler(this.StatementsForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -310,8 +346,8 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DateTimePicker finishDate;
         private System.Windows.Forms.Button full_statments_button;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button income_statements_button;
+        private System.Windows.Forms.Button expend_statements_button;
         private System.Windows.Forms.Label label_Start;
         private System.Windows.Forms.Label label_Finish;
         private System.Windows.Forms.Label label3;
@@ -321,5 +357,8 @@
         private AntiqueDBDataSet antiqueDBDataSet;
         private AntiqueDBDataSetTableAdapters.BevételekTableAdapter bevételekTableAdapter;
         private System.Windows.Forms.BindingSource antiqueDBDataSetBindingSource;
+        private System.Windows.Forms.Label label_revenue;
+        private System.Windows.Forms.Label label_cost;
+        private System.Windows.Forms.Label label_profit;
     }
 }

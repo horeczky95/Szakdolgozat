@@ -588,7 +588,6 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "SaleForm";
             this.Text = "Eladás";
-            this.Load += new System.EventHandler(this.SaleForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

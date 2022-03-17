@@ -57,19 +57,13 @@ namespace WindowsFormsApp1
         {
             Application.Exit();
         }
-
-        private void StatementsForm_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'antiqueDBDataSet.Bevételek' table. You can move, or remove it, as needed.
-        }
-
-       
-
+    
         //Adatbázis műveletek
         private void income_statements_Click(object sender, EventArgs e)
         {
             display_income_data();
         }
+
         private void expend_statements_Click(object sender, EventArgs e)
         {
             display_expend_data();
@@ -79,6 +73,7 @@ namespace WindowsFormsApp1
         {
             connection.Open();
             SqlCommand cmd = connection.CreateCommand();
+            SqlCommand cmd2 = connection.CreateCommand();
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = "select * from [Revenues]";
             cmd.ExecuteNonQuery();
@@ -86,6 +81,14 @@ namespace WindowsFormsApp1
             SqlDataAdapter dataadp = new SqlDataAdapter(cmd);
             dataadp.Fill(dta);
             dataGridView1.DataSource = dta;
+            SqlDataReader read = (null);
+            cmd2.CommandText = ("select sum(Amount) as Amount from Revenues");
+            cmd2.ExecuteNonQuery();
+            read = cmd2.ExecuteReader();
+            read.Read();
+            float all_revenues = float.Parse(read["Amount"].ToString());
+            label_revenue.Text = all_revenues.ToString() + " Ft";
+            read.Close();
             connection.Close();
         }
         public void display_expend_data()
@@ -93,7 +96,7 @@ namespace WindowsFormsApp1
             connection.Open();
 
             SqlCommand cmd = connection.CreateCommand();
-
+            SqlCommand cmd2 = connection.CreateCommand();
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = "select * from [Costs]";
             cmd.ExecuteNonQuery();
@@ -101,18 +104,49 @@ namespace WindowsFormsApp1
             SqlDataAdapter dataadp = new SqlDataAdapter(cmd);
             dataadp.Fill(dta);
             dataGridView1.DataSource = dta;
+            SqlDataReader read = (null);
+            cmd2.CommandText = ("select sum(Amount) as Amount from Costs");
+            cmd2.ExecuteNonQuery();
+            read = cmd2.ExecuteReader();
+            read.Read();
+            float all_costs = float.Parse(read["Amount"].ToString());
+            label_cost.Text = all_costs.ToString() + " Ft";
+            read.Close();
 
             connection.Close();
         }
 
-        /*private void full_statments_button_Click(object sender, EventArgs e)
+        private void full_statments_button_Click(object sender, EventArgs e)
         {
             connection.Open();
+            SqlCommand cmd = connection.CreateCommand();
+            SqlCommand cmd2 = connection.CreateCommand();
+            SqlDataReader read = (null);
+            cmd.CommandText = ("select sum(Amount) as Amount from Revenues");
+            cmd.ExecuteNonQuery();
+            read = cmd.ExecuteReader();
+            read.Read();
+            float all_revenues = float.Parse(read["Amount"].ToString());
+            label_revenue.Text = all_revenues.ToString() + " Ft";
+            read.Close();
+            SqlDataReader read1 = (null);
+            cmd2.CommandText = ("select sum(Amount) as Amount from Costs");
+            cmd2.ExecuteNonQuery();
+            read1 = cmd2.ExecuteReader();
+            read1.Read();
+            float all_costs = float.Parse(read1["Amount"].ToString());
+            label_cost.Text = all_costs.ToString() + " Ft";
+            read.Close();
+            float all_profit = all_revenues - all_costs;
+            label_profit.Text = all_profit.ToString() + " Ft";
+            connection.Close();
+
+            /*connection.Open();
 
             SqlCommand cmd = connection.CreateCommand();
 
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select distinct * from [Costs], [Revenues]";
+            cmd.CommandText = "select distinct * from [Costs] [Revenues]";
             cmd.ExecuteNonQuery();
 
             DataTable dta = new DataTable();
@@ -120,7 +154,7 @@ namespace WindowsFormsApp1
             dataadp.Fill(dta);
             dataGridView1.DataSource = dta;
 
-            connection.Close();
-        }*/
+            connection.Close();*/
+        }
     }
 }

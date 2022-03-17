@@ -405,7 +405,6 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "WishListForm";
             this.Text = "Kívánság lista";
-            this.Load += new System.EventHandler(this.WishListForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

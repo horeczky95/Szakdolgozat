@@ -82,7 +82,6 @@ namespace WindowsFormsApp1
             display_data();
         }
 
-
         private void new_regcust_Click(object sender, EventArgs e)
         {
             

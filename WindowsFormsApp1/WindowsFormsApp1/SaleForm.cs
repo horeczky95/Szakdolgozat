@@ -68,11 +68,6 @@ namespace WindowsFormsApp1
             Application.Exit();
         }
 
-        private void SaleForm_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'antiqueDBDataSet.Books' table. You can move, or remove it, as needed.
-        }
-
         //Adatbázis műveletek
         public void display_data()
         {
@@ -180,7 +175,6 @@ namespace WindowsFormsApp1
         {
             display_data();
         }
-
 
         private void add_button_Click(object sender, EventArgs e)
         {

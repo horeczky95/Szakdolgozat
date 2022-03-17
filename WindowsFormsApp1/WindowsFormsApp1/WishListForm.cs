@@ -60,10 +60,6 @@ namespace WindowsFormsApp1
             Application.Exit();
         }
 
-        private void WishListForm_Load(object sender, EventArgs e)
-        {
-        }
-
         //Adatbázis műveletek
         public void display_data()
         {
