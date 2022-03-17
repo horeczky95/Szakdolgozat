@@ -71,10 +71,12 @@
             this.delete_button = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.tB_RegCust_ID = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tB_book_sale = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tB_total_sale = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.könyvekBindingSource)).BeginInit();
@@ -89,7 +91,7 @@
             this.súgóToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1006, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1006, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -471,12 +473,12 @@
             this.tB_RegCust_ID.Size = new System.Drawing.Size(240, 22);
             this.tB_RegCust_ID.TabIndex = 40;
             // 
-            // textBox1
+            // tB_book_sale
             // 
-            this.textBox1.Location = new System.Drawing.Point(306, 388);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(240, 22);
-            this.textBox1.TabIndex = 42;
+            this.tB_book_sale.Location = new System.Drawing.Point(306, 388);
+            this.tB_book_sale.Name = "tB_book_sale";
+            this.tB_book_sale.Size = new System.Drawing.Size(240, 22);
+            this.tB_book_sale.TabIndex = 42;
             // 
             // label10
             // 
@@ -491,12 +493,12 @@
             this.label10.TabIndex = 41;
             this.label10.Text = "Könyv kedvezmény (%)";
             // 
-            // textBox2
+            // tB_total_sale
             // 
-            this.textBox2.Location = new System.Drawing.Point(306, 416);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(240, 22);
-            this.textBox2.TabIndex = 44;
+            this.tB_total_sale.Location = new System.Drawing.Point(306, 416);
+            this.tB_total_sale.Name = "tB_total_sale";
+            this.tB_total_sale.Size = new System.Drawing.Size(240, 22);
+            this.tB_total_sale.TabIndex = 44;
             // 
             // label11
             // 
@@ -511,14 +513,38 @@
             this.label11.TabIndex = 43;
             this.label11.Text = "Végösszeg kedvezmény (%)";
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button1.Location = new System.Drawing.Point(12, 455);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(174, 50);
+            this.button1.TabIndex = 45;
+            this.button1.Text = "Könyvkedvezmény";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.book_sale_Click);
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button2.Location = new System.Drawing.Point(12, 511);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(174, 50);
+            this.button2.TabIndex = 46;
+            this.button2.Text = "Végösszeg kedvezmény";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.total_sale_Click);
+            // 
             // SaleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1006, 653);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.tB_total_sale);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tB_book_sale);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.tB_RegCust_ID);
             this.Controls.Add(this.label9);
@@ -604,9 +630,11 @@
         private System.Windows.Forms.Button delete_button;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox tB_RegCust_ID;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tB_book_sale;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tB_total_sale;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
