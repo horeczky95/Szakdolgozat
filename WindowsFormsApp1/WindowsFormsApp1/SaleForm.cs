@@ -248,6 +248,7 @@ namespace WindowsFormsApp1
             read.Close();
             listView1.Items.Remove(listView1.SelectedItems[0]);
             connection.Close();
+            tB_id.Clear();
         }
 
         private void sale_button_Click(object sender, EventArgs e)
@@ -291,6 +292,7 @@ namespace WindowsFormsApp1
             label_subtotal.Text = "0 Ft";
             label_total.Text = "0 Ft";
             display_data();
+            tB_RegCust_ID.Clear();
         }
 
         private void book_sale_Click(object sender, EventArgs e)
@@ -313,26 +315,58 @@ namespace WindowsFormsApp1
                 label_total.Text = total.ToString() + " Ft";
                 read.Close();
                 connection.Close();
+                tB_book_sale.Clear();
+                tB_id.Clear();
             }
         }
 
         private void total_sale_Click(object sender, EventArgs e)
         {
-            float salenumber = float.Parse(tB_total_sale.Text) / 100;
+            if (tB_total_sale.Text != "")
+            {
+                float salenumber = float.Parse(tB_total_sale.Text) / 100;
+                connection.Open();
+                SqlCommand cmd_price = connection.CreateCommand();
+                SqlDataReader read = (null);
+                cmd_price.CommandText = ("select * from Books where Book_ID = '" + tB_id.Text + "'");
+                cmd_price.ExecuteNonQuery();
+                read = cmd_price.ExecuteReader();
+                read.Read();
+                subtotal = float.Parse(read["Selling_Price"].ToString());
+                float sale = total * salenumber;
+                total -= sale;
+                label_subtotal.Text = subtotal.ToString() + " Ft";
+                label_total.Text = total.ToString() + " Ft";
+                read.Close();
+                connection.Close();
+                tB_total_sale.Clear();
+                tB_id.Clear();
+            }
+        }
+
+        private void reg_cust_point_button_Click(object sender, EventArgs e)
+        {
             connection.Open();
-            SqlCommand cmd_price = connection.CreateCommand();
-            SqlDataReader read = (null);
-            cmd_price.CommandText = ("select * from Books where Book_ID = '" + tB_id.Text + "'");
-            cmd_price.ExecuteNonQuery();
-            read = cmd_price.ExecuteReader();
-            read.Read();
-            subtotal = float.Parse(read["Selling_Price"].ToString());
-            float sale = total * salenumber;
-            total -= sale;
-            label_subtotal.Text = subtotal.ToString() + " Ft";
-            label_total.Text = total.ToString() + " Ft";
-            read.Close();
+            if(tB_RegCust_ID.Text != "")
+            {
+                SqlCommand cmd_regcust = connection.CreateCommand();
+                cmd_regcust.CommandType = CommandType.Text;
+                SqlDataReader read = (null);
+                cmd_regcust.CommandText = ("select * from Regular_Customers where Regular_Customer_ID = '" + tB_RegCust_ID.Text + "'");
+                cmd_regcust.ExecuteNonQuery();
+                read = cmd_regcust.ExecuteReader();
+                read.Read();
+                float current_points = float.Parse(read["Current_Points"].ToString());
+                read.Close();
+                total -= current_points;
+                SqlCommand cmd_regcust2 = connection.CreateCommand();
+                cmd_regcust2.CommandType = CommandType.Text;
+                cmd_regcust2.CommandText = "update [Regular_Customers] set Current_Points = '" + 0 + "' where Regular_Customer_ID = '" + tB_RegCust_ID.Text + "'";
+                cmd_regcust2.ExecuteNonQuery();
+                label_total.Text = total.ToString() + " Ft";
+            }
             connection.Close();
+            tB_RegCust_ID.Clear();
         }
     }
 }

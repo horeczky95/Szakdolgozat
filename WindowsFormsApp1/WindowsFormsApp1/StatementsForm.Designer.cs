@@ -43,7 +43,7 @@
             this.antiqueDBDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.antiqueDBDataSet = new WindowsFormsApp1.AntiqueDBDataSet();
             this.finishDate = new System.Windows.Forms.DateTimePicker();
-            this.button1 = new System.Windows.Forms.Button();
+            this.full_statments_button = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.label_Start = new System.Windows.Forms.Label();
@@ -142,7 +142,7 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 281);
+            this.dataGridView1.Location = new System.Drawing.Point(24, 256);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
@@ -166,15 +166,15 @@
             this.finishDate.Size = new System.Drawing.Size(233, 22);
             this.finishDate.TabIndex = 4;
             // 
-            // button1
+            // full_statments_button
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button1.Location = new System.Drawing.Point(450, 40);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(174, 50);
-            this.button1.TabIndex = 22;
-            this.button1.Text = "Teljes kimutatás";
-            this.button1.UseVisualStyleBackColor = true;
+            this.full_statments_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.full_statments_button.Location = new System.Drawing.Point(450, 40);
+            this.full_statments_button.Name = "full_statments_button";
+            this.full_statments_button.Size = new System.Drawing.Size(174, 50);
+            this.full_statments_button.TabIndex = 22;
+            this.full_statments_button.Text = "Teljes kimutatás";
+            this.full_statments_button.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
@@ -275,7 +275,7 @@
             this.Controls.Add(this.label_Start);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.full_statments_button);
             this.Controls.Add(this.finishDate);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.startDate);
@@ -284,7 +284,6 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "StatementsForm";
             this.Text = "Kimutatások";
-            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             this.Load += new System.EventHandler(this.StatementsForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -310,7 +309,7 @@
         private System.Windows.Forms.DateTimePicker startDate;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DateTimePicker finishDate;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button full_statments_button;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label_Start;

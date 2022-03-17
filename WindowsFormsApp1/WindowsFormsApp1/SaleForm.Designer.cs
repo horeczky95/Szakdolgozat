@@ -77,6 +77,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.reg_cust_point_button = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.könyvekBindingSource)).BeginInit();
@@ -516,7 +517,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button1.Location = new System.Drawing.Point(12, 455);
+            this.button1.Location = new System.Drawing.Point(192, 444);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(174, 50);
             this.button1.TabIndex = 45;
@@ -527,7 +528,7 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button2.Location = new System.Drawing.Point(12, 511);
+            this.button2.Location = new System.Drawing.Point(372, 444);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(174, 50);
             this.button2.TabIndex = 46;
@@ -535,11 +536,23 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.total_sale_Click);
             // 
+            // reg_cust_point_button
+            // 
+            this.reg_cust_point_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.reg_cust_point_button.Location = new System.Drawing.Point(12, 444);
+            this.reg_cust_point_button.Name = "reg_cust_point_button";
+            this.reg_cust_point_button.Size = new System.Drawing.Size(174, 50);
+            this.reg_cust_point_button.TabIndex = 47;
+            this.reg_cust_point_button.Text = "Törzsvásálói pontok jóváírása";
+            this.reg_cust_point_button.UseVisualStyleBackColor = true;
+            this.reg_cust_point_button.Click += new System.EventHandler(this.reg_cust_point_button_Click);
+            // 
             // SaleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1006, 653);
+            this.Controls.Add(this.reg_cust_point_button);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.tB_total_sale);
@@ -636,5 +649,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button reg_cust_point_button;
     }
 }

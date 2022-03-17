@@ -105,5 +105,22 @@ namespace WindowsFormsApp1
             connection.Close();
         }
 
+        /*private void full_statments_button_Click(object sender, EventArgs e)
+        {
+            connection.Open();
+
+            SqlCommand cmd = connection.CreateCommand();
+
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select distinct * from [Costs], [Revenues]";
+            cmd.ExecuteNonQuery();
+
+            DataTable dta = new DataTable();
+            SqlDataAdapter dataadp = new SqlDataAdapter(cmd);
+            dataadp.Fill(dta);
+            dataGridView1.DataSource = dta;
+
+            connection.Close();
+        }*/
     }
 }
