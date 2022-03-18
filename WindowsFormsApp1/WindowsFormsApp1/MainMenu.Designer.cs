@@ -61,7 +61,7 @@
             this.súgóToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1006, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1482, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -132,7 +132,7 @@
             this.regular_customer.AutoSize = true;
             this.regular_customer.BackColor = System.Drawing.Color.Salmon;
             this.regular_customer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.regular_customer.Location = new System.Drawing.Point(30, 160);
+            this.regular_customer.Location = new System.Drawing.Point(30, 235);
             this.regular_customer.Name = "regular_customer";
             this.regular_customer.Size = new System.Drawing.Size(230, 100);
             this.regular_customer.TabIndex = 2;
@@ -146,7 +146,7 @@
             this.book_manager.AutoSize = true;
             this.book_manager.BackColor = System.Drawing.Color.Salmon;
             this.book_manager.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.book_manager.Location = new System.Drawing.Point(30, 280);
+            this.book_manager.Location = new System.Drawing.Point(30, 355);
             this.book_manager.Name = "book_manager";
             this.book_manager.Size = new System.Drawing.Size(230, 100);
             this.book_manager.TabIndex = 3;
@@ -160,7 +160,7 @@
             this.statments.AutoSize = true;
             this.statments.BackColor = System.Drawing.Color.Salmon;
             this.statments.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.statments.Location = new System.Drawing.Point(30, 520);
+            this.statments.Location = new System.Drawing.Point(30, 595);
             this.statments.Name = "statments";
             this.statments.Size = new System.Drawing.Size(230, 100);
             this.statments.TabIndex = 5;
@@ -174,7 +174,7 @@
             this.wish_list.AutoSize = true;
             this.wish_list.BackColor = System.Drawing.Color.Salmon;
             this.wish_list.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.wish_list.Location = new System.Drawing.Point(30, 400);
+            this.wish_list.Location = new System.Drawing.Point(30, 475);
             this.wish_list.Name = "wish_list";
             this.wish_list.Size = new System.Drawing.Size(230, 100);
             this.wish_list.TabIndex = 4;
@@ -188,7 +188,7 @@
             this.sale.AutoSize = true;
             this.sale.BackColor = System.Drawing.Color.Salmon;
             this.sale.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.sale.Location = new System.Drawing.Point(30, 40);
+            this.sale.Location = new System.Drawing.Point(30, 115);
             this.sale.Name = "sale";
             this.sale.Size = new System.Drawing.Size(230, 100);
             this.sale.TabIndex = 1;
@@ -206,7 +206,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(698, 599);
+            this.dataGridView1.Size = new System.Drawing.Size(1174, 749);
             this.dataGridView1.TabIndex = 6;
             // 
             // könyvekBindingSource
@@ -229,7 +229,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(1006, 653);
+            this.ClientSize = new System.Drawing.Size(1482, 803);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.sale);
             this.Controls.Add(this.statments);

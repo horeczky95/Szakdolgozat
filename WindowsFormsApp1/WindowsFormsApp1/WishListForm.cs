@@ -13,11 +13,12 @@ namespace WindowsFormsApp1
 {
     public partial class WishListForm : Form
     {
-        SqlConnection connection = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename=D:\Suli\GitHub\WindowsFormsApp1\WindowsFormsApp1\AntiqueDB.mdf;Integrated Security = True");
+        SqlConnection connection = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename=D:\Suli\Szakdolgozat\WindowsFormsApp1\WindowsFormsApp1\AntiqueDB.mdf;Integrated Security = True");
         public WishListForm()
         {
             InitializeComponent();
             display_data();
+            display_regcust();
         }
 
         private void mainMenuToolStripMenuItem_Click(object sender, EventArgs e)
@@ -75,6 +76,20 @@ namespace WindowsFormsApp1
             connection.Close();
         }
 
+        public void display_regcust()
+        {
+            connection.Open();
+            SqlCommand cmd = connection.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select [Regular_Customer_ID] as Azonosító, [Name] as Név from [Regular_Customers]";
+            cmd.ExecuteNonQuery();
+            DataTable dta = new DataTable();
+            SqlDataAdapter dataadp = new SqlDataAdapter(cmd);
+            dataadp.Fill(dta);
+            dataGridView2.DataSource = dta;
+            connection.Close();
+        }
+
         private void wishList_display_click(object sender, EventArgs e)
         {
             display_data();
@@ -85,9 +100,9 @@ namespace WindowsFormsApp1
             if (tB_ISBN.Text != "" && tB_author.Text != "" && tB_title.Text != "" && tB_name.Text != "" &&
                 tB_add.Text != "" && tB_phone.Text != "" && tB_email.Text != "") {
                 string regCust;
-                if (tB_RegCust.Text != "")
+                if (tB_RegCust_ID.Text != "")
                 {
-                  regCust  = tB_RegCust.Text;
+                  regCust  = tB_RegCust_ID.Text;
                 } else
                 {
                     regCust = "Nem törzsvásárló!";
@@ -97,7 +112,7 @@ namespace WindowsFormsApp1
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = "insert into [Wish_List] (ISBN, Author, Title, [Customer_Name], [Customer_Address], [Customer_Phone_Number], [Customer_Email_Address], [Regular_Customer_ID]) values ('" +
                     tB_ISBN.Text + "', '" + tB_author.Text + "', '" + tB_title.Text + "', '" + tB_name.Text + "', '" + tB_add.Text + "', '" + tB_phone.Text + "', '" +
-                    tB_email.Text + "', '" + tB_RegCust.Text + "')";
+                    tB_email.Text + "', '" + tB_RegCust_ID.Text + "')";
                 cmd.ExecuteNonQuery();
                 connection.Close();
                 display_data();
@@ -112,7 +127,7 @@ namespace WindowsFormsApp1
             tB_add.Text = "";
             tB_phone.Text = "";
             tB_email.Text = "";
-            tB_RegCust.Text = "";
+            tB_RegCust_ID.Text = "";
         }
 
         private void wish_modification_Click(object sender, EventArgs e)
@@ -158,10 +173,10 @@ namespace WindowsFormsApp1
                     cmd.CommandText = "update [Wish_List] set [Customer_Email_Address] = '" + tB_email.Text + "' where Wish_ID = '" + int.Parse(tB_ID.Text) + "'";
                     tB_email.Text = "";
                 }
-                else if (tB_RegCust.Text != "")
+                else if (tB_RegCust_ID.Text != "")
                 {
-                    cmd.CommandText = "update [Wish_List] set [Regular_Customer_ID] = '" + tB_RegCust.Text + "' where Wish_ID = '" + int.Parse(tB_ID.Text) + "'";
-                    tB_RegCust.Text = "";
+                    cmd.CommandText = "update [Wish_List] set [Regular_Customer_ID] = '" + tB_RegCust_ID.Text + "' where Wish_ID = '" + int.Parse(tB_ID.Text) + "'";
+                    tB_RegCust_ID.Text = "";
                 } else {
                     MessageBox.Show("Hiányzó adat!");
                     cmd.CommandText = "select * from [Wish_List]";
@@ -201,6 +216,10 @@ namespace WindowsFormsApp1
         {
             tB_ID.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
         }
-    
+
+        private void reg_cust_db_double_click(object sender, DataGridViewCellEventArgs e)
+        {
+            tB_RegCust_ID.Text = dataGridView2.CurrentRow.Cells[0].Value.ToString();
+        }
     }
 }

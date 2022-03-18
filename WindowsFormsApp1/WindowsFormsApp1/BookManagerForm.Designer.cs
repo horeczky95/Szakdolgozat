@@ -88,7 +88,7 @@
             this.súgóToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1006, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1482, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -159,11 +159,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 360);
+            this.dataGridView1.Location = new System.Drawing.Point(439, 40);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(982, 281);
+            this.dataGridView1.Size = new System.Drawing.Size(1031, 751);
             this.dataGridView1.TabIndex = 27;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dG_double_Click);
             // 
@@ -184,7 +184,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label_ISBN.AutoSize = true;
             this.label_ISBN.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label_ISBN.Location = new System.Drawing.Point(50, 40);
+            this.label_ISBN.Location = new System.Drawing.Point(12, 190);
             this.label_ISBN.Name = "label_ISBN";
             this.label_ISBN.Size = new System.Drawing.Size(94, 20);
             this.label_ISBN.TabIndex = 16;
@@ -197,7 +197,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label_Author.AutoSize = true;
             this.label_Author.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label_Author.Location = new System.Drawing.Point(50, 70);
+            this.label_Author.Location = new System.Drawing.Point(12, 220);
             this.label_Author.Name = "label_Author";
             this.label_Author.Size = new System.Drawing.Size(62, 20);
             this.label_Author.TabIndex = 17;
@@ -210,7 +210,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label_Title.AutoSize = true;
             this.label_Title.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label_Title.Location = new System.Drawing.Point(50, 100);
+            this.label_Title.Location = new System.Drawing.Point(12, 250);
             this.label_Title.Name = "label_Title";
             this.label_Title.Size = new System.Drawing.Size(39, 20);
             this.label_Title.TabIndex = 18;
@@ -223,7 +223,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label_Genre.AutoSize = true;
             this.label_Genre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label_Genre.Location = new System.Drawing.Point(50, 158);
+            this.label_Genre.Location = new System.Drawing.Point(12, 308);
             this.label_Genre.Name = "label_Genre";
             this.label_Genre.Size = new System.Drawing.Size(50, 20);
             this.label_Genre.TabIndex = 20;
@@ -236,7 +236,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label_Pagenumber.AutoSize = true;
             this.label_Pagenumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label_Pagenumber.Location = new System.Drawing.Point(50, 270);
+            this.label_Pagenumber.Location = new System.Drawing.Point(12, 420);
             this.label_Pagenumber.Name = "label_Pagenumber";
             this.label_Pagenumber.Size = new System.Drawing.Size(89, 20);
             this.label_Pagenumber.TabIndex = 24;
@@ -249,7 +249,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label_Purchase_price.AutoSize = true;
             this.label_Purchase_price.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label_Purchase_price.Location = new System.Drawing.Point(50, 300);
+            this.label_Purchase_price.Location = new System.Drawing.Point(12, 450);
             this.label_Purchase_price.Name = "label_Purchase_price";
             this.label_Purchase_price.Size = new System.Drawing.Size(114, 20);
             this.label_Purchase_price.TabIndex = 25;
@@ -262,7 +262,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label_Selling_price.AutoSize = true;
             this.label_Selling_price.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label_Selling_price.Location = new System.Drawing.Point(50, 330);
+            this.label_Selling_price.Location = new System.Drawing.Point(12, 480);
             this.label_Selling_price.Name = "label_Selling_price";
             this.label_Selling_price.Size = new System.Drawing.Size(84, 20);
             this.label_Selling_price.TabIndex = 26;
@@ -273,9 +273,9 @@
             this.tB_ISBN.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tB_ISBN.Location = new System.Drawing.Point(346, 38);
+            this.tB_ISBN.Location = new System.Drawing.Point(164, 190);
             this.tB_ISBN.Name = "tB_ISBN";
-            this.tB_ISBN.Size = new System.Drawing.Size(240, 22);
+            this.tB_ISBN.Size = new System.Drawing.Size(251, 22);
             this.tB_ISBN.TabIndex = 1;
             // 
             // tB_author
@@ -283,9 +283,9 @@
             this.tB_author.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tB_author.Location = new System.Drawing.Point(346, 68);
+            this.tB_author.Location = new System.Drawing.Point(164, 220);
             this.tB_author.Name = "tB_author";
-            this.tB_author.Size = new System.Drawing.Size(240, 22);
+            this.tB_author.Size = new System.Drawing.Size(251, 22);
             this.tB_author.TabIndex = 2;
             // 
             // tB_title
@@ -293,9 +293,9 @@
             this.tB_title.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tB_title.Location = new System.Drawing.Point(346, 98);
+            this.tB_title.Location = new System.Drawing.Point(164, 250);
             this.tB_title.Name = "tB_title";
-            this.tB_title.Size = new System.Drawing.Size(240, 22);
+            this.tB_title.Size = new System.Drawing.Size(251, 22);
             this.tB_title.TabIndex = 3;
             // 
             // tB_year
@@ -303,9 +303,9 @@
             this.tB_year.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tB_year.Location = new System.Drawing.Point(346, 128);
+            this.tB_year.Location = new System.Drawing.Point(164, 280);
             this.tB_year.Name = "tB_year";
-            this.tB_year.Size = new System.Drawing.Size(240, 22);
+            this.tB_year.Size = new System.Drawing.Size(251, 22);
             this.tB_year.TabIndex = 4;
             // 
             // tB_genre
@@ -313,9 +313,9 @@
             this.tB_genre.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tB_genre.Location = new System.Drawing.Point(346, 156);
+            this.tB_genre.Location = new System.Drawing.Point(164, 308);
             this.tB_genre.Name = "tB_genre";
-            this.tB_genre.Size = new System.Drawing.Size(240, 22);
+            this.tB_genre.Size = new System.Drawing.Size(251, 22);
             this.tB_genre.TabIndex = 5;
             // 
             // tB_pagenumber
@@ -323,9 +323,9 @@
             this.tB_pagenumber.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tB_pagenumber.Location = new System.Drawing.Point(346, 268);
+            this.tB_pagenumber.Location = new System.Drawing.Point(164, 420);
             this.tB_pagenumber.Name = "tB_pagenumber";
-            this.tB_pagenumber.Size = new System.Drawing.Size(240, 22);
+            this.tB_pagenumber.Size = new System.Drawing.Size(251, 22);
             this.tB_pagenumber.TabIndex = 9;
             // 
             // tB_purchase_price
@@ -333,9 +333,9 @@
             this.tB_purchase_price.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tB_purchase_price.Location = new System.Drawing.Point(346, 298);
+            this.tB_purchase_price.Location = new System.Drawing.Point(164, 450);
             this.tB_purchase_price.Name = "tB_purchase_price";
-            this.tB_purchase_price.Size = new System.Drawing.Size(240, 22);
+            this.tB_purchase_price.Size = new System.Drawing.Size(251, 22);
             this.tB_purchase_price.TabIndex = 10;
             // 
             // tB_selling_price
@@ -343,9 +343,9 @@
             this.tB_selling_price.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tB_selling_price.Location = new System.Drawing.Point(346, 328);
+            this.tB_selling_price.Location = new System.Drawing.Point(164, 480);
             this.tB_selling_price.Name = "tB_selling_price";
-            this.tB_selling_price.Size = new System.Drawing.Size(240, 22);
+            this.tB_selling_price.Size = new System.Drawing.Size(251, 22);
             this.tB_selling_price.TabIndex = 11;
             // 
             // button_display
@@ -353,7 +353,7 @@
             this.button_display.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button_display.AutoSize = true;
             this.button_display.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button_display.Location = new System.Drawing.Point(726, 40);
+            this.button_display.Location = new System.Drawing.Point(12, 110);
             this.button_display.Name = "button_display";
             this.button_display.Size = new System.Drawing.Size(210, 50);
             this.button_display.TabIndex = 12;
@@ -365,7 +365,7 @@
             // 
             this.button_new_book.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button_new_book.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button_new_book.Location = new System.Drawing.Point(726, 100);
+            this.button_new_book.Location = new System.Drawing.Point(16, 520);
             this.button_new_book.Name = "button_new_book";
             this.button_new_book.Size = new System.Drawing.Size(210, 50);
             this.button_new_book.TabIndex = 13;
@@ -378,7 +378,7 @@
             this.button_book_modification.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button_book_modification.AutoSize = true;
             this.button_book_modification.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button_book_modification.Location = new System.Drawing.Point(726, 160);
+            this.button_book_modification.Location = new System.Drawing.Point(16, 660);
             this.button_book_modification.Name = "button_book_modification";
             this.button_book_modification.Size = new System.Drawing.Size(210, 50);
             this.button_book_modification.TabIndex = 14;
@@ -391,7 +391,7 @@
             this.button_book_delete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button_book_delete.AutoSize = true;
             this.button_book_delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button_book_delete.Location = new System.Drawing.Point(726, 220);
+            this.button_book_delete.Location = new System.Drawing.Point(16, 590);
             this.button_book_delete.Name = "button_book_delete";
             this.button_book_delete.Size = new System.Drawing.Size(210, 50);
             this.button_book_delete.TabIndex = 15;
@@ -406,7 +406,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label_Year.AutoSize = true;
             this.label_Year.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label_Year.Location = new System.Drawing.Point(50, 130);
+            this.label_Year.Location = new System.Drawing.Point(12, 280);
             this.label_Year.Name = "label_Year";
             this.label_Year.Size = new System.Drawing.Size(91, 20);
             this.label_Year.TabIndex = 19;
@@ -417,9 +417,9 @@
             this.tB_publisher.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tB_publisher.Location = new System.Drawing.Point(346, 184);
+            this.tB_publisher.Location = new System.Drawing.Point(164, 336);
             this.tB_publisher.Name = "tB_publisher";
-            this.tB_publisher.Size = new System.Drawing.Size(240, 22);
+            this.tB_publisher.Size = new System.Drawing.Size(251, 22);
             this.tB_publisher.TabIndex = 6;
             // 
             // label_Publisher
@@ -429,7 +429,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label_Publisher.AutoSize = true;
             this.label_Publisher.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label_Publisher.Location = new System.Drawing.Point(50, 186);
+            this.label_Publisher.Location = new System.Drawing.Point(12, 336);
             this.label_Publisher.Name = "label_Publisher";
             this.label_Publisher.Size = new System.Drawing.Size(51, 20);
             this.label_Publisher.TabIndex = 21;
@@ -440,9 +440,9 @@
             this.tB_condition.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tB_condition.Location = new System.Drawing.Point(346, 212);
+            this.tB_condition.Location = new System.Drawing.Point(164, 364);
             this.tB_condition.Name = "tB_condition";
-            this.tB_condition.Size = new System.Drawing.Size(240, 22);
+            this.tB_condition.Size = new System.Drawing.Size(251, 22);
             this.tB_condition.TabIndex = 7;
             // 
             // tB_binding
@@ -450,9 +450,9 @@
             this.tB_binding.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tB_binding.Location = new System.Drawing.Point(346, 240);
+            this.tB_binding.Location = new System.Drawing.Point(164, 392);
             this.tB_binding.Name = "tB_binding";
-            this.tB_binding.Size = new System.Drawing.Size(240, 22);
+            this.tB_binding.Size = new System.Drawing.Size(251, 22);
             this.tB_binding.TabIndex = 8;
             // 
             // label_Binding
@@ -462,7 +462,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label_Binding.AutoSize = true;
             this.label_Binding.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label_Binding.Location = new System.Drawing.Point(50, 242);
+            this.label_Binding.Location = new System.Drawing.Point(12, 392);
             this.label_Binding.Name = "label_Binding";
             this.label_Binding.Size = new System.Drawing.Size(52, 20);
             this.label_Binding.TabIndex = 23;
@@ -475,7 +475,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label_Condition.AutoSize = true;
             this.label_Condition.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label_Condition.Location = new System.Drawing.Point(50, 214);
+            this.label_Condition.Location = new System.Drawing.Point(12, 364);
             this.label_Condition.Name = "label_Condition";
             this.label_Condition.Size = new System.Drawing.Size(60, 20);
             this.label_Condition.TabIndex = 22;
@@ -492,9 +492,9 @@
             // 
             // tB_ID
             // 
-            this.tB_ID.Location = new System.Drawing.Point(836, 300);
+            this.tB_ID.Location = new System.Drawing.Point(164, 66);
             this.tB_ID.Name = "tB_ID";
-            this.tB_ID.Size = new System.Drawing.Size(100, 22);
+            this.tB_ID.Size = new System.Drawing.Size(251, 22);
             this.tB_ID.TabIndex = 28;
             // 
             // label_BookID
@@ -504,11 +504,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label_BookID.AutoSize = true;
             this.label_BookID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label_BookID.Location = new System.Drawing.Point(722, 300);
+            this.label_BookID.Location = new System.Drawing.Point(12, 66);
             this.label_BookID.Name = "label_BookID";
-            this.label_BookID.Size = new System.Drawing.Size(76, 20);
+            this.label_BookID.Size = new System.Drawing.Size(131, 20);
             this.label_BookID.TabIndex = 29;
-            this.label_BookID.Text = "Könyv ID";
+            this.label_BookID.Text = "Könyv azonosító";
             // 
             // BookManagerForm
             // 
@@ -516,7 +516,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(1006, 653);
+            this.ClientSize = new System.Drawing.Size(1482, 803);
             this.Controls.Add(this.label_BookID);
             this.Controls.Add(this.tB_ID);
             this.Controls.Add(this.label_Condition);

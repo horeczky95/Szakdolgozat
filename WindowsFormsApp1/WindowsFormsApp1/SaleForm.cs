@@ -13,7 +13,7 @@ namespace WindowsFormsApp1
 {
     public partial class SaleForm : Form
     {
-        SqlConnection connection = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename=D:\Suli\GitHub\WindowsFormsApp1\WindowsFormsApp1\AntiqueDB.mdf;Integrated Security = True");
+        SqlConnection connection = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename=D:\Suli\Szakdolgozat\WindowsFormsApp1\WindowsFormsApp1\AntiqueDB.mdf;Integrated Security = True");
         List<int> books_ID = new List<int>();
         float subtotal = 0;
         float total = 0;
@@ -26,6 +26,7 @@ namespace WindowsFormsApp1
             {
                 books_ID.Remove(books_ID[i]);
             }
+            display_regcust();
         }
 
         private void mainMenuToolStripMenuItem_Click(object sender, EventArgs e)
@@ -80,6 +81,20 @@ namespace WindowsFormsApp1
             SqlDataAdapter dataadp = new SqlDataAdapter(cmd);
             dataadp.Fill(dta);
             dataGridView1.DataSource = dta;
+            connection.Close();
+        }
+
+        public void display_regcust()
+        {
+            connection.Open();
+            SqlCommand cmd = connection.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select [Regular_Customer_ID] as Azonosító, [Name] as Név, [Current_Points] as Pontok, [Previous_Year_Points] as [Előző éves pontok] from [Regular_Customers]";
+            cmd.ExecuteNonQuery();
+            DataTable dta = new DataTable();
+            SqlDataAdapter dataadp = new SqlDataAdapter(cmd);
+            dataadp.Fill(dta);
+            dataGridView2.DataSource = dta;
             connection.Close();
         }
 
@@ -164,6 +179,7 @@ namespace WindowsFormsApp1
             tB_year.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
             tB_genre.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
             tB_id.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+
         }
 
         private void search_button_Click(object sender, EventArgs e)
@@ -361,6 +377,11 @@ namespace WindowsFormsApp1
             }
             connection.Close();
             tB_RegCust_ID.Clear();
+        }
+
+        private void reg_cust_db_double_click(object sender, DataGridViewCellEventArgs e)
+        {
+            tB_RegCust_ID.Text = dataGridView2.CurrentRow.Cells[0].Value.ToString();
         }
     }
 }

@@ -14,7 +14,7 @@ namespace WindowsFormsApp1
    
     public partial class BookManagerForm : Form
     {
-        SqlConnection connection = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename=D:\Suli\GitHub\WindowsFormsApp1\WindowsFormsApp1\AntiqueDB.mdf;Integrated Security = True");
+        SqlConnection connection = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename=D:\Suli\Szakdolgozat\WindowsFormsApp1\WindowsFormsApp1\AntiqueDB.mdf;Integrated Security = True");
         public BookManagerForm()
         {
             InitializeComponent();
@@ -77,9 +77,28 @@ namespace WindowsFormsApp1
             connection.Close();
         }
 
+        public void display_books()
+        {
+            if (tB_ID.Text != "") {
+                connection.Open();
+                SqlCommand cmd = connection.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "select * from [Books] where Book_ID = '" + tB_ID.Text + "'";
+                cmd.ExecuteNonQuery();
+                DataTable dta = new DataTable();
+                SqlDataAdapter dataadp = new SqlDataAdapter(cmd);
+                dataadp.Fill(dta);
+                dataGridView1.DataSource = dta;
+                connection.Close(); 
+            } else
+            {
+                MessageBox.Show("Nincs megadva könyv azonosító!");
+            }
+        }
+
         private void books_display_Click(object sender, EventArgs e)
         {
-            display_data();
+            display_books();
         }
 
         public void textClear()
@@ -204,5 +223,6 @@ namespace WindowsFormsApp1
         {
             tB_ID.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
         }
+
     }
 }

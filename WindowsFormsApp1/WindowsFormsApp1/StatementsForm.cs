@@ -13,7 +13,7 @@ namespace WindowsFormsApp1
 {
     public partial class StatementsForm : Form
     {
-        SqlConnection connection = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename=D:\Suli\GitHub\WindowsFormsApp1\WindowsFormsApp1\AntiqueDB.mdf;Integrated Security = True");        public StatementsForm()
+        SqlConnection connection = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename=D:\Suli\Szakdolgozat\WindowsFormsApp1\WindowsFormsApp1\AntiqueDB.mdf;Integrated Security = True");        public StatementsForm()
         {
             InitializeComponent();
         }
@@ -140,21 +140,19 @@ namespace WindowsFormsApp1
             float all_profit = all_revenues - all_costs;
             label_profit.Text = all_profit.ToString() + " Ft";
             connection.Close();
+            connection.Open();
+            SqlCommand cmd3= connection.CreateCommand();
 
-            /*connection.Open();
-
-            SqlCommand cmd = connection.CreateCommand();
-
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select distinct * from [Costs] [Revenues]";
-            cmd.ExecuteNonQuery();
+            cmd3.CommandType = CommandType.Text;
+            cmd3.CommandText = "select* from [Costs] " + "select * from [Revenues]";
+            cmd3.ExecuteNonQuery();
 
             DataTable dta = new DataTable();
-            SqlDataAdapter dataadp = new SqlDataAdapter(cmd);
+            SqlDataAdapter dataadp = new SqlDataAdapter(cmd3);
             dataadp.Fill(dta);
             dataGridView1.DataSource = dta;
 
-            connection.Close();*/
+            connection.Close();
         }
     }
 }

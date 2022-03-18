@@ -53,7 +53,7 @@
             this.tB_ISBN = new System.Windows.Forms.TextBox();
             this.tB_author = new System.Windows.Forms.TextBox();
             this.tB_title = new System.Windows.Forms.TextBox();
-            this.tB_RegCust = new System.Windows.Forms.TextBox();
+            this.tB_RegCust_ID = new System.Windows.Forms.TextBox();
             this.tB_name = new System.Windows.Forms.TextBox();
             this.tB_add = new System.Windows.Forms.TextBox();
             this.tB_phone = new System.Windows.Forms.TextBox();
@@ -65,11 +65,13 @@
             this.kívánságlistaTableAdapter = new WindowsFormsApp1.AntiqueDBDataSetTableAdapters.KívánságlistaTableAdapter();
             this.tB_ID = new System.Windows.Forms.TextBox();
             this.label_Wish_ID = new System.Windows.Forms.Label();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kívánságlistaBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.antiqueDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kívánságlistaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -80,7 +82,7 @@
             this.súgóToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1006, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1482, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -94,7 +96,7 @@
             this.statementsToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.fájlToolStripMenuItem.Name = "fájlToolStripMenuItem";
-            this.fájlToolStripMenuItem.Size = new System.Drawing.Size(45, 26);
+            this.fájlToolStripMenuItem.Size = new System.Drawing.Size(45, 24);
             this.fájlToolStripMenuItem.Text = "Fájl";
             // 
             // mainMenuToolStripMenuItem
@@ -142,17 +144,17 @@
             // súgóToolStripMenuItem
             // 
             this.súgóToolStripMenuItem.Name = "súgóToolStripMenuItem";
-            this.súgóToolStripMenuItem.Size = new System.Drawing.Size(57, 26);
+            this.súgóToolStripMenuItem.Size = new System.Drawing.Size(57, 24);
             this.súgóToolStripMenuItem.Text = "Súgó";
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 311);
+            this.dataGridView1.Location = new System.Drawing.Point(561, 45);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(982, 330);
+            this.dataGridView1.Size = new System.Drawing.Size(900, 729);
             this.dataGridView1.TabIndex = 21;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dG_double_Click);
             // 
@@ -272,12 +274,12 @@
             this.tB_title.Size = new System.Drawing.Size(250, 22);
             this.tB_title.TabIndex = 3;
             // 
-            // tB_RegCust
+            // tB_RegCust_ID
             // 
-            this.tB_RegCust.Location = new System.Drawing.Point(270, 140);
-            this.tB_RegCust.Name = "tB_RegCust";
-            this.tB_RegCust.Size = new System.Drawing.Size(250, 22);
-            this.tB_RegCust.TabIndex = 4;
+            this.tB_RegCust_ID.Location = new System.Drawing.Point(270, 140);
+            this.tB_RegCust_ID.Name = "tB_RegCust_ID";
+            this.tB_RegCust_ID.Size = new System.Drawing.Size(250, 22);
+            this.tB_RegCust_ID.TabIndex = 4;
             // 
             // tB_name
             // 
@@ -310,7 +312,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button1.Location = new System.Drawing.Point(570, 50);
+            this.button1.Location = new System.Drawing.Point(73, 326);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(174, 50);
             this.button1.TabIndex = 17;
@@ -321,7 +323,7 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.button2.Location = new System.Drawing.Point(570, 110);
+            this.button2.Location = new System.Drawing.Point(295, 326);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(174, 50);
             this.button2.TabIndex = 18;
@@ -332,7 +334,7 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button3.Location = new System.Drawing.Point(570, 232);
+            this.button3.Location = new System.Drawing.Point(295, 404);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(174, 50);
             this.button3.TabIndex = 20;
@@ -343,7 +345,7 @@
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button4.Location = new System.Drawing.Point(570, 172);
+            this.button4.Location = new System.Drawing.Point(73, 404);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(174, 50);
             this.button4.TabIndex = 19;
@@ -357,26 +359,38 @@
             // 
             // tB_ID
             // 
-            this.tB_ID.Location = new System.Drawing.Point(890, 258);
+            this.tB_ID.Location = new System.Drawing.Point(270, 290);
             this.tB_ID.Name = "tB_ID";
-            this.tB_ID.Size = new System.Drawing.Size(63, 22);
+            this.tB_ID.Size = new System.Drawing.Size(250, 22);
             this.tB_ID.TabIndex = 22;
             // 
             // label_Wish_ID
             // 
             this.label_Wish_ID.AutoSize = true;
             this.label_Wish_ID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label_Wish_ID.Location = new System.Drawing.Point(765, 260);
+            this.label_Wish_ID.Location = new System.Drawing.Point(40, 292);
             this.label_Wish_ID.Name = "label_Wish_ID";
             this.label_Wish_ID.Size = new System.Drawing.Size(99, 20);
             this.label_Wish_ID.TabIndex = 23;
             this.label_Wish_ID.Text = "Kívánság ID";
             // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(44, 481);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersWidth = 51;
+            this.dataGridView2.RowTemplate.Height = 24;
+            this.dataGridView2.Size = new System.Drawing.Size(476, 293);
+            this.dataGridView2.TabIndex = 24;
+            this.dataGridView2.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.reg_cust_db_double_click);
+            // 
             // WishListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1006, 653);
+            this.ClientSize = new System.Drawing.Size(1482, 803);
+            this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.label_Wish_ID);
             this.Controls.Add(this.tB_ID);
             this.Controls.Add(this.button4);
@@ -387,7 +401,7 @@
             this.Controls.Add(this.tB_phone);
             this.Controls.Add(this.tB_add);
             this.Controls.Add(this.tB_name);
-            this.Controls.Add(this.tB_RegCust);
+            this.Controls.Add(this.tB_RegCust_ID);
             this.Controls.Add(this.tB_title);
             this.Controls.Add(this.tB_author);
             this.Controls.Add(this.tB_ISBN);
@@ -404,6 +418,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "WishListForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Kívánság lista";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -411,6 +426,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.kívánságlistaBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.antiqueDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kívánságlistaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -439,7 +455,7 @@
         private System.Windows.Forms.TextBox tB_ISBN;
         private System.Windows.Forms.TextBox tB_author;
         private System.Windows.Forms.TextBox tB_title;
-        private System.Windows.Forms.TextBox tB_RegCust;
+        private System.Windows.Forms.TextBox tB_RegCust_ID;
         private System.Windows.Forms.TextBox tB_name;
         private System.Windows.Forms.TextBox tB_add;
         private System.Windows.Forms.TextBox tB_phone;
@@ -454,5 +470,6 @@
         private System.Windows.Forms.BindingSource kívánságlistaBindingSource1;
         private System.Windows.Forms.TextBox tB_ID;
         private System.Windows.Forms.Label label_Wish_ID;
+        private System.Windows.Forms.DataGridView dataGridView2;
     }
 }
