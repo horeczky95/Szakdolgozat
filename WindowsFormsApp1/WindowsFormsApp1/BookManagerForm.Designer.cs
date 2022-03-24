@@ -48,7 +48,6 @@
             this.label_Genre = new System.Windows.Forms.Label();
             this.label_Pagenumber = new System.Windows.Forms.Label();
             this.label_Purchase_price = new System.Windows.Forms.Label();
-            this.label_Selling_price = new System.Windows.Forms.Label();
             this.tB_ISBN = new System.Windows.Forms.TextBox();
             this.tB_author = new System.Windows.Forms.TextBox();
             this.tB_title = new System.Windows.Forms.TextBox();
@@ -56,7 +55,6 @@
             this.tB_genre = new System.Windows.Forms.TextBox();
             this.tB_pagenumber = new System.Windows.Forms.TextBox();
             this.tB_purchase_price = new System.Windows.Forms.TextBox();
-            this.tB_selling_price = new System.Windows.Forms.TextBox();
             this.button_display = new System.Windows.Forms.Button();
             this.button_new_book = new System.Windows.Forms.Button();
             this.button_book_modification = new System.Windows.Forms.Button();
@@ -72,6 +70,8 @@
             this.könyvekBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tB_ID = new System.Windows.Forms.TextBox();
             this.label_BookID = new System.Windows.Forms.Label();
+            this.label_Selling_price = new System.Windows.Forms.Label();
+            this.tB_selling_price = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.könyvekBindingSource)).BeginInit();
@@ -255,19 +255,6 @@
             this.label_Purchase_price.TabIndex = 25;
             this.label_Purchase_price.Text = "Beszerzési ár";
             // 
-            // label_Selling_price
-            // 
-            this.label_Selling_price.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label_Selling_price.AutoSize = true;
-            this.label_Selling_price.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label_Selling_price.Location = new System.Drawing.Point(12, 480);
-            this.label_Selling_price.Name = "label_Selling_price";
-            this.label_Selling_price.Size = new System.Drawing.Size(84, 20);
-            this.label_Selling_price.TabIndex = 26;
-            this.label_Selling_price.Text = "Eladási ár";
-            // 
             // tB_ISBN
             // 
             this.tB_ISBN.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -337,16 +324,6 @@
             this.tB_purchase_price.Name = "tB_purchase_price";
             this.tB_purchase_price.Size = new System.Drawing.Size(251, 22);
             this.tB_purchase_price.TabIndex = 10;
-            // 
-            // tB_selling_price
-            // 
-            this.tB_selling_price.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tB_selling_price.Location = new System.Drawing.Point(164, 480);
-            this.tB_selling_price.Name = "tB_selling_price";
-            this.tB_selling_price.Size = new System.Drawing.Size(251, 22);
-            this.tB_selling_price.TabIndex = 11;
             // 
             // button_display
             // 
@@ -510,6 +487,30 @@
             this.label_BookID.TabIndex = 29;
             this.label_BookID.Text = "Könyv azonosító";
             // 
+            // label_Selling_price
+            // 
+            this.label_Selling_price.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label_Selling_price.AutoSize = true;
+            this.label_Selling_price.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_Selling_price.Location = new System.Drawing.Point(12, 480);
+            this.label_Selling_price.Name = "label_Selling_price";
+            this.label_Selling_price.Size = new System.Drawing.Size(84, 20);
+            this.label_Selling_price.TabIndex = 26;
+            this.label_Selling_price.Text = "Eladási ár";
+            // 
+            // tB_selling_price
+            // 
+            this.tB_selling_price.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tB_selling_price.Location = new System.Drawing.Point(164, 480);
+            this.tB_selling_price.Name = "tB_selling_price";
+            this.tB_selling_price.Size = new System.Drawing.Size(251, 22);
+            this.tB_selling_price.TabIndex = 11;
+            this.tB_selling_price.Text = "Hozzáadásnál nem kell megadni!";
+            // 
             // BookManagerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -583,7 +584,6 @@
         private System.Windows.Forms.Label label_Genre;
         private System.Windows.Forms.Label label_Pagenumber;
         private System.Windows.Forms.Label label_Purchase_price;
-        private System.Windows.Forms.Label label_Selling_price;
         private System.Windows.Forms.TextBox tB_ISBN;
         private System.Windows.Forms.TextBox tB_author;
         private System.Windows.Forms.TextBox tB_title;
@@ -591,7 +591,6 @@
         private System.Windows.Forms.TextBox tB_genre;
         private System.Windows.Forms.TextBox tB_pagenumber;
         private System.Windows.Forms.TextBox tB_purchase_price;
-        private System.Windows.Forms.TextBox tB_selling_price;
         private System.Windows.Forms.Button button_display;
         private System.Windows.Forms.Button button_new_book;
         private System.Windows.Forms.Button button_book_modification;
@@ -609,5 +608,7 @@
         private System.Windows.Forms.BindingSource könyvekBindingSource1;
         private System.Windows.Forms.TextBox tB_ID;
         private System.Windows.Forms.Label label_BookID;
+        private System.Windows.Forms.Label label_Selling_price;
+        private System.Windows.Forms.TextBox tB_selling_price;
     }
 }

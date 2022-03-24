@@ -206,21 +206,22 @@
             // ISBN
             // 
             this.ISBN.Text = "ISBN";
+            this.ISBN.Width = 84;
             // 
             // Author
             // 
             this.Author.Text = "Szerző";
-            this.Author.Width = 120;
+            this.Author.Width = 162;
             // 
             // Title
             // 
             this.Title.Text = "Cím";
-            this.Title.Width = 120;
+            this.Title.Width = 210;
             // 
             // Sellin_Price
             // 
             this.Sellin_Price.Text = "Eladási ár";
-            this.Sellin_Price.Width = 50;
+            this.Sellin_Price.Width = 101;
             // 
             // label1
             // 

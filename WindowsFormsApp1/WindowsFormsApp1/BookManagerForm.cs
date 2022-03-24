@@ -94,6 +94,14 @@ namespace WindowsFormsApp1
             {
                 MessageBox.Show("Nincs megadva könyv azonosító!");
             }
+            float selling_price = 0;
+            string purchese_price_string = tB_purchase_price.Text;
+            float purchese_price = float.Parse(purchese_price_string.ToString());
+            float clear_purchese_price = 0;
+            clear_purchese_price += (purchese_price / 100 * 73);
+            selling_price += clear_purchese_price / 100 * 125;
+            selling_price = float.Parse(Math.Round(selling_price, 0).ToString());
+            tB_selling_price.Text = selling_price.ToString();
         }
 
         private void books_display_Click(object sender, EventArgs e)
@@ -122,7 +130,13 @@ namespace WindowsFormsApp1
 
             if (tB_ISBN.Text != "" && tB_author.Text != "" && tB_title.Text != "" &&
             tB_year.Text != "" && tB_genre.Text != "" && tB_publisher.Text != "" && tB_condition.Text != "" &&
-            tB_binding.Text != "" && tB_pagenumber.Text != "" && tB_purchase_price.Text != "" && tB_selling_price.Text != "") {
+            tB_binding.Text != "" && tB_pagenumber.Text != "" && tB_purchase_price.Text != "") {
+                float selling_price = 0;
+                string purchese_price_string = tB_purchase_price.Text;
+                float purchese_price = float.Parse(purchese_price_string.ToString());
+                selling_price += purchese_price / 100 * 125 ;
+                selling_price = float.Parse(Math.Round(selling_price, 0).ToString());
+                tB_selling_price.Text = selling_price.ToString();
                 connection.Open();
                 SqlCommand cmd = connection.CreateCommand();
                 SqlCommand cmd_expend = connection.CreateCommand();
@@ -133,7 +147,7 @@ namespace WindowsFormsApp1
                 cmd.CommandText = "insert into [Books] (ISBN, Author, Title, [Release year], Genre, Publisher, Condition, Binding, Pagenumber, [Purchase_Price], [Selling_Price]) " +
                     "values ('" + tB_ISBN.Text + "', '" + tB_author.Text + "', '" + tB_title.Text + "','" + int.Parse(tB_year.Text) + "', " +
                     "'" + tB_genre.Text + "', '" + tB_publisher.Text + "', '" + tB_condition.Text + "', '" + tB_binding.Text + "', " +
-                    "'" + int.Parse(tB_pagenumber.Text) + "', '" + int.Parse(tB_purchase_price.Text) + "', '" + int.Parse(tB_selling_price.Text) + "')";
+                    "'" + int.Parse(tB_pagenumber.Text) + "', '" + float.Parse(tB_purchase_price.Text) + "', '" + float.Parse(tB_selling_price.Text) + "')";
                 cmd.ExecuteNonQuery();
                 string name = tB_author.Text + ", " + tB_title.Text;
                 SqlDataReader read = (null);
@@ -145,7 +159,7 @@ namespace WindowsFormsApp1
                 read.Close();
                 string format = "yyyy.MM.dd";
                 cmd_expend.CommandText ="insert into [Costs] (Book_ID, Name, Amount, Date) " +
-                    "values ('" + int.Parse(id.ToString()) + "', '" + name.ToString() + "', '" + int.Parse(tB_purchase_price.Text) +
+                    "values ('" + int.Parse(id.ToString()) + "', '" + name.ToString() + "', '" + float.Parse(tB_purchase_price.Text) +
                     "', '" + DateTime.Today.ToString(format) + "')";
                 cmd_expend.ExecuteNonQuery();
                 connection.Close();
@@ -202,9 +216,9 @@ namespace WindowsFormsApp1
                 } else if (tB_pagenumber.Text != "") {
                     cmd.CommandText = "update [Books] set Pagenumber = '" + int.Parse(tB_pagenumber.Text) + "' where Book_ID = '" + int.Parse(tB_ID.Text) + "'";
                 } else if (tB_purchase_price.Text != "") {
-                    cmd.CommandText = "update [Books] set [Purchase_Price] = '" + int.Parse(tB_purchase_price.Text) + "' where Book_ID = '" + int.Parse(tB_ID.Text) + "'";
+                    cmd.CommandText = "update [Books] set [Purchase_Price] = '" + float.Parse(tB_purchase_price.Text) + "' where Book_ID = '" + int.Parse(tB_ID.Text) + "'";
                 } else if (tB_selling_price.Text != "") {
-                    cmd.CommandText = "update [Books] set [Selling_Price] = '" + int.Parse(tB_selling_price.Text) + "' where Book_ID = '" + int.Parse(tB_ID.Text) + "'";
+                    cmd.CommandText = "update [Books] set [Selling_Price] = '" + float.Parse(tB_selling_price.Text) + "' where Book_ID = '" + int.Parse(tB_ID.Text) + "'";
                 } else {
                     MessageBox.Show("Hiányzó adat!");
                     cmd.CommandText = "select * from [Books]";

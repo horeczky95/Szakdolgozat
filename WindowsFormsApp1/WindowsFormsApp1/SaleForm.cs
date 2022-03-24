@@ -283,10 +283,23 @@ namespace WindowsFormsApp1
             }
             for (int i= 0; i < books_ID.Count; i++)
             {
+                SqlCommand cmd_ISBN = connection.CreateCommand();
+                cmd_ISBN.CommandType = CommandType.Text;
+                SqlDataReader read = (null);
+                cmd_ISBN.CommandText = ("select * from Books where Book_ID = '" + books_ID[i].ToString() + "'");
+                cmd_ISBN.ExecuteNonQuery();
+                read = cmd_ISBN.ExecuteReader();
+                read.Read();
+                string ISBN = read["ISBN"].ToString();
+                read.Close();
                 SqlCommand cmd = connection.CreateCommand();
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = "delete from [Books] where [Book_ID] = '" + books_ID[i].ToString() + "'";
                 cmd.ExecuteNonQuery();
+                SqlCommand cmd_wish = connection.CreateCommand();
+                cmd_wish.CommandType = CommandType.Text;
+                cmd_wish.CommandText = "delete from [Wish_List] where [ISBN] = '" + ISBN + "' and [Regular_Customer_ID] = '" + tB_RegCust_ID.Text + "'";
+                cmd_wish.ExecuteNonQuery();
             }
             for(int i = 0; i < books_ID.Count; i++)
             {
