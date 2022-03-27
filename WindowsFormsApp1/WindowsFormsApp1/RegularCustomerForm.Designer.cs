@@ -46,7 +46,6 @@
             this.label_Email_address = new System.Windows.Forms.Label();
             this.label_RegCust_ID = new System.Windows.Forms.Label();
             this.tB_name = new System.Windows.Forms.TextBox();
-            this.tB_born_date = new System.Windows.Forms.TextBox();
             this.tB_address = new System.Windows.Forms.TextBox();
             this.tB_phone = new System.Windows.Forms.TextBox();
             this.tB_email = new System.Windows.Forms.TextBox();
@@ -62,6 +61,7 @@
             this.antiqueDBDataSet = new WindowsFormsApp1.AntiqueDBDataSet();
             this.törzsvásárlókTableAdapter = new WindowsFormsApp1.AntiqueDBDataSetTableAdapters.TörzsvásárlókTableAdapter();
             this.label1 = new System.Windows.Forms.Label();
+            this.tB_born_date = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.törzsvásárlókBindingSource)).BeginInit();
@@ -218,13 +218,6 @@
             this.tB_name.Size = new System.Drawing.Size(240, 22);
             this.tB_name.TabIndex = 9;
             // 
-            // tB_born_date
-            // 
-            this.tB_born_date.Location = new System.Drawing.Point(201, 132);
-            this.tB_born_date.Name = "tB_born_date";
-            this.tB_born_date.Size = new System.Drawing.Size(240, 22);
-            this.tB_born_date.TabIndex = 10;
-            // 
             // tB_address
             // 
             this.tB_address.Location = new System.Drawing.Point(201, 212);
@@ -342,6 +335,13 @@
             this.label1.TabIndex = 24;
             this.label1.Text = "label1";
             // 
+            // tB_born_date
+            // 
+            this.tB_born_date.Location = new System.Drawing.Point(201, 132);
+            this.tB_born_date.Name = "tB_born_date";
+            this.tB_born_date.Size = new System.Drawing.Size(240, 22);
+            this.tB_born_date.TabIndex = 10;
+            // 
             // RegularCustomerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -403,7 +403,6 @@
         private System.Windows.Forms.Label label_Email_address;
         private System.Windows.Forms.Label label_RegCust_ID;
         private System.Windows.Forms.TextBox tB_name;
-        private System.Windows.Forms.TextBox tB_born_date;
         private System.Windows.Forms.TextBox tB_address;
         private System.Windows.Forms.TextBox tB_phone;
         private System.Windows.Forms.TextBox tB_email;
@@ -419,5 +418,6 @@
         private System.Windows.Forms.BindingSource törzsvásárlókBindingSource;
         private AntiqueDBDataSetTableAdapters.TörzsvásárlókTableAdapter törzsvásárlókTableAdapter;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox tB_born_date;
     }
 }
