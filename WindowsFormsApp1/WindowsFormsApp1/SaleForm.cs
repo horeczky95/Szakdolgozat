@@ -318,11 +318,11 @@ namespace WindowsFormsApp1
             tB_RegCust_ID.Clear();
         }
 
-        private void book_sale_Click(object sender, EventArgs e)
+        private void sale_Click(object sender, EventArgs e)
         {
             if (tB_book_sale.Text != "")
             {
-                float salenumber = float.Parse(tB_book_sale.Text.ToString())/100;
+                float salenumber = float.Parse(tB_book_sale.Text.ToString()) / 100;
                 connection.Open();
                 SqlCommand cmd_price = connection.CreateCommand();
                 SqlDataReader read = (null);
@@ -340,32 +340,20 @@ namespace WindowsFormsApp1
                 connection.Close();
                 tB_book_sale.Clear();
                 tB_id.Clear();
+            } else if (tB_total_sale.Text != "")
+            {
+                float salenumber = float.Parse(tB_total_sale.Text.ToString()) / 100;
+                float sale = total * salenumber;
+                total -= sale;
+                label_total.Text = total.ToString() + " Ft";
+                tB_total_sale.Clear();
+                tB_id.Clear();
+            } else
+            {
+                MessageBox.Show("Nincs megadva kedvezmény mérték!");
             }
         }
 
-        private void total_sale_Click(object sender, EventArgs e)
-        {
-            if (tB_total_sale.Text != "")
-            {
-                float salenumber = float.Parse(tB_total_sale.Text) / 100;
-                connection.Open();
-                SqlCommand cmd_price = connection.CreateCommand();
-                SqlDataReader read = (null);
-                cmd_price.CommandText = ("select * from Books where Book_ID = '" + tB_id.Text + "'");
-                cmd_price.ExecuteNonQuery();
-                read = cmd_price.ExecuteReader();
-                read.Read();
-                subtotal = float.Parse(read["Selling_Price"].ToString());
-                float sale = total * salenumber;
-                total -= sale;
-                label_subtotal.Text = subtotal.ToString() + " Ft";
-                label_total.Text = total.ToString() + " Ft";
-                read.Close();
-                connection.Close();
-                tB_total_sale.Clear();
-                tB_id.Clear();
-            }
-        }
 
         private void reg_cust_point_button_Click(object sender, EventArgs e)
         {
@@ -373,22 +361,49 @@ namespace WindowsFormsApp1
             if(tB_RegCust_ID.Text != "")
             {
                 SqlCommand cmd_regcust = connection.CreateCommand();
+                SqlCommand cmd_regcust2 = connection.CreateCommand();
                 cmd_regcust.CommandType = CommandType.Text;
+                cmd_regcust2.CommandType = CommandType.Text;
                 SqlDataReader read = (null);
                 cmd_regcust.CommandText = ("select * from Regular_Customers where Regular_Customer_ID = '" + tB_RegCust_ID.Text + "'");
                 cmd_regcust.ExecuteNonQuery();
                 read = cmd_regcust.ExecuteReader();
                 read.Read();
                 float current_points = float.Parse(read["Current_Points"].ToString());
+                float previous_points = float.Parse(read["Previous_Year_Points"].ToString());
                 read.Close();
-                total -= current_points;
-                SqlCommand cmd_regcust2 = connection.CreateCommand();
-                cmd_regcust2.CommandType = CommandType.Text;
-                cmd_regcust2.CommandText = "update [Regular_Customers] set Current_Points = '" + 0 + "' where Regular_Customer_ID = '" + tB_RegCust_ID.Text + "'";
+                if(previous_points > 0)
+                {
+                    if (previous_points < total)
+                    {
+                        total -= previous_points;
+                        cmd_regcust2.CommandText = "update [Regular_Customers] set Previous_Year_Points = '" + 0 + "' where Regular_Customer_ID = '" + tB_RegCust_ID.Text + "'";
+                    } else
+                    {
+                        previous_points -= total;
+                        total = 0;
+                        cmd_regcust2.CommandText = "update [Regular_Customers] set Previous_Year_Points = '" + previous_points.ToString() + "' where Regular_Customer_ID = '" + tB_RegCust_ID.Text + "'";
+
+                    }
+                } else if( current_points > 0)
+                {
+                    if (current_points < total)
+                    {
+                        total -= current_points;
+                        cmd_regcust2.CommandText = "update [Regular_Customers] set Current_Points = '" + 0 + "' where Regular_Customer_ID = '" + tB_RegCust_ID.Text + "'";
+                    } else
+                    {
+                        current_points -= total;
+                        total = 0;
+                        cmd_regcust2.CommandText = "update [Regular_Customers] set Current_Points = '" + current_points.ToString() + "' where Regular_Customer_ID = '" + tB_RegCust_ID.Text + "'";
+
+                    }
+                }
                 cmd_regcust2.ExecuteNonQuery();
                 label_total.Text = total.ToString() + " Ft";
             }
             connection.Close();
+            display_regcust();
             tB_RegCust_ID.Clear();
         }
 
@@ -396,5 +411,6 @@ namespace WindowsFormsApp1
         {
             tB_RegCust_ID.Text = dataGridView2.CurrentRow.Cells[0].Value.ToString();
         }
+
     }
 }
