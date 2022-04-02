@@ -271,7 +271,6 @@ namespace WindowsFormsApp1
             tB_ID.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
         }
 
-
         public void send_mail(string e_mail) {
             try
             {
@@ -295,10 +294,6 @@ namespace WindowsFormsApp1
                 Console.WriteLine(ex.ToString());
                 MessageBox.Show("Sikertelen küldés!" + ex.ToString());
             }
-
-
-
-
         }
     }
 }

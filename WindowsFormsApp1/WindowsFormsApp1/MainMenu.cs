@@ -13,15 +13,15 @@ using System.Net.Mail;
 
 namespace WindowsFormsApp1
 {
-    public class Customer
-    {
-        public string email { get; set; }
-        public float previous_points { get; set; }
-    }
-
 
     public partial class MainMenu : Form
     {
+        public class Customer
+        {
+            public string email { get; set; }
+            public float previous_points { get; set; }
+        }
+
         SqlConnection connection = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename=D:\Suli\Szakdolgozat\WindowsFormsApp1\WindowsFormsApp1\AntiqueDB.mdf;Integrated Security = True");
         NetworkCredential login;
         SmtpClient client;

@@ -150,4 +150,4 @@ D:\Suli\GitHub\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.cspr
 D:\Suli\GitHub\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CopyComplete
 D:\Suli\GitHub\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
 D:\Suli\GitHub\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
-D:\Suli\Szakdolgozat\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Customer.resources
+D:\Suli\Szakdolgozat\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.MainMenu.resources
