@@ -52,7 +52,6 @@ D:\Suli\Szakdolgozat\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\zh-Hans\Microso
 D:\Suli\Szakdolgozat\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\zh-Hant\Microsoft.Build.resources.dll
 D:\Suli\Szakdolgozat\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe.config
 D:\Suli\Szakdolgozat\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.BookManagerForm.resources
-D:\Suli\Szakdolgozat\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.MainMenu.resources
 D:\Suli\Szakdolgozat\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
 D:\Suli\Szakdolgozat\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.RegularCustomerForm.resources
 D:\Suli\Szakdolgozat\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.SaleForm.resources
@@ -151,3 +150,4 @@ D:\Suli\GitHub\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.cspr
 D:\Suli\GitHub\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CopyComplete
 D:\Suli\GitHub\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
 D:\Suli\GitHub\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+D:\Suli\Szakdolgozat\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Customer.resources

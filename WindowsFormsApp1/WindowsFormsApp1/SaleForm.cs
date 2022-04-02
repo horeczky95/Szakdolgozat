@@ -200,6 +200,7 @@ namespace WindowsFormsApp1
                 connection.Open();
                 SqlCommand cmd_price = connection.CreateCommand();
                 SqlDataReader read = (null);
+                cmd_price.CommandType = CommandType.Text;
                 cmd_price.CommandText = ("select * from Books where Book_ID = '" + tB_id.Text + "'");
                 cmd_price.ExecuteNonQuery();
                 read = cmd_price.ExecuteReader();
@@ -318,11 +319,11 @@ namespace WindowsFormsApp1
             tB_RegCust_ID.Clear();
         }
 
-        private void sale_Click(object sender, EventArgs e)
+        private void discount_Click(object sender, EventArgs e)
         {
-            if (tB_book_sale.Text != "")
+            if (tB_book_discount.Text != "")
             {
-                float salenumber = float.Parse(tB_book_sale.Text.ToString()) / 100;
+                float salenumber = float.Parse(tB_book_discount.Text.ToString()) / 100;
                 connection.Open();
                 SqlCommand cmd_price = connection.CreateCommand();
                 SqlDataReader read = (null);
@@ -338,15 +339,15 @@ namespace WindowsFormsApp1
                 label_total.Text = total.ToString() + " Ft";
                 read.Close();
                 connection.Close();
-                tB_book_sale.Clear();
+                tB_book_discount.Clear();
                 tB_id.Clear();
-            } else if (tB_total_sale.Text != "")
+            } else if (tB_total_discount.Text != "")
             {
-                float salenumber = float.Parse(tB_total_sale.Text.ToString()) / 100;
+                float salenumber = float.Parse(tB_total_discount.Text.ToString()) / 100;
                 float sale = total * salenumber;
                 total -= sale;
                 label_total.Text = total.ToString() + " Ft";
-                tB_total_sale.Clear();
+                tB_total_discount.Clear();
                 tB_id.Clear();
             } else
             {

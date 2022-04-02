@@ -290,7 +290,6 @@ namespace WindowsFormsApp1
                 msg.DeliveryNotificationOptions = DeliveryNotificationOptions.OnFailure;
                 string userstate = "Sending...";
                 client.SendAsync(msg, userstate);
-                MessageBox.Show("Email elküldve!");
             } catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());

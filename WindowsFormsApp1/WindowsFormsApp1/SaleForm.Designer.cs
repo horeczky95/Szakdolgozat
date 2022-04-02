@@ -71,9 +71,9 @@
             this.delete_button = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.tB_RegCust_ID = new System.Windows.Forms.TextBox();
-            this.tB_book_sale = new System.Windows.Forms.TextBox();
+            this.tB_book_discount = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.tB_total_sale = new System.Windows.Forms.TextBox();
+            this.tB_total_discount = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
@@ -476,12 +476,12 @@
             this.tB_RegCust_ID.Size = new System.Drawing.Size(240, 22);
             this.tB_RegCust_ID.TabIndex = 40;
             // 
-            // tB_book_sale
+            // tB_book_discount
             // 
-            this.tB_book_sale.Location = new System.Drawing.Point(306, 362);
-            this.tB_book_sale.Name = "tB_book_sale";
-            this.tB_book_sale.Size = new System.Drawing.Size(240, 22);
-            this.tB_book_sale.TabIndex = 42;
+            this.tB_book_discount.Location = new System.Drawing.Point(306, 362);
+            this.tB_book_discount.Name = "tB_book_discount";
+            this.tB_book_discount.Size = new System.Drawing.Size(240, 22);
+            this.tB_book_discount.TabIndex = 42;
             // 
             // label10
             // 
@@ -496,12 +496,12 @@
             this.label10.TabIndex = 41;
             this.label10.Text = "Könyv kedvezmény (%)";
             // 
-            // tB_total_sale
+            // tB_total_discount
             // 
-            this.tB_total_sale.Location = new System.Drawing.Point(306, 390);
-            this.tB_total_sale.Name = "tB_total_sale";
-            this.tB_total_sale.Size = new System.Drawing.Size(240, 22);
-            this.tB_total_sale.TabIndex = 44;
+            this.tB_total_discount.Location = new System.Drawing.Point(306, 390);
+            this.tB_total_discount.Name = "tB_total_discount";
+            this.tB_total_discount.Size = new System.Drawing.Size(240, 22);
+            this.tB_total_discount.TabIndex = 44;
             // 
             // label11
             // 
@@ -525,7 +525,7 @@
             this.button2.TabIndex = 46;
             this.button2.Text = "Kedvezmény";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.sale_Click);
+            this.button2.Click += new System.EventHandler(this.discount_Click);
             // 
             // dataGridView2
             // 
@@ -557,9 +557,9 @@
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.reg_cust_point_button);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.tB_total_sale);
+            this.Controls.Add(this.tB_total_discount);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.tB_book_sale);
+            this.Controls.Add(this.tB_book_discount);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.tB_RegCust_ID);
             this.Controls.Add(this.label9);
@@ -646,9 +646,9 @@
         private System.Windows.Forms.Button delete_button;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox tB_RegCust_ID;
-        private System.Windows.Forms.TextBox tB_book_sale;
+        private System.Windows.Forms.TextBox tB_book_discount;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox tB_total_sale;
+        private System.Windows.Forms.TextBox tB_total_discount;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridView dataGridView2;
