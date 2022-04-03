@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using ZXing;
 
 namespace WindowsFormsApp1
 {
@@ -106,7 +107,7 @@ namespace WindowsFormsApp1
                 connection.Open();
                 SqlCommand cmd = connection.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select * from [Books] where [ISBN] = '" + tB_ISBN.Text + "'";
+                cmd.CommandText = "select * from [Books] where [ISBN] like '%" + tB_ISBN.Text + "%'";
                 cmd.ExecuteNonQuery();
                 DataTable dta = new DataTable();
                 SqlDataAdapter dataadp = new SqlDataAdapter(cmd);
@@ -355,7 +356,6 @@ namespace WindowsFormsApp1
             }
         }
 
-
         private void reg_cust_point_button_Click(object sender, EventArgs e)
         {
             connection.Open();
@@ -413,5 +413,51 @@ namespace WindowsFormsApp1
             tB_RegCust_ID.Text = dataGridView2.CurrentRow.Cells[0].Value.ToString();
         }
 
+        private void barcode_button(object sender, EventArgs e)
+        {
+            using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "JPG| *.jpg" })
+            {
+                if(ofd.ShowDialog() == DialogResult.OK)
+                {
+                    pB_Barcode.Image = Image.FromFile(ofd.FileName);
+                    BarcodeReader reader = new BarcodeReader();
+                    var result = reader.Decode((Bitmap)pB_Barcode.Image);
+                    if(result != null)
+                    {
+                        tB_barcode.Text = result.ToString();
+                    }
+                    connection.Open();
+                    SqlCommand cmd_read = connection.CreateCommand();
+                    SqlCommand cmd_ISBN = connection.CreateCommand();
+                    SqlDataReader read = (null);
+                    cmd_read.CommandType = CommandType.Text;
+                    cmd_ISBN.CommandType = CommandType.Text;
+                    cmd_read.CommandText = "select Count(ISBN) as count from [Books] where [ISBN] = '" + tB_barcode.Text + "'";
+                    cmd_read.ExecuteNonQuery();
+                    read = cmd_read.ExecuteReader();
+                    read.Read();
+                    int count = int.Parse(read["count"].ToString());
+                    read.Close();
+                    if(count >= 1)
+                    {
+                        cmd_ISBN.CommandText = "select * from [Books] where [ISBN]= '" + tB_barcode.Text + "'";
+                        cmd_ISBN.ExecuteNonQuery();
+                    } else
+                    {
+                        string barcode = tB_barcode.Text;
+                        string ISBN = barcode[3].ToString() + barcode[4].ToString() + barcode[5].ToString() + barcode[6].ToString() + barcode[7].ToString() + barcode[8].ToString() + barcode[9].ToString() + barcode[10].ToString() + barcode[11].ToString();
+                        tB_barcode.Text = ISBN.ToString();
+                        cmd_ISBN.CommandText = "select * from [Books] where [ISBN] like '%" + ISBN.ToString() + "%'";
+                        cmd_ISBN.ExecuteNonQuery();
+                    }
+                    DataTable dta = new DataTable();
+                    SqlDataAdapter dataadp = new SqlDataAdapter(cmd_ISBN);
+                    dataadp.Fill(dta);
+                    dataGridView1.DataSource = dta;
+                    connection.Close();
+
+                }
+            }
+        }
     }
 }

@@ -78,11 +78,16 @@
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.reg_cust_point_button = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.pB_Barcode = new System.Windows.Forms.PictureBox();
+            this.tB_barcode = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.könyvekBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.antiqueDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pB_Barcode)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -93,7 +98,7 @@
             this.súgóToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1482, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1482, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -107,7 +112,7 @@
             this.statementsToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.fájlToolStripMenuItem.Name = "fájlToolStripMenuItem";
-            this.fájlToolStripMenuItem.Size = new System.Drawing.Size(45, 24);
+            this.fájlToolStripMenuItem.Size = new System.Drawing.Size(45, 26);
             this.fájlToolStripMenuItem.Text = "Fájl";
             // 
             // mainMenuToolStripMenuItem
@@ -155,7 +160,7 @@
             // súgóToolStripMenuItem
             // 
             this.súgóToolStripMenuItem.Name = "súgóToolStripMenuItem";
-            this.súgóToolStripMenuItem.Size = new System.Drawing.Size(57, 24);
+            this.súgóToolStripMenuItem.Size = new System.Drawing.Size(57, 26);
             this.súgóToolStripMenuItem.Text = "Súgó";
             // 
             // dataGridView1
@@ -549,11 +554,58 @@
             this.reg_cust_point_button.UseVisualStyleBackColor = true;
             this.reg_cust_point_button.Click += new System.EventHandler(this.reg_cust_point_button_Click);
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.button1.Location = new System.Drawing.Point(372, 741);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(178, 50);
+            this.button1.TabIndex = 49;
+            this.button1.Text = "Vonalkód beolvasás";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.barcode_button);
+            // 
+            // pB_Barcode
+            // 
+            this.pB_Barcode.Location = new System.Drawing.Point(16, 560);
+            this.pB_Barcode.Name = "pB_Barcode";
+            this.pB_Barcode.Size = new System.Drawing.Size(534, 149);
+            this.pB_Barcode.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pB_Barcode.TabIndex = 50;
+            this.pB_Barcode.TabStop = false;
+            // 
+            // tB_barcode
+            // 
+            this.tB_barcode.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tB_barcode.Location = new System.Drawing.Point(117, 756);
+            this.tB_barcode.Name = "tB_barcode";
+            this.tB_barcode.Size = new System.Drawing.Size(240, 22);
+            this.tB_barcode.TabIndex = 51;
+            // 
+            // label12
+            // 
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label12.Location = new System.Drawing.Point(12, 758);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(77, 20);
+            this.label12.TabIndex = 52;
+            this.label12.Text = "Vonalkód";
+            // 
             // SaleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1482, 803);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.tB_barcode);
+            this.Controls.Add(this.pB_Barcode);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.reg_cust_point_button);
             this.Controls.Add(this.button2);
@@ -597,6 +649,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.könyvekBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.antiqueDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pB_Barcode)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -653,5 +706,9 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Button reg_cust_point_button;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox pB_Barcode;
+        private System.Windows.Forms.TextBox tB_barcode;
+        private System.Windows.Forms.Label label12;
     }
 }

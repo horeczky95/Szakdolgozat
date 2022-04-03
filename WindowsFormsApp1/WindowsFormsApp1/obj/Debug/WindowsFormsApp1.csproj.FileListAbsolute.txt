@@ -151,3 +151,7 @@ D:\Suli\GitHub\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.cspr
 D:\Suli\GitHub\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
 D:\Suli\GitHub\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
 D:\Suli\Szakdolgozat\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.MainMenu.resources
+D:\Suli\Szakdolgozat\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\zxing.dll
+D:\Suli\Szakdolgozat\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\zxing.presentation.dll
+D:\Suli\Szakdolgozat\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\zxing.xml
+D:\Suli\Szakdolgozat\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\zxing.presentation.xml
