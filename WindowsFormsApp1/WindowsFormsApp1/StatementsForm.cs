@@ -162,80 +162,41 @@ namespace WindowsFormsApp1
             string format = "yyyy. MM. dd";
             DateTime start = startDate.Value;
             DateTime finish = finishDate.Value;
-            connection.Open();
-            SqlCommand cmd_Revenues_Date = connection.CreateCommand();
-            SqlDataReader read_Revenues_Count = (null);
-            cmd_Revenues_Date.CommandType = CommandType.Text;
-            cmd_Revenues_Date.CommandText = "select count(Revenu_ID) as count from [Revenues] where Date between '" +
-                    start.ToString(format) + "' and '" + finish.ToString(format) + "'";
-            cmd_Revenues_Date.ExecuteNonQuery();
-            read_Revenues_Count = cmd_Revenues_Date.ExecuteReader();
-            read_Revenues_Count.Read();
-            int count_revenues = int.Parse(read_Revenues_Count["count"].ToString());
-            read_Revenues_Count.Close();
-            SqlCommand cmd = connection.CreateCommand();
-            SqlCommand cmd2 = connection.CreateCommand();
-            float all_revenues;
-            SqlCommand cmd_Costs_Date = connection.CreateCommand();
-            SqlDataReader read_Costs_Count = (null);
-            cmd_Costs_Date.CommandType = CommandType.Text;
-            cmd_Costs_Date.CommandText = "select count(Cost_ID) as count from [Costs] where Date between '" +
-                    start.ToString(format) + "' and '" + finish.ToString(format) + "'";
-            cmd_Costs_Date.ExecuteNonQuery();
-            read_Costs_Count = cmd_Costs_Date.ExecuteReader();
-            read_Costs_Count.Read();
-            int count_costs = int.Parse(read_Costs_Count["count"].ToString());
-            read_Costs_Count.Close();
-            float all_costs;
-            if (count_revenues > 0)
-            {
-                SqlDataReader read = (null);
-                cmd.CommandText = "select sum(Amount) as Amount from Revenues where Date between '" +
-                        start.ToString(format) + "' and '" + finish.ToString(format) + "'";
-                cmd.ExecuteNonQuery();
-                read = cmd.ExecuteReader();
-                read.Read();
-                all_revenues = float.Parse(read["Amount"].ToString());
-                label_revenue.Text = all_revenues.ToString() + " Ft";
-                read.Close();
-            }
-            else
-            {
-                all_revenues = 0;
-            }
-            if (count_revenues > 0)
-            {
-                SqlDataReader read1 = (null);
-                cmd2.CommandText = "select sum(Amount) as Amount from Costs where Date between '" +
-                        start.ToString(format) + "' and '" + finish.ToString(format) + "'";
-                cmd2.ExecuteNonQuery();
-                read1 = cmd2.ExecuteReader();
-                read1.Read();
-                all_costs = float.Parse(read1["Amount"].ToString());
-                label_cost.Text = all_costs.ToString() + " Ft";
-                read1.Close();
-            }
-            else
-            {
-                all_costs = 0;
-            }
 
-            float all_profit = all_revenues - all_costs;
-            label_profit.Text = all_profit.ToString() + " Ft";
-            connection.Close();
             connection.Open();
-            SqlCommand cmd3= connection.CreateCommand();
 
-            cmd3.CommandType = CommandType.Text;
-            cmd3.CommandText = "select* from [Costs]  where Date between '" +
-                start.ToString(format) + "' and '" + finish.ToString(format) + "'" + "select * from [Revenues] where Date between '" +
-                start.ToString(format) + "' and '" + finish.ToString(format) + "'";
-            cmd3.ExecuteNonQuery();
+            SqlCommand cmd_cash= connection.CreateCommand();
+            SqlDataReader read_amount = (null);
+            cmd_cash.CommandType = CommandType.Text;
+            cmd_cash.CommandText = "drop table if exists [Cash_Flow]";
+            cmd_cash.ExecuteNonQuery();
+            cmd_cash.CommandText = "create table [Cash_Flow] ([Cash_Flow_ID] INT NOT NULL IDENTITY (1, 1), Amount FLOAT NOT NULL, Date DATETIME NOT NULL, PRIMARY KEY CLUSTERED ([Cash_Flow_ID] ASC))";
+            cmd_cash.ExecuteNonQuery();
+            cmd_cash.CommandText = "insert into [Cash_Flow] (Amount, Date) select Amount*(-1), Date from Costs";
+            cmd_cash.ExecuteNonQuery();
+            cmd_cash.CommandText = "insert into [Cash_Flow] (Amount, Date) select Amount, Date from Revenues";
+            cmd_cash.ExecuteNonQuery();
+
+            cmd_cash.CommandText = "select sum(Amount) as Sum from [Cash_Flow]where Date between '" +
+                    start.ToString(format) + "' and '" + finish.ToString(format) + "'";
+            cmd_cash.ExecuteNonQuery();
+            read_amount = cmd_cash.ExecuteReader();
+            read_amount.Read();
+            float all_cash = float.Parse(read_amount["Sum"].ToString());
+            read_amount.Close();
+            label_profit.Text = all_cash.ToString() + " Ft";
+
+            cmd_cash.CommandText = "select * from [Cash_Flow]where Date between '" +
+                    start.ToString(format) + "' and '" + finish.ToString(format) + "'";
+            cmd_cash.ExecuteNonQuery();
 
             DataTable dta = new DataTable();
-            SqlDataAdapter dataadp = new SqlDataAdapter(cmd3);
+            SqlDataAdapter dataadp = new SqlDataAdapter(cmd_cash);
             dataadp.Fill(dta);
             dataGridView1.DataSource = dta;
+
+            cmd_cash.CommandText = "drop table [Cash_Flow]";
+            cmd_cash.ExecuteNonQuery();
 
             connection.Close();
         }
