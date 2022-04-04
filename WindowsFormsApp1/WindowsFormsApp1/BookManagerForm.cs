@@ -80,7 +80,7 @@ namespace WindowsFormsApp1
             DataTable dta = new DataTable();
             SqlDataAdapter dataadp = new SqlDataAdapter(cmd);
             dataadp.Fill(dta);
-            dataGridView1.DataSource = dta;
+            dataGridView.DataSource = dta;
             connection.Close();
         }
 
@@ -95,7 +95,7 @@ namespace WindowsFormsApp1
                 DataTable dta = new DataTable();
                 SqlDataAdapter dataadp = new SqlDataAdapter(cmd);
                 dataadp.Fill(dta);
-                dataGridView1.DataSource = dta;
+                dataGridView.DataSource = dta;
                 connection.Close(); 
             } else
             {
@@ -269,7 +269,7 @@ namespace WindowsFormsApp1
 
         private void dG_double_Click(object sender, DataGridViewCellEventArgs e)
         {
-            tB_ID.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            tB_ID.Text = dataGridView.CurrentRow.Cells[0].Value.ToString();
         }
 
         public void send_mail(string e_mail) {
@@ -294,6 +294,215 @@ namespace WindowsFormsApp1
             {
                 Console.WriteLine(ex.ToString());
                 MessageBox.Show("Sikertelen küldés!" + ex.ToString());
+            }
+        }
+
+        //Formázás
+
+        private void tB_ISBN_Enter(object sender, EventArgs e)
+        {
+            if(tB_ISBN.Text == "ISBN")
+            {
+                tB_ISBN.Text = "";
+                tB_ISBN.ForeColor = Color.Black;
+            }
+        }
+
+        private void tB_ISBN_Leave(object sender, EventArgs e)
+        {
+            if (tB_ISBN.Text == "")
+            {
+                tB_ISBN.Text = "ISBN";
+                tB_ISBN.ForeColor = Color.Gray;
+            }
+        }
+
+        private void tB_author_Enter(object sender, EventArgs e)
+        {
+            if(tB_author.Text == "Szerző")
+            {
+                tB_author.Text = "";
+                tB_author.ForeColor = Color.Black;
+            }
+        }
+
+        private void tB_author_Leave(object sender, EventArgs e)
+        {
+            if (tB_author.Text == "")
+            {
+                tB_author.Text = "Szerző";
+                tB_author.ForeColor = Color.Gray;
+            }
+        }
+
+        private void tB_title_Enter(object sender, EventArgs e)
+        {
+            if (tB_title.Text == "Cím")
+            {
+                tB_title.Text = "";
+                tB_title.ForeColor = Color.Black;
+            }
+        }
+
+        private void tB_title_Leave(object sender, EventArgs e)
+        {
+            if (tB_title.Text == "")
+            {
+                tB_title.Text = "Cím";
+                tB_title.ForeColor = Color.Gray;
+            }
+        }
+
+        private void tB_year_Enter(object sender, EventArgs e)
+        {
+            if(tB_year.Text == "Kiadás éve")
+            {
+                tB_year.Text = "";
+                tB_year.ForeColor = Color.Black;
+            }
+        }
+
+        private void tB_year_Leave(object sender, EventArgs e)
+        {
+            if (tB_year.Text == "")
+            {
+                tB_year.Text = "Kiadás éve";
+                tB_year.ForeColor = Color.Gray;
+            }
+        }
+
+        private void tB_genre_Enter(object sender, EventArgs e)
+        {
+            if(tB_genre.Text == "Műfaj")
+            {
+                tB_genre.Text = "";
+                tB_genre.ForeColor = Color.Black;
+            }
+        }
+
+        private void tB_genre_Leave(object sender, EventArgs e)
+        {
+            if(tB_genre.Text == "")
+            {
+                tB_genre.Text = "Műfaj";
+                tB_genre.ForeColor = Color.Gray;
+            }
+        }
+
+        private void tB_publisher_Enter(object sender, EventArgs e)
+        {
+            if(tB_publisher.Text == "Kiadó")
+            {
+                tB_publisher.Text = "";
+                tB_publisher.ForeColor = Color.Black;
+            }
+        }
+
+        private void tB_publisher_Leave(object sender, EventArgs e)
+        {
+            if (tB_publisher.Text == "")
+            {
+                tB_publisher.Text = "Kiadó";
+                tB_publisher.ForeColor = Color.Gray;
+            }
+        }
+
+        private void tB_condition_Enter(object sender, EventArgs e)
+        {
+            if (tB_condition.Text == "Állapot")
+            {
+                tB_condition.Text = "";
+                tB_condition.ForeColor = Color.Black;
+            }
+        }
+
+        private void tB_condition_Leave(object sender, EventArgs e)
+        {
+            if (tB_condition.Text == "")
+            {
+                tB_condition.Text = "Állapot";
+                tB_condition.ForeColor = Color.Gray;
+            }
+        }
+
+        private void tB_binding_Enter(object sender, EventArgs e)
+        {
+            if(tB_binding.Text == "Kötés")
+            {
+                tB_binding.Text = "";
+                tB_binding.ForeColor = Color.Black;
+            }
+        }
+
+        private void tB_binding_Leave(object sender, EventArgs e)
+        {
+            if (tB_binding.Text == "")
+            {
+                tB_binding.Text = "Kötés";
+                tB_binding.ForeColor = Color.Gray;
+            }
+        }
+
+        private void tB_pagenumber_Enter(object sender, EventArgs e)
+        {
+            if(tB_pagenumber.Text == "Oldalszám")
+            {
+                tB_pagenumber.Text = "";
+                tB_pagenumber.ForeColor = Color.Black;
+            }
+        }
+
+        private void tB_pagenumber_Leave(object sender, EventArgs e)
+        {
+            if(tB_pagenumber.Text == "")
+            {
+                tB_pagenumber.Text = "Oldalszám";
+                tB_pagenumber.ForeColor = Color.Gray;
+            }
+        }
+
+        private void tB_purchase_price_Enter(object sender, EventArgs e)
+        {
+            if(tB_purchase_price.Text == "Beszerzési ár forintban")
+            {
+                tB_purchase_price.Text = "";
+                tB_purchase_price.ForeColor = Color.Black;
+            }
+        }
+
+        private void tB_purchase_price_Leave(object sender, EventArgs e)
+        {
+            if (tB_purchase_price.Text == "")
+            {
+                tB_purchase_price.Text = "Beszerzési ár forintban";
+                tB_purchase_price.ForeColor = Color.Gray;
+            }
+        }
+
+        private void tB_selling_price_Leave(object sender, EventArgs e)
+        {
+            if (tB_selling_price.Text == "")
+            {
+                tB_selling_price.Text = "Hozzáadásnál nem kell megadni!";
+                tB_selling_price.ForeColor = Color.Gray;
+            }
+        }
+
+        private void tB_ID_Enter(object sender, EventArgs e)
+        {
+            if(tB_ID.Text == "Könyv ID")
+            {
+                tB_ID.Text = "";
+                tB_ID.ForeColor = Color.Black;
+            }
+        }
+
+        private void tB_ID_Leave(object sender, EventArgs e)
+        {
+            if (tB_ID.Text == "")
+            {
+                tB_ID.Text = "Könyv ID";
+                tB_ID.ForeColor = Color.Gray;
             }
         }
     }

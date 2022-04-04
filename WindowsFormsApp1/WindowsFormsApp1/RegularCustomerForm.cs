@@ -115,7 +115,7 @@ namespace WindowsFormsApp1
                     "'" + gender.ToString()+ "', '" + tB_phone.Text + "', '" + tB_email.Text + "', '" + 0 + "', " + "'" + 0 + "')";
                 cmd.ExecuteNonQuery();
                 connection.Close();
-                tB_ID.Text = "";
+                tB_regcust_ID.Text = "";
                 tB_name.Text = "";
                 tB_address.Text = "";
                 cB_gender.Text = "";
@@ -134,7 +134,7 @@ namespace WindowsFormsApp1
             connection.Open();
             SqlCommand cmd = connection.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "delete from [Regular_Customers] where Regular_Customer_ID = '" + tB_ID.Text +"'";
+            cmd.CommandText = "delete from [Regular_Customers] where Regular_Customer_ID = '" + tB_regcust_ID.Text +"'";
             cmd.ExecuteNonQuery();
             connection.Close();
             display_data();
@@ -142,19 +142,19 @@ namespace WindowsFormsApp1
 
         private void regcus_modification_Click(object sender, EventArgs e)
         {
-            if (tB_ID.Text != "")
+            if (tB_regcust_ID.Text != "")
             {
-                string format = "yyyy. MM. dd";
+                //string format = "yyyy. MM. dd";
                 connection.Open();
                 SqlCommand cmd = connection.CreateCommand();
                 if (tB_name.Text != "")
                 {
-                    cmd.CommandText = "update [Regular_Customers] set Name = '" + tB_name.Text + "' where Regular_Customer_ID = '" + tB_ID.Text + "'";
+                    cmd.CommandText = "update [Regular_Customers] set Name = '" + tB_name.Text + "' where Regular_Customer_ID = '" + tB_regcust_ID.Text + "'";
                     tB_name.Text = "";
                 }
                 else if (tB_address.Text != "")
                 {
-                    cmd.CommandText = "update [Regular_Customers] set Address = '" + tB_address.Text + "' where Regular_Customer_ID = '" + tB_ID.Text + "'";
+                    cmd.CommandText = "update [Regular_Customers] set Address = '" + tB_address.Text + "' where Regular_Customer_ID = '" + tB_regcust_ID.Text + "'";
                     tB_address.Text = "";
                 }
                 /*else if (dtP_born_date.Value.ToString() != "")
@@ -164,17 +164,17 @@ namespace WindowsFormsApp1
                 }*/
                 else if (cB_gender.Text != "")
                 {
-                    cmd.CommandText = "update [Regular_Customers] set Gender = '" + cB_gender.Text + "' where Regular_Customer_ID = '" + tB_ID.Text + "'";
+                    cmd.CommandText = "update [Regular_Customers] set Gender = '" + cB_gender.Text + "' where Regular_Customer_ID = '" + tB_regcust_ID.Text + "'";
                     cB_gender.Text = "";
                 }
                 else if (tB_phone.Text != "")
                 {
-                    cmd.CommandText = "update [Regular_Customers] set  [Phone_Number] = '" + tB_phone.Text + "' where Regular_Customer_ID = '" + tB_ID.Text  + "'";
+                    cmd.CommandText = "update [Regular_Customers] set  [Phone_Number] = '" + tB_phone.Text + "' where Regular_Customer_ID = '" + tB_regcust_ID.Text  + "'";
                     tB_phone.Text = "";
                 }
                 else if (tB_email.Text != "")
                 {
-                    cmd.CommandText = "update [Regular_Customers] set [Email_Address]= '" + tB_email.Text + "' where Regular_Customer_ID = '" + tB_ID.Text + "'";
+                    cmd.CommandText = "update [Regular_Customers] set [Email_Address]= '" + tB_email.Text + "' where Regular_Customer_ID = '" + tB_regcust_ID.Text + "'";
                     tB_email.Text = "";
                 }
                 else
@@ -182,7 +182,7 @@ namespace WindowsFormsApp1
                     MessageBox.Show("Hiányzó adat!");
                     cmd.CommandText = "select * from [Books]";
                 }
-                tB_ID.Text = "";
+                tB_regcust_ID.Text = "";
                 cmd.ExecuteNonQuery();
                 connection.Close();
                 display_data();
@@ -195,8 +195,116 @@ namespace WindowsFormsApp1
 
         private void dG_double_Click(object sender, DataGridViewCellEventArgs e)
         {
-            tB_ID.Text = dataGridView.CurrentRow.Cells[0].Value.ToString();
+            tB_regcust_ID.Text = dataGridView.CurrentRow.Cells[0].Value.ToString();
         }
 
+        //Formázás
+        private void tB_regcust_ID_Enter(object sender, EventArgs e)
+        {
+            if (tB_regcust_ID.Text == "Törzsvásárlói kód")
+            {
+                tB_regcust_ID.Text = "";
+                tB_regcust_ID.ForeColor = Color.Black;
+            }
+        }
+
+        private void tB_regcust_ID_Leave(object sender, EventArgs e)
+        {
+            if (tB_regcust_ID.Text == "")
+            {
+                tB_regcust_ID.Text = "Törzsvásárlói kód";
+                tB_regcust_ID.ForeColor = Color.Gray;
+            }
+        }
+
+        private void tB_name_Enter(object sender, EventArgs e)
+        {
+            if (tB_name.Text == "Teljes név")
+            {
+                tB_name.Text = "";
+                tB_name.ForeColor = Color.Black;
+            }
+        }
+
+        private void tB_name_Leave(object sender, EventArgs e)
+        {
+            if (tB_name.Text == "")
+            {
+                tB_name.Text = "Teljes név";
+                tB_name.ForeColor = Color.Gray;
+            }
+        }
+
+        private void cB_gender_Enter(object sender, EventArgs e)
+        {
+            if (cB_gender.Text == "Nem")
+            {
+                cB_gender.Text = "";
+                cB_gender.ForeColor = Color.Black;
+            }
+        }
+
+        private void cB_gender_Leave(object sender, EventArgs e)
+        {
+            if (cB_gender.Text == "")
+            {
+                cB_gender.Text = "Nem";
+                cB_gender.ForeColor = Color.Gray;
+            }
+        }
+
+        private void tB_address_Enter(object sender, EventArgs e)
+        {
+            if (tB_address.Text == "Lakcím")
+            {
+                tB_address.Text = "";
+                tB_address.ForeColor = Color.Black;
+            }
+        }
+
+        private void tB_address_Leave(object sender, EventArgs e)
+        {
+            if (tB_address.Text == "")
+            {
+                tB_address.Text = "Lakcím";
+                tB_address.ForeColor = Color.Gray;
+            }
+        }
+
+        private void tB_phone_Enter(object sender, EventArgs e)
+        {
+            if (tB_phone.Text == "Telefonszám")
+            {
+                tB_phone.Text = "";
+                tB_phone.ForeColor = Color.Black;
+            }
+        }
+
+        private void tB_phone_Leave(object sender, EventArgs e)
+        {
+            if (tB_phone.Text == "")
+            {
+                tB_phone.Text = "Telefonszám";
+                tB_phone.ForeColor = Color.Gray;
+            }
+        }
+
+        private void tB_email_Enter(object sender, EventArgs e)
+        {
+            if (tB_email.Text == "Email cím")
+            {
+                tB_email.Text = "";
+                tB_email.ForeColor = Color.Black;
+            }
+        }
+
+        private void tB_email_Leave(object sender, EventArgs e)
+        {
+            if (tB_email.Text == "")
+            {
+                tB_email.Text = "Email cím";
+                tB_email.ForeColor = Color.Gray;
+            }
+        }
     }
 }

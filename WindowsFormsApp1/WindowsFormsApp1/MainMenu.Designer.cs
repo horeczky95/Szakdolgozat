@@ -29,27 +29,30 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.fájlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.regularCustomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bookManagerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.wishListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statementsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.súgóToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.regular_customer = new System.Windows.Forms.Button();
-            this.book_manager = new System.Windows.Forms.Button();
-            this.statments = new System.Windows.Forms.Button();
-            this.wish_list = new System.Windows.Forms.Button();
-            this.sale = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.regular_customer_button = new System.Windows.Forms.Button();
+            this.book_manager_button = new System.Windows.Forms.Button();
+            this.statments_button = new System.Windows.Forms.Button();
+            this.wish_list_button = new System.Windows.Forms.Button();
+            this.sale_button = new System.Windows.Forms.Button();
+            this.dataGridView = new System.Windows.Forms.DataGridView();
             this.könyvekBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.antiqueDBDataSet = new WindowsFormsApp1.AntiqueDBDataSet();
             this.könyvekTableAdapter = new WindowsFormsApp1.AntiqueDBDataSetTableAdapters.KönyvekTableAdapter();
             this.panel1 = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.könyvekBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.antiqueDBDataSet)).BeginInit();
             this.panel1.SuspendLayout();
@@ -60,184 +63,216 @@
             this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(134)))), ((int)(((byte)(134)))));
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fájlToolStripMenuItem,
-            this.súgóToolStripMenuItem});
+            this.fileToolStripMenuItem,
+            this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1482, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // fájlToolStripMenuItem
+            // fileToolStripMenuItem
             // 
-            this.fájlToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.saleToolStripMenuItem,
             this.regularCustomerToolStripMenuItem,
             this.bookManagerToolStripMenuItem,
             this.wishListToolStripMenuItem,
             this.statementsToolStripMenuItem,
             this.exitToolStripMenuItem});
-            this.fájlToolStripMenuItem.Name = "fájlToolStripMenuItem";
-            this.fájlToolStripMenuItem.Size = new System.Drawing.Size(45, 24);
-            this.fájlToolStripMenuItem.Text = "Fájl";
+            this.fileToolStripMenuItem.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
+            this.fileToolStripMenuItem.Text = "Fájl";
             // 
             // saleToolStripMenuItem
             // 
             this.saleToolStripMenuItem.Name = "saleToolStripMenuItem";
-            this.saleToolStripMenuItem.Size = new System.Drawing.Size(182, 26);
+            this.saleToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.saleToolStripMenuItem.Text = "Eladás";
             this.saleToolStripMenuItem.Click += new System.EventHandler(this.saleToolStripMenuItem_Click_1);
             // 
             // regularCustomerToolStripMenuItem
             // 
             this.regularCustomerToolStripMenuItem.Name = "regularCustomerToolStripMenuItem";
-            this.regularCustomerToolStripMenuItem.Size = new System.Drawing.Size(182, 26);
+            this.regularCustomerToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.regularCustomerToolStripMenuItem.Text = "Törzsvásárlók";
             this.regularCustomerToolStripMenuItem.Click += new System.EventHandler(this.regularCustomerToolStripMenuItem_Click_1);
             // 
             // bookManagerToolStripMenuItem
             // 
             this.bookManagerToolStripMenuItem.Name = "bookManagerToolStripMenuItem";
-            this.bookManagerToolStripMenuItem.Size = new System.Drawing.Size(182, 26);
+            this.bookManagerToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.bookManagerToolStripMenuItem.Text = "Könyv kezelő";
             this.bookManagerToolStripMenuItem.Click += new System.EventHandler(this.bookManagerToolStripMenuItem_Click);
             // 
             // wishListToolStripMenuItem
             // 
             this.wishListToolStripMenuItem.Name = "wishListToolStripMenuItem";
-            this.wishListToolStripMenuItem.Size = new System.Drawing.Size(182, 26);
+            this.wishListToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.wishListToolStripMenuItem.Text = "Kívánság lista";
             this.wishListToolStripMenuItem.Click += new System.EventHandler(this.wishListToolStripMenuItem_Click);
             // 
             // statementsToolStripMenuItem
             // 
             this.statementsToolStripMenuItem.Name = "statementsToolStripMenuItem";
-            this.statementsToolStripMenuItem.Size = new System.Drawing.Size(182, 26);
+            this.statementsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.statementsToolStripMenuItem.Text = "Kimutatások";
             this.statementsToolStripMenuItem.Click += new System.EventHandler(this.statementsToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(182, 26);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.exitToolStripMenuItem.Text = "Kilépés";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
-            // súgóToolStripMenuItem
+            // helpToolStripMenuItem
             // 
-            this.súgóToolStripMenuItem.Name = "súgóToolStripMenuItem";
-            this.súgóToolStripMenuItem.Size = new System.Drawing.Size(57, 24);
-            this.súgóToolStripMenuItem.Text = "Súgó";
+            this.helpToolStripMenuItem.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(57, 24);
+            this.helpToolStripMenuItem.Text = "Súgó";
             // 
-            // regular_customer
+            // regular_customer_button
             // 
-            this.regular_customer.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.regular_customer.AutoSize = true;
-            this.regular_customer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(113)))), ((int)(((byte)(113)))));
-            this.regular_customer.FlatAppearance.BorderSize = 0;
-            this.regular_customer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.regular_customer.Font = new System.Drawing.Font("Palatino Linotype", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.regular_customer.Image = global::WindowsFormsApp1.Properties.Resources.regular_customer;
-            this.regular_customer.Location = new System.Drawing.Point(0, 219);
-            this.regular_customer.Name = "regular_customer";
-            this.regular_customer.Size = new System.Drawing.Size(275, 100);
-            this.regular_customer.TabIndex = 2;
-            this.regular_customer.Text = "Törzsvásárlók";
-            this.regular_customer.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.regular_customer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.regular_customer.UseVisualStyleBackColor = false;
-            this.regular_customer.Click += new System.EventHandler(this.regular_customer_Click);
+            this.regular_customer_button.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.regular_customer_button.AutoSize = true;
+            this.regular_customer_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(113)))), ((int)(((byte)(113)))));
+            this.regular_customer_button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.regular_customer_button.FlatAppearance.BorderSize = 0;
+            this.regular_customer_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.regular_customer_button.Font = new System.Drawing.Font("Palatino Linotype", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.regular_customer_button.Image = global::WindowsFormsApp1.Properties.Resources.regular_customer;
+            this.regular_customer_button.Location = new System.Drawing.Point(0, 220);
+            this.regular_customer_button.Name = "regular_customer_button";
+            this.regular_customer_button.Size = new System.Drawing.Size(275, 100);
+            this.regular_customer_button.TabIndex = 2;
+            this.regular_customer_button.Text = "Törzsvásárlók";
+            this.regular_customer_button.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.regular_customer_button.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.regular_customer_button.UseVisualStyleBackColor = false;
+            this.regular_customer_button.Click += new System.EventHandler(this.regular_customer_Click);
             // 
-            // book_manager
+            // book_manager_button
             // 
-            this.book_manager.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.book_manager.AutoSize = true;
-            this.book_manager.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(113)))), ((int)(((byte)(113)))));
-            this.book_manager.FlatAppearance.BorderSize = 0;
-            this.book_manager.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.book_manager.Font = new System.Drawing.Font("Palatino Linotype", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.book_manager.Image = global::WindowsFormsApp1.Properties.Resources.book_manager;
-            this.book_manager.Location = new System.Drawing.Point(0, 338);
-            this.book_manager.Name = "book_manager";
-            this.book_manager.Size = new System.Drawing.Size(275, 100);
-            this.book_manager.TabIndex = 3;
-            this.book_manager.Text = "Könyvkezelő";
-            this.book_manager.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.book_manager.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.book_manager.UseVisualStyleBackColor = false;
-            this.book_manager.Click += new System.EventHandler(this.book_manager_Click);
+            this.book_manager_button.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.book_manager_button.AutoSize = true;
+            this.book_manager_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(113)))), ((int)(((byte)(113)))));
+            this.book_manager_button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.book_manager_button.FlatAppearance.BorderSize = 0;
+            this.book_manager_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.book_manager_button.Font = new System.Drawing.Font("Palatino Linotype", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.book_manager_button.Image = global::WindowsFormsApp1.Properties.Resources.book_manager;
+            this.book_manager_button.Location = new System.Drawing.Point(0, 339);
+            this.book_manager_button.Name = "book_manager_button";
+            this.book_manager_button.Size = new System.Drawing.Size(275, 100);
+            this.book_manager_button.TabIndex = 3;
+            this.book_manager_button.Text = "Könyvkezelő";
+            this.book_manager_button.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.book_manager_button.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.book_manager_button.UseVisualStyleBackColor = false;
+            this.book_manager_button.Click += new System.EventHandler(this.book_manager_Click);
             // 
-            // statments
+            // statments_button
             // 
-            this.statments.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.statments.AutoSize = true;
-            this.statments.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(113)))), ((int)(((byte)(113)))));
-            this.statments.FlatAppearance.BorderSize = 0;
-            this.statments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.statments.Font = new System.Drawing.Font("Palatino Linotype", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.statments.Image = global::WindowsFormsApp1.Properties.Resources.statements;
-            this.statments.Location = new System.Drawing.Point(0, 576);
-            this.statments.Name = "statments";
-            this.statments.Size = new System.Drawing.Size(275, 100);
-            this.statments.TabIndex = 5;
-            this.statments.Text = "Kimutatások";
-            this.statments.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.statments.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.statments.UseVisualStyleBackColor = false;
-            this.statments.Click += new System.EventHandler(this.statments_Click);
+            this.statments_button.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.statments_button.AutoSize = true;
+            this.statments_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(113)))), ((int)(((byte)(113)))));
+            this.statments_button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.statments_button.FlatAppearance.BorderSize = 0;
+            this.statments_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.statments_button.Font = new System.Drawing.Font("Palatino Linotype", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.statments_button.Image = global::WindowsFormsApp1.Properties.Resources.statements;
+            this.statments_button.Location = new System.Drawing.Point(0, 577);
+            this.statments_button.Name = "statments_button";
+            this.statments_button.Size = new System.Drawing.Size(275, 100);
+            this.statments_button.TabIndex = 5;
+            this.statments_button.Text = "Kimutatások";
+            this.statments_button.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.statments_button.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.statments_button.UseVisualStyleBackColor = false;
+            this.statments_button.Click += new System.EventHandler(this.statments_Click);
             // 
-            // wish_list
+            // wish_list_button
             // 
-            this.wish_list.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.wish_list.AutoSize = true;
-            this.wish_list.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(113)))), ((int)(((byte)(113)))));
-            this.wish_list.FlatAppearance.BorderSize = 0;
-            this.wish_list.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.wish_list.Font = new System.Drawing.Font("Palatino Linotype", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.wish_list.Image = global::WindowsFormsApp1.Properties.Resources.wish_list;
-            this.wish_list.Location = new System.Drawing.Point(0, 457);
-            this.wish_list.Name = "wish_list";
-            this.wish_list.Size = new System.Drawing.Size(275, 100);
-            this.wish_list.TabIndex = 4;
-            this.wish_list.Text = "Kívánságlista";
-            this.wish_list.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.wish_list.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.wish_list.UseVisualStyleBackColor = false;
-            this.wish_list.Click += new System.EventHandler(this.wish_list_Click);
+            this.wish_list_button.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.wish_list_button.AutoSize = true;
+            this.wish_list_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(113)))), ((int)(((byte)(113)))));
+            this.wish_list_button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.wish_list_button.FlatAppearance.BorderSize = 0;
+            this.wish_list_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.wish_list_button.Font = new System.Drawing.Font("Palatino Linotype", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.wish_list_button.Image = global::WindowsFormsApp1.Properties.Resources.wish_list;
+            this.wish_list_button.Location = new System.Drawing.Point(0, 458);
+            this.wish_list_button.Name = "wish_list_button";
+            this.wish_list_button.Size = new System.Drawing.Size(275, 100);
+            this.wish_list_button.TabIndex = 4;
+            this.wish_list_button.Text = "Kívánságlista";
+            this.wish_list_button.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.wish_list_button.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.wish_list_button.UseVisualStyleBackColor = false;
+            this.wish_list_button.Click += new System.EventHandler(this.wish_list_Click);
             // 
-            // sale
+            // sale_button
             // 
-            this.sale.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.sale.AutoSize = true;
-            this.sale.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(113)))), ((int)(((byte)(113)))));
-            this.sale.FlatAppearance.BorderSize = 0;
-            this.sale.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.sale.Font = new System.Drawing.Font("Palatino Linotype", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.sale.Image = global::WindowsFormsApp1.Properties.Resources.sale;
-            this.sale.Location = new System.Drawing.Point(0, 100);
-            this.sale.Name = "sale";
-            this.sale.Size = new System.Drawing.Size(275, 100);
-            this.sale.TabIndex = 1;
-            this.sale.Text = "Eladás";
-            this.sale.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.sale.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.sale.UseVisualStyleBackColor = false;
-            this.sale.Click += new System.EventHandler(this.sale_Click);
+            this.sale_button.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.sale_button.AutoSize = true;
+            this.sale_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(113)))), ((int)(((byte)(113)))));
+            this.sale_button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.sale_button.FlatAppearance.BorderSize = 0;
+            this.sale_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sale_button.Font = new System.Drawing.Font("Palatino Linotype", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.sale_button.Image = global::WindowsFormsApp1.Properties.Resources.sale;
+            this.sale_button.Location = new System.Drawing.Point(0, 101);
+            this.sale_button.Name = "sale_button";
+            this.sale_button.Size = new System.Drawing.Size(275, 100);
+            this.sale_button.TabIndex = 1;
+            this.sale_button.Text = "Eladás";
+            this.sale_button.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.sale_button.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.sale_button.UseVisualStyleBackColor = false;
+            this.sale_button.Click += new System.EventHandler(this.sale_Click);
             // 
-            // dataGridView1
+            // dataGridView
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(134)))), ((int)(((byte)(134)))));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(134)))), ((int)(((byte)(134)))));
-            this.dataGridView1.Location = new System.Drawing.Point(302, 42);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1168, 749);
-            this.dataGridView1.TabIndex = 6;
+            this.dataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(134)))), ((int)(((byte)(134)))));
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(134)))), ((int)(((byte)(134)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Cursor = System.Windows.Forms.Cursors.Hand;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(134)))), ((int)(((byte)(134)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView.GridColor = System.Drawing.Color.Black;
+            this.dataGridView.Location = new System.Drawing.Point(302, 42);
+            this.dataGridView.Name = "dataGridView";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(134)))), ((int)(((byte)(134)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridView.RowHeadersWidth = 51;
+            this.dataGridView.RowTemplate.Height = 24;
+            this.dataGridView.Size = new System.Drawing.Size(1168, 749);
+            this.dataGridView.TabIndex = 6;
             // 
             // könyvekBindingSource
             // 
@@ -255,11 +290,11 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.sale);
-            this.panel1.Controls.Add(this.regular_customer);
-            this.panel1.Controls.Add(this.book_manager);
-            this.panel1.Controls.Add(this.statments);
-            this.panel1.Controls.Add(this.wish_list);
+            this.panel1.Controls.Add(this.sale_button);
+            this.panel1.Controls.Add(this.regular_customer_button);
+            this.panel1.Controls.Add(this.book_manager_button);
+            this.panel1.Controls.Add(this.statments_button);
+            this.panel1.Controls.Add(this.wish_list_button);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 28);
             this.panel1.Name = "panel1";
@@ -274,7 +309,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1482, 803);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.menuStrip1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainMenu";
@@ -282,7 +317,7 @@
             this.Text = "Főmenü";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.könyvekBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.antiqueDBDataSet)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -295,20 +330,20 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem fájlToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem regularCustomerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bookManagerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem wishListToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem statementsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem súgóToolStripMenuItem;
-        private System.Windows.Forms.Button regular_customer;
-        private System.Windows.Forms.Button book_manager;
-        private System.Windows.Forms.Button statments;
-        private System.Windows.Forms.Button wish_list;
-        private System.Windows.Forms.Button sale;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        private System.Windows.Forms.Button regular_customer_button;
+        private System.Windows.Forms.Button book_manager_button;
+        private System.Windows.Forms.Button statments_button;
+        private System.Windows.Forms.Button wish_list_button;
+        private System.Windows.Forms.Button sale_button;
+        private System.Windows.Forms.DataGridView dataGridView;
         private AntiqueDBDataSet antiqueDBDataSet;
         private System.Windows.Forms.BindingSource könyvekBindingSource;
         private AntiqueDBDataSetTableAdapters.KönyvekTableAdapter könyvekTableAdapter;

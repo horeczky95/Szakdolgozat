@@ -122,7 +122,7 @@ namespace WindowsFormsApp1
             DataTable dta = new DataTable();
             SqlDataAdapter dataadp = new SqlDataAdapter(cmd);
             dataadp.Fill(dta);
-            dataGridView1.DataSource = dta;
+            dataGridView.DataSource = dta;
             connection.Close();
 
         }
@@ -190,8 +190,8 @@ namespace WindowsFormsApp1
             connection.Close();
             string format = "MM.dd";
             DateTime today = DateTime.Parse(DateTime.UtcNow.ToString(format));
-            DateTime mail_date_start = DateTime.Parse(new DateTime(2022, 04, 01).ToString(format));
-            DateTime mail_date_finish = DateTime.Parse(new DateTime(2022, 04, 07).ToString(format));
+            DateTime mail_date_start = DateTime.Parse(new DateTime(2022, 03, 01).ToString(format));
+            DateTime mail_date_finish = DateTime.Parse(new DateTime(2022, 03, 07).ToString(format));
             if (today >= mail_date_start && today < mail_date_finish)
             {
                 foreach(Customer c in customers)
