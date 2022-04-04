@@ -60,23 +60,25 @@
             this.törzsvásárlókBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.antiqueDBDataSet = new WindowsFormsApp1.AntiqueDBDataSet();
             this.törzsvásárlókTableAdapter = new WindowsFormsApp1.AntiqueDBDataSetTableAdapters.TörzsvásárlókTableAdapter();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tB_born_date = new System.Windows.Forms.TextBox();
+            this.dtP_born_date = new System.Windows.Forms.DateTimePicker();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.törzsvásárlókBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.antiqueDBDataSet)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(134)))), ((int)(((byte)(134)))));
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fájlToolStripMenuItem,
             this.súgóToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1482, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1482, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -90,7 +92,7 @@
             this.statementsToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.fájlToolStripMenuItem.Name = "fájlToolStripMenuItem";
-            this.fájlToolStripMenuItem.Size = new System.Drawing.Size(45, 24);
+            this.fájlToolStripMenuItem.Size = new System.Drawing.Size(45, 26);
             this.fájlToolStripMenuItem.Text = "Fájl";
             // 
             // mainMenuToolStripMenuItem
@@ -138,177 +140,219 @@
             // súgóToolStripMenuItem
             // 
             this.súgóToolStripMenuItem.Name = "súgóToolStripMenuItem";
-            this.súgóToolStripMenuItem.Size = new System.Drawing.Size(57, 24);
+            this.súgóToolStripMenuItem.Size = new System.Drawing.Size(57, 26);
             this.súgóToolStripMenuItem.Text = "Súgó";
             // 
             // label_Name
             // 
             this.label_Name.AutoSize = true;
-            this.label_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label_Name.Location = new System.Drawing.Point(36, 94);
+            this.label_Name.Font = new System.Drawing.Font("Palatino Linotype", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_Name.Location = new System.Drawing.Point(12, 197);
             this.label_Name.Name = "label_Name";
-            this.label_Name.Size = new System.Drawing.Size(38, 20);
+            this.label_Name.Size = new System.Drawing.Size(41, 23);
             this.label_Name.TabIndex = 2;
             this.label_Name.Text = "Név";
             // 
             // label_Born_date
             // 
             this.label_Born_date.AutoSize = true;
-            this.label_Born_date.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label_Born_date.Location = new System.Drawing.Point(36, 134);
+            this.label_Born_date.Font = new System.Drawing.Font("Palatino Linotype", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_Born_date.Location = new System.Drawing.Point(12, 239);
             this.label_Born_date.Name = "label_Born_date";
-            this.label_Born_date.Size = new System.Drawing.Size(129, 20);
+            this.label_Born_date.Size = new System.Drawing.Size(132, 23);
             this.label_Born_date.TabIndex = 3;
             this.label_Born_date.Text = "Születési dátum";
             // 
             // label_Gender
             // 
             this.label_Gender.AutoSize = true;
-            this.label_Gender.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label_Gender.Location = new System.Drawing.Point(36, 174);
+            this.label_Gender.Font = new System.Drawing.Font("Palatino Linotype", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_Gender.Location = new System.Drawing.Point(12, 281);
             this.label_Gender.Name = "label_Gender";
-            this.label_Gender.Size = new System.Drawing.Size(44, 20);
+            this.label_Gender.Size = new System.Drawing.Size(47, 23);
             this.label_Gender.TabIndex = 4;
             this.label_Gender.Text = "Nem";
             // 
             // label_Address
             // 
             this.label_Address.AutoSize = true;
-            this.label_Address.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label_Address.Location = new System.Drawing.Point(36, 214);
+            this.label_Address.Font = new System.Drawing.Font("Palatino Linotype", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_Address.Location = new System.Drawing.Point(12, 323);
             this.label_Address.Name = "label_Address";
-            this.label_Address.Size = new System.Drawing.Size(39, 20);
+            this.label_Address.Size = new System.Drawing.Size(42, 23);
             this.label_Address.TabIndex = 5;
             this.label_Address.Text = "Cím";
             // 
             // label_Phone_number
             // 
             this.label_Phone_number.AutoSize = true;
-            this.label_Phone_number.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label_Phone_number.Location = new System.Drawing.Point(36, 254);
+            this.label_Phone_number.Font = new System.Drawing.Font("Palatino Linotype", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_Phone_number.Location = new System.Drawing.Point(12, 365);
             this.label_Phone_number.Name = "label_Phone_number";
-            this.label_Phone_number.Size = new System.Drawing.Size(105, 20);
+            this.label_Phone_number.Size = new System.Drawing.Size(106, 23);
             this.label_Phone_number.TabIndex = 6;
             this.label_Phone_number.Text = "Telefonszám";
             // 
             // label_Email_address
             // 
             this.label_Email_address.AutoSize = true;
-            this.label_Email_address.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label_Email_address.Location = new System.Drawing.Point(36, 294);
+            this.label_Email_address.Font = new System.Drawing.Font("Palatino Linotype", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_Email_address.Location = new System.Drawing.Point(12, 407);
             this.label_Email_address.Name = "label_Email_address";
-            this.label_Email_address.Size = new System.Drawing.Size(83, 20);
+            this.label_Email_address.Size = new System.Drawing.Size(86, 23);
             this.label_Email_address.TabIndex = 7;
             this.label_Email_address.Text = "Email cím";
             // 
             // label_RegCust_ID
             // 
             this.label_RegCust_ID.AutoSize = true;
-            this.label_RegCust_ID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label_RegCust_ID.Location = new System.Drawing.Point(36, 49);
+            this.label_RegCust_ID.Font = new System.Drawing.Font("Palatino Linotype", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_RegCust_ID.Location = new System.Drawing.Point(12, 155);
             this.label_RegCust_ID.Name = "label_RegCust_ID";
-            this.label_RegCust_ID.Size = new System.Drawing.Size(141, 20);
+            this.label_RegCust_ID.Size = new System.Drawing.Size(146, 23);
             this.label_RegCust_ID.TabIndex = 8;
             this.label_RegCust_ID.Text = "Törzsvásrálói kód";
             // 
             // tB_name
             // 
-            this.tB_name.Location = new System.Drawing.Point(201, 92);
+            this.tB_name.BackColor = System.Drawing.SystemColors.Window;
+            this.tB_name.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tB_name.Location = new System.Drawing.Point(180, 197);
             this.tB_name.Name = "tB_name";
             this.tB_name.Size = new System.Drawing.Size(240, 22);
             this.tB_name.TabIndex = 9;
             // 
             // tB_address
             // 
-            this.tB_address.Location = new System.Drawing.Point(201, 212);
+            this.tB_address.BackColor = System.Drawing.SystemColors.Window;
+            this.tB_address.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tB_address.Location = new System.Drawing.Point(180, 323);
             this.tB_address.Name = "tB_address";
             this.tB_address.Size = new System.Drawing.Size(240, 22);
             this.tB_address.TabIndex = 12;
             // 
             // tB_phone
             // 
-            this.tB_phone.Location = new System.Drawing.Point(201, 252);
+            this.tB_phone.BackColor = System.Drawing.SystemColors.Window;
+            this.tB_phone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tB_phone.Location = new System.Drawing.Point(180, 365);
             this.tB_phone.Name = "tB_phone";
             this.tB_phone.Size = new System.Drawing.Size(240, 22);
             this.tB_phone.TabIndex = 13;
             // 
             // tB_email
             // 
-            this.tB_email.Location = new System.Drawing.Point(201, 292);
+            this.tB_email.BackColor = System.Drawing.SystemColors.Window;
+            this.tB_email.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tB_email.Location = new System.Drawing.Point(180, 407);
             this.tB_email.Name = "tB_email";
             this.tB_email.Size = new System.Drawing.Size(240, 22);
             this.tB_email.TabIndex = 14;
             // 
             // tB_ID
             // 
-            this.tB_ID.Location = new System.Drawing.Point(201, 49);
+            this.tB_ID.BackColor = System.Drawing.SystemColors.Window;
+            this.tB_ID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tB_ID.Location = new System.Drawing.Point(180, 155);
             this.tB_ID.Name = "tB_ID";
             this.tB_ID.Size = new System.Drawing.Size(240, 22);
             this.tB_ID.TabIndex = 15;
             // 
             // cB_gender
             // 
+            this.cB_gender.BackColor = System.Drawing.SystemColors.Window;
             this.cB_gender.FormattingEnabled = true;
             this.cB_gender.Items.AddRange(new object[] {
             "Nő",
             "Férfi"});
-            this.cB_gender.Location = new System.Drawing.Point(201, 172);
+            this.cB_gender.Location = new System.Drawing.Point(180, 281);
             this.cB_gender.Name = "cB_gender";
             this.cB_gender.Size = new System.Drawing.Size(240, 24);
             this.cB_gender.TabIndex = 16;
             // 
             // display_button
             // 
-            this.display_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.display_button.Location = new System.Drawing.Point(485, 34);
+            this.display_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(113)))), ((int)(((byte)(113)))));
+            this.display_button.FlatAppearance.BorderSize = 0;
+            this.display_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.display_button.Font = new System.Drawing.Font("Palatino Linotype", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.display_button.Image = global::WindowsFormsApp1.Properties.Resources.search;
+            this.display_button.Location = new System.Drawing.Point(88, 70);
             this.display_button.Name = "display_button";
-            this.display_button.Size = new System.Drawing.Size(174, 50);
+            this.display_button.Size = new System.Drawing.Size(260, 50);
             this.display_button.TabIndex = 19;
             this.display_button.Text = "Megjelenítés";
-            this.display_button.UseVisualStyleBackColor = true;
+            this.display_button.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.display_button.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.display_button.UseVisualStyleBackColor = false;
             this.display_button.Click += new System.EventHandler(this.regcus_display_Click);
             // 
             // button1
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button1.Location = new System.Drawing.Point(485, 108);
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(113)))), ((int)(((byte)(113)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Palatino Linotype", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button1.Image = global::WindowsFormsApp1.Properties.Resources.add;
+            this.button1.Location = new System.Drawing.Point(88, 464);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(174, 50);
+            this.button1.Size = new System.Drawing.Size(260, 50);
             this.button1.TabIndex = 20;
             this.button1.Text = "Új törzsvásárló regisztrálása";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.new_regcust_Click);
             // 
             // button2
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button2.Location = new System.Drawing.Point(485, 188);
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(113)))), ((int)(((byte)(113)))));
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Palatino Linotype", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button2.Image = global::WindowsFormsApp1.Properties.Resources.modification;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(88, 549);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(174, 50);
+            this.button2.Size = new System.Drawing.Size(260, 50);
             this.button2.TabIndex = 21;
             this.button2.Text = "Törzsvásárlói adatok módosítása";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.regcus_modification_Click);
             // 
             // button3
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button3.Location = new System.Drawing.Point(485, 268);
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(113)))), ((int)(((byte)(113)))));
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Palatino Linotype", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button3.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button3.Image = global::WindowsFormsApp1.Properties.Resources.delete;
+            this.button3.Location = new System.Drawing.Point(88, 634);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(174, 50);
+            this.button3.Size = new System.Drawing.Size(260, 50);
             this.button3.TabIndex = 22;
             this.button3.Text = "Törzsvásárló törlése";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.delete_regcus_Click);
             // 
             // dataGridView
             // 
+            this.dataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(134)))), ((int)(((byte)(134)))));
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Location = new System.Drawing.Point(12, 349);
+            this.dataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(134)))), ((int)(((byte)(134)))));
+            this.dataGridView.Location = new System.Drawing.Point(472, 40);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.RowHeadersWidth = 51;
             this.dataGridView.RowTemplate.Height = 24;
-            this.dataGridView.Size = new System.Drawing.Size(1458, 442);
+            this.dataGridView.Size = new System.Drawing.Size(998, 751);
             this.dataGridView.TabIndex = 23;
             this.dataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dG_double_Click);
             // 
@@ -326,49 +370,48 @@
             // 
             this.törzsvásárlókTableAdapter.ClearBeforeFill = true;
             // 
-            // label1
+            // dtP_born_date
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(706, 49);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 17);
-            this.label1.TabIndex = 24;
-            this.label1.Text = "label1";
+            this.dtP_born_date.Location = new System.Drawing.Point(180, 239);
+            this.dtP_born_date.Name = "dtP_born_date";
+            this.dtP_born_date.Size = new System.Drawing.Size(240, 22);
+            this.dtP_born_date.TabIndex = 25;
             // 
-            // tB_born_date
+            // panel1
             // 
-            this.tB_born_date.Location = new System.Drawing.Point(201, 132);
-            this.tB_born_date.Name = "tB_born_date";
-            this.tB_born_date.Size = new System.Drawing.Size(240, 22);
-            this.tB_born_date.TabIndex = 10;
+            this.panel1.Controls.Add(this.label_RegCust_ID);
+            this.panel1.Controls.Add(this.dtP_born_date);
+            this.panel1.Controls.Add(this.label_Name);
+            this.panel1.Controls.Add(this.label_Born_date);
+            this.panel1.Controls.Add(this.button3);
+            this.panel1.Controls.Add(this.label_Gender);
+            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.label_Address);
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.label_Phone_number);
+            this.panel1.Controls.Add(this.display_button);
+            this.panel1.Controls.Add(this.label_Email_address);
+            this.panel1.Controls.Add(this.cB_gender);
+            this.panel1.Controls.Add(this.tB_name);
+            this.panel1.Controls.Add(this.tB_ID);
+            this.panel1.Controls.Add(this.tB_email);
+            this.panel1.Controls.Add(this.tB_address);
+            this.panel1.Controls.Add(this.tB_phone);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 30);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(466, 773);
+            this.panel1.TabIndex = 26;
             // 
             // RegularCustomerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(134)))), ((int)(((byte)(134)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1482, 803);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.display_button);
-            this.Controls.Add(this.cB_gender);
-            this.Controls.Add(this.tB_ID);
-            this.Controls.Add(this.tB_email);
-            this.Controls.Add(this.tB_phone);
-            this.Controls.Add(this.tB_address);
-            this.Controls.Add(this.tB_born_date);
-            this.Controls.Add(this.tB_name);
-            this.Controls.Add(this.label_RegCust_ID);
-            this.Controls.Add(this.label_Email_address);
-            this.Controls.Add(this.label_Phone_number);
-            this.Controls.Add(this.label_Address);
-            this.Controls.Add(this.label_Gender);
-            this.Controls.Add(this.label_Born_date);
-            this.Controls.Add(this.label_Name);
             this.Controls.Add(this.menuStrip1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "RegularCustomerForm";
@@ -379,6 +422,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.törzsvásárlókBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.antiqueDBDataSet)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -417,7 +462,7 @@
         private AntiqueDBDataSet antiqueDBDataSet;
         private System.Windows.Forms.BindingSource törzsvásárlókBindingSource;
         private AntiqueDBDataSetTableAdapters.TörzsvásárlókTableAdapter törzsvásárlókTableAdapter;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox tB_born_date;
+        private System.Windows.Forms.DateTimePicker dtP_born_date;
+        private System.Windows.Forms.Panel panel1;
     }
 }

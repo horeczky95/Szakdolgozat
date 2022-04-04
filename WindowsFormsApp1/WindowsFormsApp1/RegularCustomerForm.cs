@@ -68,7 +68,8 @@ namespace WindowsFormsApp1
             connection.Open();
             SqlCommand cmd = connection.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select * from [Regular_Customers]";
+            cmd.CommandText = "select [Regular_Customer_ID] as [Törzsvásárlói kód], [Name] as Név, [Address] as Cím, [Born date] as [Születési idő], [Gender] as [Nem], [Phone_number] as Telefonszám, " +
+                "[Email_Address] as [Email cím], [Current_Points] as [Aktuális pontok], [Previous_Year_Points] as [Előző éves pontok] from [Regular_Customers]";
             cmd.ExecuteNonQuery();
             DataTable dta = new DataTable();
             SqlDataAdapter dataadp = new SqlDataAdapter(cmd);
@@ -86,11 +87,13 @@ namespace WindowsFormsApp1
         {
             
 
-            if ( tB_name.Text != "" && tB_address.Text != "" && tB_born_date.Text != "" && cB_gender.Text != "" && tB_phone.Text != "" && tB_email.Text != "")
+            if ( tB_name.Text != "" && tB_address.Text != "" &&  cB_gender.Text != "" && tB_phone.Text != "" && tB_email.Text != "")
             {
-                string tb_born = tB_born_date.Text;
+                string format = "yyyy. MM. dd";
+                DateTime born_date = dtP_born_date.Value;
+                string born_date_string = born_date.ToString(format);
                 string date = null;
-                date += tb_born[0].ToString()+ tb_born[1].ToString() + tb_born[2].ToString() + tb_born[3].ToString() + tb_born[5].ToString() + tb_born[6].ToString();
+                date += born_date_string[0].ToString()+ born_date_string[1].ToString() + born_date_string[2].ToString() + born_date_string[3].ToString() + born_date_string[6].ToString() + born_date_string[7].ToString();
                 string gender_number, gender;
                 if (cB_gender.Text == "Nő"){
                     gender_number = "1";
@@ -108,14 +111,13 @@ namespace WindowsFormsApp1
                 SqlCommand cmd = connection.CreateCommand();
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = "insert into [Regular_Customers] (Regular_Customer_ID, Name, Address, [Born date], Gender, [Phone_Number], [Email_Address], [Current_Points], [Previous_Year_Points]) " +
-                    "values ('" + reg_cust.ToString() + "', '" + tB_name.Text + "', '" + tB_address.Text + "','" + tB_born_date.Text + "', " +
+                    "values ('" + reg_cust.ToString() + "', '" + tB_name.Text + "', '" + tB_address.Text + "','" + born_date.ToString(format) + "', " +
                     "'" + gender.ToString()+ "', '" + tB_phone.Text + "', '" + tB_email.Text + "', '" + 0 + "', " + "'" + 0 + "')";
                 cmd.ExecuteNonQuery();
                 connection.Close();
                 tB_ID.Text = "";
                 tB_name.Text = "";
                 tB_address.Text = "";
-                tB_born_date.Text = "";
                 cB_gender.Text = "";
                 tB_phone.Text = "";
                 tB_email.Text = "";
@@ -142,9 +144,9 @@ namespace WindowsFormsApp1
         {
             if (tB_ID.Text != "")
             {
+                string format = "yyyy. MM. dd";
                 connection.Open();
                 SqlCommand cmd = connection.CreateCommand();
-                cmd.CommandType = CommandType.Text;
                 if (tB_name.Text != "")
                 {
                     cmd.CommandText = "update [Regular_Customers] set Name = '" + tB_name.Text + "' where Regular_Customer_ID = '" + tB_ID.Text + "'";
@@ -155,11 +157,11 @@ namespace WindowsFormsApp1
                     cmd.CommandText = "update [Regular_Customers] set Address = '" + tB_address.Text + "' where Regular_Customer_ID = '" + tB_ID.Text + "'";
                     tB_address.Text = "";
                 }
-                else if (tB_born_date.Text != "")
+                /*else if (dtP_born_date.Value.ToString() != "")
                 {
                     cmd.CommandText = "update [Regular_Customers] set [Born year] = '" + tB_born_date.Text + "' where Regular_Customer_ID = '" + tB_ID.Text + "'";
                     tB_born_date.Text = "";
-                }
+                }*/
                 else if (cB_gender.Text != "")
                 {
                     cmd.CommandText = "update [Regular_Customers] set Gender = '" + cB_gender.Text + "' where Regular_Customer_ID = '" + tB_ID.Text + "'";
@@ -195,5 +197,6 @@ namespace WindowsFormsApp1
         {
             tB_ID.Text = dataGridView.CurrentRow.Cells[0].Value.ToString();
         }
+
     }
 }
