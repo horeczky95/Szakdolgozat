@@ -87,7 +87,9 @@ namespace WindowsFormsApp1
         {
             
 
-            if ( tB_name.Text != "" && tB_address.Text != "" &&  cB_gender.Text != "" && tB_phone.Text != "" && tB_email.Text != "")
+            if ( tB_name.Text != "" && tB_name.Text != "Teljes név" && tB_address.Text != "" && tB_address.Text != "Lakcím" 
+                && cB_gender.Text != "" && cB_gender.Text != "Nem" && tB_phone.Text != "" && tB_phone.Text != "Telefonszám"
+                && tB_email.Text != "" && tB_email.Text != "Email cím")
             {
                 string format = "yyyy. MM. dd";
                 DateTime born_date = dtP_born_date.Value;
@@ -115,12 +117,16 @@ namespace WindowsFormsApp1
                     "'" + gender.ToString()+ "', '" + tB_phone.Text + "', '" + tB_email.Text + "', '" + 0 + "', " + "'" + 0 + "')";
                 cmd.ExecuteNonQuery();
                 connection.Close();
-                tB_regcust_ID.Text = "";
-                tB_name.Text = "";
-                tB_address.Text = "";
-                cB_gender.Text = "";
-                tB_phone.Text = "";
-                tB_email.Text = "";
+                tB_name.ForeColor = Color.Gray;
+                tB_name.Text = "Teljes név";
+                tB_address.ForeColor = Color.Gray;
+                tB_address.Text = "Lakcím";
+                cB_gender.ForeColor = Color.Gray;
+                cB_gender.Text = "Nem";
+                tB_phone.ForeColor = Color.Gray;
+                tB_phone.Text = "Telefonszám";
+                tB_email.ForeColor = Color.Gray;
+                tB_email.Text = "Email cím";
                 display_data();
             }
             else
@@ -138,51 +144,59 @@ namespace WindowsFormsApp1
             cmd.ExecuteNonQuery();
             connection.Close();
             display_data();
+            tB_regcust_ID.ForeColor = Color.Gray;
+            tB_regcust_ID.Text = "Törzsvásárlói kód";
         }
 
         private void regcus_modification_Click(object sender, EventArgs e)
         {
-            if (tB_regcust_ID.Text != "")
+            if (tB_regcust_ID.Text != "" && tB_regcust_ID.Text != "Törzsvásárlói kód")
             {
                 //string format = "yyyy. MM. dd";
                 connection.Open();
                 SqlCommand cmd = connection.CreateCommand();
-                if (tB_name.Text != "")
+                if (tB_name.Text != "" && tB_name.Text != "Teljes név")
                 {
                     cmd.CommandText = "update [Regular_Customers] set Name = '" + tB_name.Text + "' where Regular_Customer_ID = '" + tB_regcust_ID.Text + "'";
-                    tB_name.Text = "";
+                    tB_name.ForeColor = Color.Gray;
+                    tB_name.Text = "Teljes név";                    
                 }
-                else if (tB_address.Text != "")
+                else if (tB_address.Text != "" && tB_address.Text != "Lakcím")
                 {
                     cmd.CommandText = "update [Regular_Customers] set Address = '" + tB_address.Text + "' where Regular_Customer_ID = '" + tB_regcust_ID.Text + "'";
-                    tB_address.Text = "";
+                    tB_address.ForeColor = Color.Gray;
+                    tB_address.Text = "Lakcím";
                 }
                 /*else if (dtP_born_date.Value.ToString() != "")
                 {
                     cmd.CommandText = "update [Regular_Customers] set [Born year] = '" + tB_born_date.Text + "' where Regular_Customer_ID = '" + tB_ID.Text + "'";
                     tB_born_date.Text = "";
                 }*/
-                else if (cB_gender.Text != "")
+                else if (cB_gender.Text != "" && cB_gender.Text != "Nem")
                 {
                     cmd.CommandText = "update [Regular_Customers] set Gender = '" + cB_gender.Text + "' where Regular_Customer_ID = '" + tB_regcust_ID.Text + "'";
-                    cB_gender.Text = "";
+                    cB_gender.ForeColor = Color.Gray;
+                    cB_gender.Text = "Nem";                    
                 }
-                else if (tB_phone.Text != "")
+                else if (tB_phone.Text != "" && tB_phone.Text != "Telefonszám")
                 {
                     cmd.CommandText = "update [Regular_Customers] set  [Phone_Number] = '" + tB_phone.Text + "' where Regular_Customer_ID = '" + tB_regcust_ID.Text  + "'";
-                    tB_phone.Text = "";
+                    tB_phone.ForeColor = Color.Gray;
+                    tB_phone.Text = "Telefonszám";                    
                 }
-                else if (tB_email.Text != "")
+                else if (tB_email.Text != "" && tB_email.Text != "Email cím")
                 {
                     cmd.CommandText = "update [Regular_Customers] set [Email_Address]= '" + tB_email.Text + "' where Regular_Customer_ID = '" + tB_regcust_ID.Text + "'";
-                    tB_email.Text = "";
+                    tB_email.ForeColor = Color.Gray;
+                    tB_email.Text = "Email cím";
                 }
                 else
                 {
                     MessageBox.Show("Hiányzó adat!");
                     cmd.CommandText = "select * from [Books]";
                 }
-                tB_regcust_ID.Text = "";
+                tB_regcust_ID.ForeColor = Color.Gray;
+                tB_regcust_ID.Text = "Törzsvásárló kód";
                 cmd.ExecuteNonQuery();
                 connection.Close();
                 display_data();

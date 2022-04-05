@@ -102,42 +102,42 @@
             // mainMenuToolStripMenuItem
             // 
             this.mainMenuToolStripMenuItem.Name = "mainMenuToolStripMenuItem";
-            this.mainMenuToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.mainMenuToolStripMenuItem.Size = new System.Drawing.Size(182, 26);
             this.mainMenuToolStripMenuItem.Text = "Főmenü";
             this.mainMenuToolStripMenuItem.Click += new System.EventHandler(this.mainMenuToolStripMenuItem_Click);
             // 
             // saleToolStripMenuItem
             // 
             this.saleToolStripMenuItem.Name = "saleToolStripMenuItem";
-            this.saleToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.saleToolStripMenuItem.Size = new System.Drawing.Size(182, 26);
             this.saleToolStripMenuItem.Text = "Eladás";
             this.saleToolStripMenuItem.Click += new System.EventHandler(this.saleToolStripMenuItem_Click);
             // 
             // bookManagerToolStripMenuItem
             // 
             this.bookManagerToolStripMenuItem.Name = "bookManagerToolStripMenuItem";
-            this.bookManagerToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.bookManagerToolStripMenuItem.Size = new System.Drawing.Size(182, 26);
             this.bookManagerToolStripMenuItem.Text = "Könyv kezelő";
             this.bookManagerToolStripMenuItem.Click += new System.EventHandler(this.bookManagerToolStripMenuItem_Click);
             // 
             // wishListToolStripMenuItem
             // 
             this.wishListToolStripMenuItem.Name = "wishListToolStripMenuItem";
-            this.wishListToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.wishListToolStripMenuItem.Size = new System.Drawing.Size(182, 26);
             this.wishListToolStripMenuItem.Text = "Kívánság lista";
             this.wishListToolStripMenuItem.Click += new System.EventHandler(this.wishListToolStripMenuItem_Click);
             // 
             // statementsToolStripMenuItem
             // 
             this.statementsToolStripMenuItem.Name = "statementsToolStripMenuItem";
-            this.statementsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.statementsToolStripMenuItem.Size = new System.Drawing.Size(182, 26);
             this.statementsToolStripMenuItem.Text = "Kimutatások";
             this.statementsToolStripMenuItem.Click += new System.EventHandler(this.statementsToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(182, 26);
             this.exitToolStripMenuItem.Text = "Kilépés";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -212,7 +212,7 @@
             // 
             this.label_RegCust_ID.AutoSize = true;
             this.label_RegCust_ID.Font = new System.Drawing.Font("Palatino Linotype", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label_RegCust_ID.Location = new System.Drawing.Point(12, 155);
+            this.label_RegCust_ID.Location = new System.Drawing.Point(12, 70);
             this.label_RegCust_ID.Name = "label_RegCust_ID";
             this.label_RegCust_ID.Size = new System.Drawing.Size(146, 23);
             this.label_RegCust_ID.TabIndex = 14;
@@ -280,7 +280,7 @@
             this.tB_regcust_ID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tB_regcust_ID.Font = new System.Drawing.Font("Palatino Linotype", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.tB_regcust_ID.ForeColor = System.Drawing.Color.Gray;
-            this.tB_regcust_ID.Location = new System.Drawing.Point(180, 155);
+            this.tB_regcust_ID.Location = new System.Drawing.Point(180, 70);
             this.tB_regcust_ID.Name = "tB_regcust_ID";
             this.tB_regcust_ID.Size = new System.Drawing.Size(240, 25);
             this.tB_regcust_ID.TabIndex = 1;
@@ -313,7 +313,7 @@
             this.display_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.display_button.Font = new System.Drawing.Font("Palatino Linotype", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.display_button.Image = global::WindowsFormsApp1.Properties.Resources.search;
-            this.display_button.Location = new System.Drawing.Point(88, 70);
+            this.display_button.Location = new System.Drawing.Point(88, 121);
             this.display_button.Name = "display_button";
             this.display_button.Size = new System.Drawing.Size(260, 50);
             this.display_button.TabIndex = 8;
@@ -404,7 +404,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView.GridColor = System.Drawing.Color.Black;
-            this.dataGridView.Location = new System.Drawing.Point(472, 40);
+            this.dataGridView.Location = new System.Drawing.Point(472, 28);
             this.dataGridView.Name = "dataGridView";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(134)))), ((int)(((byte)(134)))));
@@ -416,7 +416,7 @@
             this.dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView.RowHeadersWidth = 51;
             this.dataGridView.RowTemplate.Height = 24;
-            this.dataGridView.Size = new System.Drawing.Size(998, 751);
+            this.dataGridView.Size = new System.Drawing.Size(998, 763);
             this.dataGridView.TabIndex = 12;
             this.dataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dG_double_Click);
             // 

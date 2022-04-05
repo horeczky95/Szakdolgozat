@@ -98,11 +98,15 @@ namespace WindowsFormsApp1
         private void new_wish_add_click(object sender, EventArgs e)
         {
             if (tB_ISBN.Text != "" && tB_author.Text != "" && tB_title.Text != "" && tB_name.Text != "" &&
-                tB_address.Text != "" && tB_phone.Text != "" && tB_email.Text != "") {
+                tB_address.Text != "" && tB_phone.Text != "" && tB_email.Text != "" && tB_ISBN.Text != "ISBN" &&
+                tB_author.Text != "Szerző" && tB_title.Text != "Cím" && tB_name.Text != "Teljes név" &&
+                tB_address.Text != "Lakcím" && tB_phone.Text != "Telefonszám" && tB_email.Text != "Email cím") {
                 string regCust;
-                if (tB_regcust_ID.Text != "")
+                if (tB_regcust_ID.Text != "" && tB_regcust_ID.Text != "Törzsvásárló kód")
                 {
-                  regCust  = tB_regcust_ID.Text;
+                    regCust = tB_regcust_ID.Text;
+                    tB_regcust_ID.ForeColor = Color.Gray;
+                    tB_regcust_ID.Text = "Törzsvásárlói kód";
                 } else
                 {
                     regCust = "Nem törzsvásárló!";
@@ -120,20 +124,27 @@ namespace WindowsFormsApp1
             {
                 MessageBox.Show("Hiányos adatok!");
             }
-            tB_ISBN.Text = "";
-            tB_author.Text = "";
-            tB_title.Text = "";
-            tB_name.Text = "";
-            tB_address.Text = "";
-            tB_phone.Text = "";
-            tB_email.Text = "";
-            tB_regcust_ID.Text = "";
+            tB_ISBN.ForeColor = Color.Gray;
+            tB_ISBN.Text = "ISBN";
+            tB_author.ForeColor = Color.Gray;
+            tB_author.Text = "Szerző";
+            tB_title.ForeColor = Color.Gray;
+            tB_title.Text = "Cím";
+            tB_name.ForeColor = Color.Gray;
+            tB_name.Text = "Teljes név";
+            tB_address.ForeColor = Color.Gray;
+            tB_address.Text = "Lakcím";
+            tB_phone.ForeColor = Color.Gray;
+            tB_phone.Text = "Telefonszám";
+            tB_email.ForeColor = Color.Gray;
+            tB_email.Text = "Email cím";
+
         }
 
         private void wish_modification_Click(object sender, EventArgs e)
         {
             
-            if (tB_ID.Text != "")
+            if (tB_ID.Text != "" && tB_ID.Text != "Kívánság ID")
             {
 
                 connection.Open();
@@ -190,7 +201,8 @@ namespace WindowsFormsApp1
                     MessageBox.Show("Hiányzó adat!");
                     cmd.CommandText = "select * from [Wish_List]";
                 }
-                tB_ID.Text = "";
+                tB_ID.ForeColor = Color.Gray;
+                tB_ID.Text = "Kívánság ID";
                 cmd.ExecuteNonQuery();
                 connection.Close();
                 display_data();
@@ -204,7 +216,7 @@ namespace WindowsFormsApp1
 
         private void wish_delete_Click(object sender, EventArgs e)
         {
-            if (tB_ID.Text != "")
+            if (tB_ID.Text != "" && tB_ID.Text != "Kívánság ID")
             {
                 connection.Open();
                 SqlCommand cmd = connection.CreateCommand();
@@ -213,7 +225,8 @@ namespace WindowsFormsApp1
                 cmd.ExecuteNonQuery();
                 connection.Close();
                 display_data();
-                tB_ID.Text = "";
+                tB_ID.ForeColor = Color.Gray;
+                tB_ID.Text = "Kívánság ID";
             }
             else
             {
@@ -223,11 +236,13 @@ namespace WindowsFormsApp1
 
         private void dG_double_Click(object sender, DataGridViewCellEventArgs e)
         {
+            tB_ID.ForeColor = Color.Black;
             tB_ID.Text = dataGridView_wishlist.CurrentRow.Cells[0].Value.ToString();
         }
 
         private void reg_cust_db_double_click(object sender, DataGridViewCellEventArgs e)
         {
+            tB_regcust_ID.ForeColor = Color.Black;
             tB_regcust_ID.Text = dataGridView_regcust.CurrentRow.Cells[0].Value.ToString();
         }
 

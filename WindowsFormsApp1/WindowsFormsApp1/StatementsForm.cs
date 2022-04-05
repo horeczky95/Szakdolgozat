@@ -13,6 +13,16 @@ namespace WindowsFormsApp1
 {
     public partial class StatementsForm : Form
     {
+        public class Cost
+        {
+            public float amount;
+            public string date;
+        }
+        public class Revenu
+        {
+            public float amount;
+            public string date;
+        }
         SqlConnection connection = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename=D:\Suli\Szakdolgozat\WindowsFormsApp1\WindowsFormsApp1\AntiqueDB.mdf;Integrated Security = True");        public StatementsForm()
         {
             InitializeComponent();
@@ -59,17 +69,8 @@ namespace WindowsFormsApp1
         }
     
         //Adatbázis műveletek
-        private void income_statements_Click(object sender, EventArgs e)
-        {
-            display_income_data();
-        }
-
-        private void expend_statements_Click(object sender, EventArgs e)
-        {
-            display_expend_data();
-        }
-
-        public void display_income_data()
+        
+        public void display_revenues_data()
         {
             string format = "yyyy. MM. dd";
             DateTime start = startDate.Value;
@@ -113,7 +114,7 @@ namespace WindowsFormsApp1
             }
             connection.Close();
         }
-        public void display_expend_data()
+        public void display_costs_data()
         {
             string format = "yyyy. MM. dd";
             DateTime start = startDate.Value;
@@ -157,6 +158,82 @@ namespace WindowsFormsApp1
             connection.Close();
         }
 
+        public void chart_revenues()
+        {
+            this.chart1.Series["Revenues"].Points.Clear();
+            string format = "yyyy. MM. dd";
+            DateTime start = startDate.Value;
+            DateTime finish = finishDate.Value;
+            List<Revenu> revenus = new List<Revenu>();
+            connection.Open();
+            SqlCommand cmd_revenu = connection.CreateCommand();
+            SqlDataReader reader = (null);
+            cmd_revenu.CommandType = CommandType.Text;
+            cmd_revenu.CommandText = "select SUM(Amount) as amount, Date from [Revenues] where Date between '" +
+                    start.ToString(format) + "' and '" + finish.ToString(format) + "' group by Date";
+            cmd_revenu.ExecuteNonQuery();
+            reader = cmd_revenu.ExecuteReader();
+            while (reader.Read())
+            {
+                Revenu r = new Revenu();
+                r.amount = float.Parse(reader["amount"].ToString());
+                r.date = Convert.ToDateTime(reader["Date"]).ToString(format);
+                revenus.Add(r);
+            }
+            reader.Close();
+            foreach (Revenu r in revenus)
+            {
+                this.chart1.Series["Revenues"].Points.AddXY(r.date, r.amount);
+            }
+            revenus.Clear();
+            connection.Close();
+        }
+
+        public void chart_costs()
+        {
+            this.chart1.Series["Costs"].Points.Clear();
+            string format = "yyyy. MM. dd";
+            DateTime start = startDate.Value;
+            DateTime finish = finishDate.Value;
+            List<Cost> costs = new List<Cost>();
+            connection.Open();
+            SqlCommand cmd_cost = connection.CreateCommand();
+            SqlDataReader reader = (null);
+            cmd_cost.CommandType = CommandType.Text;
+            cmd_cost.CommandText = "select SUM(Amount) as Amount, Date from [Costs]where Date between '" +
+                    start.ToString(format) + "' and '" + finish.ToString(format) + "' group by Date";
+            cmd_cost.ExecuteNonQuery();
+            reader = cmd_cost.ExecuteReader();
+            while (reader.Read())
+            {
+                Cost c = new Cost();
+                c.amount = float.Parse(reader["Amount"].ToString());
+                c.date = Convert.ToDateTime(reader["Date"]).ToString(format);
+                costs.Add(c);
+            }
+            reader.Close();
+            foreach (Cost c in costs)
+            {
+                this.chart1.Series["Costs"].Points.AddXY(c.date, c.amount);
+            }
+            costs.Clear();
+            connection.Close();
+        }
+
+        private void revenues_statements_Click(object sender, EventArgs e)
+        {
+
+            display_revenues_data();
+            chart_revenues();
+
+        }
+
+        private void costs_statements_Click(object sender, EventArgs e)
+        {
+            display_costs_data();
+            chart_costs();
+        }
+
         private void full_statments_button_Click(object sender, EventArgs e)
         {
             string format = "yyyy. MM. dd";
@@ -186,7 +263,7 @@ namespace WindowsFormsApp1
             read_amount.Close();
             label_profit.Text = all_cash.ToString() + " Ft";
 
-            cmd_cash.CommandText = "select * from [Cash_Flow]where Date between '" +
+            cmd_cash.CommandText = "select * from [Cash_Flow] where Date between '" +
                     start.ToString(format) + "' and '" + finish.ToString(format) + "'";
             cmd_cash.ExecuteNonQuery();
 
@@ -197,8 +274,9 @@ namespace WindowsFormsApp1
 
             cmd_cash.CommandText = "drop table [Cash_Flow]";
             cmd_cash.ExecuteNonQuery();
-
             connection.Close();
+            chart_costs();
+            chart_revenues();
         }
     }
 }

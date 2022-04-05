@@ -35,6 +35,8 @@ namespace WindowsFormsApp1
             points_mail();
         }
 
+        //Menü
+
         private void saleToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             SaleForm sale = new SaleForm();
@@ -75,6 +77,8 @@ namespace WindowsFormsApp1
             Application.Exit();
         }
 
+        //Gombok
+
         private void sale_Click(object sender, EventArgs e)
         {
             SaleForm sale = new SaleForm();
@@ -111,6 +115,7 @@ namespace WindowsFormsApp1
         }
 
         //Adatbázis műveletek
+
         public void display_data()
         {
             connection.Open();
@@ -169,6 +174,8 @@ namespace WindowsFormsApp1
             connection.Close();
         }
 
+        //email küldések
+
         public void points_mail()
         {
             List<Customer> customers = new List<Customer>();
@@ -199,8 +206,9 @@ namespace WindowsFormsApp1
                     send_mail(c.email, c.previous_points);
                 }
             }
-            
+            customers.Clear();
         }
+
         public void send_mail(string e_mail, float points)
         {
             try

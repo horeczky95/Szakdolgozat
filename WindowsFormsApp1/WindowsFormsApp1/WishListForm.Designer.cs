@@ -112,42 +112,42 @@
             // mainMenuToolStripMenuItem
             // 
             this.mainMenuToolStripMenuItem.Name = "mainMenuToolStripMenuItem";
-            this.mainMenuToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.mainMenuToolStripMenuItem.Size = new System.Drawing.Size(183, 26);
             this.mainMenuToolStripMenuItem.Text = "Főmenü";
             this.mainMenuToolStripMenuItem.Click += new System.EventHandler(this.mainMenuToolStripMenuItem_Click);
             // 
             // saleToolStripMenuItem
             // 
             this.saleToolStripMenuItem.Name = "saleToolStripMenuItem";
-            this.saleToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.saleToolStripMenuItem.Size = new System.Drawing.Size(183, 26);
             this.saleToolStripMenuItem.Text = "Eladás";
             this.saleToolStripMenuItem.Click += new System.EventHandler(this.saleToolStripMenuItem_Click);
             // 
             // regularCustomerToolStripMenuItem
             // 
             this.regularCustomerToolStripMenuItem.Name = "regularCustomerToolStripMenuItem";
-            this.regularCustomerToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.regularCustomerToolStripMenuItem.Size = new System.Drawing.Size(183, 26);
             this.regularCustomerToolStripMenuItem.Text = "Törzsvásárlók";
             this.regularCustomerToolStripMenuItem.Click += new System.EventHandler(this.regularCustomerToolStripMenuItem_Click);
             // 
             // bookManagerToolStripMenuItem
             // 
             this.bookManagerToolStripMenuItem.Name = "bookManagerToolStripMenuItem";
-            this.bookManagerToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.bookManagerToolStripMenuItem.Size = new System.Drawing.Size(183, 26);
             this.bookManagerToolStripMenuItem.Text = "Könyv kezelő";
             this.bookManagerToolStripMenuItem.Click += new System.EventHandler(this.bookManagerToolStripMenuItem_Click);
             // 
             // statementsToolStripMenuItem
             // 
             this.statementsToolStripMenuItem.Name = "statementsToolStripMenuItem";
-            this.statementsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.statementsToolStripMenuItem.Size = new System.Drawing.Size(183, 26);
             this.statementsToolStripMenuItem.Text = "Kimutatások";
             this.statementsToolStripMenuItem.Click += new System.EventHandler(this.statementsToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(183, 26);
             this.exitToolStripMenuItem.Text = "Kilépés";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -181,7 +181,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView_wishlist.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView_wishlist.GridColor = System.Drawing.Color.Black;
-            this.dataGridView_wishlist.Location = new System.Drawing.Point(554, 28);
+            this.dataGridView_wishlist.Location = new System.Drawing.Point(537, 28);
             this.dataGridView_wishlist.Name = "dataGridView_wishlist";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(134)))), ((int)(((byte)(134)))));
@@ -193,7 +193,7 @@
             this.dataGridView_wishlist.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView_wishlist.RowHeadersWidth = 51;
             this.dataGridView_wishlist.RowTemplate.Height = 24;
-            this.dataGridView_wishlist.Size = new System.Drawing.Size(916, 763);
+            this.dataGridView_wishlist.Size = new System.Drawing.Size(933, 763);
             this.dataGridView_wishlist.TabIndex = 14;
             this.dataGridView_wishlist.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dG_double_Click);
             // 
@@ -539,7 +539,7 @@
             this.dataGridView_regcust.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView_regcust.RowHeadersWidth = 51;
             this.dataGridView_regcust.RowTemplate.Height = 24;
-            this.dataGridView_regcust.Size = new System.Drawing.Size(498, 282);
+            this.dataGridView_regcust.Size = new System.Drawing.Size(498, 283);
             this.dataGridView_regcust.TabIndex = 15;
             this.dataGridView_regcust.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.reg_cust_db_double_click);
             // 

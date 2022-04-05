@@ -107,7 +107,7 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1482, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1482, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -122,7 +122,7 @@
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 26);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
             this.fileToolStripMenuItem.Text = "Fájl";
             // 
             // mainMenuToolStripMenuItem
@@ -171,7 +171,7 @@
             // 
             this.helpToolStripMenuItem.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(57, 26);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(57, 24);
             this.helpToolStripMenuItem.Text = "Súgó";
             // 
             // dataGridView_books
@@ -196,7 +196,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView_books.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView_books.GridColor = System.Drawing.Color.Black;
-            this.dataGridView_books.Location = new System.Drawing.Point(585, 42);
+            this.dataGridView_books.Location = new System.Drawing.Point(585, 28);
             this.dataGridView_books.Name = "dataGridView_books";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(134)))), ((int)(((byte)(134)))));
@@ -208,7 +208,7 @@
             this.dataGridView_books.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView_books.RowHeadersWidth = 51;
             this.dataGridView_books.RowTemplate.Height = 24;
-            this.dataGridView_books.Size = new System.Drawing.Size(869, 370);
+            this.dataGridView_books.Size = new System.Drawing.Size(885, 384);
             this.dataGridView_books.TabIndex = 19;
             this.dataGridView_books.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dG_double_Click);
             // 
@@ -236,7 +236,7 @@
             this.listView.HideSelection = false;
             this.listView.Location = new System.Drawing.Point(585, 420);
             this.listView.Name = "listView";
-            this.listView.Size = new System.Drawing.Size(869, 290);
+            this.listView.Size = new System.Drawing.Size(885, 290);
             this.listView.TabIndex = 20;
             this.listView.UseCompatibleStateImageBehavior = false;
             this.listView.View = System.Windows.Forms.View.Details;
@@ -245,27 +245,27 @@
             // ID
             // 
             this.ID.Text = "ID";
-            this.ID.Width = 50;
+            this.ID.Width = 80;
             // 
             // ISBN
             // 
             this.ISBN.Text = "ISBN";
-            this.ISBN.Width = 84;
+            this.ISBN.Width = 109;
             // 
             // Author
             // 
             this.Author.Text = "Szerző";
-            this.Author.Width = 162;
+            this.Author.Width = 212;
             // 
             // Title
             // 
             this.Title.Text = "Cím";
-            this.Title.Width = 210;
+            this.Title.Width = 236;
             // 
             // Sellin_Price
             // 
             this.Sellin_Price.Text = "Eladási ár";
-            this.Sellin_Price.Width = 101;
+            this.Sellin_Price.Width = 126;
             // 
             // label_total_name
             // 
@@ -296,7 +296,7 @@
             this.tB_ISBN.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tB_ISBN.Font = new System.Drawing.Font("Palatino Linotype", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.tB_ISBN.ForeColor = System.Drawing.Color.Gray;
-            this.tB_ISBN.Location = new System.Drawing.Point(317, 74);
+            this.tB_ISBN.Location = new System.Drawing.Point(317, 75);
             this.tB_ISBN.Name = "tB_ISBN";
             this.tB_ISBN.Size = new System.Drawing.Size(240, 25);
             this.tB_ISBN.TabIndex = 1;
@@ -309,7 +309,7 @@
             this.label_year.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label_year.AutoSize = true;
             this.label_year.Font = new System.Drawing.Font("Palatino Linotype", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label_year.Location = new System.Drawing.Point(12, 166);
+            this.label_year.Location = new System.Drawing.Point(12, 167);
             this.label_year.Name = "label_year";
             this.label_year.Size = new System.Drawing.Size(92, 23);
             this.label_year.TabIndex = 25;
@@ -320,7 +320,7 @@
             this.label_genre.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label_genre.AutoSize = true;
             this.label_genre.Font = new System.Drawing.Font("Palatino Linotype", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label_genre.Location = new System.Drawing.Point(12, 194);
+            this.label_genre.Location = new System.Drawing.Point(12, 195);
             this.label_genre.Name = "label_genre";
             this.label_genre.Size = new System.Drawing.Size(55, 23);
             this.label_genre.TabIndex = 26;
@@ -331,7 +331,7 @@
             this.label_title.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label_title.AutoSize = true;
             this.label_title.Font = new System.Drawing.Font("Palatino Linotype", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label_title.Location = new System.Drawing.Point(12, 136);
+            this.label_title.Location = new System.Drawing.Point(12, 137);
             this.label_title.Name = "label_title";
             this.label_title.Size = new System.Drawing.Size(42, 23);
             this.label_title.TabIndex = 24;
@@ -342,7 +342,7 @@
             this.label_author.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label_author.AutoSize = true;
             this.label_author.Font = new System.Drawing.Font("Palatino Linotype", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label_author.Location = new System.Drawing.Point(12, 106);
+            this.label_author.Location = new System.Drawing.Point(12, 107);
             this.label_author.Name = "label_author";
             this.label_author.Size = new System.Drawing.Size(60, 23);
             this.label_author.TabIndex = 23;
@@ -353,7 +353,7 @@
             this.label_ISBN.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label_ISBN.AutoSize = true;
             this.label_ISBN.Font = new System.Drawing.Font("Palatino Linotype", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label_ISBN.Location = new System.Drawing.Point(12, 75);
+            this.label_ISBN.Location = new System.Drawing.Point(12, 76);
             this.label_ISBN.Name = "label_ISBN";
             this.label_ISBN.Size = new System.Drawing.Size(49, 23);
             this.label_ISBN.TabIndex = 22;
@@ -385,7 +385,7 @@
             this.tB_genre.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.tB_genre.Font = new System.Drawing.Font("Palatino Linotype", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.tB_genre.ForeColor = System.Drawing.Color.Gray;
-            this.tB_genre.Location = new System.Drawing.Point(317, 192);
+            this.tB_genre.Location = new System.Drawing.Point(317, 193);
             this.tB_genre.Name = "tB_genre";
             this.tB_genre.Size = new System.Drawing.Size(240, 25);
             this.tB_genre.TabIndex = 5;
@@ -398,7 +398,7 @@
             this.tB_year.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tB_year.Font = new System.Drawing.Font("Palatino Linotype", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.tB_year.ForeColor = System.Drawing.Color.Gray;
-            this.tB_year.Location = new System.Drawing.Point(317, 162);
+            this.tB_year.Location = new System.Drawing.Point(317, 163);
             this.tB_year.Name = "tB_year";
             this.tB_year.Size = new System.Drawing.Size(240, 25);
             this.tB_year.TabIndex = 4;
@@ -411,7 +411,7 @@
             this.tB_title.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tB_title.Font = new System.Drawing.Font("Palatino Linotype", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.tB_title.ForeColor = System.Drawing.Color.Gray;
-            this.tB_title.Location = new System.Drawing.Point(317, 132);
+            this.tB_title.Location = new System.Drawing.Point(317, 133);
             this.tB_title.Name = "tB_title";
             this.tB_title.Size = new System.Drawing.Size(240, 25);
             this.tB_title.TabIndex = 3;
@@ -448,7 +448,7 @@
             this.tB_author.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.tB_author.Font = new System.Drawing.Font("Palatino Linotype", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.tB_author.ForeColor = System.Drawing.Color.Gray;
-            this.tB_author.Location = new System.Drawing.Point(317, 102);
+            this.tB_author.Location = new System.Drawing.Point(317, 103);
             this.tB_author.Name = "tB_author";
             this.tB_author.Size = new System.Drawing.Size(240, 25);
             this.tB_author.TabIndex = 2;
@@ -461,7 +461,7 @@
             this.tB_id.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tB_id.Font = new System.Drawing.Font("Palatino Linotype", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.tB_id.ForeColor = System.Drawing.Color.Gray;
-            this.tB_id.Location = new System.Drawing.Point(317, 222);
+            this.tB_id.Location = new System.Drawing.Point(317, 223);
             this.tB_id.Name = "tB_id";
             this.tB_id.Size = new System.Drawing.Size(240, 25);
             this.tB_id.TabIndex = 6;
@@ -474,7 +474,7 @@
             this.label_ID.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label_ID.AutoSize = true;
             this.label_ID.Font = new System.Drawing.Font("Palatino Linotype", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label_ID.Location = new System.Drawing.Point(12, 220);
+            this.label_ID.Location = new System.Drawing.Point(12, 221);
             this.label_ID.Name = "label_ID";
             this.label_ID.Size = new System.Drawing.Size(87, 23);
             this.label_ID.TabIndex = 27;
@@ -505,7 +505,7 @@
             this.label_regcust_ID.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label_regcust_ID.AutoSize = true;
             this.label_regcust_ID.Font = new System.Drawing.Font("Palatino Linotype", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label_regcust_ID.Location = new System.Drawing.Point(12, 312);
+            this.label_regcust_ID.Location = new System.Drawing.Point(12, 313);
             this.label_regcust_ID.Name = "label_regcust_ID";
             this.label_regcust_ID.Size = new System.Drawing.Size(146, 23);
             this.label_regcust_ID.TabIndex = 28;
@@ -516,7 +516,7 @@
             this.tB_regcust_ID.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tB_regcust_ID.Font = new System.Drawing.Font("Palatino Linotype", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.tB_regcust_ID.ForeColor = System.Drawing.Color.Gray;
-            this.tB_regcust_ID.Location = new System.Drawing.Point(317, 311);
+            this.tB_regcust_ID.Location = new System.Drawing.Point(317, 312);
             this.tB_regcust_ID.Name = "tB_regcust_ID";
             this.tB_regcust_ID.Size = new System.Drawing.Size(240, 25);
             this.tB_regcust_ID.TabIndex = 10;
@@ -529,7 +529,7 @@
             this.tB_book_discount.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tB_book_discount.Font = new System.Drawing.Font("Palatino Linotype", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.tB_book_discount.ForeColor = System.Drawing.Color.Gray;
-            this.tB_book_discount.Location = new System.Drawing.Point(317, 342);
+            this.tB_book_discount.Location = new System.Drawing.Point(317, 343);
             this.tB_book_discount.Name = "tB_book_discount";
             this.tB_book_discount.Size = new System.Drawing.Size(240, 25);
             this.tB_book_discount.TabIndex = 11;
@@ -542,7 +542,7 @@
             this.label_book_discount.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label_book_discount.AutoSize = true;
             this.label_book_discount.Font = new System.Drawing.Font("Palatino Linotype", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label_book_discount.Location = new System.Drawing.Point(12, 342);
+            this.label_book_discount.Location = new System.Drawing.Point(12, 343);
             this.label_book_discount.Name = "label_book_discount";
             this.label_book_discount.Size = new System.Drawing.Size(187, 23);
             this.label_book_discount.TabIndex = 29;
@@ -553,7 +553,7 @@
             this.tB_total_discount.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tB_total_discount.Font = new System.Drawing.Font("Palatino Linotype", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.tB_total_discount.ForeColor = System.Drawing.Color.Gray;
-            this.tB_total_discount.Location = new System.Drawing.Point(317, 372);
+            this.tB_total_discount.Location = new System.Drawing.Point(317, 373);
             this.tB_total_discount.Name = "tB_total_discount";
             this.tB_total_discount.Size = new System.Drawing.Size(240, 25);
             this.tB_total_discount.TabIndex = 12;
@@ -566,7 +566,7 @@
             this.label_total_discount.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label_total_discount.AutoSize = true;
             this.label_total_discount.Font = new System.Drawing.Font("Palatino Linotype", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label_total_discount.Location = new System.Drawing.Point(12, 372);
+            this.label_total_discount.Location = new System.Drawing.Point(12, 373);
             this.label_total_discount.Name = "label_total_discount";
             this.label_total_discount.Size = new System.Drawing.Size(218, 23);
             this.label_total_discount.TabIndex = 30;
@@ -595,7 +595,7 @@
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView_regcust.DefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView_regcust.GridColor = System.Drawing.Color.Black;
-            this.dataGridView_regcust.Location = new System.Drawing.Point(12, 462);
+            this.dataGridView_regcust.Location = new System.Drawing.Point(12, 463);
             this.dataGridView_regcust.Name = "dataGridView_regcust";
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(134)))), ((int)(((byte)(134)))));
@@ -667,9 +667,9 @@
             this.panel1.Controls.Add(this.tB_author);
             this.panel1.Controls.Add(this.label_ID);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 30);
+            this.panel1.Location = new System.Drawing.Point(0, 28);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(579, 773);
+            this.panel1.Size = new System.Drawing.Size(579, 775);
             this.panel1.TabIndex = 53;
             // 
             // pB_barcode
@@ -678,7 +678,7 @@
             this.pB_barcode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pB_barcode.Cursor = System.Windows.Forms.Cursors.No;
             this.pB_barcode.Image = global::WindowsFormsApp1.Properties.Resources.barcode_example;
-            this.pB_barcode.Location = new System.Drawing.Point(12, 630);
+            this.pB_barcode.Location = new System.Drawing.Point(12, 631);
             this.pB_barcode.Name = "pB_barcode";
             this.pB_barcode.Size = new System.Drawing.Size(534, 136);
             this.pB_barcode.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -694,7 +694,7 @@
             this.search_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.search_button.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.search_button.Image = global::WindowsFormsApp1.Properties.Resources.search;
-            this.search_button.Location = new System.Drawing.Point(12, 14);
+            this.search_button.Location = new System.Drawing.Point(12, 15);
             this.search_button.Name = "search_button";
             this.search_button.Size = new System.Drawing.Size(177, 52);
             this.search_button.TabIndex = 15;
@@ -713,7 +713,7 @@
             this.add_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.add_button.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.add_button.Image = global::WindowsFormsApp1.Properties.Resources.basket;
-            this.add_button.Location = new System.Drawing.Point(12, 252);
+            this.add_button.Location = new System.Drawing.Point(12, 253);
             this.add_button.Name = "add_button";
             this.add_button.Size = new System.Drawing.Size(177, 52);
             this.add_button.TabIndex = 7;
@@ -731,7 +731,7 @@
             this.sale_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sale_button.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.sale_button.Image = global::WindowsFormsApp1.Properties.Resources.selling;
-            this.sale_button.Location = new System.Drawing.Point(380, 252);
+            this.sale_button.Location = new System.Drawing.Point(380, 253);
             this.sale_button.Name = "sale_button";
             this.sale_button.Size = new System.Drawing.Size(177, 52);
             this.sale_button.TabIndex = 9;
@@ -751,7 +751,7 @@
             this.regcust_point_button.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.regcust_point_button.Image = global::WindowsFormsApp1.Properties.Resources.regular_cutomer_points;
             this.regcust_point_button.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.regcust_point_button.Location = new System.Drawing.Point(12, 402);
+            this.regcust_point_button.Location = new System.Drawing.Point(12, 403);
             this.regcust_point_button.Name = "regcust_point_button";
             this.regcust_point_button.Size = new System.Drawing.Size(177, 52);
             this.regcust_point_button.TabIndex = 13;
@@ -769,7 +769,7 @@
             this.discount_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.discount_button.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.discount_button.Image = global::WindowsFormsApp1.Properties.Resources.discount;
-            this.discount_button.Location = new System.Drawing.Point(380, 402);
+            this.discount_button.Location = new System.Drawing.Point(380, 403);
             this.discount_button.Name = "discount_button";
             this.discount_button.Size = new System.Drawing.Size(177, 52);
             this.discount_button.TabIndex = 14;
@@ -805,7 +805,7 @@
             this.delete_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.delete_button.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.delete_button.Image = global::WindowsFormsApp1.Properties.Resources.delete;
-            this.delete_button.Location = new System.Drawing.Point(196, 252);
+            this.delete_button.Location = new System.Drawing.Point(196, 253);
             this.delete_button.Name = "delete_button";
             this.delete_button.Size = new System.Drawing.Size(177, 52);
             this.delete_button.TabIndex = 8;

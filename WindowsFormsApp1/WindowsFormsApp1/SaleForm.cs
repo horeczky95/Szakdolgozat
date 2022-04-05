@@ -34,6 +34,8 @@ namespace WindowsFormsApp1
             }*/
         }
 
+        //Menü
+
         private void mainMenuToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MainMenu main = new MainMenu();
@@ -233,11 +235,17 @@ namespace WindowsFormsApp1
 
         private void dG_double_Click(object sender, DataGridViewCellEventArgs e)
         {
+            tB_ISBN.ForeColor = Color.Black;
             tB_ISBN.Text = dataGridView_books.CurrentRow.Cells[1].Value.ToString();
+            tB_author.ForeColor = Color.Black;
             tB_author.Text = dataGridView_books.CurrentRow.Cells[2].Value.ToString();
+            tB_title.ForeColor = Color.Black;
             tB_title.Text = dataGridView_books.CurrentRow.Cells[3].Value.ToString();
+            tB_year.ForeColor = Color.Black;
             tB_year.Text = dataGridView_books.CurrentRow.Cells[4].Value.ToString();
+            tB_genre.ForeColor = Color.Black;
             tB_genre.Text = dataGridView_books.CurrentRow.Cells[5].Value.ToString();
+            tB_id.ForeColor = Color.Black;
             tB_id.Text = dataGridView_books.CurrentRow.Cells[0].Value.ToString();
 
         }
@@ -254,7 +262,12 @@ namespace WindowsFormsApp1
 
         private void add_button_Click(object sender, EventArgs e)
         {
-            if(tB_ISBN.Text != "" && tB_author.Text != "" && tB_title.Text != "" && tB_year.Text != "" && tB_genre.Text != "")
+            if(tB_ISBN.Text != "" && tB_ISBN.Text != "ISBN" 
+                && tB_author.Text != "" && tB_author.Text != "Szerző"
+                && tB_title.Text != "" && tB_title.Text != "Cím"
+                && tB_year.Text != "" && tB_year.Text != "Kiadás éve"
+                && tB_genre.Text != "" && tB_genre.Text != "Műfaj"
+                && tB_id.Text != "" && tB_id.Text != "ID")
             {
                 
                 connection.Open();
@@ -280,12 +293,6 @@ namespace WindowsFormsApp1
                     label_subtotal.Text = subtotal.ToString() + " Ft";
                     label_total.Text = total.ToString() + " Ft";
                     books_ID.Add(int.Parse(tB_id.Text));
-                    tB_id.Clear();
-                    tB_ISBN.Clear();
-                    tB_author.Clear();
-                    tB_title.Clear();
-                    tB_year.Clear();
-                    tB_genre.Clear();
                 }
                 connection.Close();
 
@@ -293,6 +300,18 @@ namespace WindowsFormsApp1
             {
                 MessageBox.Show("Hiányos adatok");
             }
+            tB_ISBN.ForeColor = Color.Gray;
+            tB_ISBN.Text = "ISBN";
+            tB_author.ForeColor = Color.Gray;
+            tB_author.Text = "Szerző";
+            tB_title.ForeColor = Color.Gray;
+            tB_title.Text = "Cím";
+            tB_year.ForeColor = Color.Gray;
+            tB_year.Text = "Kiadás éve";
+            tB_genre.ForeColor = Color.Gray;
+            tB_genre.Text = "Műfaj";
+            tB_id.ForeColor = Color.Gray;
+            tB_id.Text = "ID";
         }
 
         private void list_click(object sender, MouseEventArgs e)
@@ -319,13 +338,14 @@ namespace WindowsFormsApp1
             read.Close();
             listView.Items.Remove(listView.SelectedItems[0]);
             connection.Close();
-            tB_id.Clear();
+            tB_id.ForeColor = Color.Gray;
+            tB_id.Text = "ID";
         }
 
         private void sale_button_Click(object sender, EventArgs e)
         {
             connection.Open();
-            if (tB_regcust_ID.Text != "")
+            if (tB_regcust_ID.Text != "" && tB_regcust_ID.Text != "Törzsvásárlói kód")
             {
                 SqlCommand cmd_regcust = connection.CreateCommand();
                 cmd_regcust.CommandType = CommandType.Text;
@@ -376,12 +396,13 @@ namespace WindowsFormsApp1
             label_subtotal.Text = "0 Ft";
             label_total.Text = "0 Ft";
             display_data();
-            tB_regcust_ID.Clear();
+            tB_regcust_ID.ForeColor = Color.Gray;
+            tB_regcust_ID.Text = "Törzsvásárlói kód";
         }
 
         private void discount_Click(object sender, EventArgs e)
         {
-            if (tB_book_discount.Text != "")
+            if (tB_book_discount.Text != "" && tB_book_discount.Text != "Könyv kedvezmény")
             {
                 float salenumber = float.Parse(tB_book_discount.Text.ToString()) / 100;
                 connection.Open();
@@ -399,16 +420,20 @@ namespace WindowsFormsApp1
                 label_total.Text = total.ToString() + " Ft";
                 read.Close();
                 connection.Close();
-                tB_book_discount.Clear();
-                tB_id.Clear();
-            } else if (tB_total_discount.Text != "")
+                tB_book_discount.ForeColor = Color.Gray;
+                tB_book_discount.Text = "Könyv kedvezmény";
+                tB_id.ForeColor = Color.Gray;
+                tB_id.Text = "ID";
+            } else if (tB_total_discount.Text != "" && tB_total_discount.Text != "Végösszeg kedvezmény")
             {
                 float salenumber = float.Parse(tB_total_discount.Text.ToString()) / 100;
                 float sale = total * salenumber;
                 total -= sale;
                 label_total.Text = total.ToString() + " Ft";
-                tB_total_discount.Clear();
-                tB_id.Clear();
+                tB_total_discount.ForeColor = Color.Gray;
+                tB_total_discount.Text = "Végösszeg kedvezmény";
+                tB_id.ForeColor = Color.Gray;
+                tB_id.Text = "ID";
             } else
             {
                 MessageBox.Show("Nincs megadva kedvezmény mérték!");
@@ -418,7 +443,7 @@ namespace WindowsFormsApp1
         private void reg_cust_point_button_Click(object sender, EventArgs e)
         {
             connection.Open();
-            if(tB_regcust_ID.Text != "")
+            if(tB_regcust_ID.Text != "" && tB_regcust_ID.Text != "Törzsvásárlói kód")
             {
                 SqlCommand cmd_regcust = connection.CreateCommand();
                 SqlCommand cmd_regcust2 = connection.CreateCommand();
@@ -464,7 +489,8 @@ namespace WindowsFormsApp1
             }
             connection.Close();
             display_regcust();
-            tB_regcust_ID.Clear();
+            tB_regcust_ID.ForeColor = Color.Gray;
+            tB_regcust_ID.Text = "Törzsvásárlói kód";
         }
 
         private void reg_cust_db_double_click(object sender, DataGridViewCellEventArgs e)
