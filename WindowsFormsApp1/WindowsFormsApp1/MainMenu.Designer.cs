@@ -88,42 +88,42 @@
             // saleToolStripMenuItem
             // 
             this.saleToolStripMenuItem.Name = "saleToolStripMenuItem";
-            this.saleToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.saleToolStripMenuItem.Size = new System.Drawing.Size(183, 26);
             this.saleToolStripMenuItem.Text = "Eladás";
             this.saleToolStripMenuItem.Click += new System.EventHandler(this.saleToolStripMenuItem_Click_1);
             // 
             // regularCustomerToolStripMenuItem
             // 
             this.regularCustomerToolStripMenuItem.Name = "regularCustomerToolStripMenuItem";
-            this.regularCustomerToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.regularCustomerToolStripMenuItem.Size = new System.Drawing.Size(183, 26);
             this.regularCustomerToolStripMenuItem.Text = "Törzsvásárlók";
             this.regularCustomerToolStripMenuItem.Click += new System.EventHandler(this.regularCustomerToolStripMenuItem_Click_1);
             // 
             // bookManagerToolStripMenuItem
             // 
             this.bookManagerToolStripMenuItem.Name = "bookManagerToolStripMenuItem";
-            this.bookManagerToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.bookManagerToolStripMenuItem.Size = new System.Drawing.Size(183, 26);
             this.bookManagerToolStripMenuItem.Text = "Könyv kezelő";
             this.bookManagerToolStripMenuItem.Click += new System.EventHandler(this.bookManagerToolStripMenuItem_Click);
             // 
             // wishListToolStripMenuItem
             // 
             this.wishListToolStripMenuItem.Name = "wishListToolStripMenuItem";
-            this.wishListToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.wishListToolStripMenuItem.Size = new System.Drawing.Size(183, 26);
             this.wishListToolStripMenuItem.Text = "Kívánság lista";
             this.wishListToolStripMenuItem.Click += new System.EventHandler(this.wishListToolStripMenuItem_Click);
             // 
             // statementsToolStripMenuItem
             // 
             this.statementsToolStripMenuItem.Name = "statementsToolStripMenuItem";
-            this.statementsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.statementsToolStripMenuItem.Size = new System.Drawing.Size(183, 26);
             this.statementsToolStripMenuItem.Text = "Kimutatások";
             this.statementsToolStripMenuItem.Click += new System.EventHandler(this.statementsToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(183, 26);
             this.exitToolStripMenuItem.Text = "Kilépés";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -164,7 +164,7 @@
             this.book_manager_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.book_manager_button.Font = new System.Drawing.Font("Palatino Linotype", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.book_manager_button.Image = global::WindowsFormsApp1.Properties.Resources.book_manager;
-            this.book_manager_button.Location = new System.Drawing.Point(0, 339);
+            this.book_manager_button.Location = new System.Drawing.Point(0, 340);
             this.book_manager_button.Name = "book_manager_button";
             this.book_manager_button.Size = new System.Drawing.Size(275, 100);
             this.book_manager_button.TabIndex = 3;
@@ -184,7 +184,7 @@
             this.statments_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.statments_button.Font = new System.Drawing.Font("Palatino Linotype", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.statments_button.Image = global::WindowsFormsApp1.Properties.Resources.statements;
-            this.statments_button.Location = new System.Drawing.Point(0, 577);
+            this.statments_button.Location = new System.Drawing.Point(0, 580);
             this.statments_button.Name = "statments_button";
             this.statments_button.Size = new System.Drawing.Size(275, 100);
             this.statments_button.TabIndex = 5;
@@ -204,7 +204,7 @@
             this.wish_list_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.wish_list_button.Font = new System.Drawing.Font("Palatino Linotype", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.wish_list_button.Image = global::WindowsFormsApp1.Properties.Resources.wish_list;
-            this.wish_list_button.Location = new System.Drawing.Point(0, 458);
+            this.wish_list_button.Location = new System.Drawing.Point(0, 460);
             this.wish_list_button.Name = "wish_list_button";
             this.wish_list_button.Size = new System.Drawing.Size(275, 100);
             this.wish_list_button.TabIndex = 4;
@@ -224,7 +224,7 @@
             this.sale_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sale_button.Font = new System.Drawing.Font("Palatino Linotype", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.sale_button.Image = global::WindowsFormsApp1.Properties.Resources.sale;
-            this.sale_button.Location = new System.Drawing.Point(0, 101);
+            this.sale_button.Location = new System.Drawing.Point(0, 100);
             this.sale_button.Name = "sale_button";
             this.sale_button.Size = new System.Drawing.Size(275, 100);
             this.sale_button.TabIndex = 1;

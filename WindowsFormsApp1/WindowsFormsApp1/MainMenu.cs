@@ -230,10 +230,6 @@ namespace WindowsFormsApp1
                 Console.WriteLine(ex.ToString());
                 MessageBox.Show("Sikertelen küldés!" + ex.ToString());
             }
-
-
-
-
         }
 
     }
