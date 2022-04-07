@@ -14,7 +14,7 @@ namespace WindowsFormsApp1
 {
     public partial class SaleForm : Form
     {
-        SqlConnection connection = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename=D:\Suli\Szakdolgozat\WindowsFormsApp1\WindowsFormsApp1\AntiqueDB.mdf;Integrated Security = True");
+        SqlConnection connection = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename=D:\Szakdolgozat\WindowsFormsApp1\WindowsFormsApp1\AntiqueDB.mdf;Integrated Security = True");
         List<int> books_ID = new List<int>();
         float subtotal = 0;
         float total = 0;
@@ -725,6 +725,11 @@ namespace WindowsFormsApp1
                 tB_barcode.Text = "Vonalkód";
                 tB_barcode.ForeColor = Color.Gray;
             }
+        }
+
+        private void form_Close_Click(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

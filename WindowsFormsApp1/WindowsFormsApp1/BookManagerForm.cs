@@ -16,7 +16,7 @@ namespace WindowsFormsApp1
 
     public partial class BookManagerForm : Form
     {
-        SqlConnection connection = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename=D:\Suli\Szakdolgozat\WindowsFormsApp1\WindowsFormsApp1\AntiqueDB.mdf;Integrated Security = True");
+        SqlConnection connection = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename=D:\Szakdolgozat\WindowsFormsApp1\WindowsFormsApp1\AntiqueDB.mdf;Integrated Security = True");
         NetworkCredential login;
         SmtpClient client;
         MailMessage msg;
@@ -297,7 +297,7 @@ namespace WindowsFormsApp1
                 msg.Subject = "Keresett könyv beérkezett";
                 msg.Body = "Tisztelt Vásárló!<br /><br />" +
                     "Az ön által keresett könyv mostantól megtalálható boltunkba.<br /><br />" +
-                    "Ez egy automatikus email kérem ne válaszoljon rá.\nAntikvár könyves bolt<br /><br />" +
+                    "Ez egy automatikus email kérem ne válaszoljon rá.<br /><br />Antikvár könyves bolt<br /><br />" +
                     "Üdvözlettel:Antikvár könyves bolt";
                 msg.BodyEncoding = Encoding.UTF8;
                 msg.IsBodyHtml = true;
@@ -493,6 +493,14 @@ namespace WindowsFormsApp1
                 tB_purchase_price.ForeColor = Color.Gray;
             }
         }
+        private void tB_selling_price_Enter(object sender, EventArgs e)
+        {
+            if (tB_selling_price.Text == "Hozzáadásnál nem kell megadni!")
+            {
+                tB_selling_price.Text = "";
+                tB_selling_price.ForeColor = Color.Black;
+            }
+        }
 
         private void tB_selling_price_Leave(object sender, EventArgs e)
         {
@@ -519,6 +527,11 @@ namespace WindowsFormsApp1
                 tB_ID.Text = "Könyv ID";
                 tB_ID.ForeColor = Color.Gray;
             }
+        }
+
+        private void form_Close_Click(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

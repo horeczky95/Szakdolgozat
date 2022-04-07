@@ -9,12 +9,18 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.Net;
+using System.Net.Mail;
 
 namespace WindowsFormsApp1
 {
     public partial class RegularCustomerForm : Form
     {
-        SqlConnection connection = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename=D:\Suli\Szakdolgozat\WindowsFormsApp1\WindowsFormsApp1\AntiqueDB.mdf;Integrated Security = True");
+        SqlConnection connection = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename=D:\Szakdolgozat\WindowsFormsApp1\WindowsFormsApp1\AntiqueDB.mdf;Integrated Security = True");
+        NetworkCredential login;
+        SmtpClient client;
+        MailMessage msg;
+
         public RegularCustomerForm()
         {
             InitializeComponent();
@@ -78,9 +84,28 @@ namespace WindowsFormsApp1
             connection.Close();
 
         }
+
+
         private void regcus_display_Click(object sender, EventArgs e)
         {
-            display_data();
+            if(tB_regcust_ID.Text != "" && tB_regcust_ID.Text != "Törzsvásárlói kód")
+            {
+                connection.Open();
+                SqlCommand cmd = connection.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "select [Regular_Customer_ID] as [Törzsvásárlói kód], [Name] as Név, [Address] as Cím, [Born date] as [Születési idő], [Gender] as [Nem], [Phone_number] as Telefonszám, " +
+                    "[Email_Address] as [Email cím], [Current_Points] as [Aktuális pontok], [Previous_Year_Points] as [Előző éves pontok] from [Regular_Customers] where [Regular_Customer_ID] = '" + tB_regcust_ID.Text + "'";
+                cmd.ExecuteNonQuery();
+                DataTable dta = new DataTable();
+                SqlDataAdapter dataadp = new SqlDataAdapter(cmd);
+                dataadp.Fill(dta);
+                dataGridView.DataSource = dta;
+                connection.Close();
+            } else
+            {
+                display_data();
+            }
+            
         }
 
         private void new_regcust_Click(object sender, EventArgs e)
@@ -116,6 +141,7 @@ namespace WindowsFormsApp1
                     "values ('" + reg_cust.ToString() + "', '" + tB_name.Text + "', '" + tB_address.Text + "','" + born_date.ToString(format) + "', " +
                     "'" + gender.ToString()+ "', '" + tB_phone.Text + "', '" + tB_email.Text + "', '" + 0 + "', " + "'" + 0 + "')";
                 cmd.ExecuteNonQuery();
+                send_mail(tB_email.Text.ToString(), reg_cust.ToString());
                 connection.Close();
                 tB_name.ForeColor = Color.Gray;
                 tB_name.Text = "Teljes név";
@@ -152,9 +178,19 @@ namespace WindowsFormsApp1
         {
             if (tB_regcust_ID.Text != "" && tB_regcust_ID.Text != "Törzsvásárlói kód")
             {
-                //string format = "yyyy. MM. dd";
+                string format = "yyyy. MM. dd";
+                DateTime date = new DateTime();
+                DateTime new_date = dtP_born_date.Value;
                 connection.Open();
                 SqlCommand cmd = connection.CreateCommand();
+                SqlDataReader reader = (null);
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "select * from [Regular_Customers] where Regular_Customer_ID = '" + tB_regcust_ID.Text + "'";
+                cmd.ExecuteNonQuery();
+                reader = cmd.ExecuteReader();
+                reader.Read();
+                date = DateTime.Parse(reader["Born date"].ToString());
+                reader.Close();
                 if (tB_name.Text != "" && tB_name.Text != "Teljes név")
                 {
                     cmd.CommandText = "update [Regular_Customers] set Name = '" + tB_name.Text + "' where Regular_Customer_ID = '" + tB_regcust_ID.Text + "'";
@@ -167,11 +203,10 @@ namespace WindowsFormsApp1
                     tB_address.ForeColor = Color.Gray;
                     tB_address.Text = "Lakcím";
                 }
-                /*else if (dtP_born_date.Value.ToString() != "")
+                else if (dtP_born_date.Value.ToString() != "" && dtP_born_date.Value.ToString(format) != date.ToString(format))
                 {
-                    cmd.CommandText = "update [Regular_Customers] set [Born year] = '" + tB_born_date.Text + "' where Regular_Customer_ID = '" + tB_ID.Text + "'";
-                    tB_born_date.Text = "";
-                }*/
+                    cmd.CommandText = "update [Regular_Customers] set [Born date] = '" + new_date.ToString(format) + "' where Regular_Customer_ID = '" + tB_regcust_ID.Text + "'";
+                }
                 else if (cB_gender.Text != "" && cB_gender.Text != "Nem")
                 {
                     cmd.CommandText = "update [Regular_Customers] set Gender = '" + cB_gender.Text + "' where Regular_Customer_ID = '" + tB_regcust_ID.Text + "'";
@@ -209,7 +244,41 @@ namespace WindowsFormsApp1
 
         private void dG_double_Click(object sender, DataGridViewCellEventArgs e)
         {
+            tB_regcust_ID.ForeColor = Color.Black;
             tB_regcust_ID.Text = dataGridView.CurrentRow.Cells[0].Value.ToString();
+        }
+
+        //Email
+
+        public void send_mail(string e_mail, string regcust_id)
+        {
+            try
+            {
+                login = new NetworkCredential("horeczky95@gmail.com", "louis123!!!");
+                client = new SmtpClient("smtp.gmail.com");
+                client.Port = 587;
+                client.EnableSsl = true;
+                client.Credentials = login;
+                msg = new MailMessage { From = new MailAddress("horeczky95@gmail.com") };
+                msg.To.Add(e_mail);
+                msg.Subject = "Keresett könyv beérkezett";
+                msg.Body = "Tisztelt Vásárló!<br /><br />" +
+                    "A mai nap folyamán Önt, mint törzsvásárló regisztráltuk rendszerünkbe.<br /><br />" +
+                    "Az Ön új törzsvásárlói kódja: " + regcust_id +
+                    ". Üdvözöljük törzsvásárlóink között. Reméljük mihamarabb vissza tér üzletünkbe.<br /><br />" +
+                    "Üdvözlettel: <br />Antikvár könyves bolt";
+                msg.BodyEncoding = Encoding.UTF8;
+                msg.IsBodyHtml = true;
+                msg.Priority = MailPriority.Normal;
+                msg.DeliveryNotificationOptions = DeliveryNotificationOptions.OnFailure;
+                string userstate = "Sending...";
+                client.SendAsync(msg, userstate);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                MessageBox.Show("Sikertelen küldés!" + ex.ToString());
+            }
         }
 
         //Formázás
@@ -319,6 +388,11 @@ namespace WindowsFormsApp1
                 tB_email.Text = "Email cím";
                 tB_email.ForeColor = Color.Gray;
             }
+        }
+
+        private void form_Close_Click(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

@@ -13,7 +13,7 @@ namespace WindowsFormsApp1
 {
     public partial class WishListForm : Form
     {
-        SqlConnection connection = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename=D:\Suli\Szakdolgozat\WindowsFormsApp1\WindowsFormsApp1\AntiqueDB.mdf;Integrated Security = True");
+        SqlConnection connection = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename=D:\Szakdolgozat\WindowsFormsApp1\WindowsFormsApp1\AntiqueDB.mdf;Integrated Security = True");
         public WishListForm()
         {
             InitializeComponent();
@@ -410,6 +410,9 @@ namespace WindowsFormsApp1
             }
         }
 
-
+        private void form_Close_Click(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

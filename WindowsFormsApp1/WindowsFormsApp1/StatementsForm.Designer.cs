@@ -29,134 +29,172 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.fájlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.regularCustomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bookManagerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.wishListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.súgóToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.startDate = new System.Windows.Forms.DateTimePicker();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridView = new System.Windows.Forms.DataGridView();
             this.antiqueDBDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.antiqueDBDataSet = new WindowsFormsApp1.AntiqueDBDataSet();
             this.finishDate = new System.Windows.Forms.DateTimePicker();
             this.full_statments_button = new System.Windows.Forms.Button();
-            this.income_statements_button = new System.Windows.Forms.Button();
-            this.expend_statements_button = new System.Windows.Forms.Button();
+            this.revenues_statements_button = new System.Windows.Forms.Button();
+            this.costs_statements_button = new System.Windows.Forms.Button();
             this.label_Start = new System.Windows.Forms.Label();
             this.label_Finish = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.label_data = new System.Windows.Forms.Label();
+            this.label_all_revenues = new System.Windows.Forms.Label();
+            this.label_all_costs = new System.Windows.Forms.Label();
+            this.label_all_profit = new System.Windows.Forms.Label();
             this.bevételekTableAdapter = new WindowsFormsApp1.AntiqueDBDataSetTableAdapters.BevételekTableAdapter();
             this.label_revenue = new System.Windows.Forms.Label();
             this.label_cost = new System.Windows.Forms.Label();
             this.label_profit = new System.Windows.Forms.Label();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.antiqueDBDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.antiqueDBDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(134)))), ((int)(((byte)(134)))));
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fájlToolStripMenuItem,
-            this.súgóToolStripMenuItem});
+            this.fileToolStripMenuItem,
+            this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.menuStrip1.Size = new System.Drawing.Size(1482, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // fájlToolStripMenuItem
+            // fileToolStripMenuItem
             // 
-            this.fájlToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mainMenuToolStripMenuItem,
             this.saleToolStripMenuItem,
             this.regularCustomerToolStripMenuItem,
             this.bookManagerToolStripMenuItem,
             this.wishListToolStripMenuItem,
             this.exitToolStripMenuItem});
-            this.fájlToolStripMenuItem.Name = "fájlToolStripMenuItem";
-            this.fájlToolStripMenuItem.Size = new System.Drawing.Size(45, 24);
-            this.fájlToolStripMenuItem.Text = "Fájl";
+            this.fileToolStripMenuItem.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
+            this.fileToolStripMenuItem.Text = "Fájl";
             // 
             // mainMenuToolStripMenuItem
             // 
             this.mainMenuToolStripMenuItem.Name = "mainMenuToolStripMenuItem";
-            this.mainMenuToolStripMenuItem.Size = new System.Drawing.Size(182, 26);
+            this.mainMenuToolStripMenuItem.Size = new System.Drawing.Size(183, 26);
             this.mainMenuToolStripMenuItem.Text = "Főmenü";
             this.mainMenuToolStripMenuItem.Click += new System.EventHandler(this.mainMenuToolStripMenuItem_Click);
             // 
             // saleToolStripMenuItem
             // 
             this.saleToolStripMenuItem.Name = "saleToolStripMenuItem";
-            this.saleToolStripMenuItem.Size = new System.Drawing.Size(182, 26);
+            this.saleToolStripMenuItem.Size = new System.Drawing.Size(183, 26);
             this.saleToolStripMenuItem.Text = "Eladás";
             this.saleToolStripMenuItem.Click += new System.EventHandler(this.saleToolStripMenuItem_Click);
             // 
             // regularCustomerToolStripMenuItem
             // 
             this.regularCustomerToolStripMenuItem.Name = "regularCustomerToolStripMenuItem";
-            this.regularCustomerToolStripMenuItem.Size = new System.Drawing.Size(182, 26);
+            this.regularCustomerToolStripMenuItem.Size = new System.Drawing.Size(183, 26);
             this.regularCustomerToolStripMenuItem.Text = "Törzsvásárlók";
             this.regularCustomerToolStripMenuItem.Click += new System.EventHandler(this.regularCustomerToolStripMenuItem_Click);
             // 
             // bookManagerToolStripMenuItem
             // 
             this.bookManagerToolStripMenuItem.Name = "bookManagerToolStripMenuItem";
-            this.bookManagerToolStripMenuItem.Size = new System.Drawing.Size(182, 26);
+            this.bookManagerToolStripMenuItem.Size = new System.Drawing.Size(183, 26);
             this.bookManagerToolStripMenuItem.Text = "Könyv kezelő";
             this.bookManagerToolStripMenuItem.Click += new System.EventHandler(this.bookManagerToolStripMenuItem_Click);
             // 
             // wishListToolStripMenuItem
             // 
             this.wishListToolStripMenuItem.Name = "wishListToolStripMenuItem";
-            this.wishListToolStripMenuItem.Size = new System.Drawing.Size(182, 26);
+            this.wishListToolStripMenuItem.Size = new System.Drawing.Size(183, 26);
             this.wishListToolStripMenuItem.Text = "Kívánság lista";
             this.wishListToolStripMenuItem.Click += new System.EventHandler(this.wishListToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(182, 26);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(183, 26);
             this.exitToolStripMenuItem.Text = "Kilépés";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
-            // súgóToolStripMenuItem
+            // helpToolStripMenuItem
             // 
-            this.súgóToolStripMenuItem.Name = "súgóToolStripMenuItem";
-            this.súgóToolStripMenuItem.Size = new System.Drawing.Size(57, 24);
-            this.súgóToolStripMenuItem.Text = "Súgó";
+            this.helpToolStripMenuItem.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(57, 24);
+            this.helpToolStripMenuItem.Text = "Súgó";
             // 
             // startDate
             // 
-            this.startDate.Location = new System.Drawing.Point(160, 70);
+            this.startDate.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.startDate.Font = new System.Drawing.Font("Palatino Linotype", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.startDate.Location = new System.Drawing.Point(160, 29);
             this.startDate.Name = "startDate";
-            this.startDate.Size = new System.Drawing.Size(233, 22);
+            this.startDate.Size = new System.Drawing.Size(233, 25);
             this.startDate.TabIndex = 1;
             // 
-            // dataGridView1
+            // dataGridView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(657, 28);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(813, 346);
-            this.dataGridView1.TabIndex = 2;
+            this.dataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(134)))), ((int)(((byte)(134)))));
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(134)))), ((int)(((byte)(134)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Cursor = System.Windows.Forms.Cursors.Hand;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(134)))), ((int)(((byte)(134)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView.Location = new System.Drawing.Point(763, 31);
+            this.dataGridView.Name = "dataGridView";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(134)))), ((int)(((byte)(134)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridView.RowHeadersWidth = 51;
+            this.dataGridView.RowTemplate.Height = 24;
+            this.dataGridView.Size = new System.Drawing.Size(707, 235);
+            this.dataGridView.TabIndex = 15;
             // 
             // antiqueDBDataSetBindingSource
             // 
@@ -170,103 +208,129 @@
             // 
             // finishDate
             // 
-            this.finishDate.Location = new System.Drawing.Point(160, 99);
+            this.finishDate.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.finishDate.Font = new System.Drawing.Font("Palatino Linotype", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.finishDate.Location = new System.Drawing.Point(160, 58);
             this.finishDate.Name = "finishDate";
-            this.finishDate.Size = new System.Drawing.Size(233, 22);
-            this.finishDate.TabIndex = 4;
+            this.finishDate.Size = new System.Drawing.Size(233, 25);
+            this.finishDate.TabIndex = 2;
             // 
             // full_statments_button
             // 
-            this.full_statments_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.full_statments_button.Location = new System.Drawing.Point(24, 135);
+            this.full_statments_button.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.full_statments_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(113)))), ((int)(((byte)(113)))));
+            this.full_statments_button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.full_statments_button.FlatAppearance.BorderSize = 0;
+            this.full_statments_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.full_statments_button.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.full_statments_button.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.full_statments_button.Location = new System.Drawing.Point(12, 94);
             this.full_statments_button.Name = "full_statments_button";
             this.full_statments_button.Size = new System.Drawing.Size(174, 50);
-            this.full_statments_button.TabIndex = 22;
+            this.full_statments_button.TabIndex = 3;
             this.full_statments_button.Text = "Teljes kimutatás";
-            this.full_statments_button.UseVisualStyleBackColor = true;
+            this.full_statments_button.UseVisualStyleBackColor = false;
             this.full_statments_button.Click += new System.EventHandler(this.full_statments_button_Click);
             // 
-            // income_statements_button
+            // revenues_statements_button
             // 
-            this.income_statements_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.income_statements_button.Location = new System.Drawing.Point(219, 135);
-            this.income_statements_button.Name = "income_statements_button";
-            this.income_statements_button.Size = new System.Drawing.Size(174, 50);
-            this.income_statements_button.TabIndex = 23;
-            this.income_statements_button.Text = "Bevételek kimutatása";
-            this.income_statements_button.UseVisualStyleBackColor = true;
-            this.income_statements_button.Click += new System.EventHandler(this.revenues_statements_Click);
+            this.revenues_statements_button.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.revenues_statements_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(113)))), ((int)(((byte)(113)))));
+            this.revenues_statements_button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.revenues_statements_button.FlatAppearance.BorderSize = 0;
+            this.revenues_statements_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.revenues_statements_button.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.revenues_statements_button.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.revenues_statements_button.Location = new System.Drawing.Point(192, 94);
+            this.revenues_statements_button.Name = "revenues_statements_button";
+            this.revenues_statements_button.Size = new System.Drawing.Size(174, 50);
+            this.revenues_statements_button.TabIndex = 4;
+            this.revenues_statements_button.Text = "Bevételek kimutatása";
+            this.revenues_statements_button.UseVisualStyleBackColor = false;
+            this.revenues_statements_button.Click += new System.EventHandler(this.revenues_statements_Click);
             // 
-            // expend_statements_button
+            // costs_statements_button
             // 
-            this.expend_statements_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.expend_statements_button.Location = new System.Drawing.Point(399, 135);
-            this.expend_statements_button.Name = "expend_statements_button";
-            this.expend_statements_button.Size = new System.Drawing.Size(174, 50);
-            this.expend_statements_button.TabIndex = 24;
-            this.expend_statements_button.Text = "Kiadások kimutatása";
-            this.expend_statements_button.UseVisualStyleBackColor = true;
-            this.expend_statements_button.Click += new System.EventHandler(this.costs_statements_Click);
+            this.costs_statements_button.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.costs_statements_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(113)))), ((int)(((byte)(113)))));
+            this.costs_statements_button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.costs_statements_button.FlatAppearance.BorderSize = 0;
+            this.costs_statements_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.costs_statements_button.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.costs_statements_button.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.costs_statements_button.Location = new System.Drawing.Point(111, 150);
+            this.costs_statements_button.Name = "costs_statements_button";
+            this.costs_statements_button.Size = new System.Drawing.Size(174, 50);
+            this.costs_statements_button.TabIndex = 5;
+            this.costs_statements_button.Text = "Kiadások kimutatása";
+            this.costs_statements_button.UseVisualStyleBackColor = false;
+            this.costs_statements_button.Click += new System.EventHandler(this.costs_statements_Click);
             // 
             // label_Start
             // 
+            this.label_Start.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label_Start.AutoSize = true;
-            this.label_Start.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label_Start.Location = new System.Drawing.Point(20, 70);
+            this.label_Start.Font = new System.Drawing.Font("Palatino Linotype", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_Start.Location = new System.Drawing.Point(12, 29);
             this.label_Start.Name = "label_Start";
-            this.label_Start.Size = new System.Drawing.Size(107, 20);
-            this.label_Start.TabIndex = 25;
+            this.label_Start.Size = new System.Drawing.Size(111, 23);
+            this.label_Start.TabIndex = 6;
             this.label_Start.Text = "Kezdő dátum";
             // 
             // label_Finish
             // 
+            this.label_Finish.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label_Finish.AutoSize = true;
-            this.label_Finish.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label_Finish.Location = new System.Drawing.Point(20, 99);
+            this.label_Finish.Font = new System.Drawing.Font("Palatino Linotype", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_Finish.Location = new System.Drawing.Point(12, 58);
             this.label_Finish.Name = "label_Finish";
-            this.label_Finish.Size = new System.Drawing.Size(126, 20);
-            this.label_Finish.TabIndex = 26;
+            this.label_Finish.Size = new System.Drawing.Size(126, 23);
+            this.label_Finish.TabIndex = 7;
             this.label_Finish.Text = "Befejező dátum";
             // 
-            // label3
+            // label_data
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(19, 205);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(338, 25);
-            this.label3.TabIndex = 27;
-            this.label3.Text = "Adott időszakra vonatkozó adatok";
+            this.label_data.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label_data.AutoSize = true;
+            this.label_data.Font = new System.Drawing.Font("Palatino Linotype", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_data.Location = new System.Drawing.Point(442, 29);
+            this.label_data.Name = "label_data";
+            this.label_data.Size = new System.Drawing.Size(274, 23);
+            this.label_data.TabIndex = 8;
+            this.label_data.Text = "Adott időszakra vonatkozó adatok";
             // 
-            // label4
+            // label_all_revenues
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(21, 253);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(125, 20);
-            this.label4.TabIndex = 28;
-            this.label4.Text = "Összes bevétel";
+            this.label_all_revenues.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label_all_revenues.AutoSize = true;
+            this.label_all_revenues.Font = new System.Drawing.Font("Palatino Linotype", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_all_revenues.Location = new System.Drawing.Point(442, 79);
+            this.label_all_revenues.Name = "label_all_revenues";
+            this.label_all_revenues.Size = new System.Drawing.Size(123, 23);
+            this.label_all_revenues.TabIndex = 9;
+            this.label_all_revenues.Text = "Összes bevétel";
             // 
-            // label5
+            // label_all_costs
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label5.Location = new System.Drawing.Point(21, 304);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(120, 20);
-            this.label5.TabIndex = 29;
-            this.label5.Text = "Összes kiadás";
+            this.label_all_costs.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label_all_costs.AutoSize = true;
+            this.label_all_costs.Font = new System.Drawing.Font("Palatino Linotype", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_all_costs.Location = new System.Drawing.Point(442, 128);
+            this.label_all_costs.Name = "label_all_costs";
+            this.label_all_costs.Size = new System.Drawing.Size(120, 23);
+            this.label_all_costs.TabIndex = 11;
+            this.label_all_costs.Text = "Összes kiadás";
             // 
-            // label6
+            // label_all_profit
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label6.Location = new System.Drawing.Point(21, 354);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(192, 20);
-            this.label6.TabIndex = 30;
-            this.label6.Text = "Adott időszak nyeresége";
+            this.label_all_profit.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label_all_profit.AutoSize = true;
+            this.label_all_profit.Font = new System.Drawing.Font("Palatino Linotype", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_all_profit.Location = new System.Drawing.Point(442, 178);
+            this.label_all_profit.Name = "label_all_profit";
+            this.label_all_profit.Size = new System.Drawing.Size(196, 23);
+            this.label_all_profit.TabIndex = 13;
+            this.label_all_profit.Text = "Adott időszak nyeresége";
             // 
             // bevételekTableAdapter
             // 
@@ -274,90 +338,117 @@
             // 
             // label_revenue
             // 
+            this.label_revenue.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label_revenue.AutoSize = true;
-            this.label_revenue.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label_revenue.Location = new System.Drawing.Point(236, 253);
+            this.label_revenue.Font = new System.Drawing.Font("Palatino Linotype", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_revenue.Location = new System.Drawing.Point(666, 77);
             this.label_revenue.Name = "label_revenue";
-            this.label_revenue.Size = new System.Drawing.Size(42, 20);
-            this.label_revenue.TabIndex = 37;
+            this.label_revenue.Size = new System.Drawing.Size(38, 23);
+            this.label_revenue.TabIndex = 10;
             this.label_revenue.Text = "0 Ft";
             // 
             // label_cost
             // 
+            this.label_cost.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label_cost.AutoSize = true;
-            this.label_cost.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label_cost.Location = new System.Drawing.Point(236, 304);
+            this.label_cost.Font = new System.Drawing.Font("Palatino Linotype", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_cost.Location = new System.Drawing.Point(666, 128);
             this.label_cost.Name = "label_cost";
-            this.label_cost.Size = new System.Drawing.Size(42, 20);
-            this.label_cost.TabIndex = 38;
+            this.label_cost.Size = new System.Drawing.Size(38, 23);
+            this.label_cost.TabIndex = 12;
             this.label_cost.Text = "0 Ft";
             // 
             // label_profit
             // 
+            this.label_profit.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label_profit.AutoSize = true;
-            this.label_profit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label_profit.Location = new System.Drawing.Point(236, 354);
+            this.label_profit.Font = new System.Drawing.Font("Palatino Linotype", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_profit.Location = new System.Drawing.Point(666, 178);
             this.label_profit.Name = "label_profit";
-            this.label_profit.Size = new System.Drawing.Size(42, 20);
-            this.label_profit.TabIndex = 39;
+            this.label_profit.Size = new System.Drawing.Size(38, 23);
+            this.label_profit.TabIndex = 14;
             this.label_profit.Text = "0 Ft";
             // 
-            // chart1
+            // chart
             // 
-            this.chart1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.chart.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.chart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(134)))), ((int)(((byte)(134)))));
+            this.chart.BorderlineWidth = 0;
+            chartArea1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(134)))), ((int)(((byte)(134)))));
             chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
+            this.chart.ChartAreas.Add(chartArea1);
+            this.chart.Cursor = System.Windows.Forms.Cursors.No;
+            legend1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(134)))), ((int)(((byte)(134)))));
+            legend1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            legend1.IsTextAutoFit = false;
             legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(24, 420);
-            this.chart1.Name = "chart1";
+            legend1.TitleFont = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.chart.Legends.Add(legend1);
+            this.chart.Location = new System.Drawing.Point(16, 272);
+            this.chart.Name = "chart";
+            this.chart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
             series1.ChartArea = "ChartArea1";
-            series1.Font = new System.Drawing.Font("Palatino Linotype", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            series1.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             series1.Legend = "Legend1";
+            series1.LegendText = "Kiadások";
             series1.Name = "Costs";
             series2.ChartArea = "ChartArea1";
-            series2.Font = new System.Drawing.Font("Palatino Linotype", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            series2.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             series2.Legend = "Legend1";
+            series2.LegendText = "Bevételek";
             series2.Name = "Revenues";
-            this.chart1.Series.Add(series1);
-            this.chart1.Series.Add(series2);
-            this.chart1.Size = new System.Drawing.Size(1446, 371);
-            this.chart1.TabIndex = 40;
-            this.chart1.Text = "chart1";
+            this.chart.Series.Add(series1);
+            this.chart.Series.Add(series2);
+            this.chart.Size = new System.Drawing.Size(1454, 519);
+            this.chart.TabIndex = 16;
+            this.chart.Text = "chart1";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.revenues_statements_button);
+            this.panel1.Controls.Add(this.startDate);
+            this.panel1.Controls.Add(this.label_profit);
+            this.panel1.Controls.Add(this.finishDate);
+            this.panel1.Controls.Add(this.label_cost);
+            this.panel1.Controls.Add(this.full_statments_button);
+            this.panel1.Controls.Add(this.label_revenue);
+            this.panel1.Controls.Add(this.costs_statements_button);
+            this.panel1.Controls.Add(this.label_all_profit);
+            this.panel1.Controls.Add(this.label_Start);
+            this.panel1.Controls.Add(this.label_all_costs);
+            this.panel1.Controls.Add(this.label_Finish);
+            this.panel1.Controls.Add(this.label_all_revenues);
+            this.panel1.Controls.Add(this.label_data);
+            this.panel1.Location = new System.Drawing.Point(0, 31);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(757, 235);
+            this.panel1.TabIndex = 17;
             // 
             // StatementsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(134)))), ((int)(((byte)(134)))));
             this.ClientSize = new System.Drawing.Size(1482, 803);
-            this.Controls.Add(this.chart1);
-            this.Controls.Add(this.label_profit);
-            this.Controls.Add(this.label_cost);
-            this.Controls.Add(this.label_revenue);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label_Finish);
-            this.Controls.Add(this.label_Start);
-            this.Controls.Add(this.expend_statements_button);
-            this.Controls.Add(this.income_statements_button);
-            this.Controls.Add(this.full_statments_button);
-            this.Controls.Add(this.finishDate);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.startDate);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.chart);
+            this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "StatementsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Kimutatások";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.form_Close_Click);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.antiqueDBDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.antiqueDBDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -366,32 +457,33 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem fájlToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mainMenuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem regularCustomerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bookManagerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem wishListToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem súgóToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.DateTimePicker startDate;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.DateTimePicker finishDate;
         private System.Windows.Forms.Button full_statments_button;
-        private System.Windows.Forms.Button income_statements_button;
-        private System.Windows.Forms.Button expend_statements_button;
+        private System.Windows.Forms.Button revenues_statements_button;
+        private System.Windows.Forms.Button costs_statements_button;
         private System.Windows.Forms.Label label_Start;
         private System.Windows.Forms.Label label_Finish;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label_data;
+        private System.Windows.Forms.Label label_all_revenues;
+        private System.Windows.Forms.Label label_all_costs;
+        private System.Windows.Forms.Label label_all_profit;
         private AntiqueDBDataSet antiqueDBDataSet;
         private AntiqueDBDataSetTableAdapters.BevételekTableAdapter bevételekTableAdapter;
         private System.Windows.Forms.BindingSource antiqueDBDataSetBindingSource;
         private System.Windows.Forms.Label label_revenue;
         private System.Windows.Forms.Label label_cost;
         private System.Windows.Forms.Label label_profit;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart;
+        private System.Windows.Forms.Panel panel1;
     }
 }

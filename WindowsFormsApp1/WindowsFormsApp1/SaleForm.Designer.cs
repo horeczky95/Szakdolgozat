@@ -854,6 +854,7 @@
             this.Name = "SaleForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Eladás";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.form_Close_Click);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_books)).EndInit();
