@@ -25,6 +25,7 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
             display_data();
+
         }
 
         //Fájl műveletek
@@ -74,7 +75,7 @@ namespace WindowsFormsApp1
             connection.Open();
             SqlCommand cmd = connection.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select [Regular_Customer_ID] as [Törzsvásárlói kód], [Name] as Név, [Address] as Cím, [Born date] as [Születési idő], [Gender] as [Nem], [Phone_number] as Telefonszám, " +
+            cmd.CommandText = "select [Regular_Customer_ID] as [Törzsvásárlói kód], [Name] as Név, [Address] as Cím, [Born date] as [Születési idő], [Gender] as [Nem], [Phone_number] as [Telefon], " +
                 "[Email_Address] as [Email cím], [Current_Points] as [Aktuális pontok], [Previous_Year_Points] as [Előző éves pontok] from [Regular_Customers]";
             cmd.ExecuteNonQuery();
             DataTable dta = new DataTable();
@@ -82,7 +83,8 @@ namespace WindowsFormsApp1
             dataadp.Fill(dta);
             dataGridView.DataSource = dta;
             connection.Close();
-
+            dataGridView.AutoResizeColumns();
+            dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }
 
 
@@ -105,7 +107,8 @@ namespace WindowsFormsApp1
             {
                 display_data();
             }
-            
+            dataGridView.AutoResizeColumns();
+            dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }
 
         private void new_regcust_Click(object sender, EventArgs e)
@@ -136,11 +139,32 @@ namespace WindowsFormsApp1
                 reg_cust += date.ToString() + gender_number.ToString() + name.ToString();
                 connection.Open();
                 SqlCommand cmd = connection.CreateCommand();
+                SqlDataReader reader = (null);
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "insert into [Regular_Customers] (Regular_Customer_ID, Name, Address, [Born date], Gender, [Phone_Number], [Email_Address], [Current_Points], [Previous_Year_Points]) " +
-                    "values ('" + reg_cust.ToString() + "', '" + tB_name.Text + "', '" + tB_address.Text + "','" + born_date.ToString(format) + "', " +
-                    "'" + gender.ToString()+ "', '" + tB_phone.Text + "', '" + tB_email.Text + "', '" + 0 + "', " + "'" + 0 + "')";
+                cmd.CommandText = "select Count(Name) as count from [Regular_Customers] where [Regular_Customer_ID] = '" + reg_cust.ToString() + "'";
                 cmd.ExecuteNonQuery();
+                reader = cmd.ExecuteReader();
+                reader.Read();
+                int count = int.Parse(reader["count"].ToString());
+                reader.Close();
+                if (count == 0)
+                {
+                    cmd.CommandText = "insert into [Regular_Customers] (Regular_Customer_ID, Name, Address, [Born date], Gender, [Phone_Number], [Email_Address], [Current_Points], [Previous_Year_Points]) " +
+                        "values ('" + reg_cust.ToString() + "', '" + tB_name.Text + "', '" + tB_address.Text + "','" + born_date.ToString(format) + "', " +
+                        "'" + gender.ToString() + "', '" + tB_phone.Text + "', '" + tB_email.Text + "', '" + 0 + "', " + "'" + 0 + "')";
+                    cmd.ExecuteNonQuery();
+                } else
+                {
+                    reg_cust = reg_cust.Remove(0, 1);
+                    int first_char = int.Parse(born_date_string[0].ToString());
+                    first_char += 1;
+                    reg_cust = first_char.ToString() + reg_cust;
+                    cmd.CommandText = "insert into [Regular_Customers] (Regular_Customer_ID, Name, Address, [Born date], Gender, [Phone_Number], [Email_Address], [Current_Points], [Previous_Year_Points]) " +
+                        "values ('" + reg_cust.ToString() + "', '" + tB_name.Text + "', '" + tB_address.Text + "','" + born_date.ToString(format) + "', " +
+                        "'" + gender.ToString() + "', '" + tB_phone.Text + "', '" + tB_email.Text + "', '" + 0 + "', " + "'" + 0 + "')";
+                    cmd.ExecuteNonQuery();
+                }
+
                 send_mail(tB_email.Text.ToString(), reg_cust.ToString());
                 connection.Close();
                 tB_name.ForeColor = Color.Gray;

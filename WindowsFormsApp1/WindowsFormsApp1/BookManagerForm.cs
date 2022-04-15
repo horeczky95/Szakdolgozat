@@ -74,7 +74,7 @@ namespace WindowsFormsApp1
             connection.Open();
             SqlCommand cmd = connection.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select [Book_ID] as Azonosító, [ISBN], [Author] as [Szerző], [Title] as [Cím], [Release year] as [Kiadás éve], [Genre] as [Műfaj], [Publisher] as [Kiadó], [Pagenumber] as [Oldalszám], [Condition] as [Állapot]" +
+            cmd.CommandText = "select [Book_ID] as ID, [ISBN], [Author] as [Szerző], [Title] as [Cím], [Release year] as [Kiadás\néve], [Genre] as [Műfaj], [Publisher] as [Kiadó], [Pagenumber] as [Oldalszám], [Condition] as [Állapot]" +
                 ", [Binding] as [Kötés], [Purchase_Price] as [Beszerzési ár], [Selling_Price] as [Eladási ár] from [Books]";
             cmd.ExecuteNonQuery();
             DataTable dta = new DataTable();
@@ -82,6 +82,9 @@ namespace WindowsFormsApp1
             dataadp.Fill(dta);
             dataGridView.DataSource = dta;
             connection.Close();
+            dataGridView.AutoResizeColumns();
+            dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+
         }
 
         public void display_books()
@@ -103,6 +106,9 @@ namespace WindowsFormsApp1
             {
                 MessageBox.Show("Nincs megadva könyv azonosító!");
             }
+            dataGridView.AutoResizeColumns();
+            dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+
         }
 
         private void books_display_Click(object sender, EventArgs e)

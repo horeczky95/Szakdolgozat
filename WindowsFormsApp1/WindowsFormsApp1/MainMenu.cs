@@ -129,7 +129,8 @@ namespace WindowsFormsApp1
             dataadp.Fill(dta);
             dataGridView.DataSource = dta;
             connection.Close();
-
+            dataGridView.AutoResizeColumns();
+            dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }
 
         public void update_points()
