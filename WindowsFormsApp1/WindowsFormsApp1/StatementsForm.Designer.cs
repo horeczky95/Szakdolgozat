@@ -222,7 +222,7 @@
             this.full_statments_button.Cursor = System.Windows.Forms.Cursors.Hand;
             this.full_statments_button.FlatAppearance.BorderSize = 0;
             this.full_statments_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.full_statments_button.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.full_statments_button.Font = new System.Drawing.Font("Palatino Linotype", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.full_statments_button.ForeColor = System.Drawing.SystemColors.ControlText;
             this.full_statments_button.Location = new System.Drawing.Point(12, 94);
             this.full_statments_button.Name = "full_statments_button";
@@ -239,7 +239,7 @@
             this.revenues_statements_button.Cursor = System.Windows.Forms.Cursors.Hand;
             this.revenues_statements_button.FlatAppearance.BorderSize = 0;
             this.revenues_statements_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.revenues_statements_button.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.revenues_statements_button.Font = new System.Drawing.Font("Palatino Linotype", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.revenues_statements_button.ForeColor = System.Drawing.SystemColors.ControlText;
             this.revenues_statements_button.Location = new System.Drawing.Point(192, 94);
             this.revenues_statements_button.Name = "revenues_statements_button";
@@ -256,7 +256,7 @@
             this.costs_statements_button.Cursor = System.Windows.Forms.Cursors.Hand;
             this.costs_statements_button.FlatAppearance.BorderSize = 0;
             this.costs_statements_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.costs_statements_button.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.costs_statements_button.Font = new System.Drawing.Font("Palatino Linotype", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.costs_statements_button.ForeColor = System.Drawing.SystemColors.ControlText;
             this.costs_statements_button.Location = new System.Drawing.Point(111, 150);
             this.costs_statements_button.Name = "costs_statements_button";

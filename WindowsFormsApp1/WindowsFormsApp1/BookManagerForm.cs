@@ -75,7 +75,7 @@ namespace WindowsFormsApp1
             SqlCommand cmd = connection.CreateCommand();
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = "select [Book_ID] as ID, [ISBN], [Author] as [Szerző], [Title] as [Cím], [Release year] as [Kiadás\néve], [Genre] as [Műfaj], [Publisher] as [Kiadó], [Pagenumber] as [Oldalszám], [Condition] as [Állapot]" +
-                ", [Binding] as [Kötés], [Purchase_Price] as [Beszerzési ár], [Selling_Price] as [Eladási ár] from [Books]";
+                ", [Binding] as [Kötés], [Purchase_Price] as [Beszer\nár], [Selling_Price] as [Elad.\nár] from [Books]";
             cmd.ExecuteNonQuery();
             DataTable dta = new DataTable();
             SqlDataAdapter dataadp = new SqlDataAdapter(cmd);

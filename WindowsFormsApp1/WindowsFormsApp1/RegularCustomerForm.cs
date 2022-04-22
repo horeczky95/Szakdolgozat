@@ -75,8 +75,9 @@ namespace WindowsFormsApp1
             connection.Open();
             SqlCommand cmd = connection.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select [Regular_Customer_ID] as [Törzsvásárlói kód], [Name] as Név, [Address] as Cím, [Born date] as [Születési idő], [Gender] as [Nem], [Phone_number] as [Telefon], " +
-                "[Email_Address] as [Email cím], [Current_Points] as [Aktuális pontok], [Previous_Year_Points] as [Előző éves pontok] from [Regular_Customers]";
+            cmd.CommandText = "select [Regular_Customer_ID] as [Törzsv\nkód], [Name] as [Név], [Address] as [Cím], [Born date] as [Születési\ndátum], [Gender] as [Nem]," +
+                        "[Phone_Number] as [Tel.szám], [Email_Address] as [Email cím], [Current_Points] as [Akt. pont], " +
+                        "[Previous_Year_Points] as [El év pont] from [Regular_Customers]";
             cmd.ExecuteNonQuery();
             DataTable dta = new DataTable();
             SqlDataAdapter dataadp = new SqlDataAdapter(cmd);
@@ -95,8 +96,9 @@ namespace WindowsFormsApp1
                 connection.Open();
                 SqlCommand cmd = connection.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select [Regular_Customer_ID] as [Törzsvásárlói kód], [Name] as Név, [Address] as Cím, [Born date] as [Születési idő], [Gender] as [Nem], [Phone_number] as Telefonszám, " +
-                    "[Email_Address] as [Email cím], [Current_Points] as [Aktuális pontok], [Previous_Year_Points] as [Előző éves pontok] from [Regular_Customers] where [Regular_Customer_ID] = '" + tB_regcust_ID.Text + "'";
+                cmd.CommandText = "select [Regular_Customer_ID] as [Törzsv\nkód], [Name] as [Név], [Address] as [Cím], [Born date] as [Születési\ndátum], [Gender] as [Nem]," +
+                        "[Phone_Number] as [Tel.szám], [Email_Address] as [Email cím], [Current_Points] as [Akt. pont], " +
+                        "[Previous_Year_Points] as [El év pont] where [Regular_Customer_ID] = '" + tB_regcust_ID.Text + "'";
                 cmd.ExecuteNonQuery();
                 DataTable dta = new DataTable();
                 SqlDataAdapter dataadp = new SqlDataAdapter(cmd);
@@ -215,6 +217,9 @@ namespace WindowsFormsApp1
                 reader.Read();
                 date = DateTime.Parse(reader["Born date"].ToString());
                 reader.Close();
+                cmd.CommandText = "select [Regular_Customer_ID] as [Törzsv\nkód], [Name] as [Név], [Address] as [Cím], [Born date] as [Születési\ndátum], [Gender] as [Nem]," +
+                        "[Phone_Number] as [Tel.szám], [Email_Address] as [Email cím], [Current_Points] as [Akt. pont], " +
+                        "[Previous_Year_Points] as [El év pont] from [Books] where Regular_Customer_ID = '" + tB_regcust_ID.Text + "'";
                 if (tB_name.Text != "" && tB_name.Text != "Teljes név")
                 {
                     cmd.CommandText = "update [Regular_Customers] set Name = '" + tB_name.Text + "' where Regular_Customer_ID = '" + tB_regcust_ID.Text + "'";
@@ -252,7 +257,9 @@ namespace WindowsFormsApp1
                 else
                 {
                     MessageBox.Show("Hiányzó adat!");
-                    cmd.CommandText = "select * from [Books]";
+                    cmd.CommandText = "select [Regular_Customer_ID] as [Törzsv\nkód], [Name] as [Név], [Address] as [Cím], [Born date] as [Születési\ndátum], [Gender] as [Nem]," +
+                        "[Phone_Number] as [Tel.szám], [Email_Address] as [Email cím], [Current_Points] as [Akt. pont], " +
+                        "[Previous_Year_Points] as [El év pont] from [Books]";
                 }
                 tB_regcust_ID.ForeColor = Color.Gray;
                 tB_regcust_ID.Text = "Törzsvásárló kód";
@@ -418,5 +425,6 @@ namespace WindowsFormsApp1
         {
             Application.Exit();
         }
+
     }
 }

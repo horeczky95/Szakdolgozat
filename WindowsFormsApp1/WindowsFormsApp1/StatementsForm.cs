@@ -94,7 +94,7 @@ namespace WindowsFormsApp1
                 SqlCommand cmd = connection.CreateCommand();
                 SqlCommand cmd2 = connection.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select * from [Revenues] where Date between '" +
+                cmd.CommandText = "select [Revenu_ID] as [Azonosító], [Amount] as [Összeg], [Date] as [Dátum] from [Revenues] where Date between '" +
                     start.ToString(format) + "' and '" + finish.ToString(format) + "'";
                 cmd.ExecuteNonQuery();
                 DataTable dta = new DataTable();
@@ -137,7 +137,7 @@ namespace WindowsFormsApp1
                 SqlCommand cmd = connection.CreateCommand();
                 SqlCommand cmd2 = connection.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select * from [Costs] where Date between '" +
+                cmd.CommandText = "select [Cost_ID] as [Azonosító], [Amount] as [Összeg], [Date] as [Dátum] from [Costs] where Date between '" +
                     start.ToString(format) + "' and '" + finish.ToString(format) + "'";
                 cmd.ExecuteNonQuery();
                 DataTable dta = new DataTable();
@@ -256,7 +256,7 @@ namespace WindowsFormsApp1
             SqlCommand cmd_cost = connection.CreateCommand();
             SqlDataReader reader = (null);
             cmd_cost.CommandType = CommandType.Text;
-            cmd_cost.CommandText = "select SUM(Amount) as Amount, Date from [Costs]where Date between '" +
+            cmd_cost.CommandText = "select SUM(Amount) as Amount, Date from [Costs] where Date between '" +
                     start.ToString(format) + "' and '" + finish.ToString(format) + "' group by Date";
             cmd_cost.ExecuteNonQuery();
             reader = cmd_cost.ExecuteReader();
@@ -290,7 +290,7 @@ namespace WindowsFormsApp1
             cmd_cash.ExecuteNonQuery();
             cmd_cash.CommandText = "insert into [Cash_Flow] (Amount, Date) select Amount, Date from Revenues";
             cmd_cash.ExecuteNonQuery();
-            cmd_cash.CommandText = "select * from [Cash_Flow]";
+            cmd_cash.CommandText = "select [Cash_Flow_ID] as [Azonosító], [Amount] as [Összeg], [Date] as [Dátum] from [Cash_Flow]";
             cmd_cash.ExecuteNonQuery();
 
             DataTable dta = new DataTable();
@@ -354,7 +354,7 @@ namespace WindowsFormsApp1
             cmd_cash.CommandText = "insert into [Cash_Flow] (Amount, Date) select Amount, Date from Revenues";
             cmd_cash.ExecuteNonQuery();
 
-            cmd_cash.CommandText = "select count(Amount) as Count from [Cash_Flow]where Date between '" +
+            cmd_cash.CommandText = "select count(Amount) as Count from [Cash_Flow] where Date between '" +
                     start.ToString(format) + "' and '" + finish.ToString(format) + "'";
             cmd_cash.ExecuteNonQuery();
             read_amount = cmd_cash.ExecuteReader();
@@ -372,7 +372,7 @@ namespace WindowsFormsApp1
                 read_amount.Close();
                 label_profit.Text = all_cash.ToString() + " Ft";
 
-                cmd_cash.CommandText = "select * from [Cash_Flow] where Date between '" +
+                cmd_cash.CommandText = "select [Cash_Flow_ID] as [Azonosító], [Amount] as [Összeg], [Date] as [Dátum] from [Cash_Flow] where Date between '" +
                         start.ToString(format) + "' and '" + finish.ToString(format) + "'";
                 cmd_cash.ExecuteNonQuery();
 
