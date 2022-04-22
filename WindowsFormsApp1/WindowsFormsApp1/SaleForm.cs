@@ -82,7 +82,7 @@ namespace WindowsFormsApp1
             connection.Open();
             SqlCommand cmd = connection.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select [ISBN], [Author] as [Szerző], [Title] as [Cím], [Release year] as [Kiadás éve], [Genre] as [Műfaj], [Publisher] as [Kiadó], [Pagenumber] as [Oldalszám], [Condition] as [Állapot]" +
+            cmd.CommandText = "select [Book_ID] as [Azonosító], [ISBN], [Author] as [Szerző], [Title] as [Cím], [Release year] as [Kiadás éve], [Genre] as [Műfaj], [Publisher] as [Kiadó], [Pagenumber] as [Oldalszám], [Condition] as [Állapot]" +
                 ", [Binding] as [Kötés], [Purchase_Price] as [Beszerzési ár], [Selling_Price] as [Eladási ár] from [Books]";
             cmd.ExecuteNonQuery();
             DataTable dta = new DataTable();
@@ -316,9 +316,13 @@ namespace WindowsFormsApp1
 
         private void list_click(object sender, MouseEventArgs e)
         {
+            tB_id.ForeColor = Color.Black;
             tB_id.Text = listView.SelectedItems[0].SubItems[0].Text;
+            tB_ISBN.ForeColor = Color.Black;
             tB_ISBN.Text = listView.SelectedItems[0].SubItems[1].Text;
+            tB_author.ForeColor = Color.Black;
             tB_author.Text = listView.SelectedItems[0].SubItems[2].Text;
+            tB_title.ForeColor = Color.Black;
             tB_title.Text = listView.SelectedItems[0].SubItems[3].Text;
         }
 
@@ -361,6 +365,14 @@ namespace WindowsFormsApp1
                 cmd_regcust2.CommandType = CommandType.Text;
                 cmd_regcust2.CommandText = "update [Regular_Customers] set Current_Points = '" + float.Parse(current_points.ToString()) + "' where Regular_Customer_ID = '" + tB_regcust_ID.Text + "'";
                 cmd_regcust2.ExecuteNonQuery();
+                tB_id.ForeColor = Color.Gray;
+                tB_id.Text = "ID";
+                tB_ISBN.ForeColor = Color.Gray;
+                tB_ISBN.Text = "ISBN";
+                tB_author.ForeColor = Color.Gray;
+                tB_author.Text = "Szerző";
+                tB_title.ForeColor = Color.Gray;
+                tB_title.Text = "Cím";
             }
             for (int i= 0; i < books_ID.Count; i++)
             {

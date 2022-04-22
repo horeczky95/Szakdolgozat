@@ -67,7 +67,7 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1482, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1482, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -82,7 +82,7 @@
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 26);
             this.fileToolStripMenuItem.Text = "Fájl";
             // 
             // saleToolStripMenuItem
@@ -131,7 +131,7 @@
             // 
             this.helpToolStripMenuItem.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(57, 24);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(57, 26);
             this.helpToolStripMenuItem.Text = "Súgó";
             // 
             // regular_customer_button
@@ -144,7 +144,7 @@
             this.regular_customer_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.regular_customer_button.Font = new System.Drawing.Font("Palatino Linotype", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.regular_customer_button.Image = global::WindowsFormsApp1.Properties.Resources.regular_customer;
-            this.regular_customer_button.Location = new System.Drawing.Point(0, 220);
+            this.regular_customer_button.Location = new System.Drawing.Point(0, 219);
             this.regular_customer_button.Name = "regular_customer_button";
             this.regular_customer_button.Size = new System.Drawing.Size(275, 100);
             this.regular_customer_button.TabIndex = 2;
@@ -164,7 +164,7 @@
             this.book_manager_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.book_manager_button.Font = new System.Drawing.Font("Palatino Linotype", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.book_manager_button.Image = global::WindowsFormsApp1.Properties.Resources.book_manager;
-            this.book_manager_button.Location = new System.Drawing.Point(0, 340);
+            this.book_manager_button.Location = new System.Drawing.Point(0, 339);
             this.book_manager_button.Name = "book_manager_button";
             this.book_manager_button.Size = new System.Drawing.Size(275, 100);
             this.book_manager_button.TabIndex = 3;
@@ -184,7 +184,7 @@
             this.statments_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.statments_button.Font = new System.Drawing.Font("Palatino Linotype", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.statments_button.Image = global::WindowsFormsApp1.Properties.Resources.statements;
-            this.statments_button.Location = new System.Drawing.Point(0, 580);
+            this.statments_button.Location = new System.Drawing.Point(0, 579);
             this.statments_button.Name = "statments_button";
             this.statments_button.Size = new System.Drawing.Size(275, 100);
             this.statments_button.TabIndex = 5;
@@ -204,7 +204,7 @@
             this.wish_list_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.wish_list_button.Font = new System.Drawing.Font("Palatino Linotype", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.wish_list_button.Image = global::WindowsFormsApp1.Properties.Resources.wish_list;
-            this.wish_list_button.Location = new System.Drawing.Point(0, 460);
+            this.wish_list_button.Location = new System.Drawing.Point(0, 459);
             this.wish_list_button.Name = "wish_list_button";
             this.wish_list_button.Size = new System.Drawing.Size(275, 100);
             this.wish_list_button.TabIndex = 4;
@@ -224,7 +224,7 @@
             this.sale_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sale_button.Font = new System.Drawing.Font("Palatino Linotype", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.sale_button.Image = global::WindowsFormsApp1.Properties.Resources.sale;
-            this.sale_button.Location = new System.Drawing.Point(0, 100);
+            this.sale_button.Location = new System.Drawing.Point(0, 99);
             this.sale_button.Name = "sale_button";
             this.sale_button.Size = new System.Drawing.Size(275, 100);
             this.sale_button.TabIndex = 1;
@@ -296,9 +296,9 @@
             this.panel1.Controls.Add(this.statments_button);
             this.panel1.Controls.Add(this.wish_list_button);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 28);
+            this.panel1.Location = new System.Drawing.Point(0, 30);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(275, 775);
+            this.panel1.Size = new System.Drawing.Size(275, 773);
             this.panel1.TabIndex = 7;
             // 
             // MainMenu
