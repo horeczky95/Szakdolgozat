@@ -16,7 +16,7 @@ namespace WindowsFormsApp1
 
     public partial class BookManagerForm : Form
     {
-        SqlConnection connection = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename=D:\Szakdolgozat\WindowsFormsApp1\WindowsFormsApp1\AntiqueDB.mdf;Integrated Security = True");
+        SqlConnection connection = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename=D:\SULI\SZAKDOLGOZAT\WINDOWSFORMSAPP1\WINDOWSFORMSAPP1\ANTIQUEDB.MDF;Integrated Security = True");
         NetworkCredential login;
         SmtpClient client;
         MailMessage msg;
@@ -74,7 +74,7 @@ namespace WindowsFormsApp1
             connection.Open();
             SqlCommand cmd = connection.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select [Book_ID] as ID, [ISBN], [Author] as [Szerző], [Title] as [Cím], [Release year] as [Kiadás\néve], [Genre] as [Műfaj], [Publisher] as [Kiadó], [Pagenumber] as [Oldalszám], [Condition] as [Állapot]" +
+            cmd.CommandText = "select [Book_ID] as ID, [ISBN], [Author] as [Szerző], [Title] as [Cím], [Release_Year] as [Kiadás\néve], [Genre] as [Műfaj], [Publisher] as [Kiadó], [Pagenumber] as [Oldal-\nszám], [Condition] as [Állapot]" +
                 ", [Binding] as [Kötés], [Purchase_Price] as [Beszer\nár], [Selling_Price] as [Elad.\nár] from [Books]";
             cmd.ExecuteNonQuery();
             DataTable dta = new DataTable();
@@ -167,7 +167,7 @@ namespace WindowsFormsApp1
                 cmd_expend.CommandType = CommandType.Text;
                 cmd_id.CommandType = CommandType.Text;
                 cmd_wish_count.CommandType = CommandType.Text;
-                cmd.CommandText = "insert into [Books] (ISBN, Author, Title, [Release year], Genre, Publisher, Condition, Binding, Pagenumber, [Purchase_Price], [Selling_Price]) " +
+                cmd.CommandText = "insert into [Books] (ISBN, Author, Title, [Release_Year], Genre, Publisher, Condition, Binding, Pagenumber, [Purchase_Price], [Selling_Price]) " +
                     "values ('" + tB_ISBN.Text + "', '" + tB_author.Text + "', '" + tB_title.Text + "','" + int.Parse(tB_year.Text) + "', " +
                     "'" + tB_genre.Text + "', '" + tB_publisher.Text + "', '" + tB_condition.Text + "', '" + tB_binding.Text + "', " +
                     "'" + int.Parse(tB_pagenumber.Text) + "', '" + float.Parse(tB_purchase_price.Text) + "', '" + float.Parse(selling_price_string) + "')";
@@ -253,7 +253,7 @@ namespace WindowsFormsApp1
                 } else if (tB_title.Text != "" && tB_title.Text != "Cím") {
                     cmd.CommandText = "update [Books] set Title = '" + tB_title.Text + "' where Book_ID = '" + int.Parse(tB_ID.Text) + "'";
                 } else if (tB_year.Text != "" && tB_year.Text != "Kiadás éve") {
-                    cmd.CommandText = "update [Books] set [Release year]= '" + int.Parse(tB_year.Text) + "' where Book_ID = '" + int.Parse(tB_ID.Text) + "'";
+                    cmd.CommandText = "update [Books] set [Release_Year]= '" + int.Parse(tB_year.Text) + "' where Book_ID = '" + int.Parse(tB_ID.Text) + "'";
                 } else if (tB_genre.Text != "" && tB_genre.Text != "Műfaj") {
                     cmd.CommandText = "update [Books] set Genre= '" + tB_genre.Text + "' where Book_ID = '" + int.Parse(tB_ID.Text) + "'";
                 } else if (tB_publisher.Text != "" && tB_publisher.Text != "Kiadó") {
@@ -293,7 +293,7 @@ namespace WindowsFormsApp1
         public void send_mail(string e_mail) {
             try
             {
-                login = new NetworkCredential("horeczky95@gmail.com", "louis123!!!");
+                login = new NetworkCredential("horeczky95@gmail.com", "2020junius24");
                 client = new SmtpClient("smtp.gmail.com");
                 client.Port = 587;
                 client.EnableSsl = true;

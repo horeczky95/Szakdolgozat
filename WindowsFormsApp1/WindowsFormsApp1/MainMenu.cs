@@ -22,7 +22,7 @@ namespace WindowsFormsApp1
             public float previous_points { get; set; }
         }
 
-        SqlConnection connection = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename=D:\Szakdolgozat\WindowsFormsApp1\WindowsFormsApp1\AntiqueDB.mdf;Integrated Security = True");
+        SqlConnection connection = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename=D:\SULI\SZAKDOLGOZAT\WINDOWSFORMSAPP1\WINDOWSFORMSAPP1\ANTIQUEDB.MDF;Integrated Security = True");
         NetworkCredential login;
         SmtpClient client;
         MailMessage msg;
@@ -121,7 +121,7 @@ namespace WindowsFormsApp1
             connection.Open();
             SqlCommand cmd = connection.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select [ISBN], [Author] as [Szerző], [Title] as [Cím], [Release year] as [Kiadás], [Genre] as [Műfaj], [Publisher] as [Kiadó], [Pagenumber] as [Oldalszám], [Condition] as [Állapot]" +
+            cmd.CommandText = "select [ISBN], [Author] as [Szerző], [Title] as [Cím], [Release_Year] as [Kiadás], [Genre] as [Műfaj], [Publisher] as [Kiadó], [Pagenumber] as [Oldal-\nszám], [Condition] as [Állapot]" +
                 ", [Binding] as [Kötés], [Purchase_Price] as [Beszer. ár], [Selling_Price] as [Elad. ár] from [Books]";
             cmd.ExecuteNonQuery();
             DataTable dta = new DataTable();
@@ -129,7 +129,7 @@ namespace WindowsFormsApp1
             dataadp.Fill(dta);
             dataGridView.DataSource = dta;
             connection.Close();
-            dataGridView.AutoResizeColumns();
+            dataGridView.AutoResizeColumns(); 
             dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }
 
@@ -214,7 +214,7 @@ namespace WindowsFormsApp1
         {
             try
             {
-                login = new NetworkCredential("horeczky95@gmail.com", "louis123!!!");
+                login = new NetworkCredential("horeczky95@gmail.com", "2020junius24");
                 client = new SmtpClient("smtp.gmail.com");
                 client.Port = 587;
                 client.EnableSsl = true;

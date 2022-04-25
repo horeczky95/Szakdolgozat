@@ -23,7 +23,7 @@ namespace WindowsFormsApp1
             public float amount;
             public string date;
         }
-        SqlConnection connection = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename=D:\Szakdolgozat\WindowsFormsApp1\WindowsFormsApp1\AntiqueDB.mdf;Integrated Security = True");        
+        SqlConnection connection = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename=D:\SULI\SZAKDOLGOZAT\WINDOWSFORMSAPP1\WINDOWSFORMSAPP1\ANTIQUEDB.MDF;Integrated Security = True");        
         
         public StatementsForm()
         {
@@ -297,6 +297,9 @@ namespace WindowsFormsApp1
             SqlDataAdapter dataadp = new SqlDataAdapter(cmd_cash);
             dataadp.Fill(dta);
             dataGridView.DataSource = dta;
+
+            cmd_cash.CommandText = "drop table [Cash_Flow]";
+            cmd_cash.ExecuteNonQuery();
 
             connection.Close();
 

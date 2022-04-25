@@ -14,7 +14,7 @@ namespace WindowsFormsApp1
 {
     public partial class SaleForm : Form
     {
-        SqlConnection connection = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename=D:\Szakdolgozat\WindowsFormsApp1\WindowsFormsApp1\AntiqueDB.mdf;Integrated Security = True");
+        SqlConnection connection = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename=D:\SULI\SZAKDOLGOZAT\WINDOWSFORMSAPP1\WINDOWSFORMSAPP1\ANTIQUEDB.MDF;Integrated Security = True");
         List<int> books_ID = new List<int>();
         float subtotal = 0;
         float total = 0;
@@ -28,10 +28,6 @@ namespace WindowsFormsApp1
                 books_ID.Remove(books_ID[i]);
             }
             display_regcust();
-            /*using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "JPG| *.jpg" })
-            {
-                    pB_Barcode.Image = Image.FromFile(ofd.FileName);
-            }*/
         }
 
         //Menü
@@ -82,8 +78,8 @@ namespace WindowsFormsApp1
             connection.Open();
             SqlCommand cmd = connection.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select [Book_ID] as [Azonosító], [ISBN], [Author] as [Szerző], [Title] as [Cím], [Release year] as [Kiadás éve], [Genre] as [Műfaj], [Publisher] as [Kiadó], [Pagenumber] as [Oldalszám], [Condition] as [Állapot]" +
-                ", [Binding] as [Kötés], [Purchase_Price] as [Beszerzési ár], [Selling_Price] as [Eladási ár] from [Books]";
+            cmd.CommandText = "select [Book_ID] as [ID], [ISBN], [Author] as [Szerző], [Title] as [Cím], [Release_Year] as [Kiadás\néve], [Genre] as [Műfaj], [Publisher] as [Kiadó], [Pagenumber] as [Oldal-\nszám], [Condition] as [Állapot]" +
+                ", [Binding] as [Kötés], [Purchase_Price] as [Beszer.\nár], [Selling_Price] as [Elad.\nár] from [Books]";
             cmd.ExecuteNonQuery();
             DataTable dta = new DataTable();
             SqlDataAdapter dataadp = new SqlDataAdapter(cmd);
@@ -97,7 +93,7 @@ namespace WindowsFormsApp1
             connection.Open();
             SqlCommand cmd = connection.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select [Regular_Customer_ID] as Azonosító, [Name] as Név, [Current_Points] as Pontok, [Previous_Year_Points] as [Előző éves pontok] from [Regular_Customers]";
+            cmd.CommandText = "select [Regular_Customer_ID] as ID, [Name] as Név, [Current_Points] as Pontok, [Previous_Year_Points] as [Előző éves pontok] from [Regular_Customers]";
             cmd.ExecuteNonQuery();
             DataTable dta = new DataTable();
             SqlDataAdapter dataadp = new SqlDataAdapter(cmd);
@@ -117,8 +113,8 @@ namespace WindowsFormsApp1
                 connection.Open();
                 SqlCommand cmd = connection.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select [ISBN], [Author] as [Szerző], [Title] as [Cím], [Release year] as [Kiadás éve], [Genre] as [Műfaj], [Publisher] as [Kiadó], [Pagenumber] as [Oldalszám], [Condition] as [Állapot]" +
-                ", [Binding] as [Kötés], [Purchase_Price] as [Beszerzési ár], [Selling_Price] as [Eladási ár] from [Books] where [ISBN] like '%" + tB_ISBN.Text + "%'";
+                cmd.CommandText = "select [ISBN], [Author] as [Szerző], [Title] as [Cím], [Release_Year] as [Kiadás\néve], [Genre] as [Műfaj], [Publisher] as [Kiadó], [Pagenumber] as [Oldalszám], [Condition] as [Állapot]" +
+                ", [Binding] as [Kötés], [Purchase_Price] as [Beszer.\nár], [Selling_Price] as [Elad.\nár] from [Books] where [ISBN] like '%" + tB_ISBN.Text + "%'";
                 cmd.ExecuteNonQuery();
                 DataTable dta = new DataTable();
                 SqlDataAdapter dataadp = new SqlDataAdapter(cmd);
@@ -140,8 +136,8 @@ namespace WindowsFormsApp1
                 connection.Open();
                 SqlCommand cmd = connection.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select [ISBN], [Author] as [Szerző], [Title] as [Cím], [Release year] as [Kiadás éve], [Genre] as [Műfaj], [Publisher] as [Kiadó], [Pagenumber] as [Oldalszám], [Condition] as [Állapot]" +
-                ", [Binding] as [Kötés], [Purchase_Price] as [Beszerzési ár], [Selling_Price] as [Eladási ár] from [Books] where [Author] like '%" + tB_author.Text + "%'";
+                cmd.CommandText = "select [ISBN], [Author] as [Szerző], [Title] as [Cím], [Release_Year] as [Kiadás\néve], [Genre] as [Műfaj], [Publisher] as [Kiadó], [Pagenumber] as [Oldal-\nszám], [Condition] as [Állapot]" +
+                ", [Binding] as [Kötés], [Purchase_Price] as [Beszer.\nár], [Selling_Price] as [Elad.\nár] from [Books] where [Author] like '%" + tB_author.Text + "%'";
                 cmd.ExecuteNonQuery();
                 DataTable dta = new DataTable();
                 SqlDataAdapter dataadp = new SqlDataAdapter(cmd);
@@ -164,8 +160,8 @@ namespace WindowsFormsApp1
                 connection.Open();
                 SqlCommand cmd = connection.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select [ISBN], [Author] as [Szerző], [Title] as [Cím], [Release year] as [Kiadás éve], [Genre] as [Műfaj], [Publisher] as [Kiadó], [Pagenumber] as [Oldalszám], [Condition] as [Állapot]" +
-                ", [Binding] as [Kötés], [Purchase_Price] as [Beszerzési ár], [Selling_Price] as [Eladási ár] from [Books] where [Title] like '%" + tB_title.Text + "%'";
+                cmd.CommandText = "select [ISBN], [Author] as [Szerző], [Title] as [Cím], [Release_Year] as [Kiadás\néve], [Genre] as [Műfaj], [Publisher] as [Kiadó], [Pagenumber] as [Oldal-\nszám], [Condition] as [Állapot]" +
+                ", [Binding] as [Kötés], [Purchase_Price] as [Beszer.\nár], [Selling_Price] as [Elad.\nár] from [Books] where [Title] like '%" + tB_title.Text + "%'";
                 cmd.ExecuteNonQuery();
                 DataTable dta = new DataTable();
                 SqlDataAdapter dataadp = new SqlDataAdapter(cmd);
@@ -188,8 +184,8 @@ namespace WindowsFormsApp1
                 connection.Open();
                 SqlCommand cmd = connection.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select [ISBN], [Author] as [Szerző], [Title] as [Cím], [Release year] as [Kiadás éve], [Genre] as [Műfaj], [Publisher] as [Kiadó], [Pagenumber] as [Oldalszám], [Condition] as [Állapot]" +
-                ", [Binding] as [Kötés], [Purchase_Price] as [Beszerzési ár], [Selling_Price] as [Eladási ár] from [Books] where [Release year] = '" + tB_year.Text + "'";
+                cmd.CommandText = "select [ISBN], [Author] as [Szerző], [Title] as [Cím], [Release_Year] as [Kiadás\néve], [Genre] as [Műfaj], [Publisher] as [Kiadó], [Pagenumber] as [Oldal-\nszám], [Condition] as [Állapot]" +
+                ", [Binding] as [Kötés], [Purchase_Price] as [Beszer.\nár], [Selling_Price] as [Elad.\nár] from [Books] where [Release_Year] = '" + tB_year.Text + "'";
                 cmd.ExecuteNonQuery();
                 DataTable dta = new DataTable();
                 SqlDataAdapter dataadp = new SqlDataAdapter(cmd);
@@ -212,8 +208,8 @@ namespace WindowsFormsApp1
                 connection.Open();
                 SqlCommand cmd = connection.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select [ISBN], [Author] as [Szerző], [Title] as [Cím], [Release year] as [Kiadás éve], [Genre] as [Műfaj], [Publisher] as [Kiadó], [Pagenumber] as [Oldalszám], [Condition] as [Állapot]" +
-                ", [Binding] as [Kötés], [Purchase_Price] as [Beszerzési ár], [Selling_Price] as [Eladási ár] from [Books] where [Genre] like '%" + tB_genre.Text + "%'";
+                cmd.CommandText = "select [ISBN], [Author] as [Szerző], [Title] as [Cím], [Release_Year] as [Kiadás\néve], [Genre] as [Műfaj], [Publisher] as [Kiadó], [Pagenumber] as [Oldal-\nszám], [Condition] as [Állapot]" +
+                ", [Binding] as [Kötés], [Purchase_Price] as [Beszer.\nár], [Selling_Price] as [Elad.\nár] from [Books] where [Genre] like '%" + tB_genre.Text + "%'";
                 cmd.ExecuteNonQuery();
                 DataTable dta = new DataTable();
                 SqlDataAdapter dataadp = new SqlDataAdapter(cmd);
@@ -537,14 +533,16 @@ namespace WindowsFormsApp1
                     read.Close();
                     if(count >= 1)
                     {
-                        cmd_ISBN.CommandText = "select * from [Books] where [ISBN]= '" + tB_barcode.Text + "'";
+                        cmd_ISBN.CommandText = "select [Book_ID] as [ID], [ISBN], [Author] as [Szerző], [Title] as [Cím], [Release_Year] as [Kiadás\néve], [Genre] as [Műfaj], [Publisher] as [Kiadó], [Pagenumber] as [Oldal-\nszám], [Condition] as [Állapot]" +
+                ", [Binding] as [Kötés], [Purchase_Price] as [Beszer.\nár], [Selling_Price] as [Elad.\nár] from [Books] where [ISBN]= '" + tB_barcode.Text + "'";
                         cmd_ISBN.ExecuteNonQuery();
                     } else
                     {
                         string barcode = tB_barcode.Text;
                         string ISBN = barcode[3].ToString() + barcode[4].ToString() + barcode[5].ToString() + barcode[6].ToString() + barcode[7].ToString() + barcode[8].ToString() + barcode[9].ToString() + barcode[10].ToString() + barcode[11].ToString();
                         tB_barcode.Text = ISBN.ToString();
-                        cmd_ISBN.CommandText = "select * from [Books] where [ISBN] like '%" + ISBN.ToString() + "%'";
+                        cmd_ISBN.CommandText = "select [Book_ID] as [ID], [ISBN], [Author] as [Szerző], [Title] as [Cím], [Release_Year] as [Kiadás\néve], [Genre] as [Műfaj], [Publisher] as [Kiadó], [Pagenumber] as [Oldal-\nszám], [Condition] as [Állapot]" +
+                ", [Binding] as [Kötés], [Purchase_Price] as [Beszer.\nár], [Selling_Price] as [Elad.\nár] from [Books] where [ISBN] like '%" + ISBN.ToString() + "%'";
                         cmd_ISBN.ExecuteNonQuery();
                     }
                     DataTable dta = new DataTable();

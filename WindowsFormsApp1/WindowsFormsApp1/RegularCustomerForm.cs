@@ -16,7 +16,7 @@ namespace WindowsFormsApp1
 {
     public partial class RegularCustomerForm : Form
     {
-        SqlConnection connection = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename=D:\Szakdolgozat\WindowsFormsApp1\WindowsFormsApp1\AntiqueDB.mdf;Integrated Security = True");
+        SqlConnection connection = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename=D:\SULI\SZAKDOLGOZAT\WINDOWSFORMSAPP1\WINDOWSFORMSAPP1\ANTIQUEDB.MDF;Integrated Security = True");
         NetworkCredential login;
         SmtpClient client;
         MailMessage msg;
@@ -75,7 +75,7 @@ namespace WindowsFormsApp1
             connection.Open();
             SqlCommand cmd = connection.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select [Regular_Customer_ID] as [Törzsv\nkód], [Name] as [Név], [Address] as [Cím], [Born date] as [Születési\ndátum], [Gender] as [Nem]," +
+            cmd.CommandText = "select [Regular_Customer_ID] as [Törzsv\nkód], [Name] as [Név], [Address] as [Cím], [Born_Date] as [Születési\ndátum], [Gender] as [Nem]," +
                         "[Phone_Number] as [Tel.szám], [Email_Address] as [Email cím], [Current_Points] as [Akt. pont], " +
                         "[Previous_Year_Points] as [El év pont] from [Regular_Customers]";
             cmd.ExecuteNonQuery();
@@ -96,21 +96,22 @@ namespace WindowsFormsApp1
                 connection.Open();
                 SqlCommand cmd = connection.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select [Regular_Customer_ID] as [Törzsv\nkód], [Name] as [Név], [Address] as [Cím], [Born date] as [Születési\ndátum], [Gender] as [Nem]," +
+                cmd.CommandText = "select [Regular_Customer_ID] as [Törzsv\nkód], [Name] as [Név], [Address] as [Cím], [Born_Date] as [Születési\ndátum], [Gender] as [Nem]," +
                         "[Phone_Number] as [Tel.szám], [Email_Address] as [Email cím], [Current_Points] as [Akt. pont], " +
-                        "[Previous_Year_Points] as [El év pont] where [Regular_Customer_ID] = '" + tB_regcust_ID.Text + "'";
+                        "[Previous_Year_Points] as [El év pont] from [Regular_Customers] where [Regular_Customer_ID] = '" + tB_regcust_ID.Text + "'";
                 cmd.ExecuteNonQuery();
                 DataTable dta = new DataTable();
                 SqlDataAdapter dataadp = new SqlDataAdapter(cmd);
                 dataadp.Fill(dta);
                 dataGridView.DataSource = dta;
                 connection.Close();
+                dataGridView.AutoResizeColumns();
+                dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             } else
             {
                 display_data();
             }
-            dataGridView.AutoResizeColumns();
-            dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+
         }
 
         private void new_regcust_Click(object sender, EventArgs e)
@@ -151,7 +152,7 @@ namespace WindowsFormsApp1
                 reader.Close();
                 if (count == 0)
                 {
-                    cmd.CommandText = "insert into [Regular_Customers] (Regular_Customer_ID, Name, Address, [Born date], Gender, [Phone_Number], [Email_Address], [Current_Points], [Previous_Year_Points]) " +
+                    cmd.CommandText = "insert into [Regular_Customers] (Regular_Customer_ID, Name, Address, [Born_Date], Gender, [Phone_Number], [Email_Address], [Current_Points], [Previous_Year_Points]) " +
                         "values ('" + reg_cust.ToString() + "', '" + tB_name.Text + "', '" + tB_address.Text + "','" + born_date.ToString(format) + "', " +
                         "'" + gender.ToString() + "', '" + tB_phone.Text + "', '" + tB_email.Text + "', '" + 0 + "', " + "'" + 0 + "')";
                     cmd.ExecuteNonQuery();
@@ -161,7 +162,7 @@ namespace WindowsFormsApp1
                     int first_char = int.Parse(born_date_string[0].ToString());
                     first_char += 1;
                     reg_cust = first_char.ToString() + reg_cust;
-                    cmd.CommandText = "insert into [Regular_Customers] (Regular_Customer_ID, Name, Address, [Born date], Gender, [Phone_Number], [Email_Address], [Current_Points], [Previous_Year_Points]) " +
+                    cmd.CommandText = "insert into [Regular_Customers] (Regular_Customer_ID, Name, Address, [Born_Date], Gender, [Phone_Number], [Email_Address], [Current_Points], [Previous_Year_Points]) " +
                         "values ('" + reg_cust.ToString() + "', '" + tB_name.Text + "', '" + tB_address.Text + "','" + born_date.ToString(format) + "', " +
                         "'" + gender.ToString() + "', '" + tB_phone.Text + "', '" + tB_email.Text + "', '" + 0 + "', " + "'" + 0 + "')";
                     cmd.ExecuteNonQuery();
@@ -215,9 +216,9 @@ namespace WindowsFormsApp1
                 cmd.ExecuteNonQuery();
                 reader = cmd.ExecuteReader();
                 reader.Read();
-                date = DateTime.Parse(reader["Born date"].ToString());
+                date = DateTime.Parse(reader["Born_Date"].ToString());
                 reader.Close();
-                cmd.CommandText = "select [Regular_Customer_ID] as [Törzsv\nkód], [Name] as [Név], [Address] as [Cím], [Born date] as [Születési\ndátum], [Gender] as [Nem]," +
+                cmd.CommandText = "select [Regular_Customer_ID] as [Törzsv\nkód], [Name] as [Név], [Address] as [Cím], [Born_Date] as [Születési\ndátum], [Gender] as [Nem]," +
                         "[Phone_Number] as [Tel.szám], [Email_Address] as [Email cím], [Current_Points] as [Akt. pont], " +
                         "[Previous_Year_Points] as [El év pont] from [Books] where Regular_Customer_ID = '" + tB_regcust_ID.Text + "'";
                 if (tB_name.Text != "" && tB_name.Text != "Teljes név")
@@ -234,7 +235,7 @@ namespace WindowsFormsApp1
                 }
                 else if (dtP_born_date.Value.ToString() != "" && dtP_born_date.Value.ToString(format) != date.ToString(format))
                 {
-                    cmd.CommandText = "update [Regular_Customers] set [Born date] = '" + new_date.ToString(format) + "' where Regular_Customer_ID = '" + tB_regcust_ID.Text + "'";
+                    cmd.CommandText = "update [Regular_Customers] set [Born_Date] = '" + new_date.ToString(format) + "' where Regular_Customer_ID = '" + tB_regcust_ID.Text + "'";
                 }
                 else if (cB_gender.Text != "" && cB_gender.Text != "Nem")
                 {
@@ -257,7 +258,7 @@ namespace WindowsFormsApp1
                 else
                 {
                     MessageBox.Show("Hiányzó adat!");
-                    cmd.CommandText = "select [Regular_Customer_ID] as [Törzsv\nkód], [Name] as [Név], [Address] as [Cím], [Born date] as [Születési\ndátum], [Gender] as [Nem]," +
+                    cmd.CommandText = "select [Regular_Customer_ID] as [Törzsv\nkód], [Name] as [Név], [Address] as [Cím], [Born_Date] as [Születési\ndátum], [Gender] as [Nem]," +
                         "[Phone_Number] as [Tel.szám], [Email_Address] as [Email cím], [Current_Points] as [Akt. pont], " +
                         "[Previous_Year_Points] as [El év pont] from [Books]";
                 }
@@ -285,7 +286,7 @@ namespace WindowsFormsApp1
         {
             try
             {
-                login = new NetworkCredential("horeczky95@gmail.com", "louis123!!!");
+                login = new NetworkCredential("horeczky95@gmail.com", "2020junius24");
                 client = new SmtpClient("smtp.gmail.com");
                 client.Port = 587;
                 client.EnableSsl = true;
