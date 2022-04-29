@@ -741,5 +741,19 @@ namespace WindowsFormsApp1
         {
             Application.Exit();
         }
+
+        //Súgó
+
+        private void help_add_click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Könyv kosárba helyezése\nKönyv vásárlás esetén az első lépés a könyv kosárba helyezése. " +
+                "A könyvet az ISBN száma alapján megkeressük a rendszerbe és kosárba helyezzük.Az első könyv kosárba helyezésekor létre jön egy lista, " +
+                "amely a kosárba helyezett könyvek azonosítóját tartalmazza." +
+                "Ezen felül egy táblázat segítségével megjelenik a kosártartalma is. " +
+                "Ebben a táblázatban a könyv ISBN száma, szerzője, címe és eladási ár jelenik meg. " +
+                "Minden könyv kosárba helyezésekor a kosár alatt megjelenik az aktuális könyv ára mint részösszeg, " +
+                "valamint minden alkalommal frissül a teljes fizetendő összeg is a hozzá adott könyv árával növelve. " +
+                "Ha minden könyv bekerült a kosárba akkor tudunk kedvezményeket adni, pontot levonni, illetve a könyveket eladni.");
+        }
     }
 }
