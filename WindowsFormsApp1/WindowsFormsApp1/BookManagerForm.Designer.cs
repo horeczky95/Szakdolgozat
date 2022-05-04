@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,6 +41,9 @@
             this.statementsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.new_book_helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.book_modification_helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.book_delete_helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.könyvekBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.antiqueDBDataSet = new WindowsFormsApp1.AntiqueDBDataSet();
@@ -76,9 +79,6 @@
             this.label_selling_price = new System.Windows.Forms.Label();
             this.tB_selling_price = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.újKönyvHozzáadásaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.könyvMódosításaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.könyvTörléseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.könyvekBindingSource)).BeginInit();
@@ -160,13 +160,34 @@
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.újKönyvHozzáadásaToolStripMenuItem,
-            this.könyvMódosításaToolStripMenuItem,
-            this.könyvTörléseToolStripMenuItem});
+            this.new_book_helpToolStripMenuItem,
+            this.book_modification_helpToolStripMenuItem,
+            this.book_delete_helpToolStripMenuItem});
             this.helpToolStripMenuItem.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(57, 24);
             this.helpToolStripMenuItem.Text = "Súgó";
+            // 
+            // new_book_helpToolStripMenuItem
+            // 
+            this.new_book_helpToolStripMenuItem.Name = "new_book_helpToolStripMenuItem";
+            this.new_book_helpToolStripMenuItem.Size = new System.Drawing.Size(232, 26);
+            this.new_book_helpToolStripMenuItem.Text = "Új könyv hozzáadása";
+            this.new_book_helpToolStripMenuItem.Click += new System.EventHandler(this.new_book_help_click);
+            // 
+            // book_modification_helpToolStripMenuItem
+            // 
+            this.book_modification_helpToolStripMenuItem.Name = "book_modification_helpToolStripMenuItem";
+            this.book_modification_helpToolStripMenuItem.Size = new System.Drawing.Size(232, 26);
+            this.book_modification_helpToolStripMenuItem.Text = "Könyv módosítása";
+            this.book_modification_helpToolStripMenuItem.Click += new System.EventHandler(this.book_modification_help_click);
+            // 
+            // book_delete_helpToolStripMenuItem
+            // 
+            this.book_delete_helpToolStripMenuItem.Name = "book_delete_helpToolStripMenuItem";
+            this.book_delete_helpToolStripMenuItem.Size = new System.Drawing.Size(232, 26);
+            this.book_delete_helpToolStripMenuItem.Text = "Könyv törlése";
+            this.book_delete_helpToolStripMenuItem.Click += new System.EventHandler(this.book_delete_help_click);
             // 
             // dataGridView
             // 
@@ -174,35 +195,35 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(134)))), ((int)(((byte)(134)))));
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(134)))), ((int)(((byte)(134)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Palatino Linotype", 9F);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(134)))), ((int)(((byte)(134)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Palatino Linotype", 9F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(134)))), ((int)(((byte)(134)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Palatino Linotype", 9F);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(134)))), ((int)(((byte)(134)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Palatino Linotype", 9F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView.GridColor = System.Drawing.Color.Black;
             this.dataGridView.Location = new System.Drawing.Point(463, 28);
             this.dataGridView.Name = "dataGridView";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(134)))), ((int)(((byte)(134)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(134)))), ((int)(((byte)(134)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView.RowHeadersWidth = 51;
             this.dataGridView.RowTemplate.Height = 24;
             this.dataGridView.Size = new System.Drawing.Size(1007, 763);
@@ -733,27 +754,6 @@
             this.panel1.Size = new System.Drawing.Size(457, 775);
             this.panel1.TabIndex = 30;
             // 
-            // újKönyvHozzáadásaToolStripMenuItem
-            // 
-            this.újKönyvHozzáadásaToolStripMenuItem.Name = "újKönyvHozzáadásaToolStripMenuItem";
-            this.újKönyvHozzáadásaToolStripMenuItem.Size = new System.Drawing.Size(232, 26);
-            this.újKönyvHozzáadásaToolStripMenuItem.Text = "Új könyv hozzáadása";
-            this.újKönyvHozzáadásaToolStripMenuItem.Click += new System.EventHandler(this.new_book_help_click);
-            // 
-            // könyvMódosításaToolStripMenuItem
-            // 
-            this.könyvMódosításaToolStripMenuItem.Name = "könyvMódosításaToolStripMenuItem";
-            this.könyvMódosításaToolStripMenuItem.Size = new System.Drawing.Size(232, 26);
-            this.könyvMódosításaToolStripMenuItem.Text = "Könyv módosítása";
-            this.könyvMódosításaToolStripMenuItem.Click += new System.EventHandler(this.book_modification_help_click);
-            // 
-            // könyvTörléseToolStripMenuItem
-            // 
-            this.könyvTörléseToolStripMenuItem.Name = "könyvTörléseToolStripMenuItem";
-            this.könyvTörléseToolStripMenuItem.Size = new System.Drawing.Size(232, 26);
-            this.könyvTörléseToolStripMenuItem.Text = "Könyv törlése";
-            this.könyvTörléseToolStripMenuItem.Click += new System.EventHandler(this.book_delete_help_click);
-            // 
             // BookManagerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -830,8 +830,8 @@
         private System.Windows.Forms.Label label_selling_price;
         private System.Windows.Forms.TextBox tB_selling_price;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ToolStripMenuItem újKönyvHozzáadásaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem könyvMódosításaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem könyvTörléseToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem new_book_helpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem book_modification_helpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem book_delete_helpToolStripMenuItem;
     }
 }

@@ -89,22 +89,176 @@ namespace WindowsFormsApp1
 
         public void display_books()
         {
-            if (tB_ID.Text != "" && tB_ID.Text != "Könyv ID") {
+            if (tB_ID.Text != "" && tB_ID.Text != "Könyv ID")
+            {
+                tB_ISBN.Text = "";
+                tB_author.Text = "";
+                tB_title.Text = "";
+                tB_year.Text = "";
+                tB_genre.Text = "";
                 connection.Open();
                 SqlCommand cmd = connection.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select * from [Books] where Book_ID = '" + int.Parse(tB_ID.Text) + "'";
+                cmd.CommandText = "select [Book_ID] as ID, [ISBN], [Author] as [Szerző], [Title] as [Cím], [Release_Year] as [Kiadás\néve], [Genre] as [Műfaj], [Publisher] as [Kiadó], [Pagenumber] as [Oldalszám], [Condition] as [Állapot]" +
+                ", [Binding] as [Kötés], [Purchase_Price] as [Beszer.\nár], [Selling_Price] as [Elad.\nár] from [Books] where [Book_ID] like '%" + tB_ID.Text + "%'";
                 cmd.ExecuteNonQuery();
                 DataTable dta = new DataTable();
                 SqlDataAdapter dataadp = new SqlDataAdapter(cmd);
                 dataadp.Fill(dta);
                 dataGridView.DataSource = dta;
                 connection.Close();
-                tB_ID.ForeColor = Color.Gray;
                 tB_ID.Text = "Könyv ID";
-            } else
+                tB_ID.ForeColor = Color.Gray;
+                tB_ISBN.Text = "ISBN";
+                tB_author.Text = "Szerző";
+                tB_title.Text = "Cím";
+                tB_year.Text = "Kiadás éve";
+                tB_genre.Text = "Műfaj";
+            }
+            else if (tB_ISBN.Text != "" && tB_ISBN.Text != "ISBN")
             {
-                MessageBox.Show("Nincs megadva könyv azonosító!");
+                tB_ID.Text = "";
+                tB_author.Text = "";
+                tB_title.Text = "";
+                tB_year.Text = "";
+                tB_genre.Text = "";
+                connection.Open();
+                SqlCommand cmd = connection.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "select [Book_ID] as ID, [ISBN], [Author] as [Szerző], [Title] as [Cím], [Release_Year] as [Kiadás\néve], [Genre] as [Műfaj], [Publisher] as [Kiadó], [Pagenumber] as [Oldalszám], [Condition] as [Állapot]" +
+                ", [Binding] as [Kötés], [Purchase_Price] as [Beszer.\nár], [Selling_Price] as [Elad.\nár] from [Books] where [ISBN] like '%" + tB_ISBN.Text + "%'";
+                cmd.ExecuteNonQuery();
+                DataTable dta = new DataTable();
+                SqlDataAdapter dataadp = new SqlDataAdapter(cmd);
+                dataadp.Fill(dta);
+                dataGridView.DataSource = dta;
+                connection.Close();
+                tB_ISBN.Text = "ISBN";
+                tB_ISBN.ForeColor = Color.Gray;
+                tB_ID.Text = "Könyv ID";
+                tB_author.Text = "Szerző";
+                tB_title.Text = "Cím";
+                tB_year.Text = "Kiadás éve";
+                tB_genre.Text = "Műfaj";
+            }
+            else if (tB_author.Text != "" && tB_author.Text != "Szerző")
+            {
+                tB_ID.Text = "";
+                tB_ISBN.Text = "";
+                tB_title.Text = "";
+                tB_year.Text = "";
+                tB_genre.Text = "";
+                connection.Open();
+                SqlCommand cmd = connection.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "select [Book_ID] as ID, [ISBN], [Author] as [Szerző], [Title] as [Cím], [Release_Year] as [Kiadás\néve], [Genre] as [Műfaj], [Publisher] as [Kiadó], [Pagenumber] as [Oldal-\nszám], [Condition] as [Állapot]" +
+                ", [Binding] as [Kötés], [Purchase_Price] as [Beszer.\nár], [Selling_Price] as [Elad.\nár] from [Books] where [Author] like '%" + tB_author.Text + "%'";
+                cmd.ExecuteNonQuery();
+                DataTable dta = new DataTable();
+                SqlDataAdapter dataadp = new SqlDataAdapter(cmd);
+                dataadp.Fill(dta);
+                dataGridView.DataSource = dta;
+                connection.Close();
+                tB_ID.Text = "Könyv ID";
+                tB_ISBN.Text = "ISBN";
+                tB_author.Text = "Szerző";
+                tB_author.ForeColor = Color.Gray;
+                tB_title.Text = "Cím";
+                tB_year.Text = "Kiadás éve";
+                tB_genre.Text = "Műfaj";
+            }
+            else if (tB_title.Text != "" && tB_title.Text != "Cím")
+            {
+                tB_ID.Text = "";
+                tB_ISBN.Text = "";
+                tB_author.Text = "";
+                tB_year.Text = "";
+                tB_genre.Text = "";
+                connection.Open();
+                SqlCommand cmd = connection.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "select [Book_ID] as ID, [ISBN], [Author] as [Szerző], [Title] as [Cím], [Release_Year] as [Kiadás\néve], [Genre] as [Műfaj], [Publisher] as [Kiadó], [Pagenumber] as [Oldal-\nszám], [Condition] as [Állapot]" +
+                ", [Binding] as [Kötés], [Purchase_Price] as [Beszer.\nár], [Selling_Price] as [Elad.\nár] from [Books] where [Title] like '%" + tB_title.Text + "%'";
+                cmd.ExecuteNonQuery();
+                DataTable dta = new DataTable();
+                SqlDataAdapter dataadp = new SqlDataAdapter(cmd);
+                dataadp.Fill(dta);
+                dataGridView.DataSource = dta;
+                connection.Close();
+                tB_ID.Text = "Könyv ID";
+                tB_ISBN.Text = "ISBN";
+                tB_author.Text = "Szerző";
+                tB_title.Text = "Cím";
+                tB_title.ForeColor = Color.Gray;
+                tB_year.Text = "Kiadás éve";
+                tB_genre.Text = "Műfaj";
+            }
+            else if (tB_year.Text != "" && tB_year.Text != "Kiadás éve")
+            {
+                tB_ID.Text = "";
+                tB_ISBN.Text = "";
+                tB_author.Text = "";
+                tB_title.Text = "";
+                tB_genre.Text = "";
+                connection.Open();
+                SqlCommand cmd = connection.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "select [Book_ID] as ID, [ISBN], [Author] as [Szerző], [Title] as [Cím], [Release_Year] as [Kiadás\néve], [Genre] as [Műfaj], [Publisher] as [Kiadó], [Pagenumber] as [Oldal-\nszám], [Condition] as [Állapot]" +
+                ", [Binding] as [Kötés], [Purchase_Price] as [Beszer.\nár], [Selling_Price] as [Elad.\nár] from [Books] where [Release_Year] = '" + tB_year.Text + "'";
+                cmd.ExecuteNonQuery();
+                DataTable dta = new DataTable();
+                SqlDataAdapter dataadp = new SqlDataAdapter(cmd);
+                dataadp.Fill(dta);
+                dataGridView.DataSource = dta;
+                connection.Close();
+                tB_ID.Text = "Könyv ID";
+                tB_ISBN.Text = "ISBN";
+                tB_author.Text = "Szerző";
+                tB_title.Text = "Cím";
+                tB_year.Text = "Kiadás éve";
+                tB_year.ForeColor = Color.Gray;
+                tB_genre.Text = "Műfaj";
+            }
+            else if (tB_genre.Text != "" && tB_genre.Text != "Műfaj")
+            {
+                tB_ID.Text = "";
+                tB_ISBN.Text = "";
+                tB_author.Text = "";
+                tB_title.Text = "";
+                tB_year.Text = "";
+                connection.Open();
+                SqlCommand cmd = connection.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "select [Book_ID] as ID, [ISBN], [Author] as [Szerző], [Title] as [Cím], [Release_Year] as [Kiadás\néve], [Genre] as [Műfaj], [Publisher] as [Kiadó], [Pagenumber] as [Oldal-\nszám], [Condition] as [Állapot]" +
+                ", [Binding] as [Kötés], [Purchase_Price] as [Beszer.\nár], [Selling_Price] as [Elad.\nár] from [Books] where [Genre] like '%" + tB_genre.Text + "%'";
+                cmd.ExecuteNonQuery();
+                DataTable dta = new DataTable();
+                SqlDataAdapter dataadp = new SqlDataAdapter(cmd);
+                dataadp.Fill(dta);
+                dataGridView.DataSource = dta;
+                connection.Close();
+                tB_ID.Text = "Könyv ID";
+                tB_ISBN.Text = "ISBN";
+                tB_author.Text = "Szerző";
+                tB_title.Text = "Cím";
+                tB_year.Text = "Kiadás éve";
+                tB_genre.Text = "Műfaj";
+                tB_genre.ForeColor = Color.Gray;
+            }
+            else
+            {
+                connection.Open();
+                SqlCommand cmd = connection.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "select [Book_ID] as ID, [ISBN], [Author] as [Szerző], [Title] as [Cím], [Release_Year] as [Kiadás\néve], [Genre] as [Műfaj], [Publisher] as [Kiadó], [Pagenumber] as [Oldal-\nszám], [Condition] as [Állapot]" +
+                ", [Binding] as [Kötés], [Purchase_Price] as [Beszer.\nár], [Selling_Price] as [Elad.\nár] from [Books]";
+                cmd.ExecuteNonQuery();
+                DataTable dta = new DataTable();
+                SqlDataAdapter dataadp = new SqlDataAdapter(cmd);
+                dataadp.Fill(dta);
+                dataGridView.DataSource = dta;
+                connection.Close();
+                MessageBox.Show("Nincs meghatározva egyik adat sem! Nem lehetséges a keresés.");
             }
             dataGridView.AutoResizeColumns();
             dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
@@ -555,7 +709,8 @@ namespace WindowsFormsApp1
 
         private void book_delete_help_click(object sender, EventArgs e)
         {
-            MessageBox.Show("Könyv törlése!\n\nA könyv azonosítóját megadva a törlés gomb megnyomásával lehet a könyvet törölni.");
+            MessageBox.Show("Könyv törlése!\n\n" +
+                "A könyv azonosítóját megadva a törlés gomb megnyomásával lehet a könyvet törölni.");
         }
     }
 }
