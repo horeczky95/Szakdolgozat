@@ -414,5 +414,23 @@ namespace WindowsFormsApp1
         {
             Application.Exit();
         }
+
+        private void new_wish_add_help_click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Új kívánság hozzáadása!\n\n" +
+                "Minden kötelező adat megadása után gomb nyomással új kívánságot viszunk fel az adatbázisba.");
+        }
+
+        private void wish_modification_help_click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Kíváság módosítása!\n\n" +
+                "A kívánság azonosítójának megadásával, illetve a módosítani kívánt adat beírásával, gomb nyomás segítségével tudjuk az adatokat módosítani.");
+        }
+
+        private void wish_delete_click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Kívánság törlése!\n\n" +
+                "A kívánság azonosítójának megadásával tudjuk törölni a kívánságot a listából.");
+        }
     }
 }

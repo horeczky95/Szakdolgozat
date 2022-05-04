@@ -539,5 +539,23 @@ namespace WindowsFormsApp1
         {
             Application.Exit();
         }
+
+        private void new_book_help_click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Új könyv hozzáadása!\n\nMinden adatot megkell adni az eladási ár és a könyv azonosítóját kivéve." +
+                " Ezt követően az új  könyv hozzáadása gombra kattintva elmentésre kerül a könyv." +
+                " Utána ellenőrizni kell, hogy a funkció sikeresen végre hajtodott.");
+        }
+
+        private void book_modification_help_click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Könyv adatainak módosítása!\n\nElőszőr megkell adni a módosítani kívánt köny azonosítóját majd azon adatot amit módosítani akarunk." +
+                " Gomb nyomást követően ellenőrizni kell a sikeres lefutást.");
+        }
+
+        private void book_delete_help_click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Könyv törlése!\n\nA könyv azonosítóját megadva a törlés gomb megnyomásával lehet a könyvet törölni.");
+        }
     }
 }

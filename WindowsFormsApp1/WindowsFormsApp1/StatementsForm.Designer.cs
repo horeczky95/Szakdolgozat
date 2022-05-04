@@ -65,6 +65,7 @@
             this.label_profit = new System.Windows.Forms.Label();
             this.chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.kimutatásokKezeléseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.antiqueDBDataSetBindingSource)).BeginInit();
@@ -145,6 +146,8 @@
             // 
             // helpToolStripMenuItem
             // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.kimutatásokKezeléseToolStripMenuItem});
             this.helpToolStripMenuItem.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(57, 24);
@@ -425,6 +428,13 @@
             this.panel1.Size = new System.Drawing.Size(757, 235);
             this.panel1.TabIndex = 17;
             // 
+            // kimutatásokKezeléseToolStripMenuItem
+            // 
+            this.kimutatásokKezeléseToolStripMenuItem.Name = "kimutatásokKezeléseToolStripMenuItem";
+            this.kimutatásokKezeléseToolStripMenuItem.Size = new System.Drawing.Size(235, 26);
+            this.kimutatásokKezeléseToolStripMenuItem.Text = "Kimutatások kezelése";
+            this.kimutatásokKezeléseToolStripMenuItem.Click += new System.EventHandler(this.statment_help_click);
+            // 
             // StatementsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -485,5 +495,6 @@
         private System.Windows.Forms.Label label_profit;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ToolStripMenuItem kimutatásokKezeléseToolStripMenuItem;
     }
 }

@@ -241,5 +241,9 @@ namespace WindowsFormsApp1
             }
         }
 
+        private void help_first_line_click(object sender, EventArgs e)
+        {
+            MessageBox.Show("A fő menűből a az oldalsó gombok lenyomásával léphetünk tovább a többi ablak segytségével.");
+        }
     }
 }

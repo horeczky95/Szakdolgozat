@@ -427,5 +427,22 @@ namespace WindowsFormsApp1
             Application.Exit();
         }
 
+        private void reg_cust_registration_help_click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Törzsvásárló regisztrálás!\n\nA törzsvásárlói kód megadásán kivűl minden adatot meg kell adni pontosan." +
+                " Ezt követően a Új törzsvásárló regisztrálás gombra nyomva a vásárló regisztrálásra kerül.");
+        }
+
+        private void reg_cust_modification_help_click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Törzsvásárló adatainak módosítása!\n\n" +
+                "A törzsvásárlóikód megadása után meg kell adni a változtatni kívánt adatot és gomb nyomást követően az adatok módosulnak.");
+        }
+
+        private void reg_cust_delete_help_click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Törzsvásárló törlése!\n\n" +
+                "A törzsvásárló kód megadásával lehet törölni az adatbázisból a vásárlót.");
+        }
     }
 }

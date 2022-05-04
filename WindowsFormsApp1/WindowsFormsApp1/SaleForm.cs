@@ -755,5 +755,51 @@ namespace WindowsFormsApp1
                 "valamint minden alkalommal frissül a teljes fizetendő összeg is a hozzá adott könyv árával növelve. " +
                 "Ha minden könyv bekerült a kosárba akkor tudunk kedvezményeket adni, pontot levonni, illetve a könyveket eladni.");
         }
+
+        private void delete_book_help_click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Könyv törlése a kosárból!\n\n" +
+                "Hibás felvitel esetén a kosárban szereplő törölni kívánt könyv azonosítóját kell megadnunk. Ezt követően gomb nyomással töröljük a könyvet a kosárból.");
+        }
+
+        private void regcust_point_add_help_click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Törzsvásárlói pontok jóváírása!\n\n" +
+                "Az eladás gomb megnyomását megelőzően meg kell adni a törzsvásárlói kódot és az alapjána rendszer az eladáskor jóváírja a pontokat.");
+        }
+
+        private void regcust_point_delete_help_click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Törzsvásárlói pontok levonása!\n\n" +
+                "Először meg kell adni a törzsvásárlói kódot. Ezt követően a törzsvásárlói pont levonásra kattintva a rendszer levonja a szükséges pontokat.");
+        }
+
+        private void book_discount_help_click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Könyv kedvezmény!\n\n" +
+                "A kosárban szereplő könyv azonosítójának megadásával, illetve a könyv kedvezmény százalékos formában történő érték megadása " +
+                "után a könyv kedvezmény gomb lenyomásával történik meg a kedvezményezés.");
+        }
+
+        private void total_discount_help_click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Végösszeg kedvezmény!\n\n" +
+                "A kedvezmény mértékét százalékos formában megadjuk majd a végösszeg kedvezmény gomb megnyomásával a kedvezményezés végre hajtódik." +
+                "Érdemes akkor végre hajtani amikor már minden könyvet bele raktunk a kosárba, mivel ha előtte történik meg a kedvezmény alkalmazása," +
+                " az utolag berakott könyvekre a kedvezmény már nem fog vonatkozni.");
+        }
+
+        private void sale_help_click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Eladás!\n\n" +
+                "Ha minden megvásárólni kívánt könyv a kosárban van, és megtörténtek a levonások akkor a könyv eladása gomb megnyomásával a könyveket eladjuk.");
+        }
+
+        private void barcode_help_click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Vonalkódos keresés!\n\n" +
+                "A vonalkód beolvasás gombra kattintva, a felugró ablakban megkeressük a vonalkódos képet, amit szeretnénk beolvasni." +
+                "Azt kiválasztva a megnyitás gombra kattintva a vonalkód beolvasás megtörténik és a keresés lefut.");
+        }
     }
 }

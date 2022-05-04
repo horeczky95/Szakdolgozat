@@ -402,5 +402,12 @@ namespace WindowsFormsApp1
         {
             Application.Exit();
         }
+
+        private void statment_help_click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Kimutatások kezelése!\n\n" +
+                "Mind a három esteben be kell állítanunk egy kezdő és egy befejező dátumot," +
+                " ezt követően a kívánt gomb megnyomásával a kívánt kimutatás fog megjelenni a képernyőn.");
+        }
     }
 }
