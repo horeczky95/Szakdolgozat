@@ -116,8 +116,6 @@ namespace WindowsFormsApp1
 
         private void new_regcust_Click(object sender, EventArgs e)
         {
-            
-
             if ( tB_name.Text != "" && tB_name.Text != "Teljes név" && tB_address.Text != "" && tB_address.Text != "Lakcím" 
                 && cB_gender.Text != "" && cB_gender.Text != "Nem" && tB_phone.Text != "" && tB_phone.Text != "Telefonszám"
                 && tB_email.Text != "" && tB_email.Text != "Email cím")
@@ -158,9 +156,15 @@ namespace WindowsFormsApp1
                     cmd.ExecuteNonQuery();
                 } else
                 {
+                    cmd.CommandText = "select Count(Name) as count from [Regular_Customers]";
+                    cmd.ExecuteNonQuery();
+                    reader = cmd.ExecuteReader();
+                    reader.Read();
+                    int sum = int.Parse(reader["count"].ToString());
+                    reader.Close();
                     reg_cust = reg_cust.Remove(0, 1);
                     int first_char = int.Parse(born_date_string[0].ToString());
-                    first_char += 1;
+                    first_char += sum;
                     reg_cust = first_char.ToString() + reg_cust;
                     cmd.CommandText = "insert into [Regular_Customers] (Regular_Customer_ID, Name, Address, [Born_Date], Gender, [Phone_Number], [Email_Address], [Current_Points], [Previous_Year_Points]) " +
                         "values ('" + reg_cust.ToString() + "', '" + tB_name.Text + "', '" + tB_address.Text + "','" + born_date.ToString(format) + "', " +
